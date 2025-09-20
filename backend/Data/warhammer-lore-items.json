@@ -1,0 +1,156 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "name": "Jungfreud Tabard",
+    "description": "A well-maintained cloth tabard bearing the heraldry of House Jungfreud, featuring a black boar's head on a field of green and gold. The fabric shows the quality craftsmanship of Ubersreik's finest tailors, with reinforced seams and carefully embroidered details that speak to the wearer's allegiance to the ruling family.",
+    "valueInPennies": 60,
+    "tags": ["Ubersreik", "Imperial", "Clothing", "Heraldry", "House Jungfreud"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "name": "Iron-bound Training Shield",
+    "description": "A practice shield showing wear from countless drills, reinforced with iron bands and bearing dents from sword practice. The leather grip is worn smooth from use, and scratches across its surface tell the story of dedicated military training in the Ubersreik barracks.",
+    "valueInPennies": 36,
+    "tags": ["Imperial", "Barracks", "Training", "Shield", "Military"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "name": "Dwarven Ale Mug",
+    "description": "A sturdy pewter mug decorated with runic inscriptions promising good fortune to those who drink deep. The craftsmanship is unmistakably dwarven, with thick walls, a comfortable handle, and intricate runes that seem to keep the ale at the perfect temperature for longer than any mundane vessel should.",
+    "valueInPennies": 18,
+    "tags": ["Dwarf", "Karak", "Ale", "Runic", "Craftsmanship", "Tavern"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "name": "Elvish Silk Scarf",
+    "description": "A delicate scarf woven from the finest elvish silk, shimmering with an otherworldly beauty that catches moonlight and seems to flow like liquid silver. The weaving technique is beyond human understanding, creating patterns that shift subtly in different light, marking it as genuine High Elf craftsmanship.",
+    "valueInPennies": 300,
+    "tags": ["Elven", "High Elf", "Silk", "Noble", "Craftsmanship", "Embassy"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440006",
+    "name": "Bretonnian Knight's Spurs",
+    "description": "Ornate golden spurs bearing the fleur-de-lys symbol, worn by a knight errant seeking the Grail. Each spur is a masterwork of Bretonnian metalcraft, with delicate engravings depicting scenes of chivalrous deeds and quests for honor. The gold is pure and untarnished, befitting a true knight of Bretonnia.",
+    "valueInPennies": 480,
+    "tags": ["Bretonnia", "Knight", "Chivalry", "Noble", "Gold", "Fleur-de-lys"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440007",
+    "name": "Tilean Crossbow Bolt",
+    "description": "A well-crafted quarrel with steel tip and goose feather fletching, marked with a Tilean city-state's seal pressed into the metal. The balance is perfect, the tip razor-sharp, and the craftsmanship speaks to the renowned skill of Tilean crossbow manufacturers who supply mercenary companies across the Old World.",
+    "valueInPennies": 8,
+    "tags": [
+      "Tilean",
+      "Crossbow",
+      "Mercenary",
+      "Steel",
+      "Fletching",
+      "City-state"
+    ]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440008",
+    "name": "Chaos Cultist's Amulet",
+    "description": "A twisted bronze pendant bearing blasphemous symbols that seem to writhe and shift when not looked at directly. The metal feels unnaturally cold to the touch and radiates an aura of corruption and malice that makes the faithful uneasy. Dark stains around the edges suggest unspeakable rituals.",
+    "valueInPennies": 120,
+    "tags": ["Chaos", "Cultist", "Bronze", "Cursed", "Dark", "Forbidden"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440009",
+    "name": "Ranald's Lucky Dice",
+    "description": "A pair of bone dice that seem to favor lucky rolls, blessed by the trickster god of fortune and thieves. The bone is yellowed with age, and the dots are filled with a substance that gleams faintly in tavern light. Gamblers and rogues would recognize their divine providence immediately.",
+    "valueInPennies": 24,
+    "tags": ["Ranald", "Dice", "Luck", "Tavern", "Gambling", "Trickster"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440010",
+    "name": "Sigmarite War Hammer",
+    "description": "A ceremonial hammer blessed by the priests of Sigmar, its head bearing the twin-tailed comet symbol etched deep into the steel. The weapon radiates divine authority and purpose, with leather wrappings on the handle that show signs of reverent use in temple ceremonies and righteous battle against the enemies of the Empire.",
+    "valueInPennies": 600,
+    "tags": [
+      "Sigmar",
+      "Hammer",
+      "Blessed",
+      "Temple",
+      "Ceremonial",
+      "Twin-tailed Comet"
+    ]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440011",
+    "name": "Skaven-gnawed Bones",
+    "description": "A collection of small bones bearing distinctive gnaw marks from razor-sharp teeth, clear evidence of the rat-men that infest the sewers and tunnels beneath the cities. The bones show the characteristic scratches and bite patterns that scholars of the forbidden would recognize as unmistakably Skaven in origin.",
+    "valueInPennies": 4,
+    "tags": ["Skaven", "Bones", "Sewers", "Rat-men", "Evidence", "Underground"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440012",
+    "name": "Norse Runestone",
+    "description": "A small stone tablet carved with primitive runes promising protection from the dark gods of the far north. The stone is black basalt, cold to the touch even in summer, and the runes are filled with a white substance that might be bone meal or ash. Norse shamans would recognize the protective wards against Chaos.",
+    "valueInPennies": 90,
+    "tags": [
+      "Norse",
+      "Runestone",
+      "Protection",
+      "Shaman",
+      "North",
+      "Chaos Ward"
+    ]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440013",
+    "name": "Vampire's Wine Goblet",
+    "description": "An ornate silver goblet with ruby inlays that seem to pulse with their own inner light, bearing faint stains that no amount of cleaning can remove. The craftsmanship is exquisite, clearly from a master silversmith, but the goblet carries an aura of ancient hunger and nobility corrupted by undeath.",
+    "valueInPennies": 720,
+    "tags": ["Vampire", "Silver", "Goblet", "Undead", "Sylvania", "Noble"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440014",
+    "name": "Halfling Cooking Pot",
+    "description": "A well-seasoned iron pot with a comfortable wooden handle, bearing the marks of countless delicious meals and loving care. The bottom is perfectly smooth from years of stirring, and the interior gleams with the patina that only comes from proper seasoning and the preparation of exceptional food by skilled Halfling cooks.",
+    "valueInPennies": 15,
+    "tags": ["Halfling", "Cooking", "Iron", "Food", "Comfort", "Village"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440015",
+    "name": "Wizard's Spell Component Pouch",
+    "description": "A leather pouch containing various arcane materials essential for spellcasting: dried bat wings, powdered silver, crystallized tears, and other reagents. Each component is carefully labeled and stored in separate compartments, showing the methodical approach of a trained College wizard who understands the precise requirements of magical formulae.",
+    "valueInPennies": 180,
+    "tags": ["Wizard", "Magic", "Components", "College", "Arcane", "Reagents"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440016",
+    "name": "Orc Tooth Necklace",
+    "description": "A crude necklace strung with yellowed orc tusks, each one a trophy taken from defeated greenskins in hard-fought battles. The teeth are bound with sinew and leather cord, and dried blood still stains some of the larger specimens. Warriors of the frontier would recognize this as proof of survival against the green tide.",
+    "valueInPennies": 12,
+    "tags": ["Orc", "Trophy", "Battlefield", "Greenskin", "Warrior", "Frontier"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440017",
+    "name": "Beastman Hide Cloak",
+    "description": "A rough cloak made from the hide of a defeated beastman, still bearing coarse fur and the primal smell of the deep forest. The hide shows claw marks and ritual scarification typical of the beast-men, and wearing it would mark the bearer as someone who has faced the children of Chaos and emerged victorious.",
+    "valueInPennies": 36,
+    "tags": ["Beastman", "Hide", "Cloak", "Forest", "Chaos", "Trophy"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440018",
+    "name": "Estalian Rapier",
+    "description": "An elegant dueling sword with a swept hilt and razor-sharp blade, crafted in the finest Estalian tradition by a master swordsmith. The balance is perfect, the steel folded countless times, and the hilt bears the maker's mark of one of the renowned armourers of Magritta. Such weapons are prized by duelists and nobles across the Old World.",
+    "valueInPennies": 960,
+    "tags": ["Estalian", "Rapier", "Dueling", "Noble", "Magritta", "Masterwork"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440019",
+    "name": "Undead Phylactery",
+    "description": "A crystal vial containing swirling mist that seems to move with malevolent purpose, cold to the touch and emanating an aura of death. The crystal is flawless yet somehow wrong, as if it exists partially in the realm of the dead. Necromancers would recognize this as a soul vessel, a repository for captured life essence.",
+    "valueInPennies": 450,
+    "tags": ["Undead", "Phylactery", "Necromancer", "Soul", "Crystal", "Death"]
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440020",
+    "name": "Imperial Griffon Feather",
+    "description": "A magnificent golden feather from the Emperor's own griffon, symbol of imperial authority and divine right to rule. The feather is nearly two feet long, gleaming with an inner light that speaks to its noble origin. Such feathers are given only as the highest imperial honors, marking the bearer as someone who has served the Empire with extraordinary distinction.",
+    "valueInPennies": 1200,
+    "tags": ["Imperial", "Griffon", "Emperor", "Authority", "Honor", "Divine"]
+  }
+]
