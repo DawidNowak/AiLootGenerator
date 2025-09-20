@@ -1,0 +1,320 @@
+openapi: 3.1.0
+info:
+  title: Warhammer Fantasy Loot Generator API
+  description: RESTful API for generating thematic, lore-appropriate loot items for Warhammer Fantasy Roleplay sessions
+  version: 1.0.0
+  contact:
+    name: AiLootGenerator
+    url: https://github.com/DawidNowak/AiLootGenerator
+
+servers:
+  - url: https://api.warhammerloot.com
+    description: Production server
+  - url: https://localhost:5001
+    description: Local development server
+
+paths:
+  /api/loot/generate:
+    post:
+      summary: Generate loot items for a specific location and wealth level
+      description: Creates 4-6 thematic loot items based on location context, wealth level, and user language preference
+      operationId: generateLoot
+      tags:
+        - Loot Generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerationRequest"
+            examples:
+              ubersreik_common:
+                summary: Common loot in Ubersreik
+                value:
+                  location: "Ubersreik barracks"
+                  wealthLevel: "Common"
+                  language: "en"
+                  sessionId: "abc123-session"
+              norse_noble:
+                summary: Noble loot in Norscan location (Polish)
+                value:
+                  location: "Pracownia norskich magów"
+                  wealthLevel: "Noble"
+                  language: "pl"
+                  sessionId: "def456-session"
+      responses:
+        "200":
+          description: Successfully generated loot items
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GenerationResponse"
+              examples:
+                success_response:
+                  summary: Successful generation
+                  value:
+                    requestId: "550e8400-e29b-41d4-a716-446655440000"
+                    items:
+                      - name: "Jungfreud Tabard in Ubersreik colors"
+                        description: "A well-maintained cloth tabard bearing the heraldry of House Jungfreud"
+                        valueInPennies: 60
+                        wealthLevel: "Common"
+                      - name: "Iron-bound Training Shield"
+                        description: "A practice shield showing wear from countless drills"
+                        valueInPennies: 36
+                        wealthLevel: "Poor"
+                    location: "Ubersreik barracks"
+                    language: "en"
+                    generatedAt: "2025-09-20T14:30:00Z"
+                    cooldownExpiresAt: "2025-09-20T14:30:30Z"
+        "400":
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                invalid_location:
+                  summary: Invalid location
+                  value:
+                    error: "ValidationError"
+                    message: "Location description must be between 1 and 200 characters"
+                    details:
+                      field: "location"
+                      value: ""
+        "429":
+          description: User is on cooldown
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CooldownErrorResponse"
+              examples:
+                cooldown_active:
+                  summary: Cooldown in progress
+                  value:
+                    error: "CooldownActive"
+                    message: "Please wait before generating more loot"
+                    remainingSeconds: 15
+                    retryAfter: "2025-09-20T14:30:15Z"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /api/health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the API and its dependencies
+      operationId: getHealth
+      tags:
+        - Health
+      responses:
+        "200":
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+              examples:
+                healthy:
+                  summary: All services healthy
+                  value:
+                    status: "Healthy"
+                    timestamp: "2025-09-20T14:30:00Z"
+                    services:
+                      openai: "Healthy"
+                      qdrant: "Healthy"
+                      cache: "Healthy"
+        "503":
+          description: Service is unhealthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+components:
+  schemas:
+    GenerationRequest:
+      type: object
+      required:
+        - location
+        - wealthLevel
+        - language
+        - sessionId
+      properties:
+        location:
+          type: string
+          minLength: 1
+          maxLength: 200
+          description: Description of the in-game location where loot is found
+          example: "Ubersreik barracks"
+        wealthLevel:
+          $ref: "#/components/schemas/WealthLevel"
+        language:
+          type: string
+          enum: ["en", "pl"]
+          description: Target language for generated content
+          example: "en"
+        sessionId:
+          type: string
+          minLength: 1
+          description: User session identifier for cooldown tracking
+          example: "abc123-session"
+
+    GenerationResponse:
+      type: object
+      required:
+        - requestId
+        - items
+        - location
+        - language
+        - generatedAt
+        - cooldownExpiresAt
+      properties:
+        requestId:
+          type: string
+          format: uuid
+          description: Unique identifier for this generation request
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        items:
+          type: array
+          minItems: 4
+          maxItems: 6
+          items:
+            $ref: "#/components/schemas/LootItem"
+          description: Generated loot items (4-6 items)
+        location:
+          type: string
+          description: Original location description from request
+          example: "Ubersreik barracks"
+        language:
+          type: string
+          enum: ["en", "pl"]
+          description: Language used for generation
+          example: "en"
+        generatedAt:
+          type: string
+          format: date-time
+          description: Timestamp when items were generated
+          example: "2025-09-20T14:30:00Z"
+        cooldownExpiresAt:
+          type: string
+          format: date-time
+          description: When the user can generate loot again
+          example: "2025-09-20T14:30:30Z"
+
+    LootItem:
+      type: object
+      required:
+        - name
+        - description
+        - valueInPennies
+        - wealthLevel
+      properties:
+        name:
+          type: string
+          minLength: 3
+          maxLength: 100
+          description: Thematic item name
+          example: "Jungfreud Tabard in Ubersreik colors"
+        description:
+          type: string
+          maxLength: 500
+          description: Detailed item description
+          example: "A well-maintained cloth tabard bearing the heraldry of House Jungfreud"
+        valueInPennies:
+          type: integer
+          minimum: 1
+          description: Estimated value in pennies (smallest WFRP denomination)
+          example: 60
+        wealthLevel:
+          $ref: "#/components/schemas/WealthLevel"
+
+    WealthLevel:
+      type: string
+      enum: ["Rubbish", "Poor", "Common", "Wealthy", "Noble"]
+      description: Five-tier wealth classification system
+      example: "Common"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - message
+        - details
+      properties:
+        error:
+          type: string
+          description: Error type identifier
+          example: "ValidationError"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Location description must be between 1 and 200 characters"
+        details:
+          type: object
+          description: Additional error context
+          additionalProperties: true
+
+    CooldownErrorResponse:
+      allOf:
+        - $ref: "#/components/schemas/ErrorResponse"
+        - type: object
+          required:
+            - remainingSeconds
+            - retryAfter
+          properties:
+            remainingSeconds:
+              type: integer
+              minimum: 0
+              description: Seconds remaining in cooldown period
+              example: 15
+            retryAfter:
+              type: string
+              format: date-time
+              description: When user can retry the request
+              example: "2025-09-20T14:30:15Z"
+
+    HealthResponse:
+      type: object
+      required:
+        - status
+        - timestamp
+        - services
+      properties:
+        status:
+          type: string
+          enum: ["Healthy", "Degraded", "Unhealthy"]
+          description: Overall service health status
+          example: "Healthy"
+        timestamp:
+          type: string
+          format: date-time
+          description: Health check timestamp
+          example: "2025-09-20T14:30:00Z"
+        services:
+          type: object
+          description: Health status of individual services
+          properties:
+            openai:
+              type: string
+              enum: ["Healthy", "Unhealthy"]
+              example: "Healthy"
+            qdrant:
+              type: string
+              enum: ["Healthy", "Unhealthy"]
+              example: "Healthy"
+            cache:
+              type: string
+              enum: ["Healthy", "Unhealthy"]
+              example: "Healthy"
+
+security: []
+
+tags:
+  - name: Loot Generation
+    description: Core functionality for generating Warhammer Fantasy loot items
+  - name: Health
+    description: Service health and monitoring endpoints
