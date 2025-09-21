@@ -39,11 +39,11 @@
 - [x] T005 [P] LootItem model in backend/src/Models/LootItem.cs
 - [x] T006 [P] GenerationRequest model in backend/src/Models/GenerationRequest.cs
 - [x] T007 [P] LoreItem model in backend/src/Models/LoreItem.cs
-- [ ] T008 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
+- [x] T008 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
 
 ### Backend Services (Core Business Logic)
 
-- [ ] T009 [P] OpenAIService for loot generation with tests in backend/src/Services/OpenAIService.cs
+- [x] T009 [P] OpenAIService for loot generation with tests in backend/src/Services/OpenAIService.cs
 - [ ] T010 [P] QdrantService for semantic search with tests in backend/src/Services/QdrantService.cs
 - [ ] T011 [P] CooldownService for session management with tests in backend/src/Services/CooldownService.cs
 - [ ] T012 [P] LootGenerationService orchestrating AI + vector search with tests in backend/src/Services/LootGenerationService.cs
