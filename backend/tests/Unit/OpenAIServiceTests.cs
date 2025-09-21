@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
 using OpenAI.Chat;
+using OpenAI.Embeddings;
 using AiLootGenerator.RestApi.Models;
 using AiLootGenerator.RestApi.Services;
 using System.ComponentModel.DataAnnotations;
@@ -13,14 +14,34 @@ namespace AiLootGenerator.RestApi.Tests.Unit
     /// </summary>
     public class OpenAIServiceTests
     {
+        private static OpenAIService CreateService()
+        {
+            var chatClient = new ChatClient("test", "test-key");
+            var embeddingClient = new EmbeddingClient("test", "test-key");
+            var logger = new LoggerFactory().CreateLogger<OpenAIService>();
+            return new OpenAIService(chatClient, embeddingClient, logger);
+        }
+
         [Fact]
         public void Constructor_WithNullChatClient_ThrowsArgumentNullException()
         {
             // Arrange
+            var embeddingClient = new EmbeddingClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new OpenAIService(null!, logger));
+            Assert.Throws<ArgumentNullException>(() => new OpenAIService(null!, embeddingClient, logger));
+        }
+
+        [Fact]
+        public void Constructor_WithNullEmbeddingClient_ThrowsArgumentNullException()
+        {
+            // Arrange
+            var chatClient = new ChatClient("test", "test-key");
+            var logger = new LoggerFactory().CreateLogger<OpenAIService>();
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => new OpenAIService(chatClient, null!, logger));
         }
 
         [Fact]
@@ -28,9 +49,10 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         {
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
+            var embeddingClient = new EmbeddingClient("test", "test-key");
 
             // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new OpenAIService(chatClient, null!));
+            Assert.Throws<ArgumentNullException>(() => new OpenAIService(chatClient, embeddingClient, null!));
         }
 
         [Fact]
@@ -38,8 +60,9 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         {
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
+            var embeddingClient = new EmbeddingClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = new OpenAIService(chatClient, embeddingClient, logger);
 
             // Act & Assert
             await Assert.ThrowsAsync<ArgumentNullException>(
@@ -50,9 +73,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         public async Task GenerateLootAsync_WithEmptyLocation_ThrowsArgumentException()
         {
             // Arrange
-            var chatClient = new ChatClient("test", "test-key");
-            var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             var request = new GenerationRequest
             {
@@ -71,9 +92,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         public async Task GenerateLootAsync_WithLocationTooLong_ThrowsArgumentException()
         {
             // Arrange
-            var chatClient = new ChatClient("test", "test-key");
-            var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             var request = new GenerationRequest
             {
@@ -94,7 +113,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             var request = new GenerationRequest
             {
@@ -125,7 +144,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             // Act
             var actual = service.DetermineWealthLevel(valueInPennies);
@@ -152,7 +171,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             // Act
             var actual = service.DetermineWealthLevel(valueInPennies);
@@ -175,7 +194,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             // Act
             var actual = service.GetWealthDescription(wealthLevel);
@@ -192,7 +211,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var validJsonResponse = CreateValidJsonResponse();
 
             // Act
@@ -211,7 +230,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var responseWithExtraText = @"Here are some items:
 
 [
@@ -239,7 +258,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var responseWithInvalidItems = @"[
   {
     ""name"": ""Valid Item"",
@@ -278,7 +297,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var response = $@"[
   {{
     ""name"": ""Test Item"",
@@ -301,7 +320,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var invalidJson = "This is not JSON";
 
             // Act & Assert
@@ -316,7 +335,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var emptyArray = "[]";
 
             // Act & Assert
@@ -335,7 +354,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var validRequest = new GenerationRequest
             {
                 Location = "Ubersreik barracks",
@@ -359,7 +378,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var validRequest = new GenerationRequest
             {
                 Location = "Ubersreik barracks",
@@ -384,7 +403,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
             var request = new GenerationRequest
             {
                 Location = "Test Location",
@@ -409,7 +428,7 @@ Hope this helps!";
             // Arrange
             var chatClient = new ChatClient("test", "test-key");
             var logger = new LoggerFactory().CreateLogger<OpenAIService>();
-            var service = new OpenAIService(chatClient, logger);
+            var service = CreateService();
 
             // Act
             var systemPrompt = service.GetSystemPrompt(language);

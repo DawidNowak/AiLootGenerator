@@ -251,34 +251,21 @@ namespace AiLootGenerator.RestApi.Services
         /// <summary>
         /// Generates an embedding for the given text using OpenAI's embedding model.
         /// </summary>
-        private Task<float[]?> GetEmbeddingAsync(string text, CancellationToken cancellationToken)
+        private async Task<float[]?> GetEmbeddingAsync(string text, CancellationToken cancellationToken)
         {
             if (string.IsNullOrWhiteSpace(text))
-                return Task.FromResult<float[]?>(null);
+                return null;
 
             try
             {
-                // Note: This is a simplified approach. In a real implementation,
-                // you would use OpenAI's embedding API directly or create a separate embedding service
                 _logger.LogDebug("Generating embedding for text: {TextPreview}...", text.Length > 50 ? text[..50] : text);
                 
-                // For now, return a mock embedding - this should be replaced with actual OpenAI embedding call
-                // Example: var embedding = await _embeddingClient.GenerateEmbeddingAsync(text, cancellationToken);
-                
-                // Placeholder implementation - replace with actual embedding generation
-                var random = new Random(text.GetHashCode());
-                var embedding = new float[1536]; // OpenAI ada-002 embedding dimension
-                for (int i = 0; i < embedding.Length; i++)
-                {
-                    embedding[i] = (float)(random.NextDouble() * 2.0 - 1.0); // Random value between -1 and 1
-                }
-                
-                return Task.FromResult<float[]?>(embedding);
+                return await _openAIService.GetEmbeddingAsync(text, cancellationToken);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error generating embedding for text");
-                return Task.FromResult<float[]?>(null);
+                return null;
             }
         }
 

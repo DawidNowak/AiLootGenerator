@@ -1,4 +1,5 @@
 using OpenAI.Chat;
+using OpenAI.Embeddings;
 using AiLootGenerator.RestApi.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
@@ -20,6 +21,14 @@ namespace AiLootGenerator.RestApi.Services
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <returns>A list of generated loot items.</returns>
         Task<List<LootItem>> GenerateLootAsync(GenerationRequest request, string? loreContext = null, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Generates an embedding vector for the given text using OpenAI's embedding model.
+        /// </summary>
+        /// <param name="text">The text to generate an embedding for.</param>
+        /// <param name="cancellationToken">Cancellation token for the operation.</param>
+        /// <returns>A float array representing the embedding vector, or null if generation fails.</returns>
+        Task<float[]?> GetEmbeddingAsync(string text, CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -28,11 +37,13 @@ namespace AiLootGenerator.RestApi.Services
     public class OpenAIService : IOpenAIService
     {
         private readonly ChatClient _chatClient;
+        private readonly EmbeddingClient _embeddingClient;
         private readonly ILogger<OpenAIService> _logger;
 
-        public OpenAIService(ChatClient chatClient, ILogger<OpenAIService> logger)
+        public OpenAIService(ChatClient chatClient, EmbeddingClient embeddingClient, ILogger<OpenAIService> logger)
         {
             _chatClient = chatClient ?? throw new ArgumentNullException(nameof(chatClient));
+            _embeddingClient = embeddingClient ?? throw new ArgumentNullException(nameof(embeddingClient));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -273,6 +284,41 @@ Guidelines:
                 >= 1201 => WealthLevel.Noble,
                 _ => null
             };
+        }
+
+        /// <inheritdoc/>
+        public async Task<float[]?> GetEmbeddingAsync(string text, CancellationToken cancellationToken = default)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                _logger.LogWarning("Cannot generate embedding for null or empty text");
+                return null;
+            }
+
+            try
+            {
+                _logger.LogDebug("Generating embedding for text: {TextPreview}...", 
+                    text.Length > 50 ? text[..50] + "..." : text);
+
+                var embeddingResponse = await _embeddingClient.GenerateEmbeddingAsync(text, options: null, cancellationToken);
+                
+                if (embeddingResponse?.Value == null)
+                {
+                    _logger.LogWarning("Received null embedding response from OpenAI");
+                    return null;
+                }
+
+                var embedding = embeddingResponse.Value.ToFloats().ToArray();
+                _logger.LogDebug("Successfully generated embedding with {Dimensions} dimensions", embedding.Length);
+                
+                return embedding;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error generating embedding for text: {TextPreview}", 
+                    text.Length > 50 ? text[..50] + "..." : text);
+                return null;
+            }
         }
 
         /// <summary>
