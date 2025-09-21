@@ -299,7 +299,7 @@ Represents a canonical Warhammer Fantasy item stored in vector database for sema
 **Validation Rules**:
 
 - Name must be 3-100 characters
-- Description must be 20-500 characters (optimized for embeddings)
+- Description must be 20-200 characters (optimized for embeddings)
 - ValueInPennies must be positive integer
 - Tags must contain 3-10 descriptive keywords
 
@@ -379,9 +379,11 @@ The application implements an automatic seeding process that runs during startup
    - **If vectors exist**: Skip seeding process and proceed to start listening for requests
    - **If empty/missing**: Execute seeding process
 4. **Seeding Process**:
-   - Deserialize JSON file containing canonical Warhammer Fantasy items (`warhammer-lore-items.json`)
+   - Scan `Data/` directory for all JSON files containing canonical Warhammer Fantasy items by category
+   - Iterate through each category file (e.g., `weapons.json`, `armors.json`, `jewelry.json`, `potions.json`, etc.)
+   - Deserialize each JSON file into arrays of WarhammerItem objects
    - Generate embeddings for each item using concatenated text approach
-   - Batch insert all vectors and metadata into Qdrant collection
+   - Batch insert all vectors and metadata into Qdrant collection across all categories
 5. **Application Ready**: Start HTTP server and begin accepting loot generation requests
 
 **Implementation Pattern**:
@@ -401,14 +403,30 @@ public async Task EnsureDatabaseSeeded()
 
     _logger.LogInformation("Seeding vector database with canonical Warhammer Fantasy items...");
 
-    // Load items from JSON file
-    var jsonContent = await File.ReadAllTextAsync("Data/warhammer-lore-items.json");
-    var warhammerItems = JsonSerializer.Deserialize<WarhammerItem[]>(jsonContent);
+    // Load items from all category JSON files
+    var allWarhammerItems = new List<WarhammerItem>();
+    var dataDirectory = "Data";
+    var jsonFiles = Directory.GetFiles(dataDirectory, "*.json");
 
-    // Seed database
-    await AddWarhammerItemVector(collectionName, warhammerItems);
+    foreach (var jsonFile in jsonFiles)
+    {
+        _logger.LogInformation("Loading items from {FileName}", Path.GetFileName(jsonFile));
+        var jsonContent = await File.ReadAllTextAsync(jsonFile);
+        var categoryItems = JsonSerializer.Deserialize<WarhammerItem[]>(jsonContent);
 
-    _logger.LogInformation("Successfully seeded {Count} Warhammer Fantasy items", warhammerItems.Length);
+        if (categoryItems != null && categoryItems.Length > 0)
+        {
+            allWarhammerItems.AddRange(categoryItems);
+            _logger.LogInformation("Loaded {Count} items from {Category}",
+                categoryItems.Length, Path.GetFileNameWithoutExtension(jsonFile));
+        }
+    }
+
+    // Seed database with all items from all categories
+    await AddWarhammerItemVector(collectionName, allWarhammerItems.ToArray());
+
+    _logger.LogInformation("Successfully seeded {Count} Warhammer Fantasy items from {FileCount} category files",
+        allWarhammerItems.Count, jsonFiles.Length);
 }
 
 // Called during application startup
@@ -686,14 +704,26 @@ function formatCurrency(pennies, language = "en") {
 
 ### Initial Data Population
 
-1. **JSON Preparation**: Create `lore-snippets.json` with 100-500 canonical items
-2. **Embedding Generation**: Use OpenAI text-embedding-ada-002 to convert item descriptions
-3. **Batch Upload**: Use Qdrant .NET client to upload items with metadata
+1. **JSON Preparation**: Create multiple category-specific JSON files in the `Data/` directory (e.g., `weapons.json`, `armors.json`, `jewelry.json`, `potions.json`, etc.) containing 100-500 canonical items total across all categories
+2. **Embedding Generation**: Use OpenAI text-embedding-ada-002 to convert item descriptions from all category files
+3. **Batch Upload**: Use Qdrant .NET client to upload items with metadata from all categories into a single collection
 4. **Index Creation**: Set up vector similarity and metadata filtering indexes
 
 ### Recommended JSON Categories
 
 **By Item Type**: Weapons, Armor, Tools, Clothing, Jewelry, Art, Books, Consumables, Containers, Religious, Magical, Miscellaneous
+
+**Category File Structure** (in `Data/` directory):
+
+- `weapons.json` - Swords, axes, bows, crossbows, firearms, etc.
+- `armors.json` - Plate mail, chainmail, shields, helmets, etc.
+- `jewelry.json` - Rings, necklaces, brooches, ceremonial items, etc.
+- `potions.json` - Healing draughts, alchemical compounds, poisons, etc.
+- `tools.json` - Crafting tools, professional equipment, instruments, etc.
+- `books.json` - Tomes, scrolls, maps, documents, etc.
+- `religious.json` - Holy symbols, prayer books, temple items, etc.
+- `miscellaneous.json` - Containers, art objects, curiosities, etc.
+- `common.json` - Everyday items, household goods, trade materials, etc.
 
 **By Origin Culture**: Imperial, Bretonnian, Dwarf, Elf, Kislev, Tilean, Estalia, Arabian, Norse, Lustria, Ulthuan, Araby
 

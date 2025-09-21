@@ -30,7 +30,7 @@
 - [x] T001 Create project structure per plan.md (backend/ and frontend/ directories)
 - [x] T002 Initialize backend ASP.NET Core 6.0 project with OpenAI .NET SDK, Qdrant .NET client dependencies
 - [x] T003 Initialize frontend React 18 project with Material-UI, React i18next, TypeScript dependencies
-- [x] T004 Create example Warhammer items JSON seed data in backend/Data/warhammer-lore-items.json
+- [x] T004 Create example Warhammer items JSON seed data in backend/Data/weapons.json
 
 ## Phase 3.2: Core Implementation
 
