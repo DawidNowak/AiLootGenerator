@@ -23,7 +23,7 @@ namespace AiLootGenerator.RestApi.Models
         public string Name { get; set; } = string.Empty;
 
         /// <summary>
-        /// Rich item description for embedding generation (optimized for embeddings).
+        /// Rich item description for embedding generation.
         /// </summary>
         [Required]
         [StringLength(200, MinimumLength = 20, ErrorMessage = "Description must be between 20 and 200 characters")]

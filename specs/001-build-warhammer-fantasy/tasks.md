@@ -44,7 +44,7 @@
 ### Backend Services (Core Business Logic)
 
 - [x] T009 [P] OpenAIService for loot generation with tests in backend/src/Services/OpenAIService.cs
-- [ ] T010 [P] QdrantService for semantic search with tests in backend/src/Services/QdrantService.cs
+- [x] T010 [P] QdrantService for semantic search with tests in backend/src/Services/QdrantService.cs
 - [ ] T011 [P] CooldownService for session management with tests in backend/src/Services/CooldownService.cs
 - [ ] T012 [P] LootGenerationService orchestrating AI + vector search with tests in backend/src/Services/LootGenerationService.cs
 
