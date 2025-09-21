@@ -7,7 +7,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
     /// <summary>
     /// Unit tests for the LootItem model to verify validation rules and property assignments.
     /// </summary>
-    public class LootItemTests
+    public class LootItemTests : ModelValidationTestBase
     {
         #region Valid Data Tests
 
@@ -23,11 +23,8 @@ namespace AiLootGenerator.RestApi.Tests.Unit
                 WealthLevel = WealthLevel.Common
             };
 
-            // Act
-            var validationResults = ValidateModel(item);
-
-            // Assert
-            Assert.Empty(validationResults);
+            // Act & Assert
+            AssertValidModel(item);
         }
 
         [Fact]
@@ -44,8 +41,7 @@ namespace AiLootGenerator.RestApi.Tests.Unit
                     WealthLevel = wealthLevel
                 };
 
-                var validationResults = ValidateModel(item);
-                Assert.Empty(validationResults);
+                AssertValidModel(item);
             }
         }
 
@@ -366,19 +362,6 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         #endregion
 
         #region Helper Methods
-
-        /// <summary>
-        /// Validates a model using the standard .NET validation framework.
-        /// </summary>
-        /// <param name="model">The model to validate</param>
-        /// <returns>List of validation results (empty if valid)</returns>
-        private static List<ValidationResult> ValidateModel(object model)
-        {
-            var validationResults = new List<ValidationResult>();
-            var context = new ValidationContext(model);
-            Validator.TryValidateObject(model, context, validationResults, validateAllProperties: true);
-            return validationResults;
-        }
 
         /// <summary>
         /// Returns a valid penny value for the specified wealth level based on documented ranges.

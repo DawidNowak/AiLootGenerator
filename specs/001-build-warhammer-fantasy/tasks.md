@@ -37,7 +37,7 @@
 ### Backend Models (Data-Model Entities)
 
 - [x] T005 [P] LootItem model in backend/src/Models/LootItem.cs
-- [ ] T006 [P] GenerationRequest model in backend/src/Models/GenerationRequest.cs
+- [x] T006 [P] GenerationRequest model in backend/src/Models/GenerationRequest.cs
 - [ ] T007 [P] WarhammerItem model in backend/src/Models/WarhammerItem.cs
 - [ ] T008 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
 
