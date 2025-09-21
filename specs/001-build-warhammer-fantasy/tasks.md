@@ -10,7 +10,7 @@
    → Tech stack: C# 8.0+ (ASP.NET Core 6.0+), React 18+, OpenAI .NET SDK, Qdrant .NET client
    → Structure: Web application (frontend + backend)
 2. Load design documents ✅:
-   → data-model.md: LootItem, GenerationRequest, WarhammerItem entities
+   → data-model.md: LootItem, GenerationRequest, LoreItem entities
    → contracts/openapi.yaml: POST /api/loot/generate, GET /api/health endpoints
    → research.md: OpenAI .NET SDK, Qdrant client, Material-UI decisions
    → quickstart.md: 7 user stories + edge cases
@@ -38,7 +38,7 @@
 
 - [x] T005 [P] LootItem model in backend/src/Models/LootItem.cs
 - [x] T006 [P] GenerationRequest model in backend/src/Models/GenerationRequest.cs
-- [ ] T007 [P] WarhammerItem model in backend/src/Models/WarhammerItem.cs
+- [x] T007 [P] LoreItem model in backend/src/Models/LoreItem.cs
 - [ ] T008 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
 
 ### Backend Services (Core Business Logic)
@@ -95,7 +95,7 @@
 # Launch all model creation together (different files):
 Task: "LootItem model in backend/src/Models/LootItem.cs"
 Task: "GenerationRequest model in backend/src/Models/GenerationRequest.cs"
-Task: "WarhammerItem model in backend/src/Models/WarhammerItem.cs"
+Task: "LoreItem model in backend/src/Models/LoreItem.cs"
 Task: "WealthLevel enum in backend/src/Models/WealthLevel.cs"
 ```
 
@@ -131,7 +131,7 @@ Task: "PriceToggle component with tests in frontend/src/components/PriceToggle.t
 
 - LootItem entity → T005 model creation
 - GenerationRequest entity → T006 model creation
-- WarhammerItem entity → T007 model creation
+- LoreItem entity → T007 model creation
 - WealthLevel enum → T008 model creation
 
 ### From User Stories (quickstart.md):

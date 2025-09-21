@@ -264,7 +264,7 @@ await _distributedCache.SetAsync(cacheKey, sessionJson, cacheOptions);
 - **No Cross-Reference**: Session IDs cannot be linked to user identity
 - **Temporary**: Sessions designed for short-term cooldown tracking only
 
-### 4. WarhammerItem
+### 4. LoreItem
 
 Represents a canonical Warhammer Fantasy item stored in vector database for semantic search and generation inspiration. **Note**: These are reference items used internally for lore enhancement - they are NOT directly returned to users. Instead, they inspire the AI to generate new `LootItem` objects.
 
@@ -313,15 +313,15 @@ The application uses a sophisticated semantic search system to enrich AI prompts
 **Initial Setup**: Canonical Warhammer Fantasy items are stored in the vector database using a pattern similar to your VectorDbDemo:
 
 ```csharp
-public async Task AddWarhammerItemVector(string collectionName, WarhammerItem[] items)
+public async Task AddLoreItemVector(string collectionName, LoreItem[] items)
 {
     var ids = items.Select(item => item.Id.ToString());
     var metadatas = items.Select(item => new Dictionary<string, object>()
     {
-        [nameof(WarhammerItem.Name)] = item.Name,
-        [nameof(WarhammerItem.Description)] = item.Description,
-        [nameof(WarhammerItem.ValueInPennies)] = item.ValueInPennies,
-        [nameof(WarhammerItem.Tags)] = item.Tags
+        [nameof(LoreItem.Name)] = item.Name,
+        [nameof(LoreItem.Description)] = item.Description,
+        [nameof(LoreItem.ValueInPennies)] = item.ValueInPennies,
+        [nameof(LoreItem.Tags)] = item.Tags
     });
 
     // Generate embeddings from concatenated text (Name + Description + Tags)
@@ -361,7 +361,7 @@ The application implements an automatic seeding process that runs during startup
 4. **Seeding Process**:
    - Scan `Data/` directory for all JSON files containing canonical Warhammer Fantasy items by category
    - Iterate through each category file (e.g., `weapons.json`, `armors.json`, `jewelry.json`, `potions.json`, etc.)
-   - Deserialize each JSON file into arrays of WarhammerItem objects
+   - Deserialize each JSON file into arrays of LoreItem objects
    - Generate embeddings for each item using concatenated text approach
    - Batch insert all vectors and metadata into Qdrant collection across all categories
 5. **Application Ready**: Start HTTP server and begin accepting loot generation requests
@@ -384,7 +384,7 @@ public async Task EnsureDatabaseSeeded()
     _logger.LogInformation("Seeding vector database with canonical Warhammer Fantasy items...");
 
     // Load items from all category JSON files
-    var allWarhammerItems = new List<WarhammerItem>();
+    var allLoreItems = new List<LoreItem>();
     var dataDirectory = "Data";
     var jsonFiles = Directory.GetFiles(dataDirectory, "*.json");
 
@@ -392,21 +392,21 @@ public async Task EnsureDatabaseSeeded()
     {
         _logger.LogInformation("Loading items from {FileName}", Path.GetFileName(jsonFile));
         var jsonContent = await File.ReadAllTextAsync(jsonFile);
-        var categoryItems = JsonSerializer.Deserialize<WarhammerItem[]>(jsonContent);
+        var categoryItems = JsonSerializer.Deserialize<LoreItem[]>(jsonContent);
 
         if (categoryItems != null && categoryItems.Length > 0)
         {
-            allWarhammerItems.AddRange(categoryItems);
+            allLoreItems.AddRange(categoryItems);
             _logger.LogInformation("Loaded {Count} items from {Category}",
                 categoryItems.Length, Path.GetFileNameWithoutExtension(jsonFile));
         }
     }
 
     // Seed database with all items from all categories
-    await AddWarhammerItemVector(collectionName, allWarhammerItems.ToArray());
+    await AddLoreItemVector(collectionName, allLoreItems.ToArray());
 
     _logger.LogInformation("Successfully seeded {Count} Warhammer Fantasy items from {FileCount} category files",
-        allWarhammerItems.Count, jsonFiles.Length);
+        allLoreItems.Count, jsonFiles.Length);
 }
 
 // Called during application startup
@@ -445,7 +445,7 @@ When a user requests loot generation, the system performs semantic search to fin
 5. **Lore Context Extraction**: Extract names, descriptions, and tags of similar items for prompt enrichment
 
 ```csharp
-public async Task<List<WarhammerItem>> FindSimilarItems(string locationDescription, int topK = 5)
+public async Task<List<LoreItem>> FindSimilarItems(string locationDescription, int topK = 5)
 {
     // Convert search query to vector using same concatenation approach for consistency
     var queryVector = await _embeddings.GenerateEmbeddingVectorAsync(locationDescription);
@@ -456,8 +456,8 @@ public async Task<List<WarhammerItem>> FindSimilarItems(string locationDescripti
         vector: queryVector,
         limit: topK);
 
-    // Convert results back to WarhammerItem objects using metadata
-    return searchResults.Select(result => new WarhammerItem
+    // Convert results back to LoreItem objects using metadata
+    return searchResults.Select(result => new LoreItem
     {
         Id = Guid.Parse(result.Id),
         Name = result.Metadata["Name"].ToString(),
@@ -718,7 +718,7 @@ function formatCurrency(pennies, language = "en") {
 ### Qdrant Collection Setup
 
 ```csharp
-// Collection configuration for WarhammerItems
+// Collection configuration for LoreItems
 var collectionConfig = new CreateCollection
 {
     CollectionName = "lore-snippets",

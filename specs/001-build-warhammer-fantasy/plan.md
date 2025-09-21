@@ -170,7 +170,7 @@ _Prerequisites: research.md complete_
 
    - LootItem (name, description, value)
    - GenerationRequest (location, wealth level, language)
-   - WarhammerItem (embedded content for semantic search)
+   - LoreItem (embedded content for semantic search)
 
 2. **Generate API contracts** from functional requirements:
 
