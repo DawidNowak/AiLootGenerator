@@ -703,6 +703,7 @@ function formatCurrency(pennies, language = "en") {
 - `religious.json` - Holy symbols, prayer books, temple items, etc.
 - `miscellaneous.json` - Containers, art objects, curiosities, etc.
 - `common.json` - Everyday items, household goods, trade materials, etc.
+- `clothing.json` - wardrobe, clothes etc.
 
 **By Origin Culture**: Imperial, Bretonnian, Dwarf, Elf, Kislev, Tilean, Estalia, Arabian, Norse, Lustria, Ulthuan, Araby
 

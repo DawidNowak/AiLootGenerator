@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Backend.Models
+namespace AiLootGenerator.RestApi.Models
 {
     /// <summary>
     /// Represents a generated treasure item with Warhammer Fantasy context.
