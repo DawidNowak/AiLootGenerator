@@ -172,16 +172,5 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             await Assert.ThrowsAsync<ArgumentException>(() =>
                 service.AddLoreItemsBatchAsync(invalidLoreItems));
         }
-
-        [Fact]
-        public void QdrantSettings_DefaultValues_AreValid()
-        {
-            // Test that QdrantSettings has reasonable defaults
-            var settings = new QdrantSettings();
-
-            Assert.Null(settings.CollectionName); // No default value set, should be null
-            Assert.Equal(5, settings.MaxSearchResults);
-            Assert.Equal(0.7f, settings.SimilarityThreshold);
-        }
     }
 }

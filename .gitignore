@@ -578,7 +578,7 @@ yarn.lock
 # API keys and secrets (additional safety)
 **/appsettings.*.json
 !**/appsettings.json
-!**/appsettings.Development.json
+# Note: appsettings.Development.json is ignored to protect API keys
 
 # Qdrant local data
 qdrant_data/

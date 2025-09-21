@@ -31,7 +31,7 @@ services.AddSingleton<IOpenAIService>(provider =>
 
 ### 2. Qdrant .NET Client for Semantic Search
 
-**Decision**: Use official Qdrant .NET client with OpenAI text-embedding-ada-002 for lore embeddings
+**Decision**: Use official Qdrant .NET client with OpenAI text-embedding-3-small for lore embeddings
 
 **Rationale**:
 

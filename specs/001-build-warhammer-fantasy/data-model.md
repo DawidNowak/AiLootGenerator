@@ -684,7 +684,7 @@ function formatCurrency(pennies, language = "en") {
 ### Initial Data Population
 
 1. **JSON Preparation**: Create multiple category-specific JSON files in the `Data/` directory (e.g., `weapons.json`, `armors.json`, `jewelry.json`, `potions.json`, etc.) containing 100-500 canonical items total across all categories
-2. **Embedding Generation**: Use OpenAI text-embedding-ada-002 to convert item descriptions from all category files
+2. **Embedding Generation**: Use OpenAI text-embedding-3-small to convert item descriptions from all category files
 3. **Batch Upload**: Use Qdrant .NET client to upload items with metadata from all categories into a single collection
 4. **Index Creation**: Set up vector similarity and metadata filtering indexes
 
@@ -724,7 +724,7 @@ var collectionConfig = new CreateCollection
     CollectionName = "lore-snippets",
     VectorConfig = new VectorParams
     {
-        Size = 1536,  // OpenAI text-embedding-ada-002 dimensions
+        Size = 1536,  // OpenAI text-embedding-3-small dimensions
         Distance = Distance.Cosine
     }
 };

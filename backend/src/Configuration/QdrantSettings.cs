@@ -8,7 +8,7 @@ namespace AiLootGenerator.RestApi.Configuration
         /// <summary>
         /// The name of the Qdrant collection to use for storing lore items.
         /// </summary>
-        public string CollectionName { get; set; }
+        public required string CollectionName { get; set; } = "warhammer_lore";
 
         /// <summary>
         /// Maximum number of search results to return from semantic search.
