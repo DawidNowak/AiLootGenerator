@@ -41,9 +41,13 @@ builder.Services.AddSingleton<QdrantClient>(serviceProvider =>
     return new QdrantClient(host, port, https);
 });
 
+// Register memory cache for cooldown management
+builder.Services.AddMemoryCache();
+
 // Register application services
 builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 builder.Services.AddScoped<IQdrantService, QdrantService>();
+builder.Services.AddScoped<ICooldownService, CooldownService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
