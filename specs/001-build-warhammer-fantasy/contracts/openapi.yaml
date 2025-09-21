@@ -58,7 +58,7 @@ paths:
                       - name: "Jungfreud Tabard in Ubersreik colors"
                         description: "A well-maintained cloth tabard bearing the heraldry of House Jungfreud"
                         valueInPennies: 60
-                        wealthLevel: "Common"
+                        wealthLevel: "Poor"
                       - name: "Iron-bound Training Shield"
                         description: "A practice shield showing wear from countless drills"
                         valueInPennies: 36
@@ -228,7 +228,7 @@ components:
           type: integer
           minimum: 1
           description: Estimated value in pennies (smallest WFRP denomination)
-          example: 60
+          example: 120
         wealthLevel:
           $ref: "#/components/schemas/WealthLevel"
 

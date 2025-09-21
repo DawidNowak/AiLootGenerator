@@ -97,8 +97,7 @@ As a Warhammer Fantasy Roleplay Game Master, I want to quickly generate thematic
 - **Loot Item**: Represents generated treasure with name, description, estimated value in WFRP currency, and lore-appropriate characteristics
 - **Location**: User-provided description of in-game location that influences item generation (e.g., "Ubersreik barracks", "Norscan mage workshop")
 - **Wealth Level**: Five-tier system (Rubbish, Poor, Common, Wealthy, Noble) that determines item quality and magical potential. When selected, generates items from the chosen level and one tier below (e.g., Common selection generates Common and Poor items; Noble selection generates Noble and Wealthy items; Rubbish generates only Rubbish items as it's the lowest tier)
-- **User Session**: Tracks language preference for the current browser session
-- **Generation Request**: Combines location, wealth level, language preference, and timestamp for loot creation
+- **Generation Request**: Combines location, wealth level, language preference, session ID, and timestamp for loot creation
 - **Cooldown Timer**: Manages 30-second waiting period after loot generation to prevent excessive API usage
 
 ---

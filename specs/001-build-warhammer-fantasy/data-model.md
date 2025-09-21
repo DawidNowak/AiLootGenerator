@@ -64,27 +64,7 @@ Captures user input and context for loot generation session.
 - Created → Processing → Completed
 - No persistence required (stateless)
 
-### 3. UserSession
-
-Tracks user state for cooldown validation.
-
-**Properties**:
-
-- `SessionId` (string, required): Browser session identifier
-- `LastGenerationTime` (DateTime?, optional): Timestamp of last loot generation
-
-**Validation Rules**:
-
-- SessionId must be unique and non-empty
-- Cooldown must be 30 seconds from last generation
-
-**State Management**:
-
-- Stored in IMemoryCache with sliding expiration
-- Automatic cleanup after inactivity
-- Thread-safe operations for concurrent requests
-
-## Session Management Implementation
+## Simple Cooldown Implementation
 
 ### Overview
 
@@ -143,13 +123,13 @@ public async Task<GenerationResponse> GenerateLootAsync(GenerationRequest reques
 {
     string cacheKey = $"cooldown:{request.SessionId}";
 
-    // 1. Attempt to retrieve existing session
-    var session = _memoryCache.Get<UserSession>(cacheKey);
+    // 1. Check if user is on cooldown
+    var lastGeneration = _memoryCache.Get<DateTime?>(cacheKey);
 
-    // 2. Validate cooldown if session exists
-    if (session?.LastGenerationTime != null)
+    // 2. Validate cooldown if previous generation exists
+    if (lastGeneration.HasValue)
     {
-        var timeSinceLastGeneration = DateTime.UtcNow - session.LastGenerationTime.Value;
+        var timeSinceLastGeneration = DateTime.UtcNow - lastGeneration.Value;
         if (timeSinceLastGeneration < TimeSpan.FromSeconds(30))
         {
             var remainingSeconds = 30 - (int)timeSinceLastGeneration.TotalSeconds;
@@ -160,27 +140,27 @@ public async Task<GenerationResponse> GenerateLootAsync(GenerationRequest reques
     // 3. Generate loot items (OpenAI + Qdrant processing)
     var items = await GenerateItemsAsync(request);
 
-    // 4. Update/create session with new timestamp
-    var updatedSession = new UserSession
-    {
-        SessionId = request.SessionId,
-        LastGenerationTime = DateTime.UtcNow
-    };
+    // 4. Update cooldown timestamp
+    var currentTime = DateTime.UtcNow;
 
     // 5. Store in cache with sliding expiration
+    var cacheOptions = new MemoryCacheEntryOptions
+    {
+        SlidingExpiration = TimeSpan.FromHours(1),     // Extends if user active
+    // 5. Store timestamp in cache with sliding expiration
     var cacheOptions = new MemoryCacheEntryOptions
     {
         SlidingExpiration = TimeSpan.FromHours(1),     // Extends if user active
         AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(24), // Max lifetime
         Size = 1 // For memory pressure management
     };
-    _memoryCache.Set(cacheKey, updatedSession, cacheOptions);
+    _memoryCache.Set(cacheKey, currentTime, cacheOptions);
 
     // 6. Return response with cooldown timestamp for frontend timer
     return new GenerationResponse
     {
         Items = items,
-        CooldownExpiresAt = DateTime.UtcNow.AddSeconds(30), // Frontend countdown
+        CooldownExpiresAt = currentTime.AddSeconds(30), // Frontend countdown
         // ... other response fields
     };
 }
@@ -192,15 +172,15 @@ public async Task<GenerationResponse> GenerateLootAsync(GenerationRequest reques
 
 1. User loads app → Frontend generates UUID → Stores in localStorage
 2. User submits generation request → Backend receives sessionId for first time
-3. Backend creates UserSession in cache → No prior cooldown → Generation succeeds
-4. User tries immediate second generation → Backend finds session → Enforces 30s cooldown
+3. Backend stores current timestamp in cache → No prior cooldown → Generation succeeds
+4. User tries immediate second generation → Backend finds timestamp → Enforces 30s cooldown
 
 **Returning User Journey**:
 
 1. User returns (same browser) → Frontend retrieves existing UUID from localStorage
-2. Backend checks cache for existing session:
+2. Backend checks cache for existing timestamp:
    - **Cache hit**: Normal cooldown validation applies
-   - **Cache miss**: Session expired/evicted → No cooldown restriction (clean slate)
+   - **Cache miss**: Timestamp expired/evicted → No cooldown restriction (clean slate)
 
 **Edge Case Handling**:
 
@@ -208,15 +188,15 @@ public async Task<GenerationResponse> GenerateLootAsync(GenerationRequest reques
 public bool IsOnCooldown(string sessionId, out int remainingSeconds)
 {
     string cacheKey = $"cooldown:{sessionId}";
-    var session = _memoryCache.Get<UserSession>(cacheKey);
+    var lastGeneration = _memoryCache.Get<DateTime?>(cacheKey);
 
     remainingSeconds = 0;
 
-    // Session not found in cache (new user or cache evicted)
-    if (session?.LastGenerationTime == null)
+    // Timestamp not found in cache (new user or cache evicted)
+    if (!lastGeneration.HasValue)
         return false; // Allow generation
 
-    var timeSince = DateTime.UtcNow - session.LastGenerationTime.Value;
+    var timeSince = DateTime.UtcNow - lastGeneration.Value;
 
     // Cooldown period has naturally expired
     if (timeSince >= TimeSpan.FromSeconds(30))
@@ -569,11 +549,11 @@ public enum WealthLevel
 
 | Wealth Level | Penny Range | Display Example              | Description                               |
 | ------------ | ----------- | ---------------------------- | ----------------------------------------- |
-| **Rubbish**  | 1-11p       | "3 pennies"                  | Broken tools, scraps, worthless junk      |
-| **Poor**     | 1-59p       | "2 shillings 7 pennies"      | Basic peasant gear, simple items          |
-| **Common**   | 60-239p     | "5 shillings"                | Everyday merchant goods, standard quality |
-| **Wealthy**  | 240-1199p   | "2 gold crowns 3 shillings"  | Quality craftwork, rare materials         |
-| **Noble**    | 1200+p      | "8 gold crowns 15 shillings" | Luxury goods, art, magical artifacts      |
+| **Rubbish**  | 1-12p       | "3 pennies"                  | Broken tools, scraps, worthless junk      |
+| **Poor**     | 13-60p      | "2 shillings 7 pennies"      | Basic peasant gear, simple items          |
+| **Common**   | 61-240p     | "5 shillings"                | Everyday merchant goods, standard quality |
+| **Wealthy**  | 241-1200p   | "2 gold crowns 3 shillings"  | Quality craftwork, rare materials         |
+| **Noble**    | 1201+p      | "8 gold crowns 15 shillings" | Luxury goods, art, magical artifacts      |
 
 **Economic Context** (WFRP 4th Edition):
 
@@ -669,13 +649,12 @@ function formatCurrency(pennies, language = "en") {
 
 1. **Pre-Generation Check**:
 
-   - Retrieve UserSession from IMemoryCache
-   - Check if LastGenerationTime + 30 seconds > current time
+   - Retrieve last generation timestamp from IMemoryCache
+   - Check if last timestamp + 30 seconds > current time
    - Return 429 error if still on cooldown
 
 2. **Post-Generation Update**:
-   - Set LastGenerationTime to current timestamp
-   - Update IMemoryCache with sliding expiration
+   - Store current timestamp in IMemoryCache with sliding expiration
    - Frontend handles countdown timer using cooldownExpiresAt from response
 
 ## Error Handling
@@ -764,7 +743,7 @@ var payloadIndexes = new Dictionary<string, PayloadIndexParams>
 
 ### Caching Strategy
 
-- **User Sessions**: 1-hour sliding expiration in IMemoryCache
+- **Cooldown Timestamps**: 1-hour sliding expiration in IMemoryCache
 - **Lore Embeddings**: Pre-computed and stored in Qdrant
 - **Generation Results**: No caching (variety requirement)
 

@@ -10,7 +10,7 @@
    → Tech stack: C# 8.0+ (ASP.NET Core 6.0+), React 18+, OpenAI .NET SDK, Qdrant .NET client
    → Structure: Web application (frontend + backend)
 2. Load design documents ✅:
-   → data-model.md: LootItem, GenerationRequest, UserSession, WarhammerItem entities
+   → data-model.md: LootItem, GenerationRequest, WarhammerItem entities
    → contracts/openapi.yaml: POST /api/loot/generate, GET /api/health endpoints
    → research.md: OpenAI .NET SDK, Qdrant client, Material-UI decisions
    → quickstart.md: 7 user stories + edge cases
@@ -38,55 +38,54 @@
 
 - [ ] T005 [P] LootItem model in backend/src/Models/LootItem.cs
 - [ ] T006 [P] GenerationRequest model in backend/src/Models/GenerationRequest.cs
-- [ ] T007 [P] UserSession model in backend/src/Models/UserSession.cs
-- [ ] T008 [P] WarhammerItem model in backend/src/Models/WarhammerItem.cs
-- [ ] T009 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
+- [ ] T007 [P] WarhammerItem model in backend/src/Models/WarhammerItem.cs
+- [ ] T008 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
 
 ### Backend Services (Core Business Logic)
 
-- [ ] T010 [P] OpenAIService for loot generation with tests in backend/src/Services/OpenAIService.cs
-- [ ] T011 [P] QdrantService for semantic search with tests in backend/src/Services/QdrantService.cs
-- [ ] T012 [P] CooldownService for session management with tests in backend/src/Services/CooldownService.cs
-- [ ] T013 [P] LootGenerationService orchestrating AI + vector search with tests in backend/src/Services/LootGenerationService.cs
+- [ ] T009 [P] OpenAIService for loot generation with tests in backend/src/Services/OpenAIService.cs
+- [ ] T010 [P] QdrantService for semantic search with tests in backend/src/Services/QdrantService.cs
+- [ ] T011 [P] CooldownService for session management with tests in backend/src/Services/CooldownService.cs
+- [ ] T012 [P] LootGenerationService orchestrating AI + vector search with tests in backend/src/Services/LootGenerationService.cs
 
 ### Backend Controllers (API Endpoints)
 
-- [ ] T014 POST /api/loot/generate endpoint with OpenAI/Qdrant service registration and tests in backend/src/Controllers/LootController.cs + backend/src/Program.cs
-- [ ] T015 GET /api/health endpoint with tests in backend/src/Controllers/HealthController.cs
+- [ ] T013 POST /api/loot/generate endpoint with OpenAI/Qdrant service registration and tests in backend/src/Controllers/LootController.cs + backend/src/Program.cs
+- [ ] T014 GET /api/health endpoint with tests in backend/src/Controllers/HealthController.cs
 
 ### Frontend Components (UI Implementation)
 
-- [ ] T016 [P] LootGenerator main component with tests in frontend/src/components/LootGenerator.tsx
-- [ ] T017 [P] LanguageSelector component with React i18next and tests in frontend/src/components/LanguageSelector.tsx
-- [ ] T018 [P] CooldownTimer component with tests in frontend/src/components/CooldownTimer.tsx
-- [ ] T019 [P] LootItemDisplay component with currency formatting and tests in frontend/src/components/LootItemDisplay.tsx
-- [ ] T020 [P] PriceToggle component with tests in frontend/src/components/PriceToggle.tsx
+- [ ] T015 [P] LootGenerator main component with tests in frontend/src/components/LootGenerator.tsx
+- [ ] T016 [P] LanguageSelector component with React i18next and tests in frontend/src/components/LanguageSelector.tsx
+- [ ] T017 [P] CooldownTimer component with tests in frontend/src/components/CooldownTimer.tsx
+- [ ] T018 [P] LootItemDisplay component with currency formatting and tests in frontend/src/components/LootItemDisplay.tsx
+- [ ] T019 [P] PriceToggle component with tests in frontend/src/components/PriceToggle.tsx
 
 ### Frontend Services and Utilities
 
-- [ ] T021 [P] API service for backend communication with tests in frontend/src/services/apiService.ts
-- [ ] T022 [P] Currency formatting utility with tests in frontend/src/utils/currencyFormatter.ts
-- [ ] T023 [P] Session management utility with tests in frontend/src/utils/sessionManager.ts
+- [ ] T020 [P] API service for backend communication with tests in frontend/src/services/apiService.ts
+- [ ] T021 [P] Currency formatting utility with tests in frontend/src/utils/currencyFormatter.ts
+- [ ] T022 [P] Session management utility with tests in frontend/src/utils/sessionManager.ts
 
-## Phase 3.3: Integration (T024-T026)
+## Phase 3.3: Integration (T023-T025)
 
-- [ ] T024 Setup IMemoryCache for cooldown management in backend/src/Program.cs
-- [ ] T025 Vector database seeding with canonical Warhammer items in backend/src/Services/DatabaseSeedingService.cs
-- [ ] T026 CORS configuration for frontend-backend communication in backend/src/Program.cs
+- [ ] T023 Setup IMemoryCache for cooldown management in backend/src/Program.cs
+- [ ] T024 Vector database seeding with canonical Warhammer items in backend/src/Services/DatabaseSeedingService.cs
+- [ ] T025 CORS configuration for frontend-backend communication in backend/src/Program.cs
 
-## Phase 3.4: Polish (T027-T029)
+## Phase 3.4: Polish (T026-T028)
 
-- [ ] T027 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
-- [ ] T028 [P] Mobile responsiveness testing and fixes
-- [ ] T029 Run quickstart.md manual testing scenarios validation
+- [ ] T026 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
+- [ ] T027 [P] Mobile responsiveness testing and fixes
+- [ ] T028 Run quickstart.md manual testing scenarios validation
 
 ## Dependencies
 
-- **Setup before Implementation**: T001-T004 → T005-T023
-- **Models before Services**: T005-T009 → T010-T013
-- **Services before Controllers**: T010-T013 → T014-T015
-- **Core before Integration**: T005-T023 → T024-T026
-- **Implementation before Polish**: T024-T026 → T027-T029
+- **Setup before Implementation**: T001-T004 → T005-T022
+- **Models before Services**: T005-T008 → T009-T012
+- **Services before Controllers**: T009-T012 → T013-T014
+- **Core before Integration**: T005-T022 → T023-T025
+- **Implementation before Polish**: T023-T025 → T026-T028
 
 ## Parallel Execution Examples
 
@@ -96,7 +95,6 @@
 # Launch all model creation together (different files):
 Task: "LootItem model in backend/src/Models/LootItem.cs"
 Task: "GenerationRequest model in backend/src/Models/GenerationRequest.cs"
-Task: "UserSession model in backend/src/Models/UserSession.cs"
 Task: "WarhammerItem model in backend/src/Models/WarhammerItem.cs"
 Task: "WealthLevel enum in backend/src/Models/WealthLevel.cs"
 ```
@@ -126,32 +124,31 @@ Task: "PriceToggle component with tests in frontend/src/components/PriceToggle.t
 
 ### From Contracts (openapi.yaml):
 
-- POST /api/loot/generate → T014 implementation with tests
-- GET /api/health → T015 implementation with tests
+- POST /api/loot/generate → T013 implementation with tests
+- GET /api/health → T014 implementation with tests
 
 ### From Data Model (data-model.md):
 
 - LootItem entity → T005 model creation
 - GenerationRequest entity → T006 model creation
-- UserSession entity → T007 model creation
-- WarhammerItem entity → T008 model creation
-- WealthLevel enum → T009 model creation
+- WarhammerItem entity → T007 model creation
+- WealthLevel enum → T008 model creation
 
 ### From User Stories (quickstart.md):
 
-- All user stories will be validated through manual testing in T029
+- All user stories will be validated through manual testing in T028
 
 ### From Tech Stack (plan.md):
 
-- OpenAI .NET SDK → T010 OpenAIService, service registration in T014
-- Qdrant .NET client → T011 QdrantService, service registration in T014
-- React i18next → T017 LanguageSelector
-- Material-UI → T016-T020 UI components
+- OpenAI .NET SDK → T009 OpenAIService, service registration in T013
+- Qdrant .NET client → T010 QdrantService, service registration in T013
+- React i18next → T016 LanguageSelector
+- Material-UI → T015-T019 UI components
 
 ## Validation Checklist ✅
 
-- [x] All contracts have corresponding implementations with tests (T014-T015)
-- [x] All entities have model tasks (T005-T009)
+- [x] All contracts have corresponding implementations with tests (T013-T014)
+- [x] All entities have model tasks (T005-T008)
 - [x] Tests are integrated with implementation (not standalone)
 - [x] Parallel tasks are in different files
 - [x] Each task specifies exact file path
@@ -159,6 +156,6 @@ Task: "PriceToggle component with tests in frontend/src/components/PriceToggle.t
 - [x] Dependencies properly sequenced
 - [x] Frontend and backend tasks appropriately separated
 - [x] JSON seed data task added (T004)
-- [x] Service registration moved to endpoint implementation (T014)
+- [x] Service registration moved to endpoint implementation (T013)
 
-**Ready for Execution**: All 29 tasks generated, numbered, and validated ✅
+**Ready for Execution**: All 28 tasks generated, numbered, and validated ✅
