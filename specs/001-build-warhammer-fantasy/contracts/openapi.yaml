@@ -53,7 +53,6 @@ paths:
                 success_response:
                   summary: Successful generation
                   value:
-                    requestId: "550e8400-e29b-41d4-a716-446655440000"
                     items:
                       - name: "Jungfreud Tabard in Ubersreik colors"
                         description: "A well-maintained cloth tabard bearing the heraldry of House Jungfreud"
@@ -63,8 +62,6 @@ paths:
                         description: "A practice shield showing wear from countless drills"
                         valueInPennies: 36
                         wealthLevel: "Poor"
-                    location: "Ubersreik barracks"
-                    language: "en"
                     generatedAt: "2025-09-20T14:30:00Z"
                     cooldownExpiresAt: "2025-09-20T14:30:30Z"
         "400":
@@ -126,7 +123,6 @@ paths:
                     services:
                       openai: "Healthy"
                       qdrant: "Healthy"
-                      cache: "Healthy"
         "503":
           description: Service is unhealthy
           content:
@@ -166,18 +162,10 @@ components:
     GenerationResponse:
       type: object
       required:
-        - requestId
         - items
-        - location
-        - language
         - generatedAt
         - cooldownExpiresAt
       properties:
-        requestId:
-          type: string
-          format: uuid
-          description: Unique identifier for this generation request
-          example: "550e8400-e29b-41d4-a716-446655440000"
         items:
           type: array
           minItems: 4
@@ -185,15 +173,6 @@ components:
           items:
             $ref: "#/components/schemas/LootItem"
           description: Generated loot items (4-6 items)
-        location:
-          type: string
-          description: Original location description from request
-          example: "Ubersreik barracks"
-        language:
-          type: string
-          enum: ["en", "pl"]
-          description: Language used for generation
-          example: "en"
         generatedAt:
           type: string
           format: date-time
@@ -303,10 +282,6 @@ components:
               enum: ["Healthy", "Unhealthy"]
               example: "Healthy"
             qdrant:
-              type: string
-              enum: ["Healthy", "Unhealthy"]
-              example: "Healthy"
-            cache:
               type: string
               enum: ["Healthy", "Unhealthy"]
               example: "Healthy"

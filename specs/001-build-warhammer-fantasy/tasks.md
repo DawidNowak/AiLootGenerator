@@ -55,8 +55,8 @@
 
 ### Frontend Foundation & Types (T015-T019)
 
-- [ ] T015 [P] Create TypeScript interfaces in frontend/src/types/index.ts
-- [ ] T016 [P] Create API types in frontend/src/types/api.ts
+- [x] T015 [P] Create TypeScript interfaces in frontend/src/types/index.ts
+- [x] T016 [P] Create API types in frontend/src/types/api.ts
 - [ ] T017 [P] Setup i18next configuration in frontend/src/localization/i18n.ts
 - [ ] T018 [P] Create English translation files in frontend/src/localization/en/
 - [ ] T019 [P] Create Polish translation files in frontend/src/localization/pl/
