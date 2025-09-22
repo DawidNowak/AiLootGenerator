@@ -173,7 +173,7 @@ namespace AiLootGenerator.RestApi.Services
                 foreach (var loreItem in loreItemsList)
                 {
                     // Generate embedding for the lore content
-                    var embeddingText = $"{loreItem.Name} {loreItem.Description} {string.Join(" ", loreItem.Tags)}";
+                    var embeddingText = $"{loreItem.Name}. {loreItem.Description} {string.Join(" ", loreItem.Tags)}";
                     var embedding = await GetEmbeddingAsync(embeddingText, cancellationToken);
 
                     if (embedding == null || embedding.Length == 0)

@@ -13,6 +13,11 @@ namespace AiLootGenerator.RestApi.Services
         public int RemainingSeconds { get; }
 
         /// <summary>
+        /// Gets the time when the user can retry the request.
+        /// </summary>
+        public DateTime RetryAfter { get; }
+
+        /// <summary>
         /// Initializes a new instance of the CooldownActiveException class.
         /// </summary>
         /// <param name="remainingSeconds">The remaining seconds until the cooldown expires.</param>
@@ -20,6 +25,7 @@ namespace AiLootGenerator.RestApi.Services
             : base($"Cooldown active. Please wait {remainingSeconds} seconds before generating loot again.")
         {
             RemainingSeconds = remainingSeconds;
+            RetryAfter = DateTime.UtcNow.AddSeconds(remainingSeconds);
         }
     }
 
