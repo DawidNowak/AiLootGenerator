@@ -69,7 +69,7 @@ describe('sessionManager', () => {
         });
 
         // Mock global crypto
-        Object.defineProperty(global, 'crypto', {
+        Object.defineProperty(globalThis, 'crypto', {
             value: mockCrypto,
             writable: true,
             configurable: true
@@ -90,7 +90,7 @@ describe('sessionManager', () => {
 
         it('should fall back to custom implementation when crypto.randomUUID is not available', () => {
             // Remove crypto.randomUUID
-            delete (global as any).crypto;
+            delete (globalThis as any).crypto;
 
             const sessionId = generateSessionId();
 
@@ -99,7 +99,7 @@ describe('sessionManager', () => {
 
         it('should fall back when crypto is undefined', () => {
             // Set crypto to undefined
-            Object.defineProperty(global, 'crypto', {
+            Object.defineProperty(globalThis, 'crypto', {
                 value: undefined,
                 writable: true,
                 configurable: true
@@ -112,7 +112,7 @@ describe('sessionManager', () => {
 
         it('should generate different UUIDs on subsequent calls (fallback)', () => {
             // Remove crypto to test fallback
-            delete (global as any).crypto;
+            delete (globalThis as any).crypto;
 
             const sessionId1 = generateSessionId();
             const sessionId2 = generateSessionId();
