@@ -29,6 +29,13 @@ namespace AiLootGenerator.RestApi.Services
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <returns>A float array representing the embedding vector, or null if generation fails.</returns>
         Task<float[]?> GetEmbeddingAsync(string text, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Checks if the OpenAI service is healthy and accessible.
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token for the operation.</param>
+        /// <returns>True if the service is healthy, false otherwise.</returns>
+        Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -318,6 +325,30 @@ Guidelines:
                 _logger.LogError(ex, "Error generating embedding for text: {TextPreview}", 
                     text.Length > 50 ? text[..50] + "..." : text);
                 return null;
+            }
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                // Perform a simple embedding request to test connectivity
+                var testResponse = await _embeddingClient.GenerateEmbeddingAsync("health check", options: null, cancellationToken);
+                
+                if (testResponse?.Value != null)
+                {
+                    _logger.LogDebug("OpenAI health check passed");
+                    return true;
+                }
+                
+                _logger.LogWarning("OpenAI health check failed: null response");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "OpenAI health check failed");
+                return false;
             }
         }
 
