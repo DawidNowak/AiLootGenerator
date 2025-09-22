@@ -72,8 +72,8 @@
 
 ### Frontend API Services (T026-T029)
 
-- [ ] T026 [P] Create API endpoints configuration in frontend/src/services/endpoints.ts
-- [ ] T027 [P] Create health check API function in frontend/src/services/healthService.ts
+- [x] T026 [P] Create API endpoints configuration in frontend/src/services/endpoints.ts
+- [x] T027 [P] Create health check API function in frontend/src/services/healthService.ts
 - [ ] T028 [P] Create loot generation API function in frontend/src/services/lootService.ts
 - [ ] T029 [P] Add request/response validation to API services
 
