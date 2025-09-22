@@ -1,0 +1,54 @@
+{
+  "locations": {
+    "examples": {
+      "ubersreik": "Ubersreik barracks",
+      "altdorf": "Altdorf noble district",
+      "tavern": "Roadside tavern",
+      "dungeon": "Abandoned dwarven mine",
+      "forest": "Drakwald forest clearing",
+      "temple": "Sigmar temple treasury",
+      "merchant": "Merchant caravan wagon",
+      "castle": "Border prince fortress"
+    },
+    "suggestions": {
+      "military": "Military locations (barracks, watchtowers, battlefields)",
+      "urban": "City areas (markets, noble districts, slums)",
+      "wilderness": "Outdoor locations (forests, mountains, ruins)",
+      "religious": "Temples and shrines",
+      "commercial": "Shops, taverns, and trade posts",
+      "magical": "Wizard towers and magical sites"
+    }
+  },
+  "lore": {
+    "empireProvinces": [
+      "Reikland",
+      "Middenland",
+      "Nordland",
+      "Ostland",
+      "Hochland",
+      "Talabecland",
+      "Ostermark",
+      "Stirland",
+      "Averland",
+      "Wissenland"
+    ],
+    "majorCities": ["Altdorf", "Middenheim", "Nuln", "Talabheim", "Marienburg"],
+    "currencies": {
+      "description": "The Empire uses a decimal currency system",
+      "conversion": "12 pennies = 1 shilling, 20 shillings = 1 gold crown",
+      "abbreviations": {
+        "penny": "p",
+        "shilling": "s",
+        "gold": "gc"
+      }
+    }
+  },
+  "themes": {
+    "military": "Military and warfare items",
+    "religious": "Religious artifacts and symbols",
+    "noble": "Aristocratic and luxury goods",
+    "common": "Everyday items and tools",
+    "magical": "Enchanted items and components",
+    "trade": "Commercial and merchant goods"
+  }
+}

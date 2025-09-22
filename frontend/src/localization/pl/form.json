@@ -1,0 +1,30 @@
+{
+  "labels": {
+    "location": "Lokacja",
+    "wealthLevel": "Poziom Zamożności",
+    "language": "Język",
+    "sessionId": "ID Sesji"
+  },
+  "placeholders": {
+    "location": "Wprowadź lokację (np. 'Koszary w Ubersreik', 'Karczma w Altdorf')",
+    "selectWealthLevel": "Wybierz poziom zamożności",
+    "selectLanguage": "Wybierz język"
+  },
+  "hints": {
+    "location": "Opisz gdzie znalezione są łupy. Bądź konkretny dla lepszych rezultatów.",
+    "wealthLevel": "Wybierz poziom jakości przedmiotów do wygenerowania",
+    "language": "Wybierz język dla interfejsu i generowanej zawartości"
+  },
+  "validation": {
+    "locationRequired": "Lokacja jest wymagana",
+    "locationTooShort": "Lokacja musi mieć co najmniej 1 znak",
+    "locationTooLong": "Lokacja nie może mieć więcej niż 200 znaków",
+    "wealthLevelRequired": "Poziom zamożności jest wymagany",
+    "languageRequired": "Język jest wymagany"
+  },
+  "buttons": {
+    "generate": "Generuj Łupy",
+    "reset": "Resetuj Formularz",
+    "clear": "Wyczyść"
+  }
+}

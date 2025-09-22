@@ -1,0 +1,31 @@
+{
+  "title": "Przedmioty Łupów",
+  "noItems": "Nie wygenerowano jeszcze żadnych łupów",
+  "itemsGenerated": "Wygenerowano {{count}} przedmiotów",
+  "generatedAt": "Wygenerowano o {{time}}",
+  "nextGenerationAt": "Następne generowanie dostępne o {{time}}",
+  "valueInPennies": "{{value}} pensów",
+  "valueInCurrency": "{{gold}} złote korony {{shillings}} szylingów {{pennies}} pensów",
+  "wealthLevels": {
+    "Rubbish": "Śmieci",
+    "Poor": "Biedne",
+    "Common": "Zwyczajne",
+    "Wealthy": "Bogate",
+    "Noble": "Szlacheckie"
+  },
+  "wealthLevelDescriptions": {
+    "Rubbish": "Przedmioty śmieciowe, najniższy poziom (1-12 pensów)",
+    "Poor": "Chłopskie resztki, podstawowe przedmioty (13-60 pensów)",
+    "Common": "Codzienne dobra, standardowa jakość (61-240 pensów)",
+    "Wealthy": "Łupy kupieckie, wartościowe przedmioty (241-1200 pensów)",
+    "Noble": "Przepyszne skarby, rzadkie magiczne przedmioty (1201+ pensów)"
+  },
+  "currencyUnits": {
+    "penny": "pens",
+    "pennies": "pensów",
+    "shilling": "szyling",
+    "shillings": "szylingów",
+    "gold": "złota korona",
+    "golds": "złote korony"
+  }
+}

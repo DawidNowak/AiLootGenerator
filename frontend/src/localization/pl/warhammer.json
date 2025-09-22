@@ -1,0 +1,54 @@
+{
+  "locations": {
+    "examples": {
+      "ubersreik": "Koszary w Ubersreik",
+      "altdorf": "Dzielnica szlachecka w Altdorf",
+      "tavern": "Przydrożna karczma",
+      "dungeon": "Opuszczona kopalnia krasnoludzka",
+      "forest": "Polana w Lesie Drak",
+      "temple": "Skarbiec świątyni Sigmara",
+      "merchant": "Wóz karawany kupieckie",
+      "castle": "Forteca księcia pogranicza"
+    },
+    "suggestions": {
+      "military": "Lokacje wojskowe (koszary, wieże strażnicze, pola bitew)",
+      "urban": "Obszary miejskie (rynki, dzielnice szlacheckie, slumsy)",
+      "wilderness": "Lokacje na wolnym powietrzu (lasy, góry, ruiny)",
+      "religious": "Świątynie i kapliczki",
+      "commercial": "Sklepy, karczmy i punkty handlowe",
+      "magical": "Wieże czarodziejów i miejsca magiczne"
+    }
+  },
+  "lore": {
+    "empireProvinces": [
+      "Reikland",
+      "Middenland",
+      "Nordland",
+      "Ostland",
+      "Hochland",
+      "Talabecland",
+      "Ostermark",
+      "Stirland",
+      "Averland",
+      "Wissenland"
+    ],
+    "majorCities": ["Altdorf", "Middenheim", "Nuln", "Talabheim", "Marienburg"],
+    "currencies": {
+      "description": "Imperium używa dziesiętnego systemu walutowego",
+      "conversion": "12 pensów = 1 szyling, 20 szylingów = 1 złota korona",
+      "abbreviations": {
+        "penny": "p",
+        "shilling": "s",
+        "gold": "zk"
+      }
+    }
+  },
+  "themes": {
+    "military": "Przedmioty wojskowe i bojowe",
+    "religious": "Artefakty i symbole religijne",
+    "noble": "Dobra arystokratyczne i luksusowe",
+    "common": "Codzienne przedmioty i narzędzia",
+    "magical": "Przedmioty zaczarowane i komponenty",
+    "trade": "Towary handlowe i kupieckie"
+  }
+}

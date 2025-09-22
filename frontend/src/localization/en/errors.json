@@ -1,0 +1,31 @@
+{
+  "general": {
+    "unexpectedError": "An unexpected error occurred",
+    "networkError": "Network connection error",
+    "serverError": "Server error occurred",
+    "tryAgain": "Please try again later"
+  },
+  "validation": {
+    "invalidLocation": "Location description must be between 1 and 200 characters",
+    "invalidWealthLevel": "Please select a valid wealth level",
+    "invalidLanguage": "Please select a supported language",
+    "invalidSessionId": "Invalid session identifier"
+  },
+  "api": {
+    "cooldownActive": "Please wait before generating more loot",
+    "rateLimitExceeded": "Too many requests. Please wait before trying again",
+    "invalidRequest": "Invalid request parameters",
+    "serviceUnavailable": "Service temporarily unavailable",
+    "timeout": "Request timed out. Please try again"
+  },
+  "loot": {
+    "generationFailed": "Failed to generate loot items",
+    "noItemsGenerated": "No items were generated",
+    "invalidItemData": "Received invalid item data"
+  },
+  "cooldown": {
+    "stillActive": "Cooldown is still active",
+    "remainingTime": "{{seconds}} seconds remaining",
+    "tryAfter": "Try again after {{time}}"
+  }
+}
