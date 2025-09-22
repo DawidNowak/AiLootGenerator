@@ -7,7 +7,7 @@ import {
     getCurrentSessionId,
     clearStoredSessionId,
     regenerateSessionId
-} from './sessionManager';
+} from '../../src/utils/sessionManager';
 
 // Mock sessionStorage
 const mockSessionStorage = (() => {
