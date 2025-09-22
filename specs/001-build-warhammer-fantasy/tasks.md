@@ -67,8 +67,8 @@
 - [x] T021 [P] Add sessionStorage helpers to session manager
 - [x] T022 [P] Create currency conversion constants in frontend/src/utils/currencyFormatter.ts
 - [x] T023 [P] Add penny-to-display format functions to currency formatter
-- [ ] T024 [P] Create HTTP client configuration in frontend/src/services/httpClient.ts
-- [ ] T025 [P] Add error handling wrapper to HTTP client
+- [x] T024 [P] Create HTTP client configuration in frontend/src/services/httpClient.ts
+- [x] T025 [P] Add error handling wrapper to HTTP client
 
 ### Frontend API Services (T026-T029)
 
