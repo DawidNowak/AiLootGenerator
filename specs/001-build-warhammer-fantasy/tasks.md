@@ -63,8 +63,8 @@
 
 ### Frontend Core Utilities (T020-T025)
 
-- [ ] T020 [P] Create session UUID generator in frontend/src/utils/sessionManager.ts
-- [ ] T021 [P] Add sessionStorage helpers to session manager
+- [x] T020 [P] Create session UUID generator in frontend/src/utils/sessionManager.ts
+- [x] T021 [P] Add sessionStorage helpers to session manager
 - [ ] T022 [P] Create currency conversion constants in frontend/src/utils/currencyFormatter.ts
 - [ ] T023 [P] Add penny-to-display format functions to currency formatter
 - [ ] T024 [P] Create HTTP client configuration in frontend/src/services/httpClient.ts
