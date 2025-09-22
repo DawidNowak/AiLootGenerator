@@ -9,6 +9,7 @@
 import { httpClient, HttpClientError, TimeoutError } from './httpClient';
 import { endpoints } from './endpoints';
 import { ApiResponse, HealthResponse } from '../types/api';
+import { validateHealthResponse } from './validation';
 
 /**
  * Health check status enumeration
@@ -69,6 +70,16 @@ export const checkHealth = async (): Promise<HealthCheckResult> => {
         const responseTime = Math.round(performance.now() - startTime);
 
         if (response.status >= 200 && response.status < 300 && response.data) {
+            // Validate the response structure
+            const validation = validateHealthResponse(response.data);
+            if (!validation.valid) {
+                return {
+                    status: HealthStatus.UNHEALTHY,
+                    responseTime,
+                    error: `Invalid response format: ${validation.errors[0]}`
+                };
+            }
+
             return {
                 status: response.data.status === 'Healthy' ? HealthStatus.HEALTHY : HealthStatus.UNHEALTHY,
                 responseTime,

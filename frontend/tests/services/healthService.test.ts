@@ -417,4 +417,82 @@ describe('Health Service', () => {
             expect(result.responseTime).toBe(123);
         });
     });
+
+    describe('Health Response Validation (T029)', () => {
+        it('should validate health response structure', async () => {
+            mockHttpClient.get.mockResolvedValue({
+                data: mockHealthyResponse,
+                status: 200,
+                statusText: 'OK',
+                headers: {}
+            });
+
+            const result = await checkHealth();
+
+            // The validation should pass for a properly structured response
+            expect(result.status).toBe(HealthStatus.HEALTHY);
+            expect(result.data).toEqual(mockHealthyResponse);
+            expect(result.error).toBeUndefined();
+        });
+
+        it('should handle validation failure gracefully', async () => {
+            const invalidResponse = {
+                status: 'InvalidStatus',
+                timestamp: 'invalid-date',
+                services: 'not-an-object'
+            };
+
+            mockHttpClient.get.mockResolvedValue({
+                data: invalidResponse,
+                status: 200,
+                statusText: 'OK',
+                headers: {}
+            });
+
+            const result = await checkHealth();
+
+            expect(result.status).toBe(HealthStatus.UNHEALTHY);
+            expect(result.error).toContain('Invalid response format');
+            expect(result.data).toBeUndefined();
+        });
+
+        it('should include validation error details in response', async () => {
+            const invalidResponse = { invalid: 'response' };
+
+            mockHttpClient.get.mockResolvedValue({
+                data: invalidResponse,
+                status: 200,
+                statusText: 'OK',
+                headers: {}
+            });
+
+            const result = await checkHealth();
+
+            expect(result.error).toContain('Invalid response format');
+        });
+
+        it('should pass validation with properly structured response', async () => {
+            const validResponse = {
+                status: 'Degraded',
+                timestamp: '2025-09-22T10:00:00Z',
+                services: {
+                    openai: 'Healthy',
+                    qdrant: 'Unhealthy'
+                }
+            };
+
+            mockHttpClient.get.mockResolvedValue({
+                data: validResponse,
+                status: 200,
+                statusText: 'OK',
+                headers: {}
+            });
+
+            const result = await checkHealth();
+
+            expect(result.status).toBe(HealthStatus.UNHEALTHY); // Degraded maps to UNHEALTHY
+            expect(result.data).toEqual(validResponse);
+            expect(result.error).toBeUndefined();
+        });
+    });
 });
