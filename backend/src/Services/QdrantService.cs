@@ -36,6 +36,20 @@ namespace AiLootGenerator.RestApi.Services
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <returns>True if the service is healthy, false otherwise.</returns>
         Task<bool> IsHealthyAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Checks if the collection exists and contains any data.
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token for the operation.</param>
+        /// <returns>True if the collection exists and has data, false otherwise.</returns>
+        Task<bool> HasDataAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Ensures the collection exists, creating it if necessary.
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token for the operation.</param>
+        /// <returns>True if collection was created, false if it already existed.</returns>
+        Task<bool> EnsureCollectionExistsAsync(CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -245,6 +259,70 @@ namespace AiLootGenerator.RestApi.Services
             {
                 _logger.LogError(ex, "Qdrant service health check failed");
                 return false;
+            }
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> HasDataAsync(CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                _logger.LogDebug("Checking if Qdrant collection has data");
+                
+                // Get collection info to check point count
+                var collectionInfo = await _qdrantClient.GetCollectionInfoAsync(_settings.CollectionName, cancellationToken);
+                
+                var hasData = collectionInfo?.PointsCount > 0;
+                
+                _logger.LogDebug("Collection {CollectionName} has {PointsCount} points", 
+                    _settings.CollectionName, collectionInfo?.PointsCount ?? 0);
+                
+                return hasData;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error checking if collection has data");
+                return false;
+            }
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> EnsureCollectionExistsAsync(CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                _logger.LogInformation("Ensuring collection '{CollectionName}' exists", _settings.CollectionName);
+
+                // Check if collection exists
+                var collections = await _qdrantClient.ListCollectionsAsync(cancellationToken);
+                var collectionExists = collections?.Any(c => c == _settings.CollectionName) == true;
+
+                if (!collectionExists)
+                {
+                    _logger.LogInformation("Creating collection '{CollectionName}'", _settings.CollectionName);
+                    
+                    // Create collection with embedding dimensions (typically 1536 for text-embedding-3-small)
+                    await _qdrantClient.CreateCollectionAsync(
+                        collectionName: _settings.CollectionName,
+                        vectorsConfig: new Qdrant.Client.Grpc.VectorParams 
+                        { 
+                            Size = 1536, // Standard OpenAI embedding size
+                            Distance = Qdrant.Client.Grpc.Distance.Cosine 
+                        },
+                        cancellationToken: cancellationToken
+                    );
+
+                    _logger.LogInformation("Successfully created collection '{CollectionName}'", _settings.CollectionName);
+                    return true; // Collection was created
+                }
+
+                _logger.LogDebug("Collection '{CollectionName}' already exists", _settings.CollectionName);
+                return false; // Collection already existed
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to ensure collection exists");
+                throw;
             }
         }
 

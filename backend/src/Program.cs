@@ -13,6 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<QdrantSettings>(
     builder.Configuration.GetSection("Qdrant"));
 
+builder.Services.Configure<DatabaseSeedingSettings>(
+    builder.Configuration.GetSection("DatabaseSeeding"));
+
 // Register OpenAI clients
 builder.Services.AddSingleton<ChatClient>(serviceProvider =>
 {
@@ -49,6 +52,7 @@ builder.Services.AddSingleton<ICooldownService, CooldownService>();
 builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 builder.Services.AddScoped<IQdrantService, QdrantService>();
 builder.Services.AddScoped<ILootGenerationService, LootGenerationService>();
+builder.Services.AddScoped<IDatabaseSeedingService, DatabaseSeedingService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -69,5 +73,32 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Seed the database on startup
+using (var scope = app.Services.CreateScope())
+{
+    var seedingService = scope.ServiceProvider.GetRequiredService<IDatabaseSeedingService>();
+    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+    
+    try
+    {
+        logger.LogInformation("Starting database seeding process...");
+        var wasSeeded = await seedingService.SeedDatabaseIfEmptyAsync();
+        
+        if (wasSeeded)
+        {
+            logger.LogInformation("Database seeding completed successfully");
+        }
+        else
+        {
+            logger.LogInformation("Database seeding skipped - data already exists or seeding disabled");
+        }
+    }
+    catch (Exception ex)
+    {
+        logger.LogError(ex, "Database seeding failed - application will continue but may have limited functionality");
+        // Continue running the application even if seeding fails
+    }
+}
 
 app.Run();

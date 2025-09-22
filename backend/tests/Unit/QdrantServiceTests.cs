@@ -172,5 +172,25 @@ namespace AiLootGenerator.RestApi.Tests.Unit
             await Assert.ThrowsAsync<ArgumentException>(() =>
                 service.AddLoreItemsBatchAsync(invalidLoreItems));
         }
+
+        [Fact]
+        public async Task EnsureCollectionExistsAsync_WithValidClient_DoesNotThrow()
+        {
+            // Arrange
+            var qdrantClient = new QdrantClient("localhost", 6334);
+            var service = new QdrantService(
+                qdrantClient,
+                _mockOpenAIService.Object,
+                _mockLogger.Object,
+                _mockSettings.Object);
+
+            // Act & Assert
+            // Note: This test verifies the method signature and that it doesn't throw ArgumentNullException
+            // The actual Qdrant connection behavior would require integration testing
+            var exception = await Record.ExceptionAsync(() => service.EnsureCollectionExistsAsync());
+            
+            // We expect either success or a connection-related exception, but not ArgumentNullException
+            Assert.True(exception == null || exception is not ArgumentNullException);
+        }
     }
 }

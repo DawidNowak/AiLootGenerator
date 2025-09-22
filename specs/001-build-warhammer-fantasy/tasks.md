@@ -50,8 +50,8 @@
 
 ### Backend Controllers (API Endpoints)
 
-- [ ] T013 POST /api/loot/generate endpoint with OpenAI/Qdrant service registration and tests in backend/src/Controllers/LootController.cs + backend/src/Program.cs
-- [ ] T014 GET /api/health endpoint with tests in backend/src/Controllers/HealthController.cs
+- [ ] T013 GET /api/health endpoint with tests in backend/src/Controllers/HealthController.cs
+- [ ] T014 POST /api/loot/generate endpoint with OpenAI/Qdrant service registration and tests in backend/src/Controllers/LootController.cs + backend/src/Program.cs
 
 ### Frontend Components (UI Implementation)
 
