@@ -53,39 +53,106 @@
 - [x] T013 GET /api/health endpoint with tests in backend/src/Controllers/HealthController.cs
 - [x] T014 POST /api/loot/generate endpoint with OpenAI/Qdrant service registration and tests in backend/src/Controllers/LootController.cs + backend/src/Program.cs
 
-### Frontend Components (UI Implementation)
+### Frontend Foundation & Types (T015-T019)
 
-- [ ] T015 [P] LootGenerator main component with tests in frontend/src/components/LootGenerator.tsx
-- [ ] T016 [P] LanguageSelector component with React i18next and tests in frontend/src/components/LanguageSelector.tsx
-- [ ] T017 [P] CooldownTimer component with tests in frontend/src/components/CooldownTimer.tsx
-- [ ] T018 [P] LootItemDisplay component with currency formatting and tests in frontend/src/components/LootItemDisplay.tsx
-- [ ] T019 [P] PriceToggle component with tests in frontend/src/components/PriceToggle.tsx
+- [ ] T015 [P] Create TypeScript interfaces in frontend/src/types/index.ts
+- [ ] T016 [P] Create API types in frontend/src/types/api.ts
+- [ ] T017 [P] Setup i18next configuration in frontend/src/localization/i18n.ts
+- [ ] T018 [P] Create English translation files in frontend/src/localization/en/
+- [ ] T019 [P] Create Polish translation files in frontend/src/localization/pl/
 
-### Frontend Services and Utilities
+### Frontend Core Utilities (T020-T025)
 
-- [ ] T020 [P] API service for backend communication with tests in frontend/src/services/apiService.ts
-- [ ] T021 [P] Currency formatting utility with tests in frontend/src/utils/currencyFormatter.ts
-- [ ] T022 [P] Session management utility with tests in frontend/src/utils/sessionManager.ts
+- [ ] T020 [P] Create session UUID generator in frontend/src/utils/sessionManager.ts
+- [ ] T021 [P] Add sessionStorage helpers to session manager
+- [ ] T022 [P] Create currency conversion constants in frontend/src/utils/currencyFormatter.ts
+- [ ] T023 [P] Add penny-to-display format functions to currency formatter
+- [ ] T024 [P] Create HTTP client configuration in frontend/src/services/httpClient.ts
+- [ ] T025 [P] Add error handling wrapper to HTTP client
 
-## Phase 3.3: Integration (T023-T025)
+### Frontend API Services (T026-T029)
 
-- [ ] T023 Setup IMemoryCache for cooldown management in backend/src/Program.cs
-- [ ] T024 Vector database seeding with canonical Warhammer items in backend/src/Services/DatabaseSeedingService.cs
-- [ ] T025 CORS configuration for frontend-backend communication in backend/src/Program.cs
+- [ ] T026 [P] Create API endpoints configuration in frontend/src/services/endpoints.ts
+- [ ] T027 [P] Create health check API function in frontend/src/services/healthService.ts
+- [ ] T028 [P] Create loot generation API function in frontend/src/services/lootService.ts
+- [ ] T029 [P] Add request/response validation to API services
 
-## Phase 3.4: Polish (T026-T028)
+### Frontend Basic Components (T030-T035)
 
-- [ ] T026 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
-- [ ] T027 [P] Mobile responsiveness testing and fixes
-- [ ] T028 Run quickstart.md manual testing scenarios validation
+- [ ] T030 [P] Create basic LanguageSelector dropdown in frontend/src/components/LanguageSelector.tsx
+- [ ] T031 [P] Add i18next integration to LanguageSelector
+- [ ] T032 [P] Create WealthLevel dropdown in frontend/src/components/WealthLevelSelector.tsx
+- [ ] T033 [P] Create location input field in frontend/src/components/LocationInput.tsx
+- [ ] T034 [P] Create generate button in frontend/src/components/GenerateButton.tsx
+- [ ] T035 [P] Add disabled state logic to GenerateButton
+
+### Frontend Display Components (T036-T041)
+
+- [ ] T036 [P] Create LootItem display component in frontend/src/components/LootItem.tsx
+- [ ] T037 [P] Add currency formatting to LootItem component
+- [ ] T038 [P] Create LootList container in frontend/src/components/LootList.tsx
+- [ ] T039 [P] Create PriceToggle switch in frontend/src/components/PriceToggle.tsx
+- [ ] T040 [P] Add hide/show price logic to LootList
+- [ ] T041 [P] Create loading spinner in frontend/src/components/LoadingSpinner.tsx
+
+### Frontend Hooks & State (T042-T047)
+
+- [ ] T042 [P] Create countdown timer hook in frontend/src/hooks/useCountdown.ts
+- [ ] T043 [P] Create cooldown state hook in frontend/src/hooks/useCooldown.ts
+- [ ] T044 [P] Create CooldownTimer component in frontend/src/components/CooldownTimer.tsx
+- [ ] T045 [P] Create form validation hook in frontend/src/hooks/useFormValidation.ts
+- [ ] T046 [P] Create loot generation hook in frontend/src/hooks/useLootGeneration.ts
+- [ ] T047 [P] Create language switching hook in frontend/src/hooks/useLanguage.ts
+
+### Frontend Form & Messages (T048-T052)
+
+- [ ] T048 [P] Create error message component in frontend/src/components/ErrorMessage.tsx
+- [ ] T049 [P] Create status message component in frontend/src/components/StatusMessage.tsx
+- [ ] T050 [P] Create form container in frontend/src/components/LootForm.tsx
+- [ ] T051 [P] Add form submission logic to LootForm
+- [ ] T052 [P] Connect form to API services
+
+### Frontend Main Assembly (T053-T057)
+
+- [ ] T053 Create LootGenerator main container in frontend/src/components/LootGenerator.tsx
+- [ ] T054 Add form section to LootGenerator
+- [ ] T055 Add results section to LootGenerator
+- [ ] T056 Add error handling to LootGenerator
+- [ ] T057 Add responsive layout to LootGenerator
+
+### Frontend Testing (T058-T062)
+
+- [ ] T058 [P] Create unit tests for utility functions in frontend/src/utils/
+- [ ] T059 [P] Create unit tests for API services in frontend/src/services/
+- [ ] T060 [P] Create unit tests for custom hooks in frontend/src/hooks/
+- [ ] T061 [P] Create component tests for basic components
+- [ ] T062 [P] Create integration tests for main user flow
+
+## Phase 3.3: Integration (T063-T065)
+
+- [ ] T063 Setup IMemoryCache for cooldown management in backend/src/Program.cs
+- [ ] T064 Vector database seeding with canonical Warhammer items in backend/src/Services/DatabaseSeedingService.cs
+- [ ] T065 CORS configuration for frontend-backend communication in backend/src/Program.cs
+
+## Phase 3.4: Polish (T066-T068)
+
+- [ ] T066 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
+- [ ] T067 [P] Mobile responsiveness testing and fixes
+- [ ] T068 Run quickstart.md manual testing scenarios validation
 
 ## Dependencies
 
-- **Setup before Implementation**: T001-T004 → T005-T022
+- **Setup before Implementation**: T001-T004 → T005-T062
 - **Models before Services**: T005-T008 → T009-T012
 - **Services before Controllers**: T009-T012 → T013-T014
-- **Core before Integration**: T005-T022 → T023-T025
-- **Implementation before Polish**: T023-T025 → T026-T028
+- **Frontend Foundation**: T015-T019 → T020-T062
+- **Frontend Utilities**: T020-T025 → T026-T062
+- **Frontend API Services**: T026-T029 → T030-T062
+- **Frontend Basic Components**: T030-T035 → T042-T057
+- **Frontend Hooks**: T042-T047 → T050-T057
+- **Frontend Assembly**: T048-T052 → T053-T057
+- **Core before Integration**: T005-T057 → T063-T065
+- **Implementation before Polish**: T063-T065 → T066-T068
 
 ## Parallel Execution Examples
 
@@ -109,15 +176,36 @@ Task: "CooldownService for session management with tests in backend/src/Services
 Task: "LootGenerationService orchestrating AI + vector search with tests in backend/src/Services/LootGenerationService.cs"
 ```
 
+### Phase 3.2: Frontend Foundation Launch
+
+```bash
+# Launch all foundation setup together (different files):
+Task: "TypeScript interfaces in frontend/src/types/index.ts"
+Task: "API types in frontend/src/types/api.ts"
+Task: "i18next configuration in frontend/src/localization/i18n.ts"
+Task: "English translations in frontend/src/localization/en/"
+Task: "Polish translations in frontend/src/localization/pl/"
+```
+
+### Phase 3.2: Frontend Utilities Launch
+
+```bash
+# Launch all utility creation together (different files):
+Task: "Session UUID generator in frontend/src/utils/sessionManager.ts"
+Task: "Currency conversion constants in frontend/src/utils/currencyFormatter.ts"
+Task: "HTTP client configuration in frontend/src/services/httpClient.ts"
+Task: "API endpoints configuration in frontend/src/services/endpoints.ts"
+```
+
 ### Phase 3.2: Frontend Components Launch
 
 ```bash
-# Launch all component creation together (different files):
-Task: "LootGenerator component with tests in frontend/src/components/LootGenerator.tsx"
-Task: "LanguageSelector component with tests in frontend/src/components/LanguageSelector.tsx"
-Task: "CooldownTimer component with tests in frontend/src/components/CooldownTimer.tsx"
-Task: "LootItemDisplay component with tests in frontend/src/components/LootItemDisplay.tsx"
-Task: "PriceToggle component with tests in frontend/src/components/PriceToggle.tsx"
+# Launch all basic component creation together (different files):
+Task: "LanguageSelector dropdown in frontend/src/components/LanguageSelector.tsx"
+Task: "WealthLevel dropdown in frontend/src/components/WealthLevelSelector.tsx"
+Task: "Location input field in frontend/src/components/LocationInput.tsx"
+Task: "Generate button in frontend/src/components/GenerateButton.tsx"
+Task: "LootItem display in frontend/src/components/LootItem.tsx"
 ```
 
 ## Task Generation Rules Applied
@@ -158,4 +246,4 @@ Task: "PriceToggle component with tests in frontend/src/components/PriceToggle.t
 - [x] JSON seed data task added (T004)
 - [x] Service registration moved to endpoint implementation (T013)
 
-**Ready for Execution**: All 28 tasks generated, numbered, and validated ✅
+**Ready for Execution**: All 68 tasks generated, numbered, and validated ✅
