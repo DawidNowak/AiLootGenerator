@@ -81,8 +81,8 @@
 
 - [x] T030 [P] Create basic LanguageSelector dropdown in frontend/src/components/LanguageSelector.tsx
 - [x] T031 [P] Add i18next integration to LanguageSelector
-- [ ] T032 [P] Create WealthLevel dropdown in frontend/src/components/WealthLevelSelector.tsx
-- [ ] T033 [P] Create location input field in frontend/src/components/LocationInput.tsx
+- [x] T032 [P] Create WealthLevel dropdown in frontend/src/components/WealthLevelSelector.tsx
+- [x] T033 [P] Create location input field in frontend/src/components/LocationInput.tsx
 - [ ] T034 [P] Create generate button in frontend/src/components/GenerateButton.tsx
 - [ ] T035 [P] Add disabled state logic to GenerateButton
 
