@@ -85,7 +85,7 @@ const LANGUAGE_NATIVE_NAMES: Record<Language, string> = {
 /**
  * Detect browser language and return supported language or default
  */
-function detectBrowserLanguage(fallback: Language = 'en'): Language {
+function detectBrowserLanguage(fallback: Language = 'pl'): Language {
     try {
         // Get browser language preference
         const browserLang = navigator.language || (navigator as any).userLanguage;
@@ -174,7 +174,7 @@ function saveLanguageToStorage(language: Language): void {
  */
 export function useLanguage(options: UseLanguageOptions = {}): LanguageResult {
     const {
-        defaultLanguage = 'en',
+        defaultLanguage = 'pl',
         persist = true,
         onChange,
         autoDetect = true

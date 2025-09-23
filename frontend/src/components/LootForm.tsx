@@ -99,7 +99,10 @@ export const LootForm: React.FC<LootFormProps> = ({
     "default-session";
 
   // Hooks
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage, changeLanguage } = useLanguage({
+    defaultLanguage: "pl",
+    autoDetect: false, // Disable auto-detection to always start with Polish
+  });
   const { isInCooldown, remainingSeconds, expiresAt } = useCooldown({
     sessionId,
   });
@@ -254,8 +257,8 @@ export const LootForm: React.FC<LootFormProps> = ({
       {/* Language Selector */}
       <LanguageSelector
         value={currentLanguage}
-        onChange={() => {}} // Read-only for now
-        disabled={true} // Managed by hook internally
+        onChange={changeLanguage}
+        disabled={isFormDisabled}
         fullWidth
       />
 
@@ -338,7 +341,15 @@ export const LootForm: React.FC<LootFormProps> = ({
 
   // Render full form with card layout
   return (
-    <Card className={className} elevation={2}>
+    <Card
+      className={className}
+      elevation={2}
+      sx={{
+        height: "fit-content",
+        position: { md: "sticky" },
+        top: { md: 2 },
+      }}
+    >
       <CardHeader
         title={t("form:title", { defaultValue: "Generate Loot" })}
         subheader={t("form:subtitle", {

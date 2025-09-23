@@ -77,7 +77,7 @@ export const LocationInput: React.FC<LocationInputProps> = ({
   return (
     <TextField
       id="location-input"
-      label={t("labels.location") + (required ? " *" : "")}
+      label={t("labels.location")}
       value={value}
       onChange={handleChange}
       onBlur={handleBlur}

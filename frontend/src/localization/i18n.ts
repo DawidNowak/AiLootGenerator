@@ -38,8 +38,8 @@ i18n
     .use(initReactI18next) // Passes i18n down to react-i18next
     .init({
         resources,
-        lng: 'en', // Default language
-        fallbackLng: 'en', // Fallback language if translation is missing
+        lng: 'pl', // Default language
+        fallbackLng: 'pl', // Fallback language if translation is missing
 
         // Language detection options
         detection: {

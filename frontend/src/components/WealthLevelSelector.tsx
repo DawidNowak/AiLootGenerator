@@ -64,13 +64,12 @@ export const WealthLevelSelector: React.FC<WealthLevelSelectorProps> = ({
     >
       <InputLabel id="wealth-level-label">
         {tForm("labels.wealthLevel")}
-        {required && " *"}
       </InputLabel>
       <Select
         labelId="wealth-level-label"
         id="wealth-level-select"
         value={value}
-        label={tForm("labels.wealthLevel") + (required ? " *" : "")}
+        label={tForm("labels.wealthLevel")}
         onChange={handleChange}
         disabled={disabled}
         aria-describedby={helperText ? "wealth-level-helper-text" : undefined}

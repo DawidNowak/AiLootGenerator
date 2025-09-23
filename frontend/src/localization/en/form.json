@@ -1,4 +1,6 @@
 {
+  "title": "Generate Loot",
+  "subtitle": "Enter location details to generate thematic loot items",
   "labels": {
     "location": "Location",
     "wealthLevel": "Wealth Level",

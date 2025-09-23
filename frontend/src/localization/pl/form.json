@@ -1,4 +1,6 @@
 {
+  "title": "Generuj Łupy",
+  "subtitle": "Wprowadź szczegóły lokacji aby wygenerować tematyczne przedmioty",
   "labels": {
     "location": "Lokacja",
     "wealthLevel": "Poziom Zamożności",

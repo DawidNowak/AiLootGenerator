@@ -123,22 +123,6 @@ const LootGenerator: React.FC = () => {
         px: { xs: 1, md: 2 },
       }}
     >
-      {/* Header */}
-      <Box sx={{ mb: { xs: 2, md: 4 }, textAlign: "center" }}>
-        <Typography
-          variant={isMobile ? "h4" : "h3"}
-          component="h1"
-          gutterBottom
-          sx={{ fontWeight: "bold" }}
-        >
-          {t("common:title")}
-        </Typography>
-        <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 2 }}>
-          {t("common:subtitle")}
-        </Typography>
-        <Divider />
-      </Box>
-
       {/* Task T056: Global error display */}
       {state.error && (
         <Fade in={!!state.error}>
@@ -156,24 +140,10 @@ const LootGenerator: React.FC = () => {
       <Grid container spacing={{ xs: 2, md: 3 }} alignItems="flex-start">
         {/* Task T054: Form Section */}
         <Grid item xs={formSectionSize}>
-          <Paper
-            elevation={2}
-            sx={{
-              p: { xs: 2, md: 3 },
-              height: "fit-content",
-              position: { md: "sticky" },
-              top: { md: theme.spacing(2) },
-            }}
-          >
-            <Typography variant="h5" component="h2" gutterBottom sx={{ mb: 2 }}>
-              {t("loot:form.title")}
-            </Typography>
-
-            <LootForm
-              onLootGenerated={handleLootGenerated}
-              onFormStateChange={handleFormStateChange}
-            />
-          </Paper>
+          <LootForm
+            onLootGenerated={handleLootGenerated}
+            onFormStateChange={handleFormStateChange}
+          />
         </Grid>
 
         {/* Task T055: Results Section */}
