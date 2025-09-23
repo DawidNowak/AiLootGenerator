@@ -27,5 +27,12 @@
     "shillings": "shillings",
     "gold": "gold crown",
     "golds": "gold crowns"
+  },
+  "prices": {
+    "label": "Item Prices",
+    "show": "Show Prices",
+    "hide": "Hide Prices",
+    "showTooltip": "Display item values in Warhammer Fantasy currency",
+    "hideTooltip": "Hide item values for immersion"
   }
 }

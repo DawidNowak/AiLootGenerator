@@ -9,6 +9,45 @@ import { initReactI18next } from 'react-i18next';
 // Simple mock translations for tests
 const mockTranslations = {
     en: {
+        // Common translations
+        language: 'Language',
+        english: 'English',
+        polish: 'Polski',
+
+        // Labels
+        labels: {
+            wealthLevel: 'Wealth Level',
+            location: 'Location',
+        },
+
+        // Placeholders
+        placeholders: {
+            location: 'Enter location description...',
+        },
+
+        // Hints
+        hints: {
+            location: 'Describe where the loot was found',
+        },
+
+        // Buttons
+        buttons: {
+            generate: 'Generate Loot',
+            generating: 'Generating...',
+        },
+
+        // Prices
+        prices: {
+            label: 'Item Prices',
+            show: 'Show Prices',
+            hide: 'Hide Prices',
+            showTooltip: 'Display item values in Warhammer Fantasy currency',
+            hideTooltip: 'Hide item values for immersion',
+        },
+
+        // No items message
+        noItems: 'No loot items generated yet',
+
         loot: {
             title: 'Loot Items',
             wealthLevels: {
@@ -35,15 +74,29 @@ const mockTranslations = {
             },
             valueInPennies: '{{value}} pennies',
         },
-        common: {
-            language: 'Language',
-            english: 'English',
-            polish: 'Polski',
-        },
+
+        // Form namespace for components that use useTranslation("form")
         form: {
-            wealthLevel: 'Wealth Level',
-            location: 'Location',
-            generate: 'Generate Loot',
+            labels: {
+                wealthLevel: 'Wealth Level',
+                location: 'Location',
+            },
+        },
+
+        // Direct wealth level translations for components that use t() instead of tLoot()
+        wealthLevels: {
+            Rubbish: 'Rubbish',
+            Poor: 'Poor',
+            Common: 'Common',
+            Wealthy: 'Wealthy',
+            Noble: 'Noble',
+        },
+        wealthLevelDescriptions: {
+            Rubbish: 'Junk items, lowest tier (1-12 pennies)',
+            Poor: 'Peasant scraps, basic items (13-60 pennies)',
+            Common: 'Everyday goods, standard quality (61-240 pennies)',
+            Wealthy: 'Merchant spoils, valuable items (241-1200 pennies)',
+            Noble: 'Opulent treasures, rare magic items (1201+ pennies)',
         },
     },
 };
@@ -59,6 +112,10 @@ i18n.use(initReactI18next).init({
     react: {
         useSuspense: false,
     },
+    // Support namespace access
+    defaultNS: false,
+    ns: ['loot', 'form'],
+    fallbackNS: false,
 });
 
 export default i18n;

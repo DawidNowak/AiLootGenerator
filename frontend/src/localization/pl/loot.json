@@ -27,5 +27,12 @@
     "shillings": "szylingów",
     "gold": "złota korona",
     "golds": "złote korony"
+  },
+  "prices": {
+    "label": "Ceny Przedmiotów",
+    "show": "Pokaż Ceny",
+    "hide": "Ukryj Ceny",
+    "showTooltip": "Wyświetl wartości przedmiotów w walucie Warhammer Fantasy",
+    "hideTooltip": "Ukryj wartości przedmiotów dla immersji"
   }
 }
