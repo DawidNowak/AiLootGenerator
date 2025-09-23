@@ -88,8 +88,8 @@
 
 ### Frontend Display Components (T036-T041)
 
-- [ ] T036 [P] Create LootItem display component in frontend/src/components/LootItem.tsx
-- [ ] T037 [P] Add currency formatting to LootItem component
+- [x] T036 [P] Create LootItem display component in frontend/src/components/LootItem.tsx
+- [x] T037 [P] Add currency formatting to LootItem component
 - [ ] T038 [P] Create LootList container in frontend/src/components/LootList.tsx
 - [ ] T039 [P] Create PriceToggle switch in frontend/src/components/PriceToggle.tsx
 - [ ] T040 [P] Add hide/show price logic to LootList

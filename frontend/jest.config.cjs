@@ -35,7 +35,10 @@ module.exports = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
-  setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+  setupFilesAfterEnv: [
+    "<rootDir>/src/setupTests.ts",
+    "<rootDir>/tests/setup.ts",
+  ],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
