@@ -27,5 +27,12 @@
     "stillActive": "Cooldown is still active",
     "remainingTime": "{{seconds}} seconds remaining",
     "tryAfter": "Try again after {{time}}"
+  },
+  "button": {
+    "generatingInProgress": "Generation in progress, please wait",
+    "formIncomplete": "Please fill in all required fields",
+    "cooldownActive": "Please wait {{seconds}} seconds before generating again",
+    "networkError": "Network error - please check your connection",
+    "temporarilyDisabled": "Button temporarily disabled"
   }
 }

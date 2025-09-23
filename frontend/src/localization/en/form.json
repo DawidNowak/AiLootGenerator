@@ -24,6 +24,7 @@
   },
   "buttons": {
     "generate": "Generate Loot",
+    "generating": "Generating...",
     "reset": "Reset Form",
     "clear": "Clear"
   }

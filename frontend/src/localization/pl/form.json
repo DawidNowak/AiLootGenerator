@@ -24,6 +24,7 @@
   },
   "buttons": {
     "generate": "Generuj Łupy",
+    "generating": "Generowanie...",
     "reset": "Resetuj Formularz",
     "clear": "Wyczyść"
   }

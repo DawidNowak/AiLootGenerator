@@ -27,5 +27,12 @@
     "stillActive": "Cooldown jest nadal aktywny",
     "remainingTime": "Pozostało {{seconds}} sekund",
     "tryAfter": "Spróbuj ponownie po {{time}}"
+  },
+  "button": {
+    "generatingInProgress": "Generowanie w toku, proszę czekać",
+    "formIncomplete": "Proszę wypełnić wszystkie wymagane pola",
+    "cooldownActive": "Proszę czekać {{seconds}} sekund przed kolejnym generowaniem",
+    "networkError": "Błąd sieci - sprawdź połączenie internetowe",
+    "temporarilyDisabled": "Przycisk tymczasowo wyłączony"
   }
 }
