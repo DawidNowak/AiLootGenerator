@@ -97,12 +97,12 @@
 
 ### Frontend Hooks & State (T042-T047)
 
-- [ ] T042 [P] Create countdown timer hook in frontend/src/hooks/useCountdown.ts
-- [ ] T043 [P] Create cooldown state hook in frontend/src/hooks/useCooldown.ts
-- [ ] T044 [P] Create CooldownTimer component in frontend/src/components/CooldownTimer.tsx
-- [ ] T045 [P] Create form validation hook in frontend/src/hooks/useFormValidation.ts
-- [ ] T046 [P] Create loot generation hook in frontend/src/hooks/useLootGeneration.ts
-- [ ] T047 [P] Create language switching hook in frontend/src/hooks/useLanguage.ts
+- [x] T042 [P] Create countdown timer hook in frontend/src/hooks/useCountdown.ts
+- [x] T043 [P] Create cooldown state hook in frontend/src/hooks/useCooldown.ts
+- [x] T044 [P] Create CooldownTimer component in frontend/src/components/CooldownTimer.tsx
+- [x] T045 [P] Create form validation hook in frontend/src/hooks/useFormValidation.ts
+- [x] T046 [P] Create loot generation hook in frontend/src/hooks/useLootGeneration.ts
+- [x] T047 [P] Create language switching hook in frontend/src/hooks/useLanguage.ts
 
 ### Frontend Form & Messages (T048-T052)
 
