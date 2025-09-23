@@ -34,5 +34,14 @@
     "hide": "Hide Prices",
     "showTooltip": "Display item values in Warhammer Fantasy currency",
     "hideTooltip": "Hide item values for immersion"
+  },
+  "form": {
+    "title": "Generate Loot"
+  },
+  "results": {
+    "title": "Generated Items",
+    "empty": "Generate loot to see results here...",
+    "generatedAt": "Generated at {{time}}",
+    "success": "Successfully generated {{count}} items!"
   }
 }

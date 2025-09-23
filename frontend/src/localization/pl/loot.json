@@ -34,5 +34,14 @@
     "hide": "Ukryj Ceny",
     "showTooltip": "Wyświetl wartości przedmiotów w walucie Warhammer Fantasy",
     "hideTooltip": "Ukryj wartości przedmiotów dla immersji"
+  },
+  "form": {
+    "title": "Generuj Łupy"
+  },
+  "results": {
+    "title": "Wygenerowane Przedmioty",
+    "empty": "Wygeneruj łupy aby zobaczyć wyniki tutaj...",
+    "generatedAt": "Wygenerowano o {{time}}",
+    "success": "Pomyślnie wygenerowano {{count}} przedmiotów!"
   }
 }
