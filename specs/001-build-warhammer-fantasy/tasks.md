@@ -106,11 +106,11 @@
 
 ### Frontend Form & Messages (T048-T052)
 
-- [ ] T048 [P] Create error message component in frontend/src/components/ErrorMessage.tsx
-- [ ] T049 [P] Create status message component in frontend/src/components/StatusMessage.tsx
-- [ ] T050 [P] Create form container in frontend/src/components/LootForm.tsx
-- [ ] T051 [P] Add form submission logic to LootForm
-- [ ] T052 [P] Connect form to API services
+- [x] T048 [P] Create error message component in frontend/src/components/ErrorMessage.tsx
+- [x] T049 [P] Create status message component in frontend/src/components/StatusMessage.tsx
+- [x] T050 [P] Create form container in frontend/src/components/LootForm.tsx
+- [x] T051 [P] Add form submission logic to LootForm
+- [x] T052 [P] Connect form to API services
 
 ### Frontend Main Assembly (T053-T057)
 
