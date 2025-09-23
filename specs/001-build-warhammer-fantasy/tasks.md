@@ -93,7 +93,7 @@
 - [x] T038 [P] Create LootList container in frontend/src/components/LootList.tsx
 - [x] T039 [P] Create PriceToggle switch in frontend/src/components/PriceToggle.tsx
 - [x] T040 [P] Add hide/show price logic to LootList
-- [ ] T041 [P] Create loading spinner in frontend/src/components/LoadingSpinner.tsx
+- [x] T041 [P] Create loading spinner in frontend/src/components/LoadingSpinner.tsx
 
 ### Frontend Hooks & State (T042-T047)
 
