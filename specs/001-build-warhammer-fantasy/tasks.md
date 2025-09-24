@@ -43,10 +43,10 @@
 
 ## Phase 3.3: Core Angular Services (T009-T012)
 
-- [ ] T009 [P] Create HTTP client service with interceptors in frontend/src/app/services/http-client.service.ts
-- [ ] T010 [P] Create loot generation API service with proper GUID handling in frontend/src/app/services/loot-api.service.ts
-- [ ] T011 [P] Create session management service for GUID generation and cooldown tracking in frontend/src/app/services/session.service.ts
-- [ ] T012 [P] Create currency formatting service for penny conversion (12p=1s, 20s=1gc) in frontend/src/app/services/currency.service.ts
+- [x] T009 [P] Create HTTP client service with interceptors in frontend/src/app/services/http-client.service.ts
+- [x] T010 [P] Create loot generation API service with proper GUID handling in frontend/src/app/services/loot-api.service.ts
+- [x] T011 [P] Create session management service for GUID generation and cooldown tracking in frontend/src/app/services/session.service.ts
+- [x] T012 [P] Create currency formatting service for penny conversion (12p=1s, 20s=1gc) in frontend/src/app/services/currency.service.ts
 
 ## Phase 3.4: Angular i18n Setup (T013-T015)
 
