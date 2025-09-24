@@ -37,9 +37,9 @@
 
 ## Phase 3.2: Angular Type Definitions (T006-T008)
 
-- [ ] T006 [P] Create TypeScript interfaces for LootItem in frontend/src/app/models/loot-item.interface.ts
-- [ ] T007 [P] Create GenerationRequest interface with Guid sessionId in frontend/src/app/models/generation-request.interface.ts
-- [ ] T008 [P] Create WealthLevel enum with numeric values (Rubbish=1, Poor=2, Common=3, Wealthy=4, Noble=5) in frontend/src/app/models/wealth-level.enum.ts
+- [x] T006 [P] Create TypeScript interfaces for LootItem in frontend/src/app/models/loot-item.interface.ts
+- [x] T007 [P] Create GenerationRequest interface with Guid sessionId in frontend/src/app/models/generation-request.interface.ts
+- [x] T008 [P] Create WealthLevel enum with numeric values (Rubbish=1, Poor=2, Common=3, Wealthy=4, Noble=5) in frontend/src/app/models/wealth-level.enum.ts
 
 ## Phase 3.3: Core Angular Services (T009-T012)
 
