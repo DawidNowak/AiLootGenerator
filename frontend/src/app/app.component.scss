@@ -209,6 +209,96 @@
   }
 }
 
+// Loot Items Demo Section
+.loot-items-section {
+  margin: 3rem 0;
+
+  .section-title {
+    font-size: 2rem;
+    color: var(--wf-gold);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .section-description {
+    text-align: center;
+    color: var(--wf-text-muted);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .loot-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+
+  .loot-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      &.btn-primary {
+        background: var(--wf-gold);
+        color: var(--wf-dark-bg);
+
+        &:hover:not(:disabled) {
+          background: var(--wf-gold-light);
+          transform: translateY(-1px);
+        }
+
+        &:disabled {
+          background: #666;
+          cursor: not-allowed;
+          opacity: 0.6;
+        }
+      }
+
+      &.btn-secondary {
+        background: var(--wf-bronze);
+        color: white;
+
+        &:hover {
+          background: var(--wf-bronze-light);
+          transform: translateY(-1px);
+        }
+      }
+
+      &.btn-accent {
+        background: var(--wf-accent);
+        color: white;
+
+        &:hover {
+          background: var(--wf-accent-light);
+          transform: translateY(-1px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        flex: 1;
+        min-width: 120px;
+      }
+    }
+  }
+}
+
 .theme-showcase {
   display: flex;
   flex-direction: column;

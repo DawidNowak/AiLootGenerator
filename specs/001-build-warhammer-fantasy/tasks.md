@@ -67,7 +67,7 @@
 
 ## Phase 3.6: Angular Components - Results Display (T022-T025)
 
-- [ ] T022 [P] Create loot item card component in frontend/src/app/components/loot-item/
+- [x] T022 [P] Create loot item card component in frontend/src/app/components/loot-item/
 - [ ] T023 [P] Create loot results list component in frontend/src/app/components/loot-list/
 - [ ] T024 [P] Create price toggle switch component in frontend/src/app/components/price-toggle/
 - [ ] T025 [P] Create loading spinner component in frontend/src/app/components/loading-spinner/

@@ -90,7 +90,10 @@ export class I18nService {
                 'item.rare': 'Rare Artifact',
                 'item.rare.description': 'A silver-touched item with moderate magical enchantments.',
                 'item.common': 'Common Treasure',
-                'item.common.description': 'Bronze-quality item suitable for beginning adventurers.'
+                'item.common.description': 'Bronze-quality item suitable for beginning adventurers.',
+                'item.placeholder': 'No item selected',
+                'currency.expand': 'Show detailed breakdown',
+                'currency.collapse': 'Hide detailed breakdown'
             }
         },
         {
@@ -163,7 +166,10 @@ export class I18nService {
                 'item.rare': 'Rzadki Artefakt',
                 'item.rare.description': 'Przedmiot dotknięty srebrem z umiarkowanymi magicznymi zaklęciami.',
                 'item.common': 'Pospolity Skarb',
-                'item.common.description': 'Przedmiot jakości brązowej odpowiedni dla początkujących poszukiwaczy przygód.'
+                'item.common.description': 'Przedmiot jakości brązowej odpowiedni dla początkujących poszukiwaczy przygód.',
+                'item.placeholder': 'Nie wybrano przedmiotu',
+                'currency.expand': 'Pokaż szczegółowy podział',
+                'currency.collapse': 'Ukryj szczegółowy podział'
             }
         }
     ];

@@ -94,6 +94,43 @@
       </div>
     </div>
 
+    <!-- Loot Item Components Demo -->
+    <div class="loot-items-section">
+      <h2 class="section-title">Loot Item Components</h2>
+      <p class="section-description">
+        Interactive loot item cards with wealth level styling and currency
+        formatting
+      </p>
+
+      <div class="loot-items-grid">
+        @for (item of sampleLootItems(); track item.name) {
+        <app-loot-item
+          [item]="item"
+          [showPrice]="showPriceDetails()"
+          [showFullBreakdown]="false"
+        ></app-loot-item>
+        }
+      </div>
+
+      <div class="loot-controls">
+        <button class="btn btn-secondary" (click)="togglePriceDetails()">
+          {{ showPriceDetails() ? "Hide Prices" : "Show Prices" }}
+        </button>
+
+        <button class="btn btn-accent" (click)="addRandomLootItem()">
+          Add Random Item
+        </button>
+
+        <button
+          class="btn btn-primary"
+          (click)="clearLootItems()"
+          [disabled]="sampleLootItems().length === 0"
+        >
+          Clear Items
+        </button>
+      </div>
+    </div>
+
     <div class="theme-showcase">
       <div class="color-palette">
         <div class="color-item gold">

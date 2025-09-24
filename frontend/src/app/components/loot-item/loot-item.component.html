@@ -1,0 +1,70 @@
+<mat-card
+  class="loot-item-card"
+  [class]="'wealth-' + getWealthLevelColor()"
+  *ngIf="item"
+>
+  <mat-card-header>
+    <div mat-card-avatar [class]="'avatar-' + getWealthLevelColor()">
+      <mat-icon [class]="'icon-' + getWealthLevelColor()">{{
+        getWealthLevelIcon()
+      }}</mat-icon>
+    </div>
+    <mat-card-title class="item-name" [title]="item.name">
+      {{ item.name }}
+    </mat-card-title>
+    <mat-card-subtitle class="item-wealth-level">
+      <mat-chip-set class="wealth-chips">
+        <mat-chip
+          [class]="'chip-' + getWealthLevelColor()"
+          [matTooltip]="getWealthLevelDescription()"
+          matTooltipPosition="above"
+        >
+          {{ getWealthLevelName() }}
+        </mat-chip>
+      </mat-chip-set>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="item-content">
+    <p class="item-description" [title]="item.description">
+      {{ item.description }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions class="item-actions" *ngIf="showPrice">
+    <div class="price-container">
+      <div class="price-display">
+        <mat-icon class="currency-icon">monetization_on</mat-icon>
+        <span class="price-value" [class]="'price-' + getWealthLevelColor()">
+          {{ getFormattedPrice() }}
+        </span>
+      </div>
+      <button
+        mat-icon-button
+        class="price-toggle"
+        [matTooltip]="
+          showFullBreakdown
+            ? ('currency.collapse' | translate)
+            : ('currency.expand' | translate)
+        "
+        (click)="togglePriceBreakdown()"
+        [attr.aria-label]="
+          showFullBreakdown
+            ? ('currency.collapse' | translate)
+            : ('currency.expand' | translate)
+        "
+      >
+        <mat-icon>{{
+          showFullBreakdown ? "expand_less" : "expand_more"
+        }}</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="loot-item-placeholder" *ngIf="!item">
+  <mat-card-content class="placeholder-content">
+    <mat-icon class="placeholder-icon">inventory</mat-icon>
+    <p class="placeholder-text">{{ "item.placeholder" | translate }}</p>
+  </mat-card-content>
+</mat-card>

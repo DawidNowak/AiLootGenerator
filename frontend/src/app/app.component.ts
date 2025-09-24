@@ -7,8 +7,10 @@ import { LocationInputComponent } from './components/location-input/location-inp
 import { GenerateButtonComponent } from './components/generate-button/generate-button.component';
 import { CooldownTimerComponent } from './components/cooldown-timer/cooldown-timer.component';
 import { ErrorMessageComponent, ErrorInfo } from './components/error-message/error-message.component';
+import { LootItemComponent } from './components/loot-item/loot-item.component';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { WealthLevel } from './models/wealth-level.enum';
+import { LootItem } from './models/loot-item.interface';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +24,7 @@ import { WealthLevel } from './models/wealth-level.enum';
     GenerateButtonComponent,
     CooldownTimerComponent,
     ErrorMessageComponent,
+    LootItemComponent,
     TranslatePipe
   ],
   templateUrl: './app.component.html',
@@ -41,6 +44,36 @@ export class AppComponent implements OnDestroy {
   currentError = signal<ErrorInfo | null>(null);
 
   private cooldownTimer: number | null = null;
+
+  // Sample loot items for demonstration
+  sampleLootItems = signal<LootItem[]>([
+    {
+      name: 'Enchanted Sword of Ubersreik',
+      description: 'A beautifully crafted longsword with intricate engravings depicting the coat of arms of Ubersreik. The blade gleams with a faint magical aura and seems to hum with power when drawn.',
+      valueInPennies: 1440, // 6 gold crowns
+      wealthLevel: WealthLevel.Wealthy
+    },
+    {
+      name: 'Tattered Merchant\'s Purse',
+      description: 'A worn leather purse containing a few copper coins and lint. Smells faintly of old cheese and disappointment.',
+      valueInPennies: 8, // 8 pennies
+      wealthLevel: WealthLevel.Rubbish
+    },
+    {
+      name: 'Sigmarite Holy Symbol',
+      description: 'A silver hammer pendant blessed by the priests of Altdorf. The twin-tailed comet gleams with divine light and provides comfort to the faithful.',
+      valueInPennies: 120, // 10 shillings
+      wealthLevel: WealthLevel.Common
+    },
+    {
+      name: 'Crown of the Elector Count',
+      description: 'An ornate golden crown adorned with precious gems and blessed by the most holy priests. This artifact once belonged to a noble ruler of the Empire and radiates power.',
+      valueInPennies: 4800, // 20 gold crowns
+      wealthLevel: WealthLevel.Noble
+    }
+  ]);
+
+  showPriceDetails = signal<boolean>(true);
 
   onWealthLevelChange(wealthLevel: WealthLevel): void {
     this.selectedWealthLevel.set(wealthLevel);
@@ -115,6 +148,53 @@ export class AppComponent implements OnDestroy {
   onErrorRetry(): void {
     this.currentError.set(null);
     this.onGenerateClick();
+  }
+
+  togglePriceDetails(): void {
+    this.showPriceDetails.set(!this.showPriceDetails());
+  }
+
+  addRandomLootItem(): void {
+    const randomItems: LootItem[] = [
+      {
+        name: 'Rusty Dagger of Middenheim',
+        description: 'A simple iron dagger with a worn wooden handle. Shows signs of extensive use but still holds an edge.',
+        valueInPennies: 36,
+        wealthLevel: WealthLevel.Poor
+      },
+      {
+        name: 'Wizard\'s Tome of Shadows',
+        description: 'An ancient spellbook bound in dark leather and sealed with arcane sigils. The pages seem to whisper forbidden knowledge.',
+        valueInPennies: 2880,
+        wealthLevel: WealthLevel.Noble
+      },
+      {
+        name: 'Merchant\'s Scales',
+        description: 'A set of brass scales used by traders to weigh precious goods. Well-maintained and accurate.',
+        valueInPennies: 180,
+        wealthLevel: WealthLevel.Common
+      },
+      {
+        name: 'Broken Wagon Wheel',
+        description: 'A weathered wooden wheel from an old cart. One spoke is cracked and the iron rim is rusted.',
+        valueInPennies: 4,
+        wealthLevel: WealthLevel.Rubbish
+      },
+      {
+        name: 'Noble\'s Silk Gloves',
+        description: 'Exquisite white silk gloves embroidered with golden thread and tiny pearls. Made for the highest nobility.',
+        valueInPennies: 960,
+        wealthLevel: WealthLevel.Wealthy
+      }
+    ];
+
+    const randomItem = randomItems[Math.floor(Math.random() * randomItems.length)];
+    const currentItems = this.sampleLootItems();
+    this.sampleLootItems.set([...currentItems, randomItem]);
+  }
+
+  clearLootItems(): void {
+    this.sampleLootItems.set([]);
   }
 
   private startCooldown(): void {
