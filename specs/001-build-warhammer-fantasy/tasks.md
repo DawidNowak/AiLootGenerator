@@ -50,9 +50,9 @@
 
 ## Phase 3.4: Angular i18n Setup (T013-T015)
 
-- [ ] T013 [P] Extract translatable strings and create base messages.xlf file
-- [ ] T014 [P] Create English translations in frontend/src/locale/messages.en.xlf
-- [ ] T015 [P] Create Polish translations in frontend/src/locale/messages.pl.xlf
+- [x] T013 [P] Extract translatable strings and create base messages.xlf file
+- [x] T014 [P] Create English translations in frontend/src/locale/messages.en.xlf
+- [x] T015 [P] Create Polish translations in frontend/src/locale/messages.pl.xlf
 
 ## Phase 3.5: Angular Components - Basic UI (T016-T021)
 

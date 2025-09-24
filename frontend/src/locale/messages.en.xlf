@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="app.title" datatype="html">
+        <source>AI Loot Generator</source>
+        <target>AI Loot Generator</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.subtitle" datatype="html">
+        <source>Warhammer Fantasy Edition</source>
+        <target>Warhammer Fantasy Edition</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">7,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="app.description" datatype="html">
+        <source> Generate legendary treasures and magical artifacts for your Warhammer Fantasy adventures </source>
+        <target> Generate legendary treasures and magical artifacts for your Warhammer Fantasy adventures </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">10,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="color.gold" datatype="html">
+        <source>Gold</source>
+        <target>Gold</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="color.silver" datatype="html">
+        <source>Silver</source>
+        <target>Silver</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="color.bronze" datatype="html">
+        <source>Bronze</source>
+        <target>Bronze</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="color.accent" datatype="html">
+        <source>Accent</source>
+        <target>Accent</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="item.legendary" datatype="html">
+        <source>Legendary Item</source>
+        <target>Legendary Item</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="item.legendary.description" datatype="html">
+        <source> Sample legendary treasure with golden accents and mystical properties. </source>
+        <target> Sample legendary treasure with golden accents and mystical properties. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">45,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="item.rare" datatype="html">
+        <source>Rare Artifact</source>
+        <target>Rare Artifact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="item.rare.description" datatype="html">
+        <source>A silver-touched item with moderate magical enchantments.</source>
+        <target>A silver-touched item with moderate magical enchantments.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">57,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="item.common" datatype="html">
+        <source>Common Treasure</source>
+        <target>Common Treasure</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="item.common.description" datatype="html">
+        <source>Bronze-quality item suitable for beginning adventurers.</source>
+        <target>Bronze-quality item suitable for beginning adventurers.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">67,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="button.generate" datatype="html">
+        <source>Generate Legendary Loot</source>
+        <target>Generate Legendary Loot</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="button.browse" datatype="html">
+        <source>Browse Artifacts</source>
+        <target>Browse Artifacts</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">74,75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="button.settings" datatype="html">
+        <source>Settings</source>
+        <target>Settings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">75,77</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

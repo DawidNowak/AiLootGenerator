@@ -3,10 +3,12 @@
     <div class="header-content">
       <h1 class="app-title">
         <span class="title-icon">⚔️</span>
-        AI Loot Generator
-        <span class="title-subtitle">Warhammer Fantasy Edition</span>
+        <span i18n="@@app.title">AI Loot Generator</span>
+        <span class="title-subtitle" i18n="@@app.subtitle"
+          >Warhammer Fantasy Edition</span
+        >
       </h1>
-      <p class="app-description">
+      <p class="app-description" i18n="@@app.description">
         Generate legendary treasures and magical artifacts for your Warhammer
         Fantasy adventures
       </p>
@@ -18,30 +20,30 @@
       <div class="color-palette">
         <div class="color-item gold">
           <div class="color-swatch"></div>
-          <span>Gold</span>
+          <span i18n="@@color.gold">Gold</span>
         </div>
         <div class="color-item silver">
           <div class="color-swatch"></div>
-          <span>Silver</span>
+          <span i18n="@@color.silver">Silver</span>
         </div>
         <div class="color-item bronze">
           <div class="color-swatch"></div>
-          <span>Bronze</span>
+          <span i18n="@@color.bronze">Bronze</span>
         </div>
         <div class="color-item accent">
           <div class="color-swatch"></div>
-          <span>Accent</span>
+          <span i18n="@@color.accent">Accent</span>
         </div>
       </div>
 
       <div class="sample-cards">
         <div class="loot-card legendary">
           <div class="card-header">
-            <h3>Legendary Item</h3>
+            <h3 i18n="@@item.legendary">Legendary Item</h3>
             <span class="rarity-badge">⭐⭐⭐</span>
           </div>
           <div class="card-content">
-            <p>
+            <p i18n="@@item.legendary.description">
               Sample legendary treasure with golden accents and mystical
               properties.
             </p>
@@ -50,29 +52,39 @@
 
         <div class="loot-card rare">
           <div class="card-header">
-            <h3>Rare Artifact</h3>
+            <h3 i18n="@@item.rare">Rare Artifact</h3>
             <span class="rarity-badge">⭐⭐</span>
           </div>
           <div class="card-content">
-            <p>A silver-touched item with moderate magical enchantments.</p>
+            <p i18n="@@item.rare.description">
+              A silver-touched item with moderate magical enchantments.
+            </p>
           </div>
         </div>
 
         <div class="loot-card common">
           <div class="card-header">
-            <h3>Common Treasure</h3>
+            <h3 i18n="@@item.common">Common Treasure</h3>
             <span class="rarity-badge">⭐</span>
           </div>
           <div class="card-content">
-            <p>Bronze-quality item suitable for beginning adventurers.</p>
+            <p i18n="@@item.common.description">
+              Bronze-quality item suitable for beginning adventurers.
+            </p>
           </div>
         </div>
       </div>
 
       <div class="action-buttons">
-        <button class="btn btn-primary">Generate Legendary Loot</button>
-        <button class="btn btn-secondary">Browse Artifacts</button>
-        <button class="btn btn-accent">Settings</button>
+        <button class="btn btn-primary" i18n="@@button.generate">
+          Generate Legendary Loot
+        </button>
+        <button class="btn btn-secondary" i18n="@@button.browse">
+          Browse Artifacts
+        </button>
+        <button class="btn btn-accent" i18n="@@button.settings">
+          Settings
+        </button>
       </div>
     </div>
   </main>
