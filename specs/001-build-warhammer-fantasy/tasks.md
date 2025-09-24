@@ -48,15 +48,17 @@
 - [x] T011 [P] Create session management service for GUID generation and cooldown tracking in frontend/src/app/services/session.service.ts
 - [x] T012 [P] Create currency formatting service for penny conversion (12p=1s, 20s=1gc) in frontend/src/app/services/currency.service.ts
 
-## Phase 3.4: Angular i18n Setup (T013-T015)
+## Phase 3.4: Runtime i18n Setup (T013-T015) - ⚠️ IMPLEMENTATION CHANGED
 
-- [x] T013 [P] Extract translatable strings and create base messages.xlf file
-- [x] T014 [P] Create English translations in frontend/src/locale/messages.en.xlf
-- [x] T015 [P] Create Polish translations in frontend/src/locale/messages.pl.xlf
+- [x] T013 [P] ~~Extract translatable strings and create base messages.xlf file~~ → **REPLACED**: Created I18nService with signal-based reactive translations
+- [x] T014 [P] ~~Create English translations in frontend/src/locale/messages.en.xlf~~ → **REPLACED**: Embedded English translations in I18nService
+- [x] T015 [P] ~~Create Polish translations in frontend/src/locale/messages.pl.xlf~~ → **REPLACED**: Embedded Polish translations in I18nService
+
+**Implementation Note**: Switched from Angular's compile-time i18n to custom runtime translation system to enable dynamic language switching without build-time compilation per language.
 
 ## Phase 3.5: Angular Components - Basic UI (T016-T021)
 
-- [x] T016 [P] Create language selector dropdown component in frontend/src/app/components/language-selector/
+- [x] T016 [P] Create language selector dropdown component in frontend/src/app/components/language-selector/ → **IMPLEMENTATION**: Created with runtime i18n integration, Material Design dropdown, English/Polish support with flag emojis
 - [ ] T017 [P] Create wealth level selector component in frontend/src/app/components/wealth-selector/
 - [ ] T018 [P] Create location input component with validation in frontend/src/app/components/location-input/
 - [ ] T019 [P] Create generate button component with loading states in frontend/src/app/components/generate-button/
@@ -80,6 +82,78 @@
 - [ ] T028 [P] Create unit tests for services using Jasmine in frontend/src/app/services/\*.spec.ts
 - [ ] T029 [P] Create component tests using Angular Testing Library in frontend/src/app/components/\*_/_.spec.ts
 - [ ] T030 Create end-to-end test for complete loot generation workflow using Protractor/Cypress
+
+## Architectural Decisions & Implementation Changes
+
+### i18n Implementation: Angular i18n → Custom Runtime Translation System
+
+**Decision Date**: September 24, 2025  
+**Affected Tasks**: T013, T014, T015, T016
+
+**Original Plan**: Use Angular's compile-time i18n with separate .xlf files for English and Polish translations
+
+**User Requirement**: "I don't like this approach at all, I want to be able to dynamically switch the language"
+
+**Implementation Change**:
+
+- **FROM**: Angular i18n with compile-time translation extraction and multiple builds
+- **TO**: Custom I18nService with Angular Signals for reactive runtime translation switching
+
+**Technical Details**:
+
+1. **I18nService** (`frontend/src/app/services/i18n.service.ts`):
+
+   - Signal-based reactive state management (`currentLanguage` signal)
+   - Embedded translations for English and Polish
+   - localStorage persistence for user preference
+   - Methods: `switchLanguage()`, `translate()`, `getAvailableLanguages()`, `getCurrentLanguageInfo()`
+
+2. **TranslatePipe** (`frontend/src/app/pipes/translate.pipe.ts`):
+
+   - Impure pipe for template usage
+   - Reactive to language changes via I18nService signal
+   - Usage: `{{ 'common.generate' | translate }}`
+
+3. **LanguageSelectorComponent** (`frontend/src/app/components/language-selector/`):
+   - Material Design dropdown with flag emojis (🇬🇧 English, 🇵🇱 Polski)
+   - Integrated with I18nService for seamless switching
+   - Responsive design with hover effects
+
+**Benefits Achieved**:
+
+- ✅ **Dynamic Switching**: Instant language changes without page reload
+- ✅ **Single Build**: No need for multiple language-specific builds
+- ✅ **Better UX**: Immediate UI updates when language changes
+- ✅ **Persistence**: User preference saved across browser sessions
+- ✅ **Simplified Deployment**: Single build artifact reduces complexity
+- ✅ **Reactive Updates**: Angular Signals ensure UI consistency
+
+**Testing Configuration**:
+
+- Added headless Chrome testing with `karma.conf.js`
+- npm scripts: `test:headless` and `test:ci` for CI/CD pipelines
+- All unit tests updated with proper I18nService mocks
+
+**Files Modified**:
+
+```
+frontend/src/app/
+├── services/i18n.service.ts                    # Core translation service
+├── pipes/translate.pipe.ts                     # Template translation pipe
+├── components/language-selector/
+│   ├── language-selector.component.ts          # Dropdown component
+│   ├── language-selector.component.html        # Material Design template
+│   ├── language-selector.component.scss        # Responsive styling
+│   └── language-selector.component.spec.ts     # Unit tests
+├── app.component.html                          # Updated with selector
+└── app.component.spec.ts                       # Updated test mocks
+```
+
+**Performance Impact**:
+
+- Bundle size reduction: No Angular i18n dependencies
+- Runtime performance: Minimal impact due to simple key-value lookup
+- Memory usage: Translations embedded in service (< 5KB total)
 
 ## Dependencies
 

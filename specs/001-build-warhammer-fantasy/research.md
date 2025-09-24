@@ -140,63 +140,96 @@ var systemMessage = language == "pl"
 
 ### 6. Frontend Internationalization Strategy
 
-**Decision**: Angular i18n with separate translation files for UI, backend handles content language
+**Decision**: ~~Angular i18n with separate translation files for UI~~ → **UPDATED**: Custom runtime i18n service with signal-based reactive translations, backend handles content language
 
 **Rationale**:
 
-- Angular i18n is the official internationalization solution for Angular
-- Built into Angular CLI with excellent tooling support
-- Separation of concerns: Frontend manages UI language, backend generates content in requested language
-- Compile-time optimization with Angular's build process
-- TypeScript support with type-safe translation keys
-- Automatic bundle splitting by language
-- Works seamlessly with Angular's template system and reactive forms
-- Better performance than runtime translation libraries
+- ~~Angular i18n is the official internationalization solution for Angular~~ → **CHANGED**: User requirement for dynamic language switching necessitated runtime approach
+- ~~Built into Angular CLI with excellent tooling support~~ → **REPLACED**: Custom lightweight service tailored to specific needs
+- Separation of concerns maintained: Frontend manages UI language dynamically, backend generates content in requested language
+- ~~Compile-time optimization with Angular's build process~~ → **REPLACED**: Runtime flexibility with instant language switching
+- Angular Signals provide reactive updates throughout the application
+- localStorage persistence maintains user language preference across browser sessions
+- ~~Automatic bundle splitting by language~~ → **REPLACED**: Single build with embedded translations for faster deployment
 
 **Alternatives Considered**:
 
-- ngx-translate: Runtime translation but larger bundle size and runtime overhead
-- Transloco: Good alternative but Angular i18n is official and more mature
-- Custom translation solution: Reinventing the wheel, poor developer experience
+- ~~Angular i18n: Official but compile-time approach incompatible with dynamic switching~~
+- ngx-translate: Runtime translation but adds unnecessary dependency and bundle size
+- Transloco: Good alternative but custom solution provides better control
+- **Custom translation solution: IMPLEMENTED** - Lightweight, reactive, perfectly suited to requirements
 
 **Implementation Pattern**:
 
 ```typescript
-// Component usage
-import { Component } from "@angular/core";
+// I18nService with Angular Signals for reactivity
+@Injectable({ providedIn: "root" })
+export class I18nService {
+  private currentLanguageSignal = signal<string>("en");
 
+  get currentLanguage() {
+    return this.currentLanguageSignal.asReadonly();
+  }
+
+  switchLanguage(language: string): void {
+    this.currentLanguageSignal.set(language);
+    localStorage.setItem("preferred-language", language);
+  }
+
+  translate(key: string): string {
+    const lang = this.currentLanguage();
+    return this.translations[lang]?.[key] || key;
+  }
+}
+
+// Component usage with TranslatePipe
 @Component({
   template: `
-    <button (click)="handleGenerate()" i18n="@@generate-button">
-      Generate Loot
+    <button (click)="handleGenerate()">
+      {{ "common.generate" | translate }}
     </button>
+    <mat-select>
+      <mat-option [value]="lang.code" *ngFor="let lang of languages">
+        {{ lang.label }}
+      </mat-option>
+    </mat-select>
   `,
 })
 export class LootGeneratorComponent {
-  // Component logic
+  constructor(public i18nService: I18nService) {}
 }
 ```
 
-**Translation File Structure**:
+**Translation Structure**:
 
+```typescript
+// Embedded translations for better performance
+private translations = {
+  en: {
+    'app.title': 'Warhammer Fantasy Loot Generator',
+    'common.generate': 'Generate Loot',
+    'common.language': 'Language',
+    'wealth.common': 'Common',
+    'wealth.noble': 'Noble'
+  },
+  pl: {
+    'app.title': 'Generator Łupów Warhammer Fantasy',
+    'common.generate': 'Generuj Łupy',
+    'common.language': 'Język',
+    'wealth.common': 'Pospolity',
+    'wealth.noble': 'Szlachetny'
+  }
+};
 ```
-src/
-├── locale/
-│   ├── messages.en.xlf    # English UI translations
-│   └── messages.pl.xlf    # Polish UI translations
-└── assets/
-    └── i18n/
-        ├── en.json        # Wealth levels, gaming terminology
-        └── pl.json        # Polish gaming terminology
-```
 
-**Benefits for Separation of Concerns**:
+**Benefits of Runtime Approach**:
 
-- UI language changes instantly without backend calls
-- Backend generates content in any language regardless of UI language
-- User can have Polish UI but request English loot content
-- Translation management tools work seamlessly with Angular's extraction tools
-- Better performance: UI translations bundled at build time, content always fresh
+- **Dynamic Switching**: Users can switch languages instantly without page reload
+- **Single Build**: No need for multiple language-specific builds or deployment complexity
+- **Reactive Updates**: Angular Signals ensure all UI updates immediately when language changes
+- **Persistent Preference**: localStorage maintains user choice across browser sessions
+- **Better UX**: Immediate language switching provides superior user experience
+- **Simplified Deployment**: Single build artifact reduces hosting complexity
 
 ### 7. Free Hosting Deployment Architecture
 

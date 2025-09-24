@@ -5,12 +5,13 @@
 
 ## Internationalization Architecture
 
-**Unified Language Selection**: This data model implements a simple, unified language approach:
+**Unified Language Selection**: This data model implements a simple, unified language approach with dynamic runtime switching:
 
-- **Frontend**: React i18next handles UI element translations (buttons, labels, form fields) based on user's selected language
+- **Frontend**: Custom I18nService with Angular Signals handles UI element translations (buttons, labels, form fields) with instant language switching based on user selection
 - **Backend**: Receives the same selected language in API requests and passes it to OpenAI for localized loot content
-- **User Experience**: User selects one language (English or Polish) which controls both UI display and loot generation
+- **User Experience**: User selects one language (English or Polish) which controls both UI display and loot generation, with immediate UI updates and localStorage persistence
 - **Language Field**: All `Language` properties in entities refer to the user's selected language for both UI and content
+- **Implementation**: Runtime translation system allows dynamic language switching without page reloads or multiple builds
 
 ## Core Entities
 

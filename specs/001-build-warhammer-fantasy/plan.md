@@ -41,12 +41,12 @@
 
 ## Summary
 
-Build a responsive web application that generates thematic, lore-appropriate loot for Warhammer Fantasy Roleplay Game Masters. The application features an Angular frontend with separated internationalization (Angular i18n for UI elements), ASP.NET Core Web API backend handling OpenAI integration for localized content generation, Qdrant vector database for internal semantic search of Warhammer lore during generation, cooldown timer management, and comprehensive testing. Technical approach emphasizes modular architecture with clear separation between frontend UI language management and backend content generation language, automatic prompt enrichment via lore embeddings, and deployment to free hosting platforms.
+Build a responsive web application that generates thematic, lore-appropriate loot for Warhammer Fantasy Roleplay Game Masters. The application features an Angular frontend with custom runtime internationalization system for dynamic language switching, ASP.NET Core Web API backend handling OpenAI integration for localized content generation, Qdrant vector database for internal semantic search of Warhammer lore during generation, cooldown timer management, and comprehensive testing. Technical approach emphasizes modular architecture with clear separation between frontend UI language management (runtime switching) and backend content generation language, automatic prompt enrichment via lore embeddings, and deployment to free hosting platforms.
 
 ## Technical Context
 
 **Language/Version**: C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+)
-**Primary Dependencies**: ASP.NET Core Web API, Angular, Angular Material, Angular i18n, OpenAI .NET SDK, Qdrant .NET client
+**Primary Dependencies**: ASP.NET Core Web API, Angular, Angular Material, Custom Runtime i18n Service, OpenAI .NET SDK, Qdrant .NET client
 **Storage**: Qdrant Cloud (vector database), in-memory caching for cooldowns
 **Testing**: xUnit (backend), Jasmine + Karma (Angular frontend)
 **Target Platform**: Web browsers (responsive), Azure App Service (backend), Angular hosting services (frontend)
