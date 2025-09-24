@@ -17,12 +17,8 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "pl",
+        "sourceLocale": "en",
         "locales": {
-          "en": {
-            "translation": "src/locale/messages.en.xlf",
-            "baseHref": ""
-          },
           "pl": {
             "translation": "src/locale/messages.pl.xlf",
             "baseHref": ""
@@ -71,12 +67,6 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            },
-            "en": {
-              "aot": true,
-              "outputPath": "dist/en/",
-              "i18nMissingTranslation": "error",
-              "localize": ["en"]
             },
             "pl": {
               "aot": true,

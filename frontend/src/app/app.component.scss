@@ -1,0 +1,340 @@
+.app-container {
+  min-height: 100vh;
+  background: var(--wf-dark-bg);
+  color: var(--wf-text-light);
+}
+
+.app-header {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-bottom: 2px solid var(--wf-accent);
+  padding: 2rem 0;
+  text-align: center;
+
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .app-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(45deg, var(--wf-gold), var(--wf-silver));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .title-icon {
+      font-size: 2.5rem;
+      filter: drop-shadow(0 0 10px var(--wf-gold));
+    }
+
+    .title-subtitle {
+      font-size: 1.2rem;
+      color: var(--wf-bronze);
+      font-weight: normal;
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .app-description {
+    font-size: 1.2rem;
+    color: var(--wf-text-light);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.theme-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  .color-item {
+    text-align: center;
+
+    .color-swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      margin: 0 auto 0.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &.gold .color-swatch {
+      background: var(--wf-gold);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+
+    &.silver .color-swatch {
+      background: var(--wf-silver);
+      box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+    }
+
+    &.bronze .color-swatch {
+      background: var(--wf-bronze);
+      box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);
+    }
+
+    &.accent .color-swatch {
+      background: var(--wf-accent);
+      box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+    }
+
+    span {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.sample-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.loot-card {
+  background: var(--wf-card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+  }
+
+  &.legendary {
+    border-left-color: var(--wf-gold);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+
+    .card-header h3 {
+      color: var(--wf-gold);
+    }
+
+    .rarity-badge {
+      color: var(--wf-gold);
+    }
+  }
+
+  &.rare {
+    border-left-color: var(--wf-silver);
+    box-shadow: 0 4px 20px rgba(192, 192, 192, 0.2);
+
+    .card-header h3 {
+      color: var(--wf-silver);
+    }
+
+    .rarity-badge {
+      color: var(--wf-silver);
+    }
+  }
+
+  &.common {
+    border-left-color: var(--wf-bronze);
+    box-shadow: 0 4px 20px rgba(205, 127, 50, 0.2);
+
+    .card-header h3 {
+      color: var(--wf-bronze);
+    }
+
+    .rarity-badge {
+      color: var(--wf-bronze);
+    }
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .rarity-badge {
+      font-size: 1.2rem;
+      filter: drop-shadow(0 0 6px currentColor);
+    }
+  }
+
+  .card-content {
+    p {
+      margin: 0;
+      line-height: 1.6;
+      color: var(--wf-text-light);
+      opacity: 0.9;
+    }
+  }
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  &.btn-primary {
+    background: linear-gradient(135deg, var(--wf-gold), #b8941f);
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    }
+  }
+
+  &.btn-secondary {
+    background: linear-gradient(135deg, var(--wf-silver), #a0a0a0);
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(192, 192, 192, 0.6);
+    }
+  }
+
+  &.btn-accent {
+    background: linear-gradient(135deg, var(--wf-accent), #6d3410);
+    color: var(--wf-text-light);
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.4);
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(139, 69, 19, 0.6);
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .app-header .app-title {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .title-subtitle {
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+  .main-content {
+    padding: 2rem 1rem;
+  }
+
+  .color-palette {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sample-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+
+    .btn {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 1.5rem 0;
+
+    .app-title {
+      font-size: 1.8rem;
+
+      .title-icon {
+        font-size: 2rem;
+      }
+    }
+
+    .app-description {
+      font-size: 1rem;
+    }
+  }
+
+  .color-palette .color-item .color-swatch {
+    width: 60px;
+    height: 60px;
+  }
+}
