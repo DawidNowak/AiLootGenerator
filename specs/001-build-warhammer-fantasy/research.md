@@ -55,29 +55,36 @@ services.AddSingleton<QdrantClient>(provider =>
 
 ### 3. Frontend UI Framework Decision
 
-**Decision**: Material-UI (MUI) for React components
+**Decision**: Angular Material for Angular components
 
 **Rationale**:
 
-- Comprehensive component library with built-in responsive design
-- Excellent TypeScript support and type definitions
+- Official Angular component library with built-in responsive design
+- Excellent TypeScript support and type definitions (Angular is TypeScript-first)
 - Strong theming system for consistent visual design
-- Active development and large community
+- Active development and Google backing
 - Better accessibility (a11y) support out of the box
 - Gaming-friendly dark theme options
+- Seamless integration with Angular's dependency injection and reactive forms
+- Angular 18+ with TypeScript 5.5+ provides latest performance improvements and features
 
 **Alternatives Considered**:
 
-- React Bootstrap: Less modern, requires more custom styling
-- Ant Design: Heavy bundle size, design too enterprise-focused
-- Chakra UI: Smaller ecosystem, fewer gaming-appropriate components
+- React with Material-UI: User specifically requested Angular for simplicity
+- Angular with Bootstrap: Less modern, requires more custom styling
+- PrimeNG: Good but heavier bundle size, more enterprise-focused
 - Custom CSS: Too time-consuming, accessibility challenges
 
 **Implementation Pattern**:
 
-```jsx
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+```typescript
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+
+@NgModule({
+  imports: [MatButtonModule, MatCardModule, MatInputModule]
+})
 ```
 
 ### 4. ASP.NET Core In-Memory Caching for Cooldowns
@@ -133,61 +140,40 @@ var systemMessage = language == "pl"
 
 ### 6. Frontend Internationalization Strategy
 
-**Decision**: React i18next with separate translation files for UI, backend handles content language
+**Decision**: Angular i18n with separate translation files for UI, backend handles content language
 
 **Rationale**:
 
-- React i18next is the industry standard for React internationalization
+- Angular i18n is the official internationalization solution for Angular
+- Built into Angular CLI with excellent tooling support
 - Separation of concerns: Frontend manages UI language, backend generates content in requested language
-- Namespace support allows organized translation management
-- Lazy loading of translation files optimizes bundle size
+- Compile-time optimization with Angular's build process
 - TypeScript support with type-safe translation keys
-- Rich ecosystem with pluralization, interpolation, and context features
-- Works seamlessly with React hooks and functional components
+- Automatic bundle splitting by language
+- Works seamlessly with Angular's template system and reactive forms
+- Better performance than runtime translation libraries
 
 **Alternatives Considered**:
 
-- React Intl (FormatJS): More complex setup, heavier bundle size
-- Polyglot.js: Simpler but lacks React-specific optimizations
+- ngx-translate: Runtime translation but larger bundle size and runtime overhead
+- Transloco: Good alternative but Angular i18n is official and more mature
 - Custom translation solution: Reinventing the wheel, poor developer experience
-- Lingui: Good TypeScript support but smaller community
 
 **Implementation Pattern**:
 
-```jsx
-// i18n.js configuration
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-
-i18n.use(initReactI18next).init({
-  lng: "en",
-  fallbackLng: "en",
-  ns: ["common", "loot"],
-  defaultNS: "common",
-  resources: {
-    en: {
-      common: { generateButton: "Generate Loot", location: "Location" },
-      loot: { wealthLevels: { common: "Common", noble: "Noble" } },
-    },
-    pl: {
-      common: { generateButton: "Generuj Łupy", location: "Lokalizacja" },
-      loot: { wealthLevels: { common: "Pospolity", noble: "Szlachecki" } },
-    },
-  },
-});
-
+```typescript
 // Component usage
-import { useTranslation } from "react-i18next";
+import { Component } from "@angular/core";
 
-function LootGenerator() {
-  const { t, i18n } = useTranslation(["common", "loot"]);
-
-  const handleLanguageChange = (newLang) => {
-    i18n.changeLanguage(newLang);
-    // Language selection persists for UI, sent to backend in generation request
-  };
-
-  return <Button onClick={handleGenerate}>{t("common:generateButton")}</Button>;
+@Component({
+  template: `
+    <button (click)="handleGenerate()" i18n="@@generate-button">
+      Generate Loot
+    </button>
+  `,
+})
+export class LootGeneratorComponent {
+  // Component logic
 }
 ```
 
@@ -195,13 +181,13 @@ function LootGenerator() {
 
 ```
 src/
-├── locales/
-│   ├── en/
-│   │   ├── common.json     # UI elements, buttons, labels
-│   │   └── loot.json       # Wealth levels, gaming terminology
-│   └── pl/
-│       ├── common.json     # Polish UI translations
-│       └── loot.json       # Polish gaming terminology
+├── locale/
+│   ├── messages.en.xlf    # English UI translations
+│   └── messages.pl.xlf    # Polish UI translations
+└── assets/
+    └── i18n/
+        ├── en.json        # Wealth levels, gaming terminology
+        └── pl.json        # Polish gaming terminology
 ```
 
 **Benefits for Separation of Concerns**:
@@ -209,17 +195,17 @@ src/
 - UI language changes instantly without backend calls
 - Backend generates content in any language regardless of UI language
 - User can have Polish UI but request English loot content
-- Translation management tools (Weblate, Crowdin) work seamlessly
-- Better performance: UI translations cached, content always fresh
+- Translation management tools work seamlessly with Angular's extraction tools
+- Better performance: UI translations bundled at build time, content always fresh
 
 ### 7. Free Hosting Deployment Architecture
 
-**Decision**: Azure App Service (backend) + Vercel (frontend) + Qdrant Cloud
+**Decision**: Azure App Service (backend) + Angular hosting service (frontend) + Qdrant Cloud
 
 **Rationale**:
 
 - Azure App Service free tier supports .NET Core with decent limits
-- Vercel optimized for React deployments with excellent CI/CD
+- Angular hosting services (Netlify, Vercel, Firebase Hosting) optimized for Angular deployments with excellent CI/CD
 - Qdrant Cloud free tier sufficient for lore database (1GB storage)
 - Geographic distribution improves response times
 - Each service can scale independently
@@ -241,9 +227,9 @@ src/
 
 All technology choices support the constitutional requirements:
 
-1. **Code Quality**: TypeScript + C# provide strong typing support
+1. **Code Quality**: TypeScript 5.5+ + C# provide strong typing support
 2. **Testing Excellence**: Jest/RTL + xUnit enable comprehensive test coverage
-3. **User Experience**: MUI + i18next ensures consistent, accessible multilingual design
+3. **User Experience**: Angular Material + i18n ensures consistent, accessible multilingual design
 4. **Performance**: In-memory caching + semantic search enable <5s AI-powered responses
 5. **Internationalization**: Separated frontend (UI) and backend (content) language handling for optimal user experience
 
@@ -252,6 +238,7 @@ All technology choices support the constitutional requirements:
 - **Clear Separation**: Frontend manages UI language switching, backend generates content in requested language
 - **Performance**: UI language changes instant, content generation optimized
 - **Flexibility**: Users can mix UI and content languages (e.g., Polish UI with English loot)
+- **Modern Stack**: Angular 18+ with TypeScript 5.5+ provides latest performance and developer experience improvements
 - **Maintainability**: Translation files organized by feature namespace
 - **Scalability**: Easy to add new languages without backend changes
 

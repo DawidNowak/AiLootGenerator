@@ -1,4 +1,4 @@
-# Tasks: Warhammer Fantasy Loot Generator
+# Tasks: Warhammer Fantasy Loot Generator - Angular Frontend
 
 **Input**: Design documents from `/specs/001-build-warhammer-fantasy/`
 **Prerequisites**: plan.md ✅, research.md ✅, data-model.md ✅, contracts/ ✅, quickstart.md ✅
@@ -7,141 +7,162 @@
 
 ```
 1. Load plan.md from feature directory ✅
-   → Tech stack: C# 8.0+ (ASP.NET Core 6.0+), React 18+, OpenAI .NET SDK, Qdrant .NET client
+   → Tech stack: C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+), OpenAI .NET SDK, Qdrant .NET client
    → Structure: Web application (frontend + backend)
+   → Backend: COMPLETE AND FUNCTIONAL ✅
 2. Load design documents ✅:
    → data-model.md: LootItem, GenerationRequest, LoreItem entities
    → contracts/openapi.yaml: POST /api/loot/generate, GET /api/health endpoints
-   → research.md: OpenAI .NET SDK, Qdrant client, Material-UI decisions
+   → research.md: OpenAI .NET SDK, Qdrant client, Angular Material decisions
    → quickstart.md: 7 user stories + edge cases
-3. Generate tasks by category: Setup → Tests → Core → Integration → Polish
+3. Generate Angular frontend tasks only (backend is complete)
 4. Apply task rules: Different files = [P], Tests before implementation (TDD)
-5. Number tasks sequentially (T001-T029)
-6. Validate completeness: All contracts tested, all entities modeled
+5. Number tasks sequentially (T001-T030)
+6. Validate completeness: All UI components, all API integration
 ```
 
 ## Format: `[ID] [P?] Description`
 
 - **[P]**: Can run in parallel (different files, no dependencies)
-- Paths assume web app structure: `backend/src/`, `frontend/src/`
+- Paths assume web app structure: `frontend/src/`
+- **Backend is COMPLETE**: No backend tasks included
 
-## Phase 3.1: Setup (T001-T004)
+## Phase 3.1: Angular Frontend Setup (T001-T005)
 
-- [x] T001 Create project structure per plan.md (backend/ and frontend/ directories)
-- [x] T002 Initialize backend ASP.NET Core 6.0 project with OpenAI .NET SDK, Qdrant .NET client dependencies
-- [x] T003 Initialize frontend React 18 project with Material-UI, React i18next, TypeScript dependencies
-- [x] T004 Create example Warhammer items JSON seed data in backend/Data/weapons.json
+- [ ] T001 Initialize Angular 18+ project with TypeScript 5.5+ in frontend/ directory
+- [ ] T002 Install Angular Material, Angular CDK, and Angular Animations dependencies
+- [ ] T003 Configure Angular i18n with extraction and build scripts for en/pl locales
+- [ ] T004 Setup Angular Material theme and global styles in frontend/src/styles.scss
+- [ ] T005 [P] Create environment configuration files for API endpoints in frontend/src/environments/
 
-## Phase 3.2: Core Implementation
+## Phase 3.2: Angular Type Definitions (T006-T008)
 
-### Backend Models (Data-Model Entities)
+- [ ] T006 [P] Create TypeScript interfaces for LootItem in frontend/src/app/models/loot-item.interface.ts
+- [ ] T007 [P] Create GenerationRequest interface with Guid sessionId in frontend/src/app/models/generation-request.interface.ts
+- [ ] T008 [P] Create WealthLevel enum with numeric values (Rubbish=1, Poor=2, Common=3, Wealthy=4, Noble=5) in frontend/src/app/models/wealth-level.enum.ts
 
-- [x] T005 [P] LootItem model in backend/src/Models/LootItem.cs
-- [x] T006 [P] GenerationRequest model in backend/src/Models/GenerationRequest.cs
-- [x] T007 [P] LoreItem model in backend/src/Models/LoreItem.cs
-- [x] T008 [P] WealthLevel enum in backend/src/Models/WealthLevel.cs
+## Phase 3.3: Core Angular Services (T009-T012)
 
-### Backend Services (Core Business Logic)
+- [ ] T009 [P] Create HTTP client service with interceptors in frontend/src/app/services/http-client.service.ts
+- [ ] T010 [P] Create loot generation API service with proper GUID handling in frontend/src/app/services/loot-api.service.ts
+- [ ] T011 [P] Create session management service for GUID generation and cooldown tracking in frontend/src/app/services/session.service.ts
+- [ ] T012 [P] Create currency formatting service for penny conversion (12p=1s, 20s=1gc) in frontend/src/app/services/currency.service.ts
 
-- [x] T009 [P] OpenAIService for loot generation with tests in backend/src/Services/OpenAIService.cs
-- [x] T010 [P] QdrantService for semantic search with tests in backend/src/Services/QdrantService.cs
-- [x] T011 [P] CooldownService for session management with tests in backend/src/Services/CooldownService.cs
-- [x] T012 [P] LootGenerationService orchestrating AI + vector search with tests in backend/src/Services/LootGenerationService.cs
+## Phase 3.4: Angular i18n Setup (T013-T015)
 
-### Backend Controllers (API Endpoints)
+- [ ] T013 [P] Extract translatable strings and create base messages.xlf file
+- [ ] T014 [P] Create English translations in frontend/src/locale/messages.en.xlf
+- [ ] T015 [P] Create Polish translations in frontend/src/locale/messages.pl.xlf
 
-- [x] T013 GET /api/health endpoint with tests in backend/src/Controllers/HealthController.cs
-- [x] T014 POST /api/loot/generate endpoint with OpenAI/Qdrant service registration and tests in backend/src/Controllers/LootController.cs + backend/src/Program.cs
+## Phase 3.5: Angular Components - Basic UI (T016-T021)
 
-### Frontend Foundation & Types (T015-T019)
+- [ ] T016 [P] Create language selector dropdown component in frontend/src/app/components/language-selector/
+- [ ] T017 [P] Create wealth level selector component in frontend/src/app/components/wealth-selector/
+- [ ] T018 [P] Create location input component with validation in frontend/src/app/components/location-input/
+- [ ] T019 [P] Create generate button component with loading states in frontend/src/app/components/generate-button/
+- [ ] T020 [P] Create cooldown timer component in frontend/src/app/components/cooldown-timer/
+- [ ] T021 [P] Create error message display component in frontend/src/app/components/error-message/
 
-- [x] T015 [P] Create TypeScript interfaces in frontend/src/types/index.ts
-- [x] T016 [P] Create API types in frontend/src/types/api.ts
-- [x] T017 [P] Setup i18next configuration in frontend/src/localization/i18n.ts
-- [x] T018 [P] Create English translation files in frontend/src/localization/en/
-- [x] T019 [P] Create Polish translation files in frontend/src/localization/pl/
+## Phase 3.6: Angular Components - Results Display (T022-T025)
 
-### Frontend Core Utilities (T020-T025)
+- [ ] T022 [P] Create loot item card component in frontend/src/app/components/loot-item/
+- [ ] T023 [P] Create loot results list component in frontend/src/app/components/loot-list/
+- [ ] T024 [P] Create price toggle switch component in frontend/src/app/components/price-toggle/
+- [ ] T025 [P] Create loading spinner component in frontend/src/app/components/loading-spinner/
 
-- [x] T020 [P] Create session UUID generator in frontend/src/utils/sessionManager.ts
-- [x] T021 [P] Add sessionStorage helpers to session manager
-- [x] T022 [P] Create currency conversion constants in frontend/src/utils/currencyFormatter.ts
-- [x] T023 [P] Add penny-to-display format functions to currency formatter
-- [x] T024 [P] Create HTTP client configuration in frontend/src/services/httpClient.ts
-- [x] T025 [P] Add error handling wrapper to HTTP client
+## Phase 3.7: Main Container Components (T026-T027)
 
-### Frontend API Services (T026-T029)
+- [ ] T026 Create loot generation form container in frontend/src/app/components/loot-form/
+- [ ] T027 Create main app container component integrating all parts in frontend/src/app/components/loot-generator/
 
-- [x] T026 [P] Create API endpoints configuration in frontend/src/services/endpoints.ts
-- [x] T027 [P] Create health check API function in frontend/src/services/healthService.ts
-- [x] T028 [P] Create loot generation API function in frontend/src/services/lootService.ts
-- [x] T029 [P] Add request/response validation to API services
+## Phase 3.8: Angular Testing (T028-T030)
 
-### Frontend Basic Components (T030-T035)
-
-- [x] T030 [P] Create basic LanguageSelector dropdown in frontend/src/components/LanguageSelector.tsx
-- [x] T031 [P] Add i18next integration to LanguageSelector
-- [x] T032 [P] Create WealthLevel dropdown in frontend/src/components/WealthLevelSelector.tsx
-- [x] T033 [P] Create location input field in frontend/src/components/LocationInput.tsx
-- [x] T034 [P] Create generate button in frontend/src/components/GenerateButton.tsx
-- [x] T035 [P] Add disabled state logic to GenerateButton
-
-### Frontend Display Components (T036-T041)
-
-- [x] T036 [P] Create LootItem display component in frontend/src/components/LootItem.tsx
-- [x] T037 [P] Add currency formatting to LootItem component
-- [x] T038 [P] Create LootList container in frontend/src/components/LootList.tsx
-- [x] T039 [P] Create PriceToggle switch in frontend/src/components/PriceToggle.tsx
-- [x] T040 [P] Add hide/show price logic to LootList
-- [x] T041 [P] Create loading spinner in frontend/src/components/LoadingSpinner.tsx
-
-### Frontend Hooks & State (T042-T047)
-
-- [x] T042 [P] Create countdown timer hook in frontend/src/hooks/useCountdown.ts
-- [x] T043 [P] Create cooldown state hook in frontend/src/hooks/useCooldown.ts
-- [x] T044 [P] Create CooldownTimer component in frontend/src/components/CooldownTimer.tsx
-- [x] T045 [P] Create form validation hook in frontend/src/hooks/useFormValidation.ts
-- [x] T046 [P] Create loot generation hook in frontend/src/hooks/useLootGeneration.ts
-- [x] T047 [P] Create language switching hook in frontend/src/hooks/useLanguage.ts
-
-### Frontend Form & Messages (T048-T052)
-
-- [x] T048 [P] Create error message component in frontend/src/components/ErrorMessage.tsx
-- [x] T049 [P] Create status message component in frontend/src/components/StatusMessage.tsx
-- [x] T050 [P] Create form container in frontend/src/components/LootForm.tsx
-- [x] T051 [P] Add form submission logic to LootForm
-- [x] T052 [P] Connect form to API services
-
-### Frontend Main Assembly (T053-T057)
-
-- [x] T053 Create LootGenerator main container in frontend/src/components/LootGenerator.tsx
-- [x] T054 Add form section to LootGenerator
-- [x] T055 Add results section to LootGenerator
-- [x] T056 Add error handling to LootGenerator
-- [x] T057 Add responsive layout to LootGenerator
-
-### Frontend Testing (T058-T062)
-
-- [x] T058 [P] Create unit tests for utility functions in frontend/src/utils/
-- [x] T059 [P] Create unit tests for API services in frontend/src/services/
-- [x] T060 [P] Create unit tests for custom hooks in frontend/src/hooks/
-- [x] T061 [P] Create component tests for basic components
-- [x] T062 [P] Create integration tests for main user flow
-
-## Phase 3.3: Integration (T063-T065)
-
-- [ ] T063 Setup IMemoryCache for cooldown management in backend/src/Program.cs
-- [ ] T064 CORS configuration for frontend-backend communication in backend/src/Program.cs
-
-## Phase 3.4: Polish (T066-T068)
-
-- [ ] T065 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
-- [ ] T066 [P] Mobile responsiveness testing and fixes
-- [ ] T067 Run quickstart.md manual testing scenarios validation
+- [ ] T028 [P] Create unit tests for services using Jasmine in frontend/src/app/services/\*.spec.ts
+- [ ] T029 [P] Create component tests using Angular Testing Library in frontend/src/app/components/\*_/_.spec.ts
+- [ ] T030 Create end-to-end test for complete loot generation workflow using Protractor/Cypress
 
 ## Dependencies
 
-- **Setup before Implementation**: T001-T004 → T005-T062
+- **Setup before Implementation**: T001-T005 → T006-T030
+- **Types before Services**: T006-T008 → T009-T012
+- **Services before Components**: T009-T012 → T016-T027
+- **Basic Components before Containers**: T016-T025 → T026-T027
+- **Implementation before Testing**: T006-T027 → T028-T030
+
+## Parallel Execution Examples
+
+```bash
+# Phase 3.2 - Type Definitions (can run in parallel):
+Task: "Create LootItem interface in frontend/src/app/models/loot-item.interface.ts"
+Task: "Create GenerationRequest interface in frontend/src/app/models/generation-request.interface.ts"
+Task: "Create WealthLevel enum in frontend/src/app/models/wealth-level.enum.ts"
+
+# Phase 3.3 - Services (can run in parallel):
+Task: "Create HTTP client service in frontend/src/app/services/http-client.service.ts"
+Task: "Create loot API service in frontend/src/app/services/loot-api.service.ts"
+Task: "Create session service in frontend/src/app/services/session.service.ts"
+Task: "Create currency service in frontend/src/app/services/currency.service.ts"
+
+# Phase 3.5 - Basic Components (can run in parallel):
+Task: "Create language selector in frontend/src/app/components/language-selector/"
+Task: "Create wealth selector in frontend/src/app/components/wealth-selector/"
+Task: "Create location input in frontend/src/app/components/location-input/"
+```
+
+## Notes
+
+- **Backend Status**: ✅ COMPLETE - ASP.NET Core API fully functional
+- **Focus**: Angular frontend only - simple and clean implementation
+- **Angular Version**: 18+ with TypeScript 5.5+ as specified
+- **UI Framework**: Angular Material for consistency and responsiveness
+- **i18n Strategy**: Angular's built-in i18n with compile-time optimization
+- **Testing**: Jasmine + Karma for unit tests, E2E for integration
+- **API Integration**: Connect to existing backend at localhost:5001
+
+## Backend API Endpoints (Already Available)
+
+- ✅ `POST /api/loot/generate` - Generate loot items
+- ✅ `GET /api/health` - Health check endpoint
+- ✅ Cooldown management via GUID session IDs
+- ✅ Bilingual content generation (en/pl)
+- ✅ OpenAI + Qdrant integration complete
+
+## Backend Model Specifications
+
+**GenerationRequest Contract:**
+
+```csharp
+public class GenerationRequest
+{
+    [Required]
+    [StringLength(200, MinimumLength = 1)]
+    public string Location { get; set; }
+
+    [Required]
+    public WealthLevel WealthLevel { get; set; }
+
+    [Required]
+    [RegularExpression("^(en|pl)$")]
+    public string Language { get; set; }
+
+    [Required]
+    public Guid SessionId { get; set; }
+}
+```
+
+**WealthLevel Enum:**
+
+```csharp
+public enum WealthLevel
+{
+    Rubbish = 1,    // 1-12 pennies
+    Poor = 2,       // 13-60 pennies
+    Common = 3,     // 61-240 pennies
+    Wealthy = 4,    // 241-1200 pennies
+    Noble = 5       // 1201+ pennies
+}
+```
+
 - **Models before Services**: T005-T008 → T009-T012
 - **Services before Controllers**: T009-T012 → T013-T014
 - **Frontend Foundation**: T015-T019 → T020-T062

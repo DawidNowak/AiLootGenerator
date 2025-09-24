@@ -1,9 +1,21 @@
 # Implementation Plan: Warhammer Fantasy Loot Generator
 
 **Branch**: `001-build-warhammer-fantasy` | **Date**: September 20, 2025 | **Spec**: [spec.md](./spec.md)
-**Input**: Feature specification from `/specs/001-build-warhammer-fantasy/spec.md`
+**Input**: Feature specification from `/specs/001-build-warhammer-fantasy/sp**Phase Status**:
 
-## Execution Flow (/plan command scope)
+- [x] Phase 0: Research complete (/plan command)
+- [x] Phase 1: Design complete (/plan command)
+- [x] Phase 2: Task planning complete (/plan command - describe approach only)
+- [ ] Phase 3: Tasks generated (/tasks command)
+- [ ] Phase 4: Implementation complete
+- [ ] Phase 5: Validation passed
+
+**Gate Status**:
+
+- [x] Initial Constitution Check: PASS
+- [x] Post-Design Constitution Check: PASS
+- [x] All NEEDS CLARIFICATION resolved
+- [x] Complexity deviations documentedecution Flow (/plan command scope)
 
 ```
 1. Load feature spec from Input path
@@ -29,22 +41,22 @@
 
 ## Summary
 
-Build a responsive web application that generates thematic, lore-appropriate loot for Warhammer Fantasy Roleplay Game Masters. The application features a React.js frontend with separated internationalization (React i18next for UI elements), ASP.NET Core Web API backend handling OpenAI integration for localized content generation, Qdrant vector database for internal semantic search of Warhammer lore during generation, cooldown timer management, and comprehensive testing. Technical approach emphasizes modular architecture with clear separation between frontend UI language management and backend content generation language, automatic prompt enrichment via lore embeddings, and deployment to free hosting platforms.
+Build a responsive web application that generates thematic, lore-appropriate loot for Warhammer Fantasy Roleplay Game Masters. The application features an Angular frontend with separated internationalization (Angular i18n for UI elements), ASP.NET Core Web API backend handling OpenAI integration for localized content generation, Qdrant vector database for internal semantic search of Warhammer lore during generation, cooldown timer management, and comprehensive testing. Technical approach emphasizes modular architecture with clear separation between frontend UI language management and backend content generation language, automatic prompt enrichment via lore embeddings, and deployment to free hosting platforms.
 
 ## Technical Context
 
-**Language/Version**: C# 8.0+ (ASP.NET Core 6.0+), JavaScript ES2020+ (React 18+)
-**Primary Dependencies**: ASP.NET Core Web API, React.js, Material-UI, React i18next, OpenAI .NET SDK, Qdrant .NET client
+**Language/Version**: C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+)
+**Primary Dependencies**: ASP.NET Core Web API, Angular, Angular Material, Angular i18n, OpenAI .NET SDK, Qdrant .NET client
 **Storage**: Qdrant Cloud (vector database), in-memory caching for cooldowns
-**Testing**: xUnit (backend), Jest + React Testing Library (frontend)
-**Target Platform**: Web browsers (responsive), Azure App Service (backend), Vercel (frontend)
+**Testing**: xUnit (backend), Jasmine + Karma (Angular frontend)
+**Target Platform**: Web browsers (responsive), Azure App Service (backend), Angular hosting services (frontend)
 **Project Type**: web (frontend + backend)
 **Performance Goals**: <5s API response time, <2s initial page load, 30s cooldown enforcement
 **Constraints**: Free hosting tier limitations, OpenAI API rate limits, separated UI/content internationalization
 **Scale/Scope**: Single-user sessions, ~10 peak concurrent users, 4-6 items per generation
 
 **Technical Context from User Requirements**:
-Build a full-stack responsive web application called Warhammer Fantasy Loot Generator. Use C# with ASP.NET Core for the backend Web API, handling all logic including OpenAI API calls for loot generation (with prompts that include the selected language for internationalization of generated items in English or Polish), semantic search integration with Qdrant vector database for enriching prompts with Warhammer Fantasy lore, cooldown timer management, and randomization for output variety. For the vector DB, use Qdrant with its .NET client to store and query embedded lore snippets (embeddings via OpenAI's text-embedding model). Frontend should be built with React.js, using responsive components from Material-UI for mobile-friendliness. Structure the backend with controllers for generation endpoints, services for OpenAI and Qdrant interactions, and in-memory caching for cooldowns. For deployment, target free hosting like Azure App Service for backend, Vercel for frontend, and Qdrant Cloud free tier for the DB.
+Build a full-stack responsive web application called Warhammer Fantasy Loot Generator. Use C# with ASP.NET Core for the backend Web API (already functional), handling all logic including OpenAI API calls for loot generation (with prompts that include the selected language for internationalization of generated items in English or Polish), semantic search integration with Qdrant vector database for enriching prompts with Warhammer Fantasy lore, cooldown timer management, and randomization for output variety. For the vector DB, use Qdrant with its .NET client to store and query embedded lore snippets (embeddings via OpenAI's text-embedding model). Frontend should be built with Angular (as simple as possible), using responsive components from Angular Material for mobile-friendliness. Structure the backend with controllers for generation endpoints, services for OpenAI and Qdrant interactions, and in-memory caching for cooldowns. For deployment, target free hosting like Azure App Service for backend, Angular hosting for frontend, and Qdrant Cloud free tier for the DB.
 
 ## Constitution Check
 

@@ -34,14 +34,14 @@ paths:
                   location: "Ubersreik barracks"
                   wealthLevel: "Common"
                   language: "en"
-                  sessionId: "abc123-session"
+                  sessionId: "550e8400-e29b-41d4-a716-446655440000"
               norse_noble:
                 summary: Noble loot in Norscan location (Polish)
                 value:
                   location: "Pracownia norskich magów"
                   wealthLevel: "Noble"
                   language: "pl"
-                  sessionId: "def456-session"
+                  sessionId: "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
       responses:
         "200":
           description: Successfully generated loot items
@@ -91,6 +91,8 @@ paths:
                   value:
                     error: "CooldownActive"
                     message: "Please wait before generating more loot"
+                    details:
+                      sessionId: "550e8400-e29b-41d4-a716-446655440000"
                     remainingSeconds: 15
                     retryAfter: "2025-09-20T14:30:15Z"
         "500":
@@ -144,7 +146,7 @@ components:
           type: string
           minLength: 1
           maxLength: 200
-          description: Description of the in-game location where loot is found
+          description: User-provided location description where loot is found
           example: "Ubersreik barracks"
         wealthLevel:
           $ref: "#/components/schemas/WealthLevel"
@@ -155,9 +157,9 @@ components:
           example: "en"
         sessionId:
           type: string
-          minLength: 1
-          description: User session identifier for cooldown tracking
-          example: "abc123-session"
+          format: uuid
+          description: User session identifier (GUID) for cooldown tracking
+          example: "550e8400-e29b-41d4-a716-446655440000"
 
     GenerationResponse:
       type: object
@@ -214,7 +216,13 @@ components:
     WealthLevel:
       type: string
       enum: ["Rubbish", "Poor", "Common", "Wealthy", "Noble"]
-      description: Five-tier wealth classification system
+      description: |
+        Five-tier wealth classification system:
+        - Rubbish: Junk items, lowest tier (1-12 pennies)
+        - Poor: Peasant scraps, basic items (13-60 pennies)  
+        - Common: Everyday goods, standard quality (61-240 pennies)
+        - Wealthy: Merchant spoils, valuable items (241-1200 pennies)
+        - Noble: Opulent treasures, rare magic items (1201+ pennies)
       example: "Common"
 
     ErrorResponse:
