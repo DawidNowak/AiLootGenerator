@@ -577,3 +577,114 @@
     height: 60px;
   }
 }
+
+// Loot List Component Demo Section
+.loot-list-section {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 45, 45, 0.8) 0%,
+    rgba(26, 26, 26, 0.8) 100%
+  );
+  border: 1px solid var(--wf-accent);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  .list-demo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .list-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .list-demo-wrapper {
+    min-height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 140px;
+
+    &.btn-primary {
+      background: var(--wf-gold);
+      color: var(--wf-dark-bg);
+
+      &:hover:not(:disabled) {
+        background: var(--wf-gold-light);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        background: var(--wf-bronze);
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+
+    &.btn-secondary {
+      background: var(--wf-silver);
+      color: var(--wf-dark-bg);
+
+      &:hover:not(:disabled) {
+        background: var(--wf-silver-light);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        background: var(--wf-bronze);
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+
+    &.btn-accent {
+      background: var(--wf-accent);
+      color: var(--wf-text-light);
+
+      &:hover:not(:disabled) {
+        background: var(--wf-accent-light);
+        transform: translateY(-2px);
+      }
+    }
+
+    &.btn-outline {
+      background: transparent;
+      color: var(--wf-text-light);
+      border: 2px solid var(--wf-bronze);
+
+      &:hover:not(:disabled) {
+        background: var(--wf-bronze);
+        color: var(--wf-dark-bg);
+        transform: translateY(-2px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+}

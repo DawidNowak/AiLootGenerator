@@ -93,7 +93,12 @@ export class I18nService {
                 'item.common.description': 'Bronze-quality item suitable for beginning adventurers.',
                 'item.placeholder': 'No item selected',
                 'currency.expand': 'Show detailed breakdown',
-                'currency.collapse': 'Hide detailed breakdown'
+                'currency.collapse': 'Hide detailed breakdown',
+                'loot.list.title': 'Generated Loot',
+                'loot.list.loading': 'Generating loot items...',
+                'loot.list.empty': 'No loot items generated yet',
+                'loot.list.emptyHint': 'Click the "Generate Loot" button to create thematic items for your location',
+                'loot.list.summary': '{{count}} item generated|{{count}} items generated'
             }
         },
         {
@@ -169,7 +174,12 @@ export class I18nService {
                 'item.common.description': 'Przedmiot jakości brązowej odpowiedni dla początkujących poszukiwaczy przygód.',
                 'item.placeholder': 'Nie wybrano przedmiotu',
                 'currency.expand': 'Pokaż szczegółowy podział',
-                'currency.collapse': 'Ukryj szczegółowy podział'
+                'currency.collapse': 'Ukryj szczegółowy podział',
+                'loot.list.title': 'Wygenerowane Skarby',
+                'loot.list.loading': 'Generowanie przedmiotów...',
+                'loot.list.empty': 'Nie wygenerowano jeszcze żadnych skarbów',
+                'loot.list.emptyHint': 'Kliknij przycisk "Generuj Skarby" aby stworzyć tematyczne przedmioty dla twojej lokalizacji',
+                'loot.list.summary': 'Wygenerowano {{count}} przedmiot|Wygenerowano {{count}} przedmiotów'
             }
         }
     ];

@@ -8,6 +8,7 @@ import { GenerateButtonComponent } from './components/generate-button/generate-b
 import { CooldownTimerComponent } from './components/cooldown-timer/cooldown-timer.component';
 import { ErrorMessageComponent, ErrorInfo } from './components/error-message/error-message.component';
 import { LootItemComponent } from './components/loot-item/loot-item.component';
+import { LootListComponent } from './components/loot-list/loot-list.component';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { WealthLevel } from './models/wealth-level.enum';
 import { LootItem } from './models/loot-item.interface';
@@ -25,6 +26,7 @@ import { LootItem } from './models/loot-item.interface';
     CooldownTimerComponent,
     ErrorMessageComponent,
     LootItemComponent,
+    LootListComponent,
     TranslatePipe
   ],
   templateUrl: './app.component.html',
@@ -74,6 +76,12 @@ export class AppComponent implements OnDestroy {
   ]);
 
   showPriceDetails = signal<boolean>(true);
+
+  // LootList demo state
+  listDemoItems = signal<LootItem[]>([]);
+  listDemoLoading = signal<boolean>(false);
+  showListPrices = signal<boolean>(true);
+  showListFullBreakdown = signal<boolean>(false);
 
   onWealthLevelChange(wealthLevel: WealthLevel): void {
     this.selectedWealthLevel.set(wealthLevel);
@@ -195,6 +203,57 @@ export class AppComponent implements OnDestroy {
 
   clearLootItems(): void {
     this.sampleLootItems.set([]);
+  }
+
+  // LootList demo methods
+  loadListDemo(): void {
+    this.listDemoLoading.set(true);
+    this.listDemoItems.set([]);
+
+    // Simulate API call
+    setTimeout(() => {
+      const demoItems: LootItem[] = [
+        {
+          name: 'Reikland Infantry Sword',
+          description: 'A standard-issue blade carried by soldiers of the Reikland state army. Well-balanced and functional.',
+          valueInPennies: 240,
+          wealthLevel: WealthLevel.Common
+        },
+        {
+          name: 'Jade Wizard\'s Amulet',
+          description: 'A small jade pendant carved with nature symbols. It feels warm to the touch and smells of fresh earth.',
+          valueInPennies: 1200,
+          wealthLevel: WealthLevel.Wealthy
+        },
+        {
+          name: 'Peasant\'s Wooden Bowl',
+          description: 'A simple carved wooden bowl used for eating gruel. Stained and worn from years of use.',
+          valueInPennies: 2,
+          wealthLevel: WealthLevel.Rubbish
+        },
+        {
+          name: 'Emperor\'s Seal Ring',
+          description: 'An ornate gold ring bearing the imperial seal. Only the highest nobles are permitted to wear such regalia.',
+          valueInPennies: 6000,
+          wealthLevel: WealthLevel.Noble
+        }
+      ];
+
+      this.listDemoItems.set(demoItems);
+      this.listDemoLoading.set(false);
+    }, 1500);
+  }
+
+  clearListDemo(): void {
+    this.listDemoItems.set([]);
+  }
+
+  toggleListPrices(): void {
+    this.showListPrices.set(!this.showListPrices());
+  }
+
+  toggleListFullBreakdown(): void {
+    this.showListFullBreakdown.set(!this.showListFullBreakdown());
   }
 
   private startCooldown(): void {

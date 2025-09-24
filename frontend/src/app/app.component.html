@@ -94,6 +94,52 @@
       </div>
     </div>
 
+    <!-- Loot List Component Demo -->
+    <div class="loot-list-section">
+      <h2 class="section-title">Loot List Component</h2>
+      <p class="section-description">
+        Displays multiple loot items in a responsive grid layout with empty
+        states and loading indicators
+      </p>
+
+      <div class="list-demo-container">
+        <div class="list-controls">
+          <button
+            class="btn btn-primary"
+            (click)="loadListDemo()"
+            [disabled]="listDemoLoading()"
+          >
+            {{ listDemoLoading() ? "Loading..." : "Load Demo Items" }}
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            (click)="clearListDemo()"
+            [disabled]="listDemoItems().length === 0 || listDemoLoading()"
+          >
+            Clear Items
+          </button>
+
+          <button class="btn btn-accent" (click)="toggleListPrices()">
+            {{ showListPrices() ? "Hide Prices" : "Show Prices" }}
+          </button>
+
+          <button class="btn btn-outline" (click)="toggleListFullBreakdown()">
+            {{ showListFullBreakdown() ? "Simple View" : "Detailed View" }}
+          </button>
+        </div>
+
+        <div class="list-demo-wrapper">
+          <app-loot-list
+            [items]="listDemoItems()"
+            [isLoading]="listDemoLoading()"
+            [showPrices]="showListPrices()"
+            [showFullBreakdown]="showListFullBreakdown()"
+          ></app-loot-list>
+        </div>
+      </div>
+    </div>
+
     <!-- Loot Item Components Demo -->
     <div class="loot-items-section">
       <h2 class="section-title">Loot Item Components</h2>
