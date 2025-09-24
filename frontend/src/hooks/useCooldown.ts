@@ -196,7 +196,7 @@ export function useCooldown(options: UseCooldownOptions = {}): CooldownResult {
     });
 
     // Derived state
-    const isInCooldown = expiresAt !== null && countdown.remainingSeconds > 0;
+    const isInCooldown = expiresAt !== null && expiresAt > new Date();
 
     // Load initial cooldown state
     useEffect(() => {
@@ -211,6 +211,14 @@ export function useCooldown(options: UseCooldownOptions = {}): CooldownResult {
         }
         setIsLoading(false);
     }, [sessionId]);
+
+    // Sync countdown target date when expiresAt changes
+    useEffect(() => {
+        countdown.setTargetDate(expiresAt);
+        if (expiresAt && autoStart) {
+            countdown.start();
+        }
+    }, [expiresAt, countdown, autoStart]);
 
     // Auto-refresh effect (optional periodic sync with server)
     useEffect(() => {

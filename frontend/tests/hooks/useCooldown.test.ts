@@ -65,7 +65,7 @@ describe('useCooldown', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-        jest.clearAllTimers();
+        jest.useFakeTimers();
         jest.setSystemTime(new Date('2023-01-01T12:00:00Z'));
         mockLocalStorage.clear();
 

@@ -122,23 +122,22 @@
 
 ### Frontend Testing (T058-T062)
 
-- [ ] T058 [P] Create unit tests for utility functions in frontend/src/utils/
-- [ ] T059 [P] Create unit tests for API services in frontend/src/services/
-- [ ] T060 [P] Create unit tests for custom hooks in frontend/src/hooks/
-- [ ] T061 [P] Create component tests for basic components
-- [ ] T062 [P] Create integration tests for main user flow
+- [x] T058 [P] Create unit tests for utility functions in frontend/src/utils/
+- [x] T059 [P] Create unit tests for API services in frontend/src/services/
+- [x] T060 [P] Create unit tests for custom hooks in frontend/src/hooks/
+- [x] T061 [P] Create component tests for basic components
+- [x] T062 [P] Create integration tests for main user flow
 
 ## Phase 3.3: Integration (T063-T065)
 
 - [ ] T063 Setup IMemoryCache for cooldown management in backend/src/Program.cs
-- [ ] T064 Vector database seeding with canonical Warhammer items in backend/src/Services/DatabaseSeedingService.cs
-- [ ] T065 CORS configuration for frontend-backend communication in backend/src/Program.cs
+- [ ] T064 CORS configuration for frontend-backend communication in backend/src/Program.cs
 
 ## Phase 3.4: Polish (T066-T068)
 
-- [ ] T066 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
-- [ ] T067 [P] Mobile responsiveness testing and fixes
-- [ ] T068 Run quickstart.md manual testing scenarios validation
+- [ ] T065 [P] End-to-end test for complete loot generation workflow in frontend/tests/e2e/lootGeneration.spec.ts
+- [ ] T066 [P] Mobile responsiveness testing and fixes
+- [ ] T067 Run quickstart.md manual testing scenarios validation
 
 ## Dependencies
 
@@ -151,8 +150,8 @@
 - **Frontend Basic Components**: T030-T035 → T042-T057
 - **Frontend Hooks**: T042-T047 → T050-T057
 - **Frontend Assembly**: T048-T052 → T053-T057
-- **Core before Integration**: T005-T057 → T063-T065
-- **Implementation before Polish**: T063-T065 → T066-T068
+- **Core before Integration**: T005-T057 → T063-T064
+- **Implementation before Polish**: T063-T064 → T065-T067
 
 ## Parallel Execution Examples
 

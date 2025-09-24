@@ -44,9 +44,6 @@ describe('useLanguage', () => {
     });
 
     it('should handle language change errors', async () => {
-        // Mock the initialization to succeed first
-        mockChangeLanguage.mockResolvedValueOnce(undefined);
-
         const { result } = renderHook(() => useLanguage());
 
         // Wait for initialization to complete
@@ -54,22 +51,32 @@ describe('useLanguage', () => {
             expect(result.current.isLoading).toBe(false);
         });
 
-        // Now mock the changeLanguage to fail
-        mockChangeLanguage.mockRejectedValue(new Error('Failed to load language'));
+        // Mock console.error before setting up the rejection
         const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
+        // Clear all previous calls and set up rejection
+        mockChangeLanguage.mockClear();
+        mockChangeLanguage.mockRejectedValue(new Error('Failed to load language'));
+
+        // The hook starts with 'pl' as default language, try changing to 'en'
         await act(async () => {
             try {
-                await result.current.changeLanguage('pl');
+                await result.current.changeLanguage('en');
             } catch (error) {
-                // Expected to throw
+                // Expected - the error should be caught and handled internally
             }
         });
 
+        // Check if the mock was called
+        expect(mockChangeLanguage).toHaveBeenCalledWith('en');
+
+        // Check if console.error was called
         expect(consoleSpy).toHaveBeenCalledWith(
             'Failed to change language:',
             expect.any(Error)
         );
+
+        expect(result.current.isChanging).toBe(false);
 
         consoleSpy.mockRestore();
     });
