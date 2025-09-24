@@ -69,7 +69,7 @@
 
 - [x] T022 [P] Create loot item card component in frontend/src/app/components/loot-item/
 - [x] T023 [P] Create loot results list component in frontend/src/app/components/loot-list/
-- [ ] T024 [P] Create price toggle switch component in frontend/src/app/components/price-toggle/
+- [x] T024 [P] Create price toggle switch component in frontend/src/app/components/price-toggle/
 - [ ] T025 [P] Create loading spinner component in frontend/src/app/components/loading-spinner/
 
 ## Phase 3.7: Main Container Components (T026-T027)

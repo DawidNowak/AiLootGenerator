@@ -1,0 +1,16 @@
+<div class="price-toggle-container">
+  <mat-slide-toggle
+    [checked]="isDetailed()"
+    [disabled]="disabled"
+    (change)="onToggleChange($event.checked)"
+    [matTooltip]="getTooltipText()"
+    matTooltipPosition="above"
+    class="price-toggle"
+    color="primary"
+  >
+    <div class="toggle-content">
+      <mat-icon class="toggle-icon">{{ getToggleIcon() }}</mat-icon>
+      <span class="toggle-label">{{ getToggleLabel() }}</span>
+    </div>
+  </mat-slide-toggle>
+</div>

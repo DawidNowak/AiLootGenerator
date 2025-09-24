@@ -60,6 +60,15 @@
           </div>
         </div>
 
+        <!-- Price Toggle Section -->
+        <div class="price-toggle-section">
+          <app-price-toggle
+            [showDetailedPrices]="showPriceDetails()"
+            [disabled]="false"
+            (showDetailedPricesChange)="onPriceToggleChange($event)"
+          ></app-price-toggle>
+        </div>
+
         <!-- Generate Button Section -->
         <div class="generate-section">
           <app-generate-button

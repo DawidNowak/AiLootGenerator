@@ -9,6 +9,7 @@ import { CooldownTimerComponent } from './components/cooldown-timer/cooldown-tim
 import { ErrorMessageComponent, ErrorInfo } from './components/error-message/error-message.component';
 import { LootItemComponent } from './components/loot-item/loot-item.component';
 import { LootListComponent } from './components/loot-list/loot-list.component';
+import { PriceToggleComponent } from './components/price-toggle/price-toggle.component';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { WealthLevel } from './models/wealth-level.enum';
 import { LootItem } from './models/loot-item.interface';
@@ -27,6 +28,7 @@ import { LootItem } from './models/loot-item.interface';
     ErrorMessageComponent,
     LootItemComponent,
     LootListComponent,
+    PriceToggleComponent,
     TranslatePipe
   ],
   templateUrl: './app.component.html',
@@ -160,6 +162,11 @@ export class AppComponent implements OnDestroy {
 
   togglePriceDetails(): void {
     this.showPriceDetails.set(!this.showPriceDetails());
+  }
+
+  onPriceToggleChange(showDetailed: boolean): void {
+    this.showPriceDetails.set(showDetailed);
+    console.log('Price display mode changed to:', showDetailed ? 'detailed' : 'simple');
   }
 
   addRandomLootItem(): void {
