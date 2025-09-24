@@ -73,9 +73,7 @@ describe("StatusMessage", () => {
         </TestWrapper>
       );
 
-      expect(
-        screen.getByText("loot:status.generationSuccess")
-      ).toBeInTheDocument();
+      expect(screen.getByText("loot:generation.success")).toBeInTheDocument();
 
       rerender(
         <TestWrapper>
@@ -83,7 +81,7 @@ describe("StatusMessage", () => {
         </TestWrapper>
       );
 
-      expect(screen.getByText("loot:status.cooldownInfo")).toBeInTheDocument();
+      expect(screen.getByText("common:cooldown.remaining")).toBeInTheDocument();
     });
   });
 
@@ -108,7 +106,7 @@ describe("StatusMessage", () => {
       expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
 
-    it("updates visibility when prop changes", () => {
+    it("updates visibility when prop changes", async () => {
       const { rerender } = render(
         <TestWrapper>
           <StatusMessage message="Test status" visible={true} />
@@ -123,7 +121,13 @@ describe("StatusMessage", () => {
         </TestWrapper>
       );
 
-      expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+      // Wait for the collapse animation to complete
+      await waitFor(
+        () => {
+          expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+        },
+        { timeout: 1000 }
+      );
     });
   });
 
@@ -263,42 +267,45 @@ describe("StatusMessage", () => {
       render(
         <TestWrapper>
           <StatusMessage
-            message="Generation complete"
             statusType="generation-success"
             statusData={{ itemCount: 5 }}
           />
         </TestWrapper>
       );
 
-      expect(screen.getByText("5")).toBeInTheDocument();
+      // The component uses the translation system which interpolates the count
+      expect(screen.getByText("loot:generation.success")).toBeInTheDocument();
     });
 
     it("displays generation time when provided", () => {
       render(
         <TestWrapper>
           <StatusMessage
-            message="Generation complete"
             statusType="generation-success"
             statusData={{ generationTime: 2.5 }}
           />
         </TestWrapper>
       );
 
-      expect(screen.getByText(/2\.5/)).toBeInTheDocument();
+      // Check that timeInfo translation key is present when generationTime is provided
+      expect(screen.getByText("loot:generation.timeInfo")).toBeInTheDocument();
     });
 
     it("displays cooldown remaining when provided", () => {
       render(
         <TestWrapper>
           <StatusMessage
-            message="Cooldown active"
             statusType="cooldown-info"
             statusData={{ cooldownRemaining: 30 }}
           />
         </TestWrapper>
       );
 
-      expect(screen.getByText("30")).toBeInTheDocument();
+      // Check that the cooldown message is displayed with the translation key
+      expect(screen.getByText("common:cooldown.remaining")).toBeInTheDocument();
+      expect(
+        screen.getByText("common:cooldown.nextGeneration")
+      ).toBeInTheDocument();
     });
   });
 

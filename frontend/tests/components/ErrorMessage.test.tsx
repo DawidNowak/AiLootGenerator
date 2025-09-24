@@ -110,7 +110,7 @@ describe("ErrorMessage", () => {
       expect(screen.queryByRole("alert")).not.toBeInTheDocument();
     });
 
-    it("updates visibility when prop changes", () => {
+    it("updates visibility when prop changes", async () => {
       const { rerender } = render(
         <TestWrapper>
           <ErrorMessage message="Test error" visible={true} />
@@ -125,7 +125,13 @@ describe("ErrorMessage", () => {
         </TestWrapper>
       );
 
-      expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+      // Wait for the collapse animation to complete
+      await waitFor(
+        () => {
+          expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+        },
+        { timeout: 1000 }
+      );
     });
   });
 

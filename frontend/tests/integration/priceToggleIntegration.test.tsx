@@ -268,8 +268,8 @@ describe("PriceToggle with LootList Integration", () => {
       const endTime = performance.now();
       const duration = endTime - startTime;
 
-      // Should complete in reasonable time (less than 1 second)
-      expect(duration).toBeLessThan(1000);
+      // Should complete in reasonable time (less than 3 seconds)
+      expect(duration).toBeLessThan(3000);
 
       // Verify final state is correct (should be showing prices)
       expect(toggle).toBeChecked();

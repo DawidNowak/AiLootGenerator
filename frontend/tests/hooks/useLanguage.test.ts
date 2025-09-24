@@ -2,7 +2,7 @@
  * Unit tests for useLanguage hook
  */
 
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act, waitFor } from '@testing-library/react';
 import { useLanguage } from '../../src/hooks/useLanguage';
 
 // Mock react-i18next
@@ -44,13 +44,26 @@ describe('useLanguage', () => {
     });
 
     it('should handle language change errors', async () => {
-        mockChangeLanguage.mockRejectedValue(new Error('Failed to load language'));
-        const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+        // Mock the initialization to succeed first
+        mockChangeLanguage.mockResolvedValueOnce(undefined);
 
         const { result } = renderHook(() => useLanguage());
 
+        // Wait for initialization to complete
+        await waitFor(() => {
+            expect(result.current.isLoading).toBe(false);
+        });
+
+        // Now mock the changeLanguage to fail
+        mockChangeLanguage.mockRejectedValue(new Error('Failed to load language'));
+        const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
+
         await act(async () => {
-            await result.current.changeLanguage('pl');
+            try {
+                await result.current.changeLanguage('pl');
+            } catch (error) {
+                // Expected to throw
+            }
         });
 
         expect(consoleSpy).toHaveBeenCalledWith(
@@ -65,8 +78,8 @@ describe('useLanguage', () => {
         const { result } = renderHook(() => useLanguage());
 
         expect(result.current.availableLanguages).toEqual([
-            { code: 'en', name: expect.any(String) },
-            { code: 'pl', name: expect.any(String) },
+            'en',
+            'pl',
         ]);
     });
 });
