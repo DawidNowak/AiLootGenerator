@@ -38,10 +38,11 @@ const getEnvVar = (key: string, defaultValue: string): string => {
  * Load environment configuration
  */
 export const loadEnvironmentConfig = (): EnvironmentConfig => {
+    const timeout = parseInt(getEnvVar('VITE_API_TIMEOUT', '10000'), 10);
     return {
         apiBaseUrl: getEnvVar('VITE_API_BASE_URL', 'https://localhost:5001'),
         apiVersion: getEnvVar('VITE_API_VERSION', 'api'),
-        apiTimeout: parseInt(getEnvVar('VITE_API_TIMEOUT', '10000'), 10)
+        apiTimeout: isNaN(timeout) ? 10000 : timeout
     };
 };
 

@@ -67,9 +67,9 @@ export function addValidationError(
  * Validates a generation request before sending to API
  * 
  * @param request - Generation request to validate
- * @returns Validation result with detailed error information
+ * @returns Promise resolving to validation result with detailed error information
  */
-export function validateGenerationRequest(request: any): ValidationResult {
+export async function validateGenerationRequest(request: any): Promise<ValidationResult> {
     const result = createValidationResult();
 
     // Check if request is an object
@@ -114,7 +114,7 @@ export function validateGenerationRequest(request: any): ValidationResult {
         addValidationError(result, 'Session ID cannot be empty', 'sessionId');
     }
 
-    return result;
+    return Promise.resolve(result);
 }
 
 /**

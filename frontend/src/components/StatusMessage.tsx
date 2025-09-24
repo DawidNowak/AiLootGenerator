@@ -8,7 +8,7 @@
  * status messages. Complements ErrorMessage for complete user feedback.
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Alert,
   AlertTitle,
@@ -97,10 +97,10 @@ export const StatusMessage: React.FC<StatusMessageProps> = ({
   statusData,
 }) => {
   const { t } = useTranslation(["common", "loot", "form"]);
-  const [isVisible, setIsVisible] = React.useState(visible);
+  const [isVisible, setIsVisible] = useState(visible);
 
   // Auto-dismiss functionality
-  React.useEffect(() => {
+  useEffect(() => {
     if (
       autoDismiss &&
       visible &&
@@ -117,7 +117,7 @@ export const StatusMessage: React.FC<StatusMessageProps> = ({
   }, [autoDismiss, visible, autoDismissDelay, severity, onClose]);
 
   // Update visibility when prop changes
-  React.useEffect(() => {
+  useEffect(() => {
     setIsVisible(visible);
   }, [visible]);
 

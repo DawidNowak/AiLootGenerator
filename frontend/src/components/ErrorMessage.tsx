@@ -8,7 +8,7 @@
  * and network connectivity issues with appropriate styling and accessibility.
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Alert,
   AlertTitle,
@@ -89,10 +89,10 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({
   showDetails = false,
 }) => {
   const { t } = useTranslation(["errors", "common"]);
-  const [isVisible, setIsVisible] = React.useState(visible);
+  const [isVisible, setIsVisible] = useState(visible);
 
   // Auto-dismiss functionality
-  React.useEffect(() => {
+  useEffect(() => {
     if (autoDismiss && visible && autoDismissDelay > 0) {
       const timer = setTimeout(() => {
         setIsVisible(false);
@@ -104,7 +104,7 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({
   }, [autoDismiss, visible, autoDismissDelay, onClose]);
 
   // Update visibility when prop changes
-  React.useEffect(() => {
+  useEffect(() => {
     setIsVisible(visible);
   }, [visible]);
 

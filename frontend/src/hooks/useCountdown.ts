@@ -80,6 +80,12 @@ function calculateRemainingSeconds(targetDate: Date | string | null): number {
     }
 
     const target = new Date(targetDate);
+
+    // Check if the date is invalid
+    if (isNaN(target.getTime())) {
+        return 0;
+    }
+
     const now = new Date();
     const diffMs = target.getTime() - now.getTime();
 
@@ -124,7 +130,10 @@ export function useCountdown(options: UseCountdownOptions): CountdownResult {
     const [remainingSeconds, setRemainingSeconds] = useState(() =>
         calculateRemainingSeconds(targetDate)
     );
-    const [isActive, setIsActive] = useState(autoStart);
+    const [isActive, setIsActive] = useState(() => {
+        const initial = calculateRemainingSeconds(targetDate);
+        return autoStart && initial > 0;
+    });
     const [currentTargetDate, setCurrentTargetDate] = useState(targetDate);
 
     // Refs for stable references
@@ -187,7 +196,7 @@ export function useCountdown(options: UseCountdownOptions): CountdownResult {
     const reset = useCallback(() => {
         const newRemainingSeconds = calculateRemainingSeconds(currentTargetDate);
         setRemainingSeconds(newRemainingSeconds);
-        setIsActive(autoStart);
+        setIsActive(autoStart && newRemainingSeconds > 0);
     }, [currentTargetDate, autoStart]);
 
     const setTargetDate = useCallback((date: Date | string | null) => {
@@ -195,8 +204,10 @@ export function useCountdown(options: UseCountdownOptions): CountdownResult {
         const newRemainingSeconds = calculateRemainingSeconds(date);
         setRemainingSeconds(newRemainingSeconds);
 
-        if (date && autoStart) {
+        if (date && autoStart && newRemainingSeconds > 0) {
             setIsActive(true);
+        } else {
+            setIsActive(false);
         }
     }, [autoStart]);
 

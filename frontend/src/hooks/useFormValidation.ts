@@ -99,7 +99,7 @@ export interface FormValidationResult {
 const createDefaultFieldValidation = (): FieldValidation => ({
     touched: false,
     error: null,
-    isValid: true,
+    isValid: false,
     isPending: false
 });
 
@@ -208,23 +208,6 @@ export function useFormValidation(
                 [field]: value
             };
 
-            // Skip validation if required fields are missing
-            if (!tempRequest.location || !tempRequest.wealthLevel || !tempRequest.language || !tempRequest.sessionId) {
-                setState(prev => ({
-                    ...prev,
-                    fields: {
-                        ...prev.fields,
-                        [field]: {
-                            ...prev.fields[field],
-                            isPending: false,
-                            error: null,
-                            isValid: true
-                        }
-                    }
-                }));
-                return true;
-            }
-
             const result = await validateGenerationRequest(tempRequest as GenerationRequest);
 
             // Extract field-specific error from fieldErrors
@@ -250,6 +233,7 @@ export function useFormValidation(
 
             return isValid;
         } catch (error) {
+            console.error('Field validation error:', error);
             setState(prev => ({
                 ...prev,
                 fields: {
@@ -306,6 +290,7 @@ export function useFormValidation(
     const setFieldTouched = useCallback((field: keyof GenerationRequest, touched = true) => {
         setState(prev => ({
             ...prev,
+            isDirty: true,
             fields: {
                 ...prev.fields,
                 [field]: {
@@ -325,6 +310,7 @@ export function useFormValidation(
     const setAllTouched = useCallback(() => {
         setState(prev => ({
             ...prev,
+            isDirty: true,
             fields: Object.keys(prev.fields).reduce((acc, field) => ({
                 ...acc,
                 [field]: {
@@ -340,27 +326,12 @@ export function useFormValidation(
         setState(prev => ({ ...prev, isValidating: true }));
 
         try {
-            // Ensure all required fields are present
-            if (!values.location || !values.wealthLevel || !values.language || !values.sessionId) {
-                const result: ValidationResult = {
-                    valid: false,
-                    errors: [t('validation.missing_required_fields')],
-                    fieldErrors: {}
-                };
-
-                setState(prev => ({
-                    ...prev,
-                    isValidating: false,
-                    formErrors: result.errors
-                }));
-
-                return result;
-            }
-
             const result = await validateGenerationRequest(values as GenerationRequest);
 
             // Update field-specific errors
             const fieldUpdates: Partial<FormValidationState['fields']> = {};
+
+            // Check all fields from current state for errors
             Object.keys(state.fields).forEach(field => {
                 const fieldKey = field as keyof typeof state.fields;
                 const fieldErrorList = result.fieldErrors[field] || [];
@@ -371,6 +342,21 @@ export function useFormValidation(
                     error,
                     isValid: error === null
                 };
+            });
+
+            // Also check for any additional field errors not in current state
+            Object.keys(result.fieldErrors).forEach(field => {
+                const fieldKey = field as keyof typeof state.fields;
+                if (fieldKey in state.fields && !fieldUpdates[fieldKey]) {
+                    const fieldErrorList = result.fieldErrors[field] || [];
+                    const error = fieldErrorList.length > 0 ? fieldErrorList[0] : null;
+
+                    fieldUpdates[fieldKey] = {
+                        ...state.fields[fieldKey],
+                        error,
+                        isValid: error === null
+                    };
+                }
             });
 
             // Form-level errors are in the general errors array
@@ -386,6 +372,8 @@ export function useFormValidation(
 
             return result;
         } catch (error) {
+            console.error('Form validation error:', error);
+
             const errorResult: ValidationResult = {
                 valid: false,
                 errors: [t('validation.unexpected_error')],
@@ -441,7 +429,7 @@ export function useFormValidation(
     // Check if should show error for field
     const shouldShowError = useCallback((field: keyof GenerationRequest): boolean => {
         const fieldState = state.fields[field];
-        return fieldState.touched && !fieldState.isValid;
+        return fieldState.touched && fieldState.error !== null;
     }, [state.fields]);
 
     // Update overall form validity when field states change

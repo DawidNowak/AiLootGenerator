@@ -83,85 +83,85 @@ describe('Validation Service', () => {
             sessionId: 'test-session-123'
         };
 
-        it('should validate correct request', () => {
-            const result = validateGenerationRequest(validRequest);
+        it('should validate correct request', async () => {
+            const result = await validateGenerationRequest(validRequest);
 
             expect(result.valid).toBe(true);
             expect(result.errors).toEqual([]);
         });
 
-        it('should fail for non-object request', () => {
-            const result = validateGenerationRequest(null);
+        it('should fail for non-object request', async () => {
+            const result = await validateGenerationRequest(null);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Request must be an object');
         });
 
-        it('should fail for missing location', () => {
+        it('should fail for missing location', async () => {
             const request = { ...validRequest, location: undefined };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Location is required');
             expect(result.fieldErrors.location).toContain('Location is required');
         });
 
-        it('should fail for non-string location', () => {
+        it('should fail for non-string location', async () => {
             const request = { ...validRequest, location: 123 };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Location must be a string');
         });
 
-        it('should fail for empty location', () => {
+        it('should fail for empty location', async () => {
             const request = { ...validRequest, location: '   ' };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Location cannot be empty');
         });
 
-        it('should fail for location too long', () => {
+        it('should fail for location too long', async () => {
             const request = { ...validRequest, location: 'a'.repeat(201) };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Location must be 200 characters or less');
         });
 
-        it('should fail for invalid wealth level', () => {
+        it('should fail for invalid wealth level', async () => {
             const request = { ...validRequest, wealthLevel: 'Invalid' };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Invalid wealth level. Must be one of: Rubbish, Poor, Common, Wealthy, Noble');
         });
 
-        it('should fail for invalid language', () => {
+        it('should fail for invalid language', async () => {
             const request = { ...validRequest, language: 'fr' };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Invalid language. Must be "en" or "pl"');
         });
 
-        it('should fail for missing session ID', () => {
+        it('should fail for missing session ID', async () => {
             const request = { ...validRequest, sessionId: undefined };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors).toContain('Session ID is required');
         });
 
-        it('should collect multiple errors', () => {
+        it('should collect multiple errors', async () => {
             const request = {
                 location: '',
                 wealthLevel: 'Invalid',
                 language: 'fr',
                 sessionId: ''
             };
-            const result = validateGenerationRequest(request);
+            const result = await validateGenerationRequest(request);
 
             expect(result.valid).toBe(false);
             expect(result.errors.length).toBeGreaterThan(3);

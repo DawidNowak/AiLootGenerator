@@ -6,7 +6,7 @@
  * Shows remaining time until next loot generation is available.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography, Chip, CircularProgress, Fade } from "@mui/material";
 import {
   AccessTime as TimeIcon,
@@ -107,7 +107,7 @@ export const CooldownTimer: React.FC<CooldownTimerProps> = ({
   });
 
   // Update cooldown if expiresAt prop changes
-  React.useEffect(() => {
+  useEffect(() => {
     if (expiresAt) {
       cooldown.setCooldown(expiresAt);
     }
