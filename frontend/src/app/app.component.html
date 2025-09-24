@@ -18,6 +18,50 @@
   </header>
 
   <main class="main-content">
+    <!-- Loot Generation Form Preview -->
+    <div class="form-demo-section">
+      <h2 class="section-title">{{ "form.title" | translate }}</h2>
+      <p class="section-description">{{ "form.description" | translate }}</p>
+
+      <div class="form-container">
+        <div class="form-row">
+          <div class="form-field">
+            <app-wealth-selector
+              [value]="selectedWealthLevel()"
+              (valueChange)="onWealthLevelChange($event)"
+            >
+            </app-wealth-selector>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <app-location-input
+              [value]="locationValue()"
+              (valueChange)="onLocationChange($event)"
+              (validationChange)="onLocationValidationChange($event)"
+            >
+            </app-location-input>
+          </div>
+        </div>
+
+        <div class="form-status">
+          <div class="status-item">
+            <strong>Selected Wealth Level:</strong> {{ selectedWealthLevel() }}
+          </div>
+          <div class="status-item">
+            <strong>Location:</strong> "{{ locationValue() || "Not set" }}"
+          </div>
+          <div class="status-item">
+            <strong>Form Valid:</strong>
+            <span [class]="locationValid() ? 'valid' : 'invalid'">
+              {{ locationValid() ? "Yes" : "No" }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="theme-showcase">
       <div class="color-palette">
         <div class="color-item gold">

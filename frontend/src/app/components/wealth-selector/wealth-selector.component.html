@@ -1,0 +1,34 @@
+<mat-form-field appearance="outline" class="wealth-selector">
+  <mat-label>{{ "wealth.label" | translate }}</mat-label>
+
+  <mat-select [formControl]="wealthLevelControl" [required]="required">
+    <mat-option
+      *ngFor="let option of wealthLevelOptions"
+      [value]="option.value"
+      [matTooltip]="getTooltipText(option)"
+      matTooltipPosition="right"
+      [class]="'wealth-option-' + option.value"
+    >
+      <div class="wealth-option-content">
+        <mat-icon [style.color]="option.color" class="wealth-icon">
+          {{ option.icon }}
+        </mat-icon>
+
+        <div class="wealth-text">
+          <div class="wealth-label">
+            {{ getOptionLabel(option) }}
+          </div>
+        </div>
+      </div>
+    </mat-option>
+  </mat-select>
+
+  <!-- Display selected option icon -->
+  <mat-icon
+    matPrefix
+    [style.color]="getSelectedOptionColor()"
+    class="selected-wealth-icon"
+  >
+    {{ getSelectedOptionIcon() }}
+  </mat-icon>
+</mat-form-field>

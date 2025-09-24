@@ -1,0 +1,55 @@
+<mat-form-field appearance="outline" class="location-input">
+  <mat-label>{{ "location.label" | translate }}</mat-label>
+
+  <input
+    matInput
+    [formControl]="locationControl"
+    [placeholder]="getPlaceholderText()"
+    [maxlength]="maxLength"
+    (input)="onInput($event)"
+    type="text"
+    autocomplete="off"
+    spellcheck="true"
+  />
+
+  <!-- Location icon prefix -->
+  <mat-icon matPrefix class="location-icon">place</mat-icon>
+
+  <!-- Clear button suffix (when has value) -->
+  <button
+    *ngIf="locationControl.value && !locationControl.disabled"
+    matSuffix
+    mat-icon-button
+    type="button"
+    [matTooltip]="'common.clear' | translate"
+    (click)="clearInput()"
+    class="clear-button"
+  >
+    <mat-icon>clear</mat-icon>
+  </button>
+
+  <!-- Character counter suffix -->
+  <div
+    matSuffix
+    class="character-counter"
+    [class.near-limit]="isCharacterCountNearLimit()"
+    [class.at-limit]="isCharacterCountAtLimit()"
+  >
+    {{ characterCount() }}/{{ maxLength }}
+  </div>
+
+  <!-- Error messages -->
+  <mat-error
+    *ngIf="
+      locationControl.invalid &&
+      (locationControl.dirty || locationControl.touched)
+    "
+  >
+    {{ getErrorMessage() }}
+  </mat-error>
+
+  <!-- Helpful hint -->
+  <mat-hint *ngIf="!locationControl.invalid">
+    {{ "location.hint" | translate }}
+  </mat-hint>
+</mat-form-field>
