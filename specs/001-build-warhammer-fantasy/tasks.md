@@ -29,11 +29,11 @@
 
 ## Phase 3.1: Angular Frontend Setup (T001-T005)
 
-- [ ] T001 Initialize Angular 18+ project with TypeScript 5.5+ in frontend/ directory
-- [ ] T002 Install Angular Material, Angular CDK, and Angular Animations dependencies
-- [ ] T003 Configure Angular i18n with extraction and build scripts for en/pl locales
-- [ ] T004 Setup Angular Material theme and global styles in frontend/src/styles.scss
-- [ ] T005 [P] Create environment configuration files for API endpoints in frontend/src/environments/
+- [x] T001 Initialize Angular 18+ project with TypeScript 5.5+ in frontend/ directory
+- [x] T002 Install Angular Material, Angular CDK, and Angular Animations dependencies
+- [x] T003 Configure Angular i18n with extraction and build scripts for en/pl locales
+- [x] T004 Setup Angular Material theme and global styles in frontend/src/styles.scss
+- [x] T005 [P] Create environment configuration files for API endpoints in frontend/src/environments/
 
 ## Phase 3.2: Angular Type Definitions (T006-T008)
 

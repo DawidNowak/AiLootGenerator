@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* Warhammer Fantasy Theme Variables */
+:root {
+  --wf-gold: #d4af37;
+  --wf-silver: #c0c0c0;
+  --wf-bronze: #cd7f32;
+  --wf-dark-bg: #1a1a1a;
+  --wf-card-bg: #2d2d2d;
+  --wf-accent: #8b4513;
+  --wf-text-light: #e0e0e0;
+  --wf-text-dark: #333;
+}
+
+/* Custom Angular Material Theme Overrides */
+.mat-mdc-card {
+  background-color: var(--wf-card-bg) !important;
+  color: var(--wf-text-light) !important;
+  border: 1px solid var(--wf-accent);
+}
+
+.mat-mdc-button-base {
+  &.mat-primary {
+    background-color: var(--wf-accent) !important;
+    color: var(--wf-text-light) !important;
+  }
+}
+
+.mat-mdc-form-field {
+  .mat-mdc-text-field-wrapper {
+    background-color: var(--wf-card-bg) !important;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    color: var(--wf-text-light) !important;
+  }
+}
+
+.mat-mdc-select-panel {
+  background-color: var(--wf-card-bg) !important;
+}
+
+.mat-mdc-option {
+  background-color: var(--wf-card-bg) !important;
+  color: var(--wf-text-light) !important;
+
+  &:hover {
+    background-color: var(--wf-accent) !important;
+  }
+}
+
+/* Utility Classes */
+.gold-text {
+  color: var(--wf-gold);
+  font-weight: 600;
+}
+
+.silver-text {
+  color: var(--wf-silver);
+  font-weight: 500;
+}
+
+.bronze-text {
+  color: var(--wf-bronze);
+  font-weight: 500;
+}
+
+.wf-card {
+  background: var(--wf-card-bg);
+  border: 1px solid var(--wf-accent);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px 0;
+}
+
+.wf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Loading Animation */
+.wf-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--wf-accent);
+  border-radius: 50%;
+  border-top-color: var(--wf-gold);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wf-container {
+    padding: 16px;
+  }
+
+  .mat-mdc-card {
+    margin: 8px 4px;
+  }
+}
