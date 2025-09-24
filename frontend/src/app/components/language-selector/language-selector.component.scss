@@ -1,0 +1,76 @@
+.language-selector {
+  min-width: 150px;
+
+  .language-select {
+    font-size: 14px;
+  }
+
+  .mat-mdc-form-field-icon-suffix {
+    color: var(--mdc-outlined-text-field-input-text-color, rgba(0, 0, 0, 0.87));
+  }
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+
+  .language-flag {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  .language-label {
+    font-size: 14px;
+  }
+}
+
+// Material theme integration
+:host {
+  --language-selector-primary: #1976d2;
+  --language-selector-accent: #ff4081;
+
+  .language-selector {
+    .mat-mdc-select-value-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .mat-mdc-form-field-outline {
+      border-radius: 8px;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .language-selector {
+    min-width: 120px;
+
+    .language-select {
+      font-size: 13px;
+    }
+  }
+
+  .language-option {
+    padding: 6px 12px;
+
+    .language-flag {
+      margin-right: 6px;
+      font-size: 14px;
+    }
+
+    .language-label {
+      font-size: 13px;
+    }
+  }
+}
+
+// Dark theme support
+@media (prefers-color-scheme: dark) {
+  :host {
+    .mat-mdc-form-field-icon-suffix {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}

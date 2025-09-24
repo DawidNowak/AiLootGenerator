@@ -56,7 +56,7 @@
 
 ## Phase 3.5: Angular Components - Basic UI (T016-T021)
 
-- [ ] T016 [P] Create language selector dropdown component in frontend/src/app/components/language-selector/
+- [x] T016 [P] Create language selector dropdown component in frontend/src/app/components/language-selector/
 - [ ] T017 [P] Create wealth level selector component in frontend/src/app/components/wealth-selector/
 - [ ] T018 [P] Create location input component with validation in frontend/src/app/components/location-input/
 - [ ] T019 [P] Create generate button component with loading states in frontend/src/app/components/generate-button/
