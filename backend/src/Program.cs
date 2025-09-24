@@ -47,6 +47,18 @@ builder.Services.AddSingleton<QdrantClient>(serviceProvider =>
 // Register memory cache for cooldown management
 builder.Services.AddMemoryCache();
 
+// Configure CORS for frontend-backend communication
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000", "https://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+
 // Register application services
 builder.Services.AddSingleton<ICooldownService, CooldownService>();
 builder.Services.AddScoped<IOpenAIService, OpenAIService>();
@@ -69,6 +81,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Enable CORS
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 

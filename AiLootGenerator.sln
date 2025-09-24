@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiLootGenerator.RestApi", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiLootGenerator.RestApi.Tests", "backend\tests\AiLootGenerator.RestApi.Tests.csproj", "{059C9FE9-9C52-BEC9-F01C-6EBCD9F3D3A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "backend\tests\Tests.csproj", "{0FF046C0-EDA5-AF24-13A3-217A64957B63}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,10 +22,6 @@ Global
 		{059C9FE9-9C52-BEC9-F01C-6EBCD9F3D3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{059C9FE9-9C52-BEC9-F01C-6EBCD9F3D3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{059C9FE9-9C52-BEC9-F01C-6EBCD9F3D3A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FF046C0-EDA5-AF24-13A3-217A64957B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FF046C0-EDA5-AF24-13A3-217A64957B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FF046C0-EDA5-AF24-13A3-217A64957B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FF046C0-EDA5-AF24-13A3-217A64957B63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,7 +29,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F04D6431-B520-CCD7-230D-90F03B240D1D} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
 		{059C9FE9-9C52-BEC9-F01C-6EBCD9F3D3A9} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
-		{0FF046C0-EDA5-AF24-13A3-217A64957B63} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CD1BD9D-5CBB-44FB-9E2E-14BAEFDCAF64}
