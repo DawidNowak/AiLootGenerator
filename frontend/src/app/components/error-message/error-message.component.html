@@ -1,0 +1,130 @@
+<div
+  class="error-message"
+  [class.inline]="inline"
+  [class.visible]="isVisible()"
+  [ngClass]="'type-' + errorClass()"
+  *ngIf="error"
+>
+  <!-- Card-style display (default) -->
+  <mat-card
+    *ngIf="!inline"
+    class="error-card"
+    [ngClass]="'card-' + errorClass()"
+  >
+    <mat-card-header class="error-header">
+      <mat-icon
+        mat-card-avatar
+        class="error-icon"
+        [ngClass]="'icon-' + errorClass()"
+      >
+        {{ errorIcon() }}
+      </mat-icon>
+
+      <mat-card-title class="error-title">
+        {{ displayTitle() }}
+      </mat-card-title>
+
+      <mat-card-subtitle *ngIf="error.code" class="error-code">
+        {{ "error.code" | translate }}: {{ error.code }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="error-content">
+      <div class="error-message-text">
+        {{ displayMessage() }}
+      </div>
+
+      <!-- Details section -->
+      <div *ngIf="error.details && showDetails" class="error-details">
+        <div class="details-label">
+          {{ "error.details.label" | translate }}:
+        </div>
+        <pre class="details-content">{{ error.details }}</pre>
+      </div>
+
+      <!-- Timestamp -->
+      <div *ngIf="error.timestamp" class="error-timestamp">
+        {{ "error.occurred.at" | translate }} {{ formattedTimestamp() }}
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions class="error-actions">
+      <!-- Details toggle -->
+      <button
+        *ngIf="error.details"
+        mat-button
+        class="details-toggle"
+        (click)="onToggleDetails()"
+      >
+        <mat-icon>{{ showDetails ? "expand_less" : "expand_more" }}</mat-icon>
+        {{
+          showDetails
+            ? ("error.details.hide" | translate)
+            : ("error.details.show" | translate)
+        }}
+      </button>
+
+      <!-- Retry button -->
+      <button
+        *ngIf="showRetryButton()"
+        mat-button
+        color="primary"
+        class="retry-button"
+        (click)="onRetryClick()"
+      >
+        <mat-icon>refresh</mat-icon>
+        {{ "error.action.retry" | translate }}
+      </button>
+
+      <!-- Dismiss button -->
+      <button
+        *ngIf="allowDismiss"
+        mat-button
+        class="dismiss-button"
+        (click)="onDismissClick()"
+      >
+        <mat-icon>close</mat-icon>
+        {{ "error.action.dismiss" | translate }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Inline display -->
+  <div *ngIf="inline" class="error-inline" [ngClass]="'inline-' + errorClass()">
+    <mat-icon class="inline-icon" [ngClass]="'icon-' + errorClass()">
+      {{ errorIcon() }}
+    </mat-icon>
+
+    <div class="inline-content">
+      <div class="inline-message">
+        {{ displayMessage() }}
+      </div>
+
+      <div *ngIf="error.code" class="inline-code">
+        {{ "error.code" | translate }}: {{ error.code }}
+      </div>
+    </div>
+
+    <div class="inline-actions">
+      <button
+        *ngIf="showRetryButton()"
+        mat-icon-button
+        class="inline-retry"
+        [attr.aria-label]="'error.action.retry' | translate"
+        (click)="onRetryClick()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+
+      <button
+        *ngIf="allowDismiss"
+        mat-icon-button
+        class="inline-dismiss"
+        [attr.aria-label]="'error.action.dismiss' | translate"
+        (click)="onDismissClick()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

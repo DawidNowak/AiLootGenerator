@@ -61,9 +61,9 @@
 - [x] T016 [P] Create language selector dropdown component in frontend/src/app/components/language-selector/ → **IMPLEMENTATION**: Created with runtime i18n integration, Material Design dropdown, English/Polish support with flag emojis
 - [x] T017 [P] Create wealth level selector component in frontend/src/app/components/wealth-selector/
 - [x] T018 [P] Create location input component with validation in frontend/src/app/components/location-input/
-- [ ] T019 [P] Create generate button component with loading states in frontend/src/app/components/generate-button/
-- [ ] T020 [P] Create cooldown timer component in frontend/src/app/components/cooldown-timer/
-- [ ] T021 [P] Create error message display component in frontend/src/app/components/error-message/
+- [x] T019 [P] Create generate button component with loading states in frontend/src/app/components/generate-button/
+- [x] T020 [P] Create cooldown timer component in frontend/src/app/components/cooldown-timer/
+- [x] T021 [P] Create error message display component in frontend/src/app/components/error-message/
 
 ## Phase 3.6: Angular Components - Results Display (T022-T025)
 

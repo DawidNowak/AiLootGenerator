@@ -59,6 +59,38 @@
             </span>
           </div>
         </div>
+
+        <!-- Generate Button Section -->
+        <div class="generate-section">
+          <app-generate-button
+            [isLoading]="isGenerating()"
+            [isDisabled]="!locationValid()"
+            [cooldownRemaining]="cooldownRemaining()"
+            (generateClick)="onGenerateClick()"
+          ></app-generate-button>
+        </div>
+
+        <!-- Cooldown Timer Section -->
+        <div class="cooldown-section" *ngIf="cooldownRemaining() > 0">
+          <app-cooldown-timer
+            [remainingTime]="cooldownRemaining()"
+            [totalTime]="30000"
+            [showProgress]="true"
+            [compact]="false"
+          ></app-cooldown-timer>
+        </div>
+
+        <!-- Error Message Section -->
+        <div class="error-section" *ngIf="currentError()">
+          <app-error-message
+            [error]="currentError()"
+            [allowDismiss]="true"
+            [allowRetry]="true"
+            [inline]="false"
+            (dismiss)="onErrorDismiss()"
+            (retry)="onErrorRetry()"
+          ></app-error-message>
+        </div>
       </div>
     </div>
 
