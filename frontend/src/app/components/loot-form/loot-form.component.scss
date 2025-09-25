@@ -1,0 +1,305 @@
+.loot-form-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
+}
+
+.loot-form-card {
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 8px;
+  }
+}
+
+.form-header {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
+
+  .mat-card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .mat-card-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem 1rem;
+
+    .mat-card-title {
+      font-size: 1.5rem;
+    }
+
+    .mat-card-subtitle {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.form-content {
+  position: relative;
+  padding: 2rem 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: inherit;
+}
+
+.loot-generation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  &.cooldown-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  &.generation-section {
+    margin-top: 1rem;
+    align-items: center;
+  }
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 1.1rem;
+    background: #1976d2;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.section-divider {
+  margin: 0.5rem 0;
+  opacity: 0.6;
+}
+
+// Component-specific styling
+:host ::ng-deep {
+  // Location Input Styling
+  app-location-input {
+    .mat-form-field {
+      width: 100%;
+
+      .mat-form-field-wrapper {
+        padding-bottom: 0.5rem;
+      }
+    }
+
+    .mat-input-element {
+      font-size: 1rem;
+    }
+
+    .mat-hint {
+      font-size: 0.875rem;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  // Wealth Selector Styling
+  app-wealth-selector {
+    .mat-form-field {
+      width: 100%;
+    }
+
+    .wealth-option {
+      padding: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  // Generate Button Styling
+  app-generate-button {
+    .mat-raised-button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      min-width: 200px;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+      transition: all 0.3s ease;
+
+      &:not(:disabled):hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    .mat-progress-spinner {
+      margin-right: 0.5rem;
+    }
+  }
+
+  // Error Message Styling
+  app-error-message {
+    .error-container {
+      border-radius: 8px;
+      animation: slideInFromTop 0.3s ease-out;
+    }
+  }
+
+  // Cooldown Timer Styling
+  app-cooldown-timer {
+    .cooldown-container {
+      background: rgba(255, 152, 0, 0.1);
+      border: 1px solid rgba(255, 152, 0, 0.3);
+      border-radius: 8px;
+      padding: 1rem;
+
+      .cooldown-message {
+        font-weight: 500;
+        color: #e65100;
+      }
+    }
+  }
+
+  // Loading Spinner Styling
+  app-loading-spinner {
+    .spinner-container {
+      padding: 2rem;
+
+      .mat-progress-spinner {
+        margin: 0 auto 1rem;
+      }
+
+      .spinner-message {
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Focus and accessibility improvements
+:host ::ng-deep {
+  .mat-form-field.mat-focused {
+    .mat-form-field-ripple {
+      background-color: #1976d2;
+    }
+  }
+
+  .mat-form-field.mat-form-field-invalid {
+    .mat-form-field-ripple {
+      background-color: #f44336;
+    }
+  }
+
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    .loot-form-card {
+      border: 2px solid #000;
+    }
+
+    .form-header {
+      background: #000;
+      color: #fff;
+    }
+
+    .section-title::before {
+      background: #000;
+    }
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  // Dark mode support (if implemented in the future)
+  @media (prefers-color-scheme: dark) {
+    .loot-form-card {
+      background-color: #303030;
+      color: #ffffff;
+    }
+
+    .section-title {
+      color: rgba(255, 255, 255, 0.87);
+    }
+
+    .loading-overlay {
+      background: rgba(48, 48, 48, 0.9);
+    }
+  }
+}

@@ -11,6 +11,7 @@ import { LoadingSpinnerComponent } from './components/loading-spinner/loading-sp
 import { LootItemComponent } from './components/loot-item/loot-item.component';
 import { LootListComponent } from './components/loot-list/loot-list.component';
 import { PriceToggleComponent } from './components/price-toggle/price-toggle.component';
+import { LootFormComponent, LootGeneratedEvent } from './components/loot-form/loot-form.component';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { WealthLevel } from './models/wealth-level.enum';
 import { LootItem } from './models/loot-item.interface';
@@ -31,6 +32,7 @@ import { LootItem } from './models/loot-item.interface';
     LootItemComponent,
     LootListComponent,
     PriceToggleComponent,
+    LootFormComponent,
     TranslatePipe
   ],
   templateUrl: './app.component.html',
@@ -86,6 +88,9 @@ export class AppComponent implements OnDestroy {
   listDemoLoading = signal<boolean>(false);
   showListPrices = signal<boolean>(true);
   showListFullBreakdown = signal<boolean>(false);
+
+  // Generated loot from form component
+  generatedLoot = signal<LootItem[]>([]);
 
   // Loading spinner demo state
   spinnerDemoLoading = signal<boolean>(false);
@@ -317,6 +322,24 @@ export class AppComponent implements OnDestroy {
 
       this.cooldownRemaining.set(Math.max(0, remaining - 100));
     }, 100);
+  }
+
+  // Handle loot generation events from the form component
+  onLootGenerated(event: LootGeneratedEvent): void {
+    this.generatedLoot.set(event.items);
+    console.log('Loot generated:', event);
+  }
+
+  onLootGenerationError(error: string): void {
+    this.currentError.set({
+      message: error,
+      type: 'error',
+      code: 'GEN_ERROR',
+      details: 'Failed to generate loot. Please try again.',
+      timestamp: new Date(),
+      retryable: true
+    });
+    console.error('Loot generation error:', error);
   }
 
   ngOnDestroy(): void {

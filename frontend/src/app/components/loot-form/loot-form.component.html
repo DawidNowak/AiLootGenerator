@@ -1,0 +1,95 @@
+<div class="loot-form-container">
+  <mat-card class="loot-form-card">
+    <mat-card-header class="form-header">
+      <mat-card-title>{{ "loot.generation.title" | translate }}</mat-card-title>
+      <mat-card-subtitle>{{
+        "loot.generation.subtitle" | translate
+      }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="form-content">
+      <!-- Loading Spinner Overlay -->
+      <div *ngIf="isLoading()" class="loading-overlay">
+        <app-loading-spinner [message]="'common.generating' | translate">
+        </app-loading-spinner>
+      </div>
+
+      <!-- Form Content -->
+      <form
+        [formGroup]="lootForm"
+        (ngSubmit)="onSubmit()"
+        class="loot-generation-form"
+      >
+        <!-- Location Input Section -->
+        <div class="form-section">
+          <h3 class="section-title">{{ "form.location.title" | translate }}</h3>
+          <app-location-input
+            [value]="lootForm.get('location')?.value || ''"
+            [disabled]="isLoading()"
+            [required]="true"
+            [maxLength]="200"
+            (valueChange)="onLocationChange($event)"
+            data-testid="location-input"
+          >
+          </app-location-input>
+        </div>
+
+        <mat-divider class="section-divider"></mat-divider>
+
+        <!-- Wealth Level Selection Section -->
+        <div class="form-section">
+          <h3 class="section-title">
+            {{ "form.wealthLevel.title" | translate }}
+          </h3>
+          <app-wealth-selector
+            [value]="lootForm.get('wealthLevel')?.value"
+            [disabled]="isLoading()"
+            (valueChange)="onWealthLevelChange($event)"
+            data-testid="wealth-selector"
+          >
+          </app-wealth-selector>
+        </div>
+
+        <mat-divider class="section-divider"></mat-divider>
+
+        <!-- Error Message Section -->
+        <div class="form-section" *ngIf="errorMessage()">
+          <app-error-message
+            [error]="{ message: errorMessage()!, type: 'error' }"
+            [allowDismiss]="true"
+            (dismiss)="clearError()"
+            data-testid="error-message"
+          >
+          </app-error-message>
+        </div>
+
+        <!-- Cooldown Timer Section -->
+        <div
+          class="form-section cooldown-section"
+          *ngIf="cooldownStatus().isActive"
+        >
+          <app-cooldown-timer
+            [remainingTime]="cooldownStatus().remainingMs"
+            [showProgress]="true"
+            data-testid="cooldown-timer"
+          >
+          </app-cooldown-timer>
+        </div>
+
+        <!-- Generation Button Section -->
+        <div class="form-section generation-section">
+          <app-generate-button
+            [isLoading]="isLoading()"
+            [isDisabled]="!canSubmit()"
+            [cooldownRemaining]="cooldownRemaining()"
+            (generateClick)="onGenerateClick()"
+            data-testid="generate-button"
+          >
+          </app-generate-button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

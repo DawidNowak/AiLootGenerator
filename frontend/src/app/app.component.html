@@ -18,6 +18,43 @@
   </header>
 
   <main class="main-content">
+    <!-- Integrated Loot Generation Form -->
+    <section class="integrated-form-section">
+      <h2 class="section-title">{{ "loot.generation.title" | translate }}</h2>
+      <p class="section-description">
+        {{ "loot.generation.description" | translate }}
+      </p>
+
+      <app-loot-form
+        (lootGenerated)="onLootGenerated($event)"
+        (generationError)="onLootGenerationError($event)"
+        class="integrated-form"
+      >
+      </app-loot-form>
+
+      <!-- Generated Loot Display -->
+      <div class="generated-loot-section" *ngIf="generatedLoot().length > 0">
+        <h3 class="subsection-title">
+          {{ "loot.generated.title" | translate }}
+        </h3>
+        <app-loot-list
+          [items]="generatedLoot()"
+          [showPrices]="showPriceDetails()"
+          [showFullBreakdown]="true"
+          [isLoading]="false"
+        >
+        </app-loot-list>
+
+        <div class="loot-controls">
+          <app-price-toggle
+            [showDetailedPrices]="showPriceDetails()"
+            (showDetailedPricesChange)="onPriceToggleChange($event)"
+          >
+          </app-price-toggle>
+        </div>
+      </div>
+    </section>
+
     <!-- Loot Generation Form Preview -->
     <div class="form-demo-section">
       <h2 class="section-title">{{ "form.title" | translate }}</h2>
