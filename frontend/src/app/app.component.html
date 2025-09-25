@@ -103,6 +103,83 @@
       </div>
     </div>
 
+    <!-- Loading Spinner Component Demo -->
+    <div class="loading-spinner-section">
+      <h2 class="section-title">Loading Spinner Component</h2>
+      <p class="section-description">
+        Displays loading states with customizable size, color, and messages
+      </p>
+
+      <div class="spinner-demo-container">
+        <div class="spinner-controls">
+          <button class="btn btn-primary" (click)="toggleSpinnerDemo()">
+            {{ spinnerDemoLoading() ? "Stop Loading" : "Start Loading" }}
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            (click)="cycleSpinnerSize()"
+            [disabled]="spinnerDemoLoading()"
+          >
+            Size: {{ spinnerDemoSize() }}px
+          </button>
+
+          <button
+            class="btn btn-accent"
+            (click)="cycleSpinnerColor()"
+            [disabled]="spinnerDemoLoading()"
+          >
+            Color: {{ spinnerDemoColor }}
+          </button>
+        </div>
+
+        <div class="spinner-demo-wrapper">
+          <app-loading-spinner
+            [isLoading]="spinnerDemoLoading()"
+            [size]="spinnerDemoSize()"
+            [color]="spinnerDemoColor"
+            [message]="'loot.list.loading'"
+            [showMessage]="true"
+          ></app-loading-spinner>
+
+          <div class="spinner-variations">
+            <div class="variation-item">
+              <h4>Small Spinner</h4>
+              <app-loading-spinner
+                [isLoading]="true"
+                [size]="30"
+                [color]="'accent'"
+                [message]="'loading.default'"
+                [showMessage]="false"
+              ></app-loading-spinner>
+            </div>
+
+            <div class="variation-item">
+              <h4>Custom Message</h4>
+              <app-loading-spinner
+                [isLoading]="true"
+                [size]="40"
+                [color]="'warn'"
+                [message]="'common.generating'"
+                [showMessage]="true"
+              ></app-loading-spinner>
+            </div>
+
+            <div class="variation-item">
+              <h4>Large Spinner</h4>
+              <app-loading-spinner
+                [isLoading]="true"
+                [size]="80"
+                [color]="'primary'"
+                [message]="'loot.list.loading'"
+                [showMessage]="true"
+              ></app-loading-spinner>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Loot List Component Demo -->
     <div class="loot-list-section">
       <h2 class="section-title">Loot List Component</h2>

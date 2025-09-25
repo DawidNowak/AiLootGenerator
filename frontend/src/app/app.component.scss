@@ -589,6 +589,68 @@
   }
 }
 
+// Loading Spinner Component Demo Section
+.loading-spinner-section {
+  background: linear-gradient(
+    135deg,
+    rgba(45, 45, 45, 0.8) 0%,
+    rgba(26, 26, 26, 0.8) 100%
+  );
+  border: 1px solid var(--wf-accent);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  .spinner-demo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .spinner-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  .spinner-demo-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .spinner-variations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .variation-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+
+    h4 {
+      margin: 0 0 1rem 0;
+      color: var(--wf-gold);
+      font-size: 1.1rem;
+    }
+  }
+}
+
 // Loot List Component Demo Section
 .loot-list-section {
   background: linear-gradient(

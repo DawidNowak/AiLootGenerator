@@ -7,6 +7,7 @@ import { LocationInputComponent } from './components/location-input/location-inp
 import { GenerateButtonComponent } from './components/generate-button/generate-button.component';
 import { CooldownTimerComponent } from './components/cooldown-timer/cooldown-timer.component';
 import { ErrorMessageComponent, ErrorInfo } from './components/error-message/error-message.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { LootItemComponent } from './components/loot-item/loot-item.component';
 import { LootListComponent } from './components/loot-list/loot-list.component';
 import { PriceToggleComponent } from './components/price-toggle/price-toggle.component';
@@ -26,6 +27,7 @@ import { LootItem } from './models/loot-item.interface';
     GenerateButtonComponent,
     CooldownTimerComponent,
     ErrorMessageComponent,
+    LoadingSpinnerComponent,
     LootItemComponent,
     LootListComponent,
     PriceToggleComponent,
@@ -84,6 +86,11 @@ export class AppComponent implements OnDestroy {
   listDemoLoading = signal<boolean>(false);
   showListPrices = signal<boolean>(true);
   showListFullBreakdown = signal<boolean>(false);
+
+  // Loading spinner demo state
+  spinnerDemoLoading = signal<boolean>(false);
+  spinnerDemoSize = signal<number>(50);
+  spinnerDemoColor: 'primary' | 'accent' | 'warn' = 'primary';
 
   onWealthLevelChange(wealthLevel: WealthLevel): void {
     this.selectedWealthLevel.set(wealthLevel);
@@ -261,6 +268,33 @@ export class AppComponent implements OnDestroy {
 
   toggleListFullBreakdown(): void {
     this.showListFullBreakdown.set(!this.showListFullBreakdown());
+  }
+
+  // Loading spinner demo methods
+  toggleSpinnerDemo(): void {
+    if (this.spinnerDemoLoading()) {
+      this.spinnerDemoLoading.set(false);
+    } else {
+      this.spinnerDemoLoading.set(true);
+      // Auto-stop after 3 seconds for demo
+      setTimeout(() => {
+        this.spinnerDemoLoading.set(false);
+      }, 3000);
+    }
+  }
+
+  cycleSpinnerSize(): void {
+    const sizes = [30, 50, 80, 120];
+    const currentIndex = sizes.indexOf(this.spinnerDemoSize());
+    const nextIndex = (currentIndex + 1) % sizes.length;
+    this.spinnerDemoSize.set(sizes[nextIndex]);
+  }
+
+  cycleSpinnerColor(): void {
+    const colors: Array<'primary' | 'accent' | 'warn'> = ['primary', 'accent', 'warn'];
+    const currentIndex = colors.indexOf(this.spinnerDemoColor);
+    const nextIndex = (currentIndex + 1) % colors.length;
+    this.spinnerDemoColor = colors[nextIndex];
   }
 
   private startCooldown(): void {
