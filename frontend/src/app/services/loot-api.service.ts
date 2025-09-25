@@ -65,15 +65,6 @@ export class LootApiService {
         // Validate request before sending
         this.validateGenerationRequest(request);
 
-        if (environment.enableLogging && !environment.production) {
-            console.log('Generating loot with request:', {
-                location: request.location,
-                wealthLevel: WealthLevel[request.wealthLevel],
-                language: request.language,
-                sessionId: request.sessionId
-            });
-        }
-
         return this.httpClient.post<LootGenerationResponse>(
             this.endpoints.generateLoot,
             request

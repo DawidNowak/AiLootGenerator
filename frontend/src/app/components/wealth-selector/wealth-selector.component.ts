@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, signal } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
@@ -32,7 +32,7 @@ export interface WealthLevelOption {
     templateUrl: './wealth-selector.component.html',
     styleUrls: ['./wealth-selector.component.scss']
 })
-export class WealthSelectorComponent implements OnInit {
+export class WealthSelectorComponent implements OnInit, OnChanges {
     @Input() value: WealthLevel = WealthLevel.Common;
     @Input() disabled: boolean = false;
     @Input() required: boolean = true;
@@ -80,6 +80,24 @@ export class WealthSelectorComponent implements OnInit {
     ];
 
     constructor(private i18nService: I18nService) { }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['value'] && !changes['value'].firstChange) {
+            const newValue = changes['value'].currentValue;
+            if (this.wealthLevelControl.value !== newValue) {
+                this.wealthLevelControl.setValue(newValue, { emitEvent: false });
+                this.selectedWealthLevel.set(newValue);
+            }
+        }
+
+        if (changes['disabled']) {
+            if (changes['disabled'].currentValue) {
+                this.wealthLevelControl.disable();
+            } else {
+                this.wealthLevelControl.enable();
+            }
+        }
+    }
 
     ngOnInit(): void {
         this.wealthLevelControl.setValue(this.value);

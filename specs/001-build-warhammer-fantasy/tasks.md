@@ -75,7 +75,7 @@
 ## Phase 3.7: Main Container Components (T026-T027)
 
 - [x] T026 Create loot generation form container in frontend/src/app/components/loot-form/
-- [ ] T027 Create main app container component integrating all parts in frontend/src/app/components/loot-generator/
+- [x] T027 Create main app container component integrating all parts in frontend/src/app/components/loot-generator/
 
 ## Phase 3.8: Angular Testing (T028-T030)
 

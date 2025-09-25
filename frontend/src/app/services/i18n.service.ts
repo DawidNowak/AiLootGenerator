@@ -104,7 +104,9 @@ export class I18nService {
                 'loot.list.loading': 'Generating loot items...',
                 'loot.list.empty': 'No loot items generated yet',
                 'loot.list.emptyHint': 'Click the "Generate Loot" button to create thematic items for your location',
-                'loot.list.summary': '{{count}} item generated|{{count}} items generated'
+                'loot.list.summary': '{{count}} item generated|{{count}} items generated',
+                'loot.empty.title': 'Ready to Generate Loot',
+                'loot.empty.description': 'Enter a location and select a wealth level to generate thematic treasures for your Warhammer Fantasy adventure'
             }
         },
         {
@@ -191,7 +193,9 @@ export class I18nService {
                 'loot.list.loading': 'Generowanie przedmiotów...',
                 'loot.list.empty': 'Nie wygenerowano jeszcze żadnych skarbów',
                 'loot.list.emptyHint': 'Kliknij przycisk "Generuj Skarby" aby stworzyć tematyczne przedmioty dla twojej lokalizacji',
-                'loot.list.summary': 'Wygenerowano {{count}} przedmiot|Wygenerowano {{count}} przedmiotów'
+                'loot.list.summary': 'Wygenerowano {{count}} przedmiot|Wygenerowano {{count}} przedmiotów',
+                'loot.empty.title': 'Gotowy do Generowania Skarbów',
+                'loot.empty.description': 'Wprowadź lokalizację i wybierz poziom bogactwa aby wygenerować tematyczne skarby dla twojej przygody w Warhammer Fantasy'
             }
         }
     ];

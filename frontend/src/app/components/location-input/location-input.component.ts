@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, signal } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -23,7 +23,7 @@ import { I18nService } from '../../services/i18n.service';
     templateUrl: './location-input.component.html',
     styleUrls: ['./location-input.component.scss']
 })
-export class LocationInputComponent implements OnInit {
+export class LocationInputComponent implements OnInit, OnChanges {
     @Input() value: string = '';
     @Input() disabled: boolean = false;
     @Input() required: boolean = true;
@@ -55,6 +55,24 @@ export class LocationInputComponent implements OnInit {
     currentPlaceholder = signal<string>('');
 
     constructor(private i18nService: I18nService) { }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['value'] && !changes['value'].firstChange) {
+            const newValue = changes['value'].currentValue || '';
+            if (this.locationControl.value !== newValue) {
+                this.locationControl.setValue(newValue, { emitEvent: false });
+                this.updateCharacterCount(newValue);
+            }
+        }
+
+        if (changes['disabled']) {
+            if (changes['disabled'].currentValue) {
+                this.locationControl.disable();
+            } else {
+                this.locationControl.enable();
+            }
+        }
+    }
 
     ngOnInit(): void {
         // Initialize form control with input value

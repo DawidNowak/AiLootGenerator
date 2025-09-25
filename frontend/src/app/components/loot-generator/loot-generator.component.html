@@ -1,0 +1,70 @@
+<div class="loot-generator">
+  <!-- Generation Form Section -->
+  <section class="generation-section">
+    <div class="section-header">
+      <h2 class="section-title">{{ "loot.generation.title" | translate }}</h2>
+      <p class="section-description">
+        {{ "loot.generation.description" | translate }}
+      </p>
+    </div>
+
+    <app-loot-form
+      (lootGenerated)="onLootGenerated($event)"
+      (generationError)="onLootGenerationError($event)"
+      class="loot-form"
+    >
+    </app-loot-form>
+  </section>
+
+  <!-- Error Display -->
+  <div class="error-section" *ngIf="currentError()">
+    <app-error-message
+      [error]="currentError()"
+      [allowDismiss]="true"
+      [allowRetry]="true"
+      [inline]="false"
+      (dismiss)="onErrorDismiss()"
+      (retry)="onErrorRetry()"
+    >
+    </app-error-message>
+  </div>
+
+  <!-- Generated Loot Results Section -->
+  <section class="results-section" *ngIf="generatedLoot().length > 0">
+    <div class="section-header">
+      <h3 class="section-title">
+        {{ "loot.generated.title" | translate }}
+      </h3>
+      <div class="results-controls">
+        <app-price-toggle
+          [showDetailedPrices]="showPriceDetails()"
+          (showDetailedPricesChange)="onPriceToggleChange($event)"
+        >
+        </app-price-toggle>
+      </div>
+    </div>
+
+    <app-loot-list
+      [items]="generatedLoot()"
+      [showPrices]="showPriceDetails()"
+      [showFullBreakdown]="true"
+      [isLoading]="false"
+      class="loot-results"
+    >
+    </app-loot-list>
+  </section>
+
+  <!-- Empty State -->
+  <section
+    class="empty-state"
+    *ngIf="generatedLoot().length === 0 && !currentError()"
+  >
+    <div class="empty-content">
+      <div class="empty-icon">⚔️</div>
+      <h3 class="empty-title">{{ "loot.empty.title" | translate }}</h3>
+      <p class="empty-description">
+        {{ "loot.empty.description" | translate }}
+      </p>
+    </div>
+  </section>
+</div>

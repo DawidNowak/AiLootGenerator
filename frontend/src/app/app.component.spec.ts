@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { signal } from '@angular/core';
 import { AppComponent } from './app.component';
 import { I18nService } from './services/i18n.service';
 
@@ -13,11 +15,15 @@ describe('AppComponent', () => {
       'switchLanguage',
       'translate'
     ], {
-      currentLanguage: jasmine.createSpy().and.returnValue('en')
+      currentLanguage: signal('en')
     });
 
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NoopAnimationsModule],
+      imports: [
+        AppComponent,
+        NoopAnimationsModule,
+        HttpClientTestingModule
+      ],
       providers: [
         { provide: I18nService, useValue: i18nServiceSpy }
       ]

@@ -77,6 +77,7 @@ export class LootFormComponent implements OnInit, OnDestroy {
     private readonly destroy$ = new Subject<void>();
     public readonly isLoading = signal<boolean>(false);
     public readonly errorMessage = signal<string | null>(null);
+    private readonly formValid = signal<boolean>(false);
     public readonly cooldownStatus = signal<CooldownStatus>({
         isActive: false,
         remainingMs: 0,
@@ -88,7 +89,9 @@ export class LootFormComponent implements OnInit, OnDestroy {
     public readonly canSubmit = computed(() => {
         const cooldown = this.cooldownStatus();
         const loading = this.isLoading();
-        return this.lootForm?.valid && !cooldown.isActive && !loading;
+        const formValid = this.formValid();
+
+        return formValid && !cooldown.isActive && !loading;
     });
 
     public readonly cooldownRemaining = computed(() => {
@@ -126,6 +129,9 @@ export class LootFormComponent implements OnInit, OnDestroy {
             ]],
             wealthLevel: [WealthLevel.Common, [Validators.required]]
         });
+
+        // Initialize form validity signal
+        this.formValid.set(this.lootForm.valid);
     }
 
     /**
@@ -143,13 +149,14 @@ export class LootFormComponent implements OnInit, OnDestroy {
      * Initialize form validation and real-time feedback.
      */
     private initializeFormValidation(): void {
-        // Clear errors when form becomes valid
+        // Clear errors when form becomes valid and update form validity signal
         this.lootForm.statusChanges
             .pipe(
                 takeUntil(this.destroy$),
                 distinctUntilChanged()
             )
             .subscribe(status => {
+                this.formValid.set(status === 'VALID');
                 if (status === 'VALID' && this.errorMessage()) {
                     this.errorMessage.set(null);
                 }
@@ -186,6 +193,9 @@ export class LootFormComponent implements OnInit, OnDestroy {
     onWealthLevelChange(wealthLevel: WealthLevel): void {
         this.lootForm.patchValue({ wealthLevel });
         this.errorMessage.set(null); // Clear any previous errors
+
+        // Update form validity signal
+        this.formValid.set(this.lootForm.valid);
     }
 
     /**
@@ -193,6 +203,11 @@ export class LootFormComponent implements OnInit, OnDestroy {
      */
     onLocationChange(location: string): void {
         this.lootForm.patchValue({ location });
+        // Force form validation update
+        this.lootForm.get('location')?.updateValueAndValidity();
+
+        // Update form validity signal
+        this.formValid.set(this.lootForm.valid);
     }
 
     /**
