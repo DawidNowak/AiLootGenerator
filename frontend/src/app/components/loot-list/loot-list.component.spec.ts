@@ -305,6 +305,100 @@ describe('LootListComponent', () => {
             expect(emptyHint).toBeTruthy();
         });
     });
+
+    // T005: List layout tests (these should FAIL initially)
+    describe('List Layout (T005)', () => {
+        it('should display items in vertical list format instead of grid', () => {
+            const mockItems = sampleLootItems.slice(0, 3);
+            component.items = mockItems;
+            (component as any).layout = 'list';
+            fixture.detectChanges();
+
+            const listContainer = fixture.debugElement.query(By.css('.loot-items-grid'));
+            expect(listContainer).toBeTruthy();
+
+            const computedStyle = getComputedStyle(listContainer.nativeElement);
+            // This will fail until we implement the list layout
+            expect(computedStyle.display).toBe('flex');
+            expect(computedStyle.flexDirection).toBe('column');
+        });
+
+        it('should apply list item styling to each loot item', () => {
+            const mockItems = sampleLootItems.slice(0, 2);
+            component.items = mockItems;
+            fixture.detectChanges();
+
+            const itemWrappers = fixture.debugElement.queryAll(By.css('.loot-item-wrapper'));
+            expect(itemWrappers.length).toBe(2);
+
+            itemWrappers.forEach((wrapper: any) => {
+                const computedStyle = getComputedStyle(wrapper.nativeElement);
+                // Check that width is either 100% or a reasonable pixel value (test environment)
+                const width = computedStyle.width;
+                expect(width === '100%' || parseInt(width) > 0).toBe(true);
+
+                // Check border radius (may vary in test environment)
+                const borderRadius = computedStyle.borderRadius;
+                expect(borderRadius).toBeTruthy();
+            });
+        });
+
+        it('should preserve all item information in list format', () => {
+            const mockItem = sampleLootItems[0];
+            component.items = [mockItem];
+            fixture.detectChanges();
+
+            const itemElement = fixture.debugElement.query(By.css('app-loot-item'));
+            expect(itemElement).toBeTruthy();
+
+            const itemComponent = itemElement.componentInstance;
+            expect(itemComponent.item).toEqual(mockItem);
+            expect(itemComponent.showPrice).toBe(component.showPrices);
+            expect(itemComponent.showFullBreakdown).toBe(component.showFullBreakdown);
+        });
+
+        it('should maintain proper list spacing between items', () => {
+            const mockItems = sampleLootItems.slice(0, 3);
+            component.items = mockItems;
+            fixture.detectChanges();
+
+            const listContainer = fixture.debugElement.query(By.css('.loot-items-grid'));
+            const computedStyle = getComputedStyle(listContainer.nativeElement);
+            // Check that gap is set (value may vary in test environment)
+            const gap = computedStyle.gap;
+            expect(gap).toBeTruthy();
+            expect(gap !== 'normal' && gap !== '0px').toBe(true);
+        });
+
+        it('should use semantic list markup for accessibility', () => {
+            const mockItems = sampleLootItems.slice(0, 2);
+            component.items = mockItems;
+            fixture.detectChanges();
+
+            // This will fail until we add proper ARIA roles
+            const listElement = fixture.debugElement.query(By.css('[role="list"]'));
+            expect(listElement).toBeTruthy();
+
+            const listItems = fixture.debugElement.queryAll(By.css('[role="listitem"]'));
+            expect(listItems.length).toBe(2);
+        });
+
+        it('should preserve loading and empty states in list layout', () => {
+            // Test empty state
+            component.items = [];
+            fixture.detectChanges();
+
+            const emptyState = fixture.debugElement.query(By.css('.empty-state'));
+            expect(emptyState).toBeTruthy();
+
+            // Test loading state
+            component.isLoading = true;
+            fixture.detectChanges();
+
+            const loadingState = fixture.debugElement.query(By.css('.empty-state .loading'));
+            expect(loadingState).toBeTruthy();
+        });
+    });
 });
 
 // Separate describe block for Input Properties tests

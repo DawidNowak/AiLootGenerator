@@ -36,6 +36,9 @@ export class WealthSelectorComponent implements OnInit, OnChanges {
     @Input() value: WealthLevel = WealthLevel.Common;
     @Input() disabled: boolean = false;
     @Input() required: boolean = true;
+    @Input() showIcons: boolean = false;              // NEW - disable icon display
+    @Input() showPennyRanges: boolean = true;         // NEW - enable penny range display
+    @Input() pennyRangePosition: 'below' = 'below';   // NEW - position ranges below dropdown
     @Output() valueChange = new EventEmitter<WealthLevel>();
 
     wealthLevelControl = new FormControl(WealthLevel.Common);
@@ -140,5 +143,25 @@ export class WealthSelectorComponent implements OnInit, OnChanges {
             option => option.value === this.selectedWealthLevel()
         );
         return selected?.color || '#5d4037';
+    }
+
+    /**
+     * Get penny range text for the selected wealth level
+     */
+    getPennyRangeText(): string {
+        const selected = this.wealthLevelOptions.find(
+            option => option.value === this.selectedWealthLevel()
+        );
+
+        if (!selected) {
+            return '';
+        }
+
+        // Get the description which contains penny range info
+        const description = this.i18nService.translate(selected.descriptionKey);
+
+        // Extract just the penny range part (before the dash if it exists)
+        const pennyRange = description.split(' - ')[0];
+        return pennyRange || description;
     }
 }

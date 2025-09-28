@@ -40,9 +40,26 @@ export class LootListComponent {
     @Input() showPrices: boolean = true;
     @Input() showFullBreakdown: boolean = false;
 
+    // Responsive layout coordination
+    @Input() set isMobile(value: boolean) {
+        this.isMobileSignal.set(value);
+    }
+    get isMobile(): boolean {
+        return this.isMobileSignal();
+    }
+
+    @Input() set isDesktop(value: boolean) {
+        this.isDesktopSignal.set(value);
+    }
+    get isDesktop(): boolean {
+        return this.isDesktopSignal();
+    }
+
     // Internal signals for reactivity
     private itemsSignal = signal<LootItem[]>([]);
     private isLoadingSignal = signal<boolean>(false);
+    private isMobileSignal = signal<boolean>(false);
+    private isDesktopSignal = signal<boolean>(true);
 
     // Computed values for reactive updates
     currentLanguage = computed(() => this.i18nService.currentLanguage());

@@ -43,4 +43,13 @@
   // Shadows (minimal for light theme)
   --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.12);
   --shadow-medium: 0 2px 6px rgba(0, 0, 0, 0.16);
+
+  // Responsive Breakpoints
+  --breakpoint-mobile: 768px;
+  --breakpoint-desktop: 769px;
+  --breakpoint-large: 1024px;
+
+  // Layout Grid
+  --grid-gap: 2rem;
+  --grid-gap-mobile: 1rem;
 }

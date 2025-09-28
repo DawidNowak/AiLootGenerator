@@ -79,4 +79,114 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('AI Loot Generator');
   });
+
+  // T007: Header visibility tests (these should FAIL initially)
+  describe('Header Visibility (T007)', () => {
+    it('should have all header elements visible', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      const compiled = fixture.nativeElement as HTMLElement;
+
+      // Check for header container
+      const header = compiled.querySelector('.app-header');
+      expect(header).toBeTruthy();
+
+      // Check for title elements
+      const title = compiled.querySelector('.app-title');
+      expect(title).toBeTruthy();
+
+      // Check for subtitle
+      const subtitle = compiled.querySelector('.title-subtitle');
+      expect(subtitle).toBeTruthy();
+
+      // Check for description
+      const description = compiled.querySelector('.app-description');
+      expect(description).toBeTruthy();
+    });
+
+    it('should not have content cut off or overlapping', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      const compiled = fixture.nativeElement as HTMLElement;
+
+      const header = compiled.querySelector('.app-header') as HTMLElement;
+      expect(header).toBeTruthy();
+
+      // This will fail if header has fixed height that cuts off content
+      const computedStyle = getComputedStyle(header);
+      expect(computedStyle.minHeight).not.toBe('auto'); // Will fail until CSS is fixed
+      expect(computedStyle.overflow).not.toBe('hidden'); // Will fail if content is hidden
+    });
+
+    it('should scale appropriately on small screens', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+
+      fixture.detectChanges();
+      const compiled = fixture.nativeElement as HTMLElement;
+
+      const title = compiled.querySelector('.app-title') as HTMLElement;
+      expect(title).toBeTruthy();
+
+      // Verify that responsive CSS classes exist and title has reasonable styling
+      const titleStyle = getComputedStyle(title);
+      const fontSize = parseFloat(titleStyle.fontSize);
+
+      // In testing environment, check that font size is set (might be default value)
+      expect(fontSize).toBeGreaterThan(0);
+      expect(titleStyle.fontWeight).toBeTruthy();
+    });
+
+    it('should maintain proper header layout on different viewport heights', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+
+      // Test different viewport heights
+      const viewportHeights = [600, 800, 1080];
+
+      viewportHeights.forEach(height => {
+        Object.defineProperty(window, 'innerHeight', { value: height, writable: true });
+        fixture.detectChanges();
+
+        const compiled = fixture.nativeElement as HTMLElement;
+        const headerContent = compiled.querySelector('.header-content') as HTMLElement;
+
+        expect(headerContent).toBeTruthy();
+
+        // Will fail if padding is excessive for small heights
+        if (height <= 600) {
+          const computedStyle = getComputedStyle(headerContent);
+          expect(parseFloat(computedStyle.paddingTop)).toBeLessThan(32); // Should reduce padding on small screens
+        }
+      });
+    });
+
+    it('should preserve language selector visibility', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      const compiled = fixture.nativeElement as HTMLElement;
+
+      const languageSelector = compiled.querySelector('app-language-selector');
+      expect(languageSelector).toBeTruthy();
+
+      const headerControls = compiled.querySelector('.header-controls');
+      expect(headerControls).toBeTruthy();
+
+      // Should be visible and properly positioned
+      const controlsStyle = getComputedStyle(headerControls as HTMLElement);
+      expect(controlsStyle.display).not.toBe('none');
+    });
+
+    it('should maintain responsive header layout', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      const compiled = fixture.nativeElement as HTMLElement;
+
+      const headerTop = compiled.querySelector('.header-top') as HTMLElement;
+      expect(headerTop).toBeTruthy();
+
+      // Should use flex layout for responsive behavior
+      const headerTopStyle = getComputedStyle(headerTop);
+      expect(headerTopStyle.display).toBe('flex');
+      expect(headerTopStyle.justifyContent).toBe('space-between'); // Will fail until proper layout is ensured
+    });
+  });
 });

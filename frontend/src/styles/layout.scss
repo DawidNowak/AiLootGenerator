@@ -1,0 +1,77 @@
+/* CSS Grid Utility Classes for Responsive Layout */
+
+// Responsive Container Base Class
+.responsive-container {
+  display: grid;
+  gap: var(--grid-gap-mobile);
+  width: 100%;
+
+  @media (min-width: 769px) {
+    gap: var(--grid-gap);
+  }
+}
+
+// Layout Configurations
+.layout-stacked {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "form"
+    "results";
+}
+
+.layout-side-by-side {
+  grid-template-columns: 400px 1fr;
+  grid-template-areas: "form results";
+}
+
+// Grid Areas
+.grid-form {
+  grid-area: form;
+}
+
+.grid-results {
+  grid-area: results;
+}
+
+// List Layout Utilities
+.list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.list-item {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: var(--shadow-light);
+  background: var(--background-card);
+  border: 1px solid var(--form-border);
+}
+
+// Responsive Utilities
+.mobile-only {
+  display: block;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+
+  @media (min-width: 769px) {
+    display: block;
+  }
+}
+
+// Smooth Transitions for Layout Changes
+.responsive-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+// Hide Elements (for icon removal)
+.hidden {
+  display: none !important;
+}

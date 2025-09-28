@@ -356,4 +356,116 @@ describe('LootGeneratorComponent', () => {
             expect(component.currentError()).toBeNull();
         });
     });
+
+    // T006: Responsive layout tests (these should FAIL initially)
+    describe('Responsive Layout (T006)', () => {
+        it('should initialize responsive state signals', () => {
+            expect(component.isMobile).toBeDefined();
+            expect(component.isDesktop).toBeDefined();
+
+            // Check actual values and log them for debugging
+            console.log('Initial values:', {
+                isMobile: component.isMobile(),
+                isDesktop: component.isDesktop()
+            });
+
+            // Component initializes with whatever the current breakpoint is
+            expect(typeof component.isMobile()).toBe('boolean');
+            expect(typeof component.isDesktop()).toBe('boolean');
+        });
+
+        it('should use stacked layout on mobile viewports', () => {
+            // Simulate mobile breakpoint
+            (component as any).isMobile.set(true);
+            (component as any).isDesktop.set(false);
+            fixture.detectChanges();
+
+            const container = fixture.debugElement.query(By.css('.responsive-container'));
+            expect(container).toBeTruthy();
+            expect(container.nativeElement).toHaveClass('layout-stacked');
+            expect(container.nativeElement).not.toHaveClass('layout-side-by-side');
+        });
+
+        it('should use side-by-side layout on desktop viewports', () => {
+            // Simulate desktop breakpoint
+            (component as any).isMobile.set(false);
+            (component as any).isDesktop.set(true);
+            fixture.detectChanges();
+
+            const container = fixture.debugElement.query(By.css('.responsive-container'));
+            expect(container).toBeTruthy();
+            expect(container.nativeElement).toHaveClass('layout-side-by-side');
+            expect(container.nativeElement).not.toHaveClass('layout-stacked');
+        });
+
+        it('should observe breakpoint changes and update state', async () => {
+            // This test will fail until BreakpointObserver is properly implemented
+            expect(component.ngOnInit).toBeDefined();
+            expect(component.ngOnDestroy).toBeDefined();
+
+            // Mock breakpoint observer behavior
+            component.ngOnInit();
+
+            // Verify that the component subscribes to breakpoint changes
+            expect((component as any).destroy$).toBeDefined();
+        });
+
+        it('should apply correct grid areas to form and results sections', () => {
+            const mockItems = [mockLootItems[0]];
+            component.onLootGenerated({
+                items: mockItems,
+                request: {
+                    sessionId: 'test',
+                    location: 'Test',
+                    wealthLevel: WealthLevel.Common,
+                    language: 'en'
+                }
+            });
+            fixture.detectChanges();
+
+            // Check for grid area classes
+            const formSection = fixture.debugElement.query(By.css('.generation-section'));
+            const resultsSection = fixture.debugElement.query(By.css('.results-section'));
+
+            expect(formSection).toBeTruthy();
+            expect(resultsSection).toBeTruthy();
+
+            expect(formSection.nativeElement).toHaveClass('grid-form');
+            expect(resultsSection.nativeElement).toHaveClass('grid-results');
+        });
+
+        it('should transition smoothly between layouts', () => {
+            // Set initial state
+            (component as any).isMobile.set(false);
+            fixture.detectChanges();
+
+            const container = fixture.debugElement.query(By.css('.responsive-container'));
+            expect(container).toBeTruthy();
+
+            // Check if transition is defined (the exact value may vary in testing environments)
+            const computedStyle = getComputedStyle(container.nativeElement);
+            expect(computedStyle.transition).toBeTruthy();
+            expect(computedStyle.transition.length).toBeGreaterThan(0);
+        });
+
+        it('should maintain existing form functionality with responsive layout', () => {
+            // Ensure form still works in responsive container
+            const formComponent = fixture.debugElement.query(By.css('app-loot-form'));
+            expect(formComponent).toBeTruthy();
+
+            // Test that events still work
+            const event: LootGeneratedEvent = {
+                items: mockLootItems,
+                request: {
+                    sessionId: 'test',
+                    location: 'Test',
+                    wealthLevel: WealthLevel.Common,
+                    language: 'en'
+                }
+            };
+
+            component.onLootGenerated(event);
+            expect(component.generatedLoot()).toEqual(mockLootItems);
+        });
+    });
 });

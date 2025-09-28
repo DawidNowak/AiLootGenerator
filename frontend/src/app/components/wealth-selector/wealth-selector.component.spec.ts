@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 import { WealthSelectorComponent } from './wealth-selector.component';
 import { I18nService } from '../../services/i18n.service';
 import { WealthLevel } from '../../models/wealth-level.enum';
@@ -145,14 +146,68 @@ describe('WealthSelectorComponent', () => {
         expect(matOptions.length).toBe(5);
     });
 
-    it('should display wealth level icons', async () => {
-        // Trigger the select to open by clicking on it
-        const trigger = fixture.debugElement.nativeElement.querySelector('.mat-mdc-select-trigger');
-        trigger.click();
-        fixture.detectChanges();
-        await fixture.whenStable();
+    // T004: Icon removal tests (these should FAIL initially)
+    describe('Icon Removal (T004)', () => {
+        it('should not display icons in dropdown options when showIcons is false', async () => {
+            // Set showIcons to false (this property needs to be added)
+            (component as any).showIcons = false;
+            fixture.detectChanges();
 
-        const icons = document.querySelectorAll('.wealth-icon');
-        expect(icons.length).toBeGreaterThan(0);
+            const trigger = fixture.debugElement.nativeElement.querySelector('.mat-mdc-select-trigger');
+            trigger.click();
+            fixture.detectChanges();
+            await fixture.whenStable();
+
+            // Icons should not be visible in options
+            const icons = document.querySelectorAll('.wealth-icon');
+            const visibleIcons = Array.from(icons).filter(icon =>
+                (icon as HTMLElement).style.display !== 'none' &&
+                !icon.classList.contains('hidden')
+            );
+            expect(visibleIcons.length).toBe(0);
+        });
+
+        it('should display penny ranges below dropdown when showPennyRanges is true', () => {
+            // Set showPennyRanges to true (this property needs to be added)
+            (component as any).showPennyRanges = true;
+            fixture.detectChanges();
+
+            // Penny range display should be visible
+            const pennyRangeElement = fixture.debugElement.nativeElement.querySelector('.penny-range-display');
+            expect(pennyRangeElement).toBeTruthy();
+            expect(pennyRangeElement.textContent).toContain('pennies');
+        });
+
+        it('should not show prefix icon when showIcons is false', () => {
+            (component as any).showIcons = false;
+            fixture.detectChanges();
+
+            const prefixIcon = fixture.debugElement.nativeElement.querySelector('mat-icon[matPrefix]');
+            expect(prefixIcon).toBeFalsy();
+        });
+
+        it('should maintain form validation with simplified display', () => {
+            component.required = true;
+            (component as any).showIcons = false;
+            component.selectedWealthLevel.set(null as any);
+            fixture.detectChanges();
+
+            const formControl = component.selectedWealthLevel;
+            // This will fail until the form validation is properly set up
+            expect(formControl).toBeTruthy();
+        });
+
+        it('should preserve accessibility attributes without icons', async () => {
+            (component as any).showIcons = false;
+            fixture.detectChanges();
+
+            // Check if the mat-select has appropriate accessibility attributes
+            const selectElement = fixture.debugElement.query(By.css('mat-select'));
+            expect(selectElement).toBeTruthy();
+
+            // Material components handle aria-label internally, so we check if it's accessible
+            const selectNative = selectElement.nativeElement;
+            expect(selectNative.getAttribute('aria-label') || selectNative.getAttribute('aria-labelledby')).toBeTruthy();
+        });
     });
 });

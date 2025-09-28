@@ -70,15 +70,35 @@
 }
 
 .loot-items-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1rem;
+  // Convert from grid to vertical list layout
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; // List item spacing
   width: 100%;
+
+  // Remove grid-specific styles (commented out for reference)
+  // grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  // gap: 1rem;
 }
 
 .loot-item-wrapper {
   display: block;
   height: fit-content;
+
+  // List item styling
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: var(--shadow-light);
+  background: var(--background-card);
+  border: 1px solid var(--form-border);
+
+  // Smooth transitions
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
 }
 
 .results-summary {
@@ -133,8 +153,14 @@
   }
 
   .loot-items-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    // No longer using grid - already vertical flex layout
+    gap: 0.5rem; // Slightly smaller gap on mobile
+  }
+
+  .loot-item-wrapper {
+    // Adjust list item styling for mobile
+    border-radius: 2px;
+    margin-bottom: 0.25rem;
   }
 
   .empty-state {

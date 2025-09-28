@@ -22,14 +22,19 @@
     <p class="empty-state-hint">{{ "loot.list.emptyHint" | translate }}</p>
   </div>
 
-  <!-- Loot Items List -->
-  <div class="loot-items-grid" *ngIf="hasItems() && !isLoading">
+  <!-- Loot Items List - Converted to vertical list with accessibility -->
+  <div
+    class="loot-items-grid list-vertical"
+    role="list"
+    *ngIf="hasItems() && !isLoading"
+  >
     <app-loot-item
       *ngFor="let item of items; trackBy: trackByIndex"
       [item]="item"
       [showPrice]="showPrices"
       [showFullBreakdown]="showFullBreakdown"
-      class="loot-item-wrapper"
+      class="loot-item-wrapper list-item"
+      role="listitem"
     ></app-loot-item>
   </div>
 

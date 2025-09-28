@@ -3,6 +3,9 @@
 // Import CSS custom properties
 @import "./styles/themes/light-variables.scss";
 
+// Import layout utilities
+@import "./styles/layout.scss";
+
 // Import animation-disabled styles
 @import "./styles/global/animations-disabled.scss";
 

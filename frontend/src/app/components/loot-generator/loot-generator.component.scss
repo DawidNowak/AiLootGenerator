@@ -4,14 +4,47 @@
   margin: 0 auto;
   padding: 0 16px;
 
-  // Section spacing
+  // Responsive Container with CSS Grid
+  .responsive-container {
+    display: grid;
+    gap: var(--grid-gap-mobile);
+    width: 100%;
+    align-items: start; // Align items to top
+
+    // Mobile-first approach (stacked layout)
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "form"
+      "results";
+
+    // Desktop layout (side-by-side)
+    @media (min-width: 769px) {
+      gap: var(--grid-gap);
+      grid-template-columns: 400px 1fr;
+      grid-template-areas: "form results";
+    }
+
+    // Smooth transitions for layout changes
+    transition: all 0.3s ease-in-out;
+  }
+
+  // Grid area assignments
+  .grid-form {
+    grid-area: form;
+  }
+
+  .grid-results {
+    grid-area: results;
+  }
+
+  // Section spacing - adjusted for responsive layout
   .generation-section,
   .results-section,
   .empty-state {
-    margin-bottom: 32px;
+    margin-bottom: 0; // Remove bottom margin, use grid gap instead
 
     @media (max-width: 768px) {
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
   }
 

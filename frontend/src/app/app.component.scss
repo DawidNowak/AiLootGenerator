@@ -1,14 +1,24 @@
 .app-container {
   min-height: 100vh;
-  background: var(--wf-dark-bg);
-  color: var(--wf-text-light);
+  background: var(--background-default);
+  color: var(--text-primary);
 }
 
 .app-header {
-  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-  border-bottom: 2px solid var(--wf-accent);
-  padding: 2rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-100) 0%,
+    var(--primary-200) 100%
+  );
+  border-bottom: 2px solid var(--accent-600);
+  padding: 1rem 0 2rem 0; // Reduced top padding for better visibility
   text-align: center;
+  min-height: auto; // Ensure content isn't cut off
+
+  // Responsive header height
+  @media (max-height: 600px) {
+    padding: 0.5rem 0 1rem 0; // Further reduced padding on small screens
+  }
 
   .header-content {
     max-width: 1200px;
@@ -44,7 +54,7 @@
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
-    background: linear-gradient(45deg, var(--wf-gold), var(--wf-silver));
+    background: linear-gradient(45deg, var(--accent-600), var(--primary-800));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -55,32 +65,55 @@
     flex-wrap: wrap;
     flex: 1;
 
+    // Responsive title sizing
     @media (max-width: 768px) {
       justify-content: center;
       text-align: center;
+      font-size: 2rem; // Smaller font size on mobile
+    }
+
+    @media (max-height: 600px) {
+      font-size: 2rem; // Smaller font size on short screens
     }
 
     .title-icon {
       font-size: 2.5rem;
-      filter: drop-shadow(0 0 10px var(--wf-gold));
+      filter: drop-shadow(0 0 10px var(--accent-600));
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
 
     .title-subtitle {
       font-size: 1.2rem;
-      color: var(--wf-bronze);
+      color: var(--text-secondary);
       font-weight: normal;
       display: block;
       margin-top: 0.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 
   .app-description {
     font-size: 1.2rem;
-    color: var(--wf-text-light);
+    color: var(--text-primary);
     opacity: 0.8;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-height: 600px) {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
   }
 }
 
