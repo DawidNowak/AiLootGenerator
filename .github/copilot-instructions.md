@@ -1,6 +1,6 @@
 # AiLootGenerator Development Guidelines
 
-Auto-generated from all feature plans. Last updated: 2025-09-24
+Auto-generated from all feature plans. Last updated: 2025-09-28
 
 ## Active Technologies
 
@@ -28,3 +28,4 @@ C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+): Follow standard conv
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
+

@@ -1,0 +1,73 @@
+// Complete animation and transition elimination
+*,
+*::before,
+*::after {
+  // Remove all CSS transitions
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+
+  // Remove all CSS animations
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+}
+
+// Override Angular Material animations
+.mat-ripple-element {
+  display: none !important;
+}
+
+.mat-button-focus-overlay {
+  opacity: 0 !important;
+}
+
+// Override Angular Material internal animations
+.cdk-overlay-backdrop {
+  transition: none !important;
+}
+
+.mat-drawer-transition,
+.mat-drawer-content {
+  transition: none !important;
+}
+
+.mat-tab-group,
+.mat-tab-header {
+  .mat-ink-bar {
+    transition: none !important;
+  }
+}
+
+// Preserve only loading spinner animation (essential feedback)
+mat-spinner circle {
+  animation: mat-spinner-rotate 1.4s linear infinite !important;
+}
+
+@keyframes mat-spinner-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Essential user feedback (instant state changes)
+.mat-form-field.mat-focused {
+  .mat-form-field-label {
+    // NO transition - instant color change
+    transition: none !important;
+  }
+}
+
+button:active {
+  // NO transition - instant feedback
+  transition: none !important;
+}
+
+.mat-form-field-invalid {
+  .mat-form-field-outline {
+    // NO transition - instant error state
+    transition: none !important;
+  }
+}

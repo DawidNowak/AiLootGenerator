@@ -1,15 +1,18 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Subject, combineLatest, switchMap, catchError, of, EMPTY } from 'rxjs';
 import { takeUntil, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 // Components
 import { WealthSelectorComponent } from '../wealth-selector/wealth-selector.component';
-import { LocationInputComponent } from '../location-input/location-input.component';
-import { GenerateButtonComponent } from '../generate-button/generate-button.component';
 import { CooldownTimerComponent } from '../cooldown-timer/cooldown-timer.component';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
 import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
@@ -44,8 +47,29 @@ export interface LootGeneratedEvent {
 }
 
 /**
- * Container component for the loot generation form.
- * Coordinates all form components and handles the generation workflow.
+ * Integrated loot generation form component with light minimalistic design.
+ * 
+ * This component integrates location input and generation button directly into a single
+ * cohesive interface, eliminating separate child components for a cleaner user experience.
+ * 
+ * Features:
+ * - Direct Angular Material form integration (location input, generate button)
+ * - Light theme with instant visual feedback (no animations/transitions) 
+ * - Form validation and submission handling
+ * - Cooldown timer integration
+ * - Loading state management with spinner
+ * - Responsive design across all viewport sizes
+ * - Accessibility support for keyboard navigation and screen readers
+ * 
+ * @example
+ * ```html
+ * <app-loot-form 
+ *   (lootGenerated)="onLootGenerated($event)"
+ *   (generationError)="onError($event)">
+ * </app-loot-form>
+ * ```
+ * 
+ * @version 2.0.0 - Integrated design without separate LocationInput/GenerateButton components
  */
 @Component({
     selector: 'app-loot-form',
@@ -55,9 +79,12 @@ export interface LootGeneratedEvent {
         ReactiveFormsModule,
         MatCardModule,
         MatDividerModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
         WealthSelectorComponent,
-        LocationInputComponent,
-        GenerateButtonComponent,
         CooldownTimerComponent,
         ErrorMessageComponent,
         LoadingSpinnerComponent,
@@ -199,18 +226,6 @@ export class LootFormComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Handle location input changes.
-     */
-    onLocationChange(location: string): void {
-        this.lootForm.patchValue({ location });
-        // Force form validation update
-        this.lootForm.get('location')?.updateValueAndValidity();
-
-        // Update form validity signal
-        this.formValid.set(this.lootForm.valid);
-    }
-
-    /**
      * Handle form submission and loot generation.
      */
     onSubmit(): void {
@@ -220,13 +235,6 @@ export class LootFormComponent implements OnInit, OnDestroy {
         }
 
         this.generateLoot();
-    }
-
-    /**
-     * Handle generate button click.
-     */
-    onGenerateClick(): void {
-        this.onSubmit();
     }
 
     /**
@@ -378,5 +386,27 @@ export class LootFormComponent implements OnInit, OnDestroy {
             cooldownStatus: this.cooldownStatus(),
             errorMessage: this.errorMessage()
         };
+    }
+
+    /**
+     * Get location control for template access.
+     */
+    get locationControl(): AbstractControl {
+        return this.lootForm.get('location')!;
+    }
+
+    /**
+     * Get generate button text based on current state.
+     */
+    generateButtonText(): string {
+        if (this.isLoading()) {
+            return this.i18nService.translate('common.generating');
+        }
+
+        if (this.cooldownStatus().isActive) {
+            return this.i18nService.translate('common.cooldown.wait');
+        }
+
+        return this.i18nService.translate('common.generate');
     }
 }
