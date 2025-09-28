@@ -2,48 +2,40 @@
   <!-- Header with item count -->
   <div class="list-header" *ngIf="hasItems() && !isLoading">
     <h3 class="list-title">
-      <mat-icon>inventory_2</mat-icon>
       {{ "loot.list.title" | translate }} ({{ itemCount() }})
     </h3>
   </div>
 
   <!-- Loading State -->
   <div class="empty-state" *ngIf="isLoading">
-    <mat-icon class="empty-state-icon loading">{{
-      getEmptyStateIcon()
-    }}</mat-icon>
+    <mat-progress-bar
+      mode="indeterminate"
+      class="loading-bar"
+    ></mat-progress-bar>
     <p class="empty-state-message">{{ getEmptyStateMessage() | translate }}</p>
   </div>
 
   <!-- Empty State (no items) -->
   <div class="empty-state" *ngIf="!isLoading && !hasItems()">
-    <mat-icon class="empty-state-icon">{{ getEmptyStateIcon() }}</mat-icon>
     <p class="empty-state-message">{{ getEmptyStateMessage() | translate }}</p>
     <p class="empty-state-hint">{{ "loot.list.emptyHint" | translate }}</p>
   </div>
 
-  <!-- Loot Items List -->
-  <div class="loot-items-grid" *ngIf="hasItems() && !isLoading">
-    <app-loot-item
+  <!-- Loot Items List - Custom Cards -->
+  <div class="loot-items-list" *ngIf="hasItems() && !isLoading">
+    <div
       *ngFor="let item of items; trackBy: trackByIndex"
-      [item]="item"
-      [showPrice]="showPrices"
-      [showFullBreakdown]="showFullBreakdown"
-      class="loot-item-wrapper"
-    ></app-loot-item>
-  </div>
-
-  <!-- Results Summary -->
-  <div class="results-summary" *ngIf="hasItems() && !isLoading">
-    <mat-card class="summary-card">
-      <mat-card-content>
-        <div class="summary-content">
-          <mat-icon>summarize</mat-icon>
-          <span>{{
-            "loot.list.summary" | translate : { count: itemCount().toString() }
-          }}</span>
-        </div>
-      </mat-card-content>
-    </mat-card>
+      class="loot-item-card"
+    >
+      <div class="item-name">
+        {{ item.name }}
+      </div>
+      <div class="item-description">
+        {{ item.description }}
+      </div>
+      <div class="item-value" *ngIf="showPrices">
+        {{ "item.value" | translate }}: {{ formatPrice(item) }}
+      </div>
+    </div>
   </div>
 </div>

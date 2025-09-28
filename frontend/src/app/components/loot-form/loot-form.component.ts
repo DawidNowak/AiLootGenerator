@@ -1,18 +1,20 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Subject, combineLatest, switchMap, catchError, of, EMPTY } from 'rxjs';
 import { takeUntil, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
-// Components
-import { WealthSelectorComponent } from '../wealth-selector/wealth-selector.component';
-import { LocationInputComponent } from '../location-input/location-input.component';
-import { GenerateButtonComponent } from '../generate-button/generate-button.component';
-import { CooldownTimerComponent } from '../cooldown-timer/cooldown-timer.component';
-import { ErrorMessageComponent } from '../error-message/error-message.component';
-import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+// No more separate components needed
 
 // Services and Models
 import { SessionService, CooldownStatus } from '../../services/session.service';
@@ -22,6 +24,7 @@ import { GenerationRequest } from '../../models/generation-request.interface';
 import { WealthLevel } from '../../models/wealth-level.enum';
 import { LootItem } from '../../models/loot-item.interface';
 import { TranslatePipe } from '../../pipes/translate.pipe';
+import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
 
 /**
  * Form state for the loot generation form.
@@ -44,8 +47,29 @@ export interface LootGeneratedEvent {
 }
 
 /**
- * Container component for the loot generation form.
- * Coordinates all form components and handles the generation workflow.
+ * Integrated loot generation form component with light minimalistic design.
+ * 
+ * This component integrates location input and generation button directly into a single
+ * cohesive interface, eliminating separate child components for a cleaner user experience.
+ * 
+ * Features:
+ * - Direct Angular Material form integration (location input, generate button)
+ * - Light theme with instant visual feedback (no animations/transitions) 
+ * - Form validation and submission handling
+ * - Cooldown timer integration
+ * - Loading state management with spinner
+ * - Responsive design across all viewport sizes
+ * - Accessibility support for keyboard navigation and screen readers
+ * 
+ * @example
+ * ```html
+ * <app-loot-form 
+ *   (lootGenerated)="onLootGenerated($event)"
+ *   (generationError)="onError($event)">
+ * </app-loot-form>
+ * ```
+ * 
+ * @version 2.0.0 - Integrated design without separate LocationInput/GenerateButton components
  */
 @Component({
     selector: 'app-loot-form',
@@ -55,13 +79,16 @@ export interface LootGeneratedEvent {
         ReactiveFormsModule,
         MatCardModule,
         MatDividerModule,
-        WealthSelectorComponent,
-        LocationInputComponent,
-        GenerateButtonComponent,
-        CooldownTimerComponent,
-        ErrorMessageComponent,
-        LoadingSpinnerComponent,
-        TranslatePipe
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatCheckboxModule,
+        MatSelectModule,
+        MatProgressBarModule,
+        TranslatePipe,
+        LanguageSelectorComponent
     ],
     templateUrl: './loot-form.component.html',
     styleUrls: ['./loot-form.component.scss']
@@ -69,6 +96,7 @@ export interface LootGeneratedEvent {
 export class LootFormComponent implements OnInit, OnDestroy {
     @Output() lootGenerated = new EventEmitter<LootGeneratedEvent>();
     @Output() generationError = new EventEmitter<string>();
+    @Output() priceToggleChanged = new EventEmitter<boolean>();
 
     // Form setup
     lootForm!: FormGroup;
@@ -78,6 +106,7 @@ export class LootFormComponent implements OnInit, OnDestroy {
     public readonly isLoading = signal<boolean>(false);
     public readonly errorMessage = signal<string | null>(null);
     private readonly formValid = signal<boolean>(false);
+    public readonly showPrices = signal<boolean>(false);
     public readonly cooldownStatus = signal<CooldownStatus>({
         isActive: false,
         remainingMs: 0,
@@ -97,6 +126,14 @@ export class LootFormComponent implements OnInit, OnDestroy {
     public readonly cooldownRemaining = computed(() => {
         return this.cooldownStatus().remainingMs;
     });
+
+    // Wealth level options derived from enum
+    public readonly wealthLevelOptions = Object.keys(WealthLevel)
+        .filter(key => !isNaN(Number(WealthLevel[key as keyof typeof WealthLevel])))
+        .map(key => ({
+            value: WealthLevel[key as keyof typeof WealthLevel],
+            labelKey: `wealth.${key.toLowerCase()}`
+        }));
 
     constructor(
         private fb: FormBuilder,
@@ -127,7 +164,8 @@ export class LootFormComponent implements OnInit, OnDestroy {
                 Validators.minLength(1),
                 Validators.maxLength(200)
             ]],
-            wealthLevel: [WealthLevel.Common, [Validators.required]]
+            wealthLevel: [WealthLevel.Common, [Validators.required]],
+            showPrices: [true] // Add price toggle checkbox
         });
 
         // Initialize form validity signal
@@ -188,29 +226,6 @@ export class LootFormComponent implements OnInit, OnDestroy {
     }
 
     /**
-     * Handle wealth level selection changes.
-     */
-    onWealthLevelChange(wealthLevel: WealthLevel): void {
-        this.lootForm.patchValue({ wealthLevel });
-        this.errorMessage.set(null); // Clear any previous errors
-
-        // Update form validity signal
-        this.formValid.set(this.lootForm.valid);
-    }
-
-    /**
-     * Handle location input changes.
-     */
-    onLocationChange(location: string): void {
-        this.lootForm.patchValue({ location });
-        // Force form validation update
-        this.lootForm.get('location')?.updateValueAndValidity();
-
-        // Update form validity signal
-        this.formValid.set(this.lootForm.valid);
-    }
-
-    /**
      * Handle form submission and loot generation.
      */
     onSubmit(): void {
@@ -220,13 +235,6 @@ export class LootFormComponent implements OnInit, OnDestroy {
         }
 
         this.generateLoot();
-    }
-
-    /**
-     * Handle generate button click.
-     */
-    onGenerateClick(): void {
-        this.onSubmit();
     }
 
     /**
@@ -356,6 +364,41 @@ export class LootFormComponent implements OnInit, OnDestroy {
     }
 
     /**
+     * Handle price toggle change and emit to parent.
+     */
+    onPriceToggleChange(showPrices: boolean): void {
+        this.showPrices.set(showPrices);
+        this.priceToggleChanged.emit(showPrices);
+    }
+
+    /**
+     * Get cooldown progress as percentage (0-100).
+     */
+    getCooldownProgress(): number {
+        const status = this.cooldownStatus();
+        if (!status.isActive || !status.expiresAt) return 0;
+
+        // Simple calculation: how much time has elapsed vs total cooldown time
+        const totalCooldownMs = 30000; // 30 seconds in milliseconds
+        const remainingMs = status.remainingMs;
+        const elapsedMs = totalCooldownMs - remainingMs;
+
+        const progress = (elapsedMs / totalCooldownMs) * 100;
+        return Math.max(0, Math.min(100, progress));
+    }
+
+    /**
+     * Get cooldown remaining time as formatted text.
+     */
+    getCooldownText(): string {
+        const status = this.cooldownStatus();
+        if (!status.isActive) return '';
+
+        const seconds = Math.ceil(status.remainingMs / 1000);
+        return `${seconds}s`;
+    }
+
+    /**
      * Reset the form to initial state.
      */
     resetForm(): void {
@@ -378,5 +421,27 @@ export class LootFormComponent implements OnInit, OnDestroy {
             cooldownStatus: this.cooldownStatus(),
             errorMessage: this.errorMessage()
         };
+    }
+
+    /**
+     * Get location control for template access.
+     */
+    get locationControl(): AbstractControl {
+        return this.lootForm.get('location')!;
+    }
+
+    /**
+     * Get generate button text based on current state.
+     */
+    generateButtonText(): string {
+        if (this.isLoading()) {
+            return this.i18nService.translate('common.generating');
+        }
+
+        if (this.cooldownStatus().isActive) {
+            return this.i18nService.translate('common.cooldown.wait');
+        }
+
+        return this.i18nService.translate('common.generate');
     }
 }

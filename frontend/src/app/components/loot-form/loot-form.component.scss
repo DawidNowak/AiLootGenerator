@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
-  min-height: 100vh;
   box-sizing: border-box;
+  background-color: var(--background-default);
+  color: var(--text-primary);
 
   @media (max-width: 768px) {
     padding: 0.5rem;
@@ -13,8 +14,10 @@
 .loot-form-card {
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  border-radius: 12px;
+  background-color: var(--background-card);
+  border: 1px solid var(--form-border);
+  box-shadow: var(--shadow-light);
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
 
@@ -26,21 +29,21 @@
 }
 
 .form-header {
-  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
-  color: white;
+  background-color: var(--background-paper);
+  color: var(--text-primary);
   padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--form-border);
 
   .mat-card-title {
     font-size: 1.75rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 0.5rem;
-    color: white;
+    color: var(--text-primary);
   }
 
   .mat-card-subtitle {
     font-size: 1rem;
-    opacity: 0.9;
-    color: rgba(255, 255, 255, 0.87);
+    color: var(--text-secondary);
   }
 
   @media (max-width: 768px) {
@@ -79,6 +82,45 @@
   border-radius: inherit;
 }
 
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+
+  mat-spinner {
+    // Fix spinner rotation center point
+    transform-origin: center center !important;
+    // Ensure proper positioning
+    position: relative !important;
+    display: block !important;
+    margin: 0 auto !important;
+
+    // Override any potential conflicting styles
+    ::ng-deep {
+      svg {
+        transform-origin: center center !important;
+        display: block !important;
+      }
+
+      circle {
+        transform-origin: center center !important;
+        // Make spinner orange to match checkbox and button
+        stroke: var(--accent-600) !important; // Orange color
+      }
+    }
+  }
+
+  .loading-message {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+}
+
 .loot-generation-form {
   display: flex;
   flex-direction: column;
@@ -94,9 +136,50 @@
     align-items: center;
     text-align: center;
   }
+}
+
+// Cooldown progress bar styling
+.cooldown-progress {
+  width: 100%;
+  height: 8px;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+
+  ::ng-deep {
+    .mdc-linear-progress__bar-inner {
+      border-color: var(--color-warning);
+    }
+
+    .mdc-linear-progress__buffer {
+      background-color: rgba(255, 152, 0, 0.2);
+    }
+  }
+}
+
+.cooldown-display {
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid var(--color-warning);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 300px;
+
+  h4 {
+    color: var(--color-warning);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+  }
 
   &.generation-section {
     margin-top: 1rem;
+    margin-bottom: 8px; // Reduced from default to minimize whitespace below generate button
     align-items: center;
   }
 }
@@ -105,7 +188,7 @@
   font-size: 1.1rem;
   font-weight: 500;
   margin: 0 0 0.5rem;
-  color: rgba(0, 0, 0, 0.87);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -114,7 +197,7 @@
     content: "";
     width: 4px;
     height: 1.1rem;
-    background: #1976d2;
+    background: var(--primary-200);
     border-radius: 2px;
   }
 
@@ -126,31 +209,169 @@
 .section-divider {
   margin: 0.5rem 0;
   opacity: 0.6;
+  border-color: var(--form-border);
 }
 
-// Component-specific styling
-:host ::ng-deep {
-  // Location Input Styling
-  app-location-input {
-    .mat-form-field {
-      width: 100%;
+// Integrated form field styling
+.location-input,
+.wealth-selector,
+.language-selector {
+  width: 100%;
 
-      .mat-form-field-wrapper {
-        padding-bottom: 0.5rem;
+  ::ng-deep .mat-mdc-form-field {
+    width: 100%;
+
+    &.mat-form-field-appearance-outline {
+      .mat-form-field-outline {
+        color: var(--form-border);
+      }
+
+      &.mat-focused .mat-form-field-outline-thick {
+        color: var(--form-border-focus);
+      }
+
+      &.mat-form-field-invalid .mat-form-field-outline-thick {
+        color: var(--form-border-error);
       }
     }
 
-    .mat-input-element {
-      font-size: 1rem;
+    .mat-form-field-label {
+      color: var(--text-secondary);
     }
 
-    .mat-hint {
-      font-size: 0.875rem;
-      color: rgba(0, 0, 0, 0.6);
+    input {
+      color: var(--text-primary);
+    }
+
+    mat-hint {
+      color: var(--text-hint);
+    }
+
+    mat-error {
+      color: var(--color-error);
+    }
+  }
+}
+
+// Integrated button styling - Override Angular Material styles
+.generate-button {
+  background-color: var(--accent-600) !important; // Vibrant orange color
+  color: #ffffff !important; // White text for contrast
+  border: none !important;
+  padding: 12px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important; // Bolder text
+  border-radius: 8px !important;
+  min-width: 200px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.2s ease !important;
+
+  &:hover:not(:disabled) {
+    background-color: #e65100 !important; // Darker orange on hover
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  &:active:not(:disabled) {
+    background-color: #bf360c !important; // Even darker orange when pressed
+    transform: translateY(0) !important;
+  }
+
+  &:disabled {
+    background-color: var(--button-disabled) !important;
+    color: var(--text-disabled) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  // Override Angular Material ripple effect colors
+  .mat-ripple-element {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  // Override Material button text styles
+  .mat-button-wrapper {
+    color: inherit !important;
+  }
+
+  // Fix mat-spinner alignment inside the button
+  mat-spinner {
+    display: inline-block !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+
+    // Override Angular Material spinner colors to match button
+    ::ng-deep {
+      circle {
+        stroke: #ffffff !important; // White spinner to match button text
+      }
     }
   }
 
-  // Wealth Selector Styling
+  // Ensure proper button content alignment
+  .mdc-button__label {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+}
+
+// Price toggle checkbox styling - Match generate button color
+:host ::ng-deep .mat-mdc-checkbox {
+  // Override the checked state color
+  &.mat-mdc-checkbox-checked {
+    .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
+      background-color: var(--accent-600) !important; // Same orange as button
+      border-color: var(--accent-600) !important;
+    }
+
+    .mdc-checkbox__checkmark {
+      color: #ffffff !important; // White checkmark
+    }
+  }
+
+  // Hover state for checked checkbox
+  &.mat-mdc-checkbox-checked:hover {
+    .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
+      background-color: #e65100 !important; // Darker orange on hover (same as button)
+      border-color: #e65100 !important;
+    }
+  }
+
+  // Focus state
+  &.mat-mdc-checkbox-checked.cdk-focused {
+    .mdc-checkbox__native-control:enabled ~ .mdc-checkbox__background {
+      background-color: var(--accent-600) !important;
+      border-color: var(--accent-600) !important;
+      box-shadow: 0 0 0 2px rgba(255, 143, 0, 0.3) !important;
+    }
+  }
+
+  // Ripple effect color
+  .mat-ripple-element {
+    background-color: rgba(255, 143, 0, 0.2) !important;
+  }
+}
+
+// Preserved component styling
+:host ::ng-deep {
+  // Language Selector Styling - Full width to match other form fields
+  app-language-selector {
+    display: block !important;
+    width: 100% !important;
+
+    .language-selector {
+      width: 100% !important;
+      min-width: unset !important;
+    }
+
+    .mat-mdc-form-field {
+      width: 100% !important;
+    }
+  }
+
+  // Wealth Selector Styling (preserved component)
   app-wealth-selector {
     .mat-form-field {
       width: 100%;
@@ -159,66 +380,40 @@
     .wealth-option {
       padding: 1rem;
       border-radius: 8px;
-      transition: all 0.3s ease;
+      // No transitions - eliminated animations
 
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        background-color: var(--button-hover);
       }
     }
   }
 
-  // Generate Button Styling
-  app-generate-button {
-    .mat-raised-button {
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      min-width: 200px;
-      border-radius: 25px;
-      box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
-      transition: all 0.3s ease;
-
-      &:not(:disabled):hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
-      }
-
-      &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-    }
-
-    .mat-progress-spinner {
-      margin-right: 0.5rem;
-    }
-  }
-
-  // Error Message Styling
+  // Error Message Styling (preserved component)
   app-error-message {
     .error-container {
       border-radius: 8px;
-      animation: slideInFromTop 0.3s ease-out;
+      color: var(--color-error);
+      background-color: rgba(244, 67, 54, 0.1);
+      border: 1px solid var(--color-error);
     }
   }
 
-  // Cooldown Timer Styling
+  // Cooldown Timer Styling (preserved component)
   app-cooldown-timer {
     .cooldown-container {
       background: rgba(255, 152, 0, 0.1);
-      border: 1px solid rgba(255, 152, 0, 0.3);
+      border: 1px solid var(--color-warning);
       border-radius: 8px;
       padding: 1rem;
 
       .cooldown-message {
         font-weight: 500;
-        color: #e65100;
+        color: var(--color-warning);
       }
     }
   }
 
-  // Loading Spinner Styling
+  // Loading Spinner Styling (preserved component)
   app-loading-spinner {
     .spinner-container {
       padding: 2rem;
@@ -229,22 +424,10 @@
 
       .spinner-message {
         font-size: 1rem;
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--text-secondary);
         text-align: center;
       }
     }
-  }
-}
-
-// Animations
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -252,54 +435,42 @@
 :host ::ng-deep {
   .mat-form-field.mat-focused {
     .mat-form-field-ripple {
-      background-color: #1976d2;
+      background-color: var(--form-border-focus);
     }
   }
 
   .mat-form-field.mat-form-field-invalid {
     .mat-form-field-ripple {
-      background-color: #f44336;
+      background-color: var(--form-border-error);
     }
   }
 
   // High contrast mode support
   @media (prefers-contrast: high) {
     .loot-form-card {
-      border: 2px solid #000;
+      border: 2px solid var(--text-primary);
     }
 
     .form-header {
-      background: #000;
-      color: #fff;
+      background: var(--text-primary);
+      color: var(--background-paper);
     }
 
     .section-title::before {
-      background: #000;
+      background: var(--text-primary);
     }
   }
+}
 
-  // Reduced motion support
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
-
-  // Dark mode support (if implemented in the future)
-  @media (prefers-color-scheme: dark) {
-    .loot-form-card {
-      background-color: #303030;
-      color: #ffffff;
-    }
-
-    .section-title {
-      color: rgba(255, 255, 255, 0.87);
-    }
-
-    .loading-overlay {
-      background: rgba(48, 48, 48, 0.9);
-    }
-  }
+// Accessibility: Screen reader only text
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
