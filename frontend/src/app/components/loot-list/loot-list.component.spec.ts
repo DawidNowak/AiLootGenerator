@@ -8,7 +8,7 @@ import { I18nService } from '../../services/i18n.service';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { LootItem } from '../../models/loot-item.interface';
 import { WealthLevel } from '../../models/wealth-level.enum';
-import { LootItemComponent } from '../loot-item/loot-item.component';
+import { CurrencyService } from '../../services/currency.service';
 
 // Mock I18n Service
 class MockI18nService {
@@ -26,7 +26,6 @@ class MockI18nService {
             'loot.list.loading': 'Generating loot items...',
             'loot.list.empty': 'No loot items generated yet',
             'loot.list.emptyHint': 'Click the "Generate Loot" button to create thematic items',
-            'loot.list.summary': params ? `${params.count} items generated` : 'Items generated'
         };
         return translations[key] || key;
     }
@@ -37,6 +36,22 @@ class MockTranslatePipe {
     transform(key: string, params?: any): string {
         const mockI18n = new MockI18nService();
         return mockI18n.translate(key, params);
+    }
+}
+
+// Mock Currency Service
+class MockCurrencyService {
+    formatCurrency(valueInPennies: number, options?: any): string {
+        const gold = Math.floor(valueInPennies / 240);
+        const silver = Math.floor((valueInPennies % 240) / 12);
+        const pennies = valueInPennies % 12;
+
+        let result = '';
+        if (gold > 0) result += `${gold}g `;
+        if (silver > 0) result += `${silver}s `;
+        if (pennies > 0) result += `${pennies}p`;
+
+        return result.trim() || '0p';
     }
 }
 
@@ -91,11 +106,11 @@ describe('LootListComponent', () => {
         await TestBed.configureTestingModule({
             imports: [
                 LootListComponent,
-                LootItemComponent,
                 NoopAnimationsModule
             ],
             providers: [
                 { provide: I18nService, useValue: mockI18nService },
+                { provide: CurrencyService, useClass: MockCurrencyService },
                 { provide: TranslatePipe, useClass: MockTranslatePipe }
             ]
         }).compileComponents();
@@ -175,22 +190,21 @@ describe('LootListComponent', () => {
             fixture.detectChanges();
 
             const loadingState = fixture.debugElement.query(By.css('.empty-state'));
-            const loadingIcon = fixture.debugElement.query(By.css('.loading'));
+            const loadingBar = fixture.debugElement.query(By.css('.loading-bar'));
 
             expect(loadingState).toBeTruthy();
-            expect(loadingIcon).toBeTruthy();
-            expect(loadingIcon.classes['loading']).toBeTruthy();
+            expect(loadingBar).toBeTruthy();
         });
 
-        it('should render loot items grid when items exist', () => {
+        it('should render loot items list when items exist', () => {
             component.items = sampleLootItems;
             component.isLoading = false;
             fixture.detectChanges();
 
-            const itemsGrid = fixture.debugElement.query(By.css('.loot-items-grid'));
-            const lootItems = fixture.debugElement.queryAll(By.directive(LootItemComponent));
+            const itemsList = fixture.debugElement.query(By.css('.loot-items-list'));
+            const lootItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
 
-            expect(itemsGrid).toBeTruthy();
+            expect(itemsList).toBeTruthy();
             expect(lootItems.length).toBe(3);
         });
 
@@ -212,10 +226,10 @@ describe('LootListComponent', () => {
             fixture.detectChanges();
 
             const summary = fixture.debugElement.query(By.css('.results-summary'));
-            const summaryCard = fixture.debugElement.query(By.css('.summary-card'));
+            const summaryText = fixture.debugElement.query(By.css('.summary-text'));
 
             expect(summary).toBeTruthy();
-            expect(summaryCard).toBeTruthy();
+            expect(summaryText).toBeTruthy();
         });
 
         it('should not show list content when loading', () => {
@@ -223,11 +237,11 @@ describe('LootListComponent', () => {
             component.isLoading = true;
             fixture.detectChanges();
 
-            const itemsGrid = fixture.debugElement.query(By.css('.loot-items-grid'));
+            const itemsList = fixture.debugElement.query(By.css('.loot-items-list'));
             const listHeader = fixture.debugElement.query(By.css('.list-header'));
             const summary = fixture.debugElement.query(By.css('.results-summary'));
 
-            expect(itemsGrid).toBeFalsy();
+            expect(itemsList).toBeFalsy();
             expect(listHeader).toBeFalsy();
             expect(summary).toBeFalsy();
         });
@@ -311,16 +325,14 @@ describe('LootListComponent', () => {
         it('should display items in vertical list format instead of grid', () => {
             const mockItems = sampleLootItems.slice(0, 3);
             component.items = mockItems;
-            (component as any).layout = 'list';
             fixture.detectChanges();
 
-            const listContainer = fixture.debugElement.query(By.css('.loot-items-grid'));
+            const listContainer = fixture.debugElement.query(By.css('.loot-items-list'));
             expect(listContainer).toBeTruthy();
+            expect(listContainer.nativeElement.tagName.toLowerCase()).toBe('mat-list');
 
-            const computedStyle = getComputedStyle(listContainer.nativeElement);
-            // This will fail until we implement the list layout
-            expect(computedStyle.display).toBe('flex');
-            expect(computedStyle.flexDirection).toBe('column');
+            const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
+            expect(listItems.length).toBe(3);
         });
 
         it('should apply list item styling to each loot item', () => {
@@ -328,18 +340,11 @@ describe('LootListComponent', () => {
             component.items = mockItems;
             fixture.detectChanges();
 
-            const itemWrappers = fixture.debugElement.queryAll(By.css('.loot-item-wrapper'));
-            expect(itemWrappers.length).toBe(2);
+            const itemElements = fixture.debugElement.queryAll(By.css('mat-list-item'));
+            expect(itemElements.length).toBe(2);
 
-            itemWrappers.forEach((wrapper: any) => {
-                const computedStyle = getComputedStyle(wrapper.nativeElement);
-                // Check that width is either 100% or a reasonable pixel value (test environment)
-                const width = computedStyle.width;
-                expect(width === '100%' || parseInt(width) > 0).toBe(true);
-
-                // Check border radius (may vary in test environment)
-                const borderRadius = computedStyle.borderRadius;
-                expect(borderRadius).toBeTruthy();
+            itemElements.forEach((element: any) => {
+                expect(element.nativeElement.classList.contains('loot-item-light')).toBe(true);
             });
         });
 
@@ -348,13 +353,16 @@ describe('LootListComponent', () => {
             component.items = [mockItem];
             fixture.detectChanges();
 
-            const itemElement = fixture.debugElement.query(By.css('app-loot-item'));
+            const itemElement = fixture.debugElement.query(By.css('mat-list-item'));
             expect(itemElement).toBeTruthy();
 
-            const itemComponent = itemElement.componentInstance;
-            expect(itemComponent.item).toEqual(mockItem);
-            expect(itemComponent.showPrice).toBe(component.showPrices);
-            expect(itemComponent.showFullBreakdown).toBe(component.showFullBreakdown);
+            const nameElement = itemElement.query(By.css('.item-name'));
+            const descriptionElement = itemElement.query(By.css('.item-description'));
+            const priceElement = itemElement.query(By.css('.item-price'));
+
+            expect(nameElement.nativeElement.textContent.trim()).toBe(mockItem.name);
+            expect(descriptionElement.nativeElement.textContent.trim()).toBe(mockItem.description);
+            expect(priceElement).toBeTruthy(); // Price should be shown when showPrices is true
         });
 
         it('should maintain proper list spacing between items', () => {
@@ -362,12 +370,11 @@ describe('LootListComponent', () => {
             component.items = mockItems;
             fixture.detectChanges();
 
-            const listContainer = fixture.debugElement.query(By.css('.loot-items-grid'));
-            const computedStyle = getComputedStyle(listContainer.nativeElement);
-            // Check that gap is set (value may vary in test environment)
-            const gap = computedStyle.gap;
-            expect(gap).toBeTruthy();
-            expect(gap !== 'normal' && gap !== '0px').toBe(true);
+            const listContainer = fixture.debugElement.query(By.css('.loot-items-list'));
+            expect(listContainer).toBeTruthy();
+
+            const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
+            expect(listItems.length).toBe(3);
         });
 
         it('should use semantic list markup for accessibility', () => {
@@ -375,11 +382,11 @@ describe('LootListComponent', () => {
             component.items = mockItems;
             fixture.detectChanges();
 
-            // This will fail until we add proper ARIA roles
-            const listElement = fixture.debugElement.query(By.css('[role="list"]'));
+            // mat-list automatically provides proper ARIA roles
+            const listElement = fixture.debugElement.query(By.css('mat-list'));
             expect(listElement).toBeTruthy();
 
-            const listItems = fixture.debugElement.queryAll(By.css('[role="listitem"]'));
+            const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
             expect(listItems.length).toBe(2);
         });
 
@@ -395,7 +402,7 @@ describe('LootListComponent', () => {
             component.isLoading = true;
             fixture.detectChanges();
 
-            const loadingState = fixture.debugElement.query(By.css('.empty-state .loading'));
+            const loadingState = fixture.debugElement.query(By.css('.empty-state .loading-bar'));
             expect(loadingState).toBeTruthy();
         });
     });
@@ -420,10 +427,11 @@ describe('LootListComponent Input Properties', () => {
         mockI18nService = new MockI18nService();
 
         await TestBed.configureTestingModule({
-            imports: [LootListComponent, LootItemComponent, NoopAnimationsModule],
+            imports: [LootListComponent, NoopAnimationsModule],
             declarations: [TestHostComponent],
             providers: [
                 { provide: I18nService, useValue: mockI18nService },
+                { provide: CurrencyService, useClass: MockCurrencyService },
                 { provide: TranslatePipe, useClass: MockTranslatePipe }
             ]
         }).compileComponents();
@@ -437,8 +445,8 @@ describe('LootListComponent Input Properties', () => {
         hostComponent.testItems = sampleLootItems;
         hostFixture.detectChanges();
 
-        const lootItemComponents = hostFixture.debugElement.queryAll(By.directive(LootItemComponent));
-        expect(lootItemComponents.length).toBe(1);
+        const lootItemElements = hostFixture.debugElement.queryAll(By.css('mat-list-item'));
+        expect(lootItemElements.length).toBe(1);
     });
 
     it('should handle empty items array', () => {
@@ -446,7 +454,7 @@ describe('LootListComponent Input Properties', () => {
         hostFixture.detectChanges();
 
         const emptyState = hostFixture.debugElement.query(By.css('.empty-state'));
-        const lootItems = hostFixture.debugElement.queryAll(By.directive(LootItemComponent));
+        const lootItems = hostFixture.debugElement.queryAll(By.css('mat-list-item'));
 
         expect(emptyState).toBeTruthy();
         expect(lootItems.length).toBe(0);
@@ -457,27 +465,52 @@ describe('LootListComponent Input Properties', () => {
         hostFixture.detectChanges();
 
         const loadingState = hostFixture.debugElement.query(By.css('.empty-state'));
-        const loadingIcon = hostFixture.debugElement.query(By.css('.loading'));
+        const loadingBar = hostFixture.debugElement.query(By.css('.loading-bar'));
 
         expect(loadingState).toBeTruthy();
-        expect(loadingIcon).toBeTruthy();
+        expect(loadingBar).toBeTruthy();
     });
 
-    it('should pass showPrices property to loot item components', () => {
+    it('should pass showPrices property to loot item display', () => {
         hostComponent.testItems = sampleLootItems.slice(0, 1);
         hostComponent.testShowPrices = false;
         hostFixture.detectChanges();
 
-        const lootItemComponent = hostFixture.debugElement.query(By.directive(LootItemComponent));
-        expect(lootItemComponent.componentInstance.showPrice).toBe(false);
+        const priceElement = hostFixture.debugElement.query(By.css('.item-price'));
+        expect(priceElement).toBeFalsy(); // Price should not be displayed
     });
 
-    it('should pass showFullBreakdown property to loot item components', () => {
-        hostComponent.testItems = sampleLootItems.slice(0, 1);
-        hostComponent.testShowFullBreakdown = true;
-        hostFixture.detectChanges();
+    describe('UI Simplification Requirements', () => {
+        it('should use mat-list container instead of custom grid', () => {
+            hostComponent.testItems = sampleLootItems.slice(0, 2);
+            hostFixture.detectChanges();
 
-        const lootItemComponent = hostFixture.debugElement.query(By.directive(LootItemComponent));
-        expect(lootItemComponent.componentInstance.showFullBreakdown).toBe(true);
+            // Should find mat-list
+            const matList = hostFixture.debugElement.query(By.css('mat-list'));
+            expect(matList).toBeTruthy();
+
+            // Should use the correct CSS class
+            expect(matList.nativeElement.classList.contains('loot-items-list')).toBe(true);
+        });
+
+        it('should have simplified header without decorative icons', () => {
+            hostComponent.testItems = sampleLootItems.slice(0, 1);
+            hostFixture.detectChanges();
+
+            const headerIcon = hostFixture.debugElement.query(By.css('.list-title mat-icon'));
+            expect(headerIcon).toBeFalsy(); // No decorative icons in header
+        });
+
+        it('should maintain accessibility with proper mat-list structure', () => {
+            hostComponent.testItems = sampleLootItems.slice(0, 2);
+            hostFixture.detectChanges();
+
+            const matList = hostFixture.debugElement.query(By.css('mat-list'));
+            expect(matList).toBeTruthy();
+
+            // mat-list automatically provides proper accessibility attributes
+            const listItems = hostFixture.debugElement.queryAll(By.css('mat-list-item'));
+            expect(listItems.length).toBe(2);
+        });
     });
 });

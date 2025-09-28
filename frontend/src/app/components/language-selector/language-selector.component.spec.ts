@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
 import { LanguageSelectorComponent } from './language-selector.component';
 import { I18nService } from '../../services/i18n.service';
 
@@ -64,6 +65,23 @@ describe('LanguageSelectorComponent', () => {
         const result = component.getCurrentLanguageLabel();
         expect(result).toContain('English');
         expect(i18nService.getCurrentLanguageInfo).toHaveBeenCalled();
+    });
+
+    it('should use mat-select without custom icons', () => {
+        // Test that the mat-select is used without decorative icons in the template
+        const matSelect = fixture.debugElement.query(By.css('mat-select'));
+        expect(matSelect).toBeTruthy();
+
+        // Should not have custom icons in the select options (only standard mat-select behavior)
+        const matOptions = fixture.debugElement.queryAll(By.css('mat-option mat-icon'));
+        expect(matOptions.length).toBe(0); // No custom icons in options
+    });
+
+    it('should have simplified styling without wealth-level colors', () => {
+        const formField = fixture.debugElement.query(By.css('mat-form-field'));
+        expect(formField).toBeTruthy();
+        expect(formField.nativeElement.className).not.toContain('wealth-');
+        expect(formField.nativeElement.className).not.toContain('custom-color');
     });
 
     it('should switch language when selection changes', () => {

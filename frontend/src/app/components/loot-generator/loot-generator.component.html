@@ -7,16 +7,10 @@
   >
     <!-- Generation Form Section -->
     <section class="generation-section grid-form">
-      <div class="section-header">
-        <h2 class="section-title">{{ "loot.generation.title" | translate }}</h2>
-        <p class="section-description">
-          {{ "loot.generation.description" | translate }}
-        </p>
-      </div>
-
       <app-loot-form
         (lootGenerated)="onLootGenerated($event)"
         (generationError)="onLootGenerationError($event)"
+        (priceToggleChanged)="onPriceToggleChange($event)"
         class="loot-form"
       >
       </app-loot-form>
@@ -31,13 +25,6 @@
         <h3 class="section-title">
           {{ "loot.generated.title" | translate }}
         </h3>
-        <div class="results-controls">
-          <app-price-toggle
-            [showDetailedPrices]="showPriceDetails()"
-            (showDetailedPricesChange)="onPriceToggleChange($event)"
-          >
-          </app-price-toggle>
-        </div>
       </div>
 
       <app-loot-list

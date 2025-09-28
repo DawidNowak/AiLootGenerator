@@ -1,5 +1,6 @@
 .language-selector {
-  min-width: 150px;
+  width: 100% !important; // Force full width
+  min-width: unset !important; // Remove min-width constraint
 
   .language-select {
     font-size: 14px;

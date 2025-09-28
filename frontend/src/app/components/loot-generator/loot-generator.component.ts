@@ -1,10 +1,10 @@
 import { Component, signal, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BreakpointObserver, Breakpoints, LayoutModule } from '@angular/cdk/layout';
 import { Subject, takeUntil } from 'rxjs';
 import { LootFormComponent, LootGeneratedEvent } from '../loot-form/loot-form.component';
 import { LootListComponent } from '../loot-list/loot-list.component';
-import { PriceToggleComponent } from '../price-toggle/price-toggle.component';
 import { ErrorMessageComponent, ErrorInfo } from '../error-message/error-message.component';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { LootItem } from '../../models/loot-item.interface';
@@ -15,9 +15,9 @@ import { LootItem } from '../../models/loot-item.interface';
     imports: [
         CommonModule,
         LayoutModule,
+        MatCheckboxModule,
         LootFormComponent,
         LootListComponent,
-        PriceToggleComponent,
         ErrorMessageComponent,
         TranslatePipe
     ],

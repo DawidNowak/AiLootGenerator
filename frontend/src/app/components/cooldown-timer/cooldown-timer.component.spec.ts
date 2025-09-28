@@ -225,4 +225,47 @@ describe('CooldownTimerComponent', () => {
         component.ngOnDestroy();
         expect(component['clearInterval']).toHaveBeenCalled();
     });
+
+    describe('UI Simplification Requirements', () => {
+        it('should use mat-progress-bar instead of custom display', () => {
+            component.remainingTime = 15000;
+            component.totalTime = 30000;
+            fixture.detectChanges();
+
+            const compiled = fixture.nativeElement as HTMLElement;
+            const progressBar = compiled.querySelector('mat-progress-bar');
+            expect(progressBar).toBeTruthy();
+
+            // Should not have complex custom timer display
+            const customTimer = compiled.querySelector('.complex-custom-timer');
+            expect(customTimer).toBeFalsy();
+        });
+
+        it('should show simple text display with progress bar', () => {
+            component.remainingTime = 15000;
+            component.totalTime = 30000;
+            fixture.detectChanges();
+
+            const compiled = fixture.nativeElement as HTMLElement;
+            const textDisplay = compiled.querySelector('.timer-text, .cooldown-text');
+            const progressBar = compiled.querySelector('mat-progress-bar');
+
+            expect(textDisplay).toBeTruthy();
+            expect(progressBar).toBeTruthy();
+        });
+
+        it('should have simplified styling without decorative elements', () => {
+            component.remainingTime = 10000;
+            fixture.detectChanges();
+
+            const compiled = fixture.nativeElement as HTMLElement;
+
+            // Should not have decorative icons or complex cards
+            const decorativeIcons = compiled.querySelectorAll('mat-icon:not(.status-icon)');
+            const complexCard = compiled.querySelector('mat-card.complex-timer-card');
+
+            expect(decorativeIcons.length).toBe(0);
+            expect(complexCard).toBeFalsy();
+        });
+    });
 });

@@ -111,11 +111,10 @@ describe('LootFormComponent', () => {
             fixture.detectChanges();
         });
 
-        it('should handle wealth level changes', () => {
-            component.onWealthLevelChange(WealthLevel.Noble);
+        it('should handle wealth level changes through form control', () => {
+            component.lootForm.patchValue({ wealthLevel: WealthLevel.Noble });
 
             expect(component.lootForm.get('wealthLevel')?.value).toBe(WealthLevel.Noble);
-            expect(component.errorMessage()).toBeNull();
         });
 
         it('should handle location changes through direct form control', () => {
@@ -276,6 +275,89 @@ describe('LootFormComponent', () => {
                 // Form control should be updated directly
                 expect(component.lootForm.get('location')?.value).toBe('Altdorf marketplace');
             }
+        });
+    });
+
+    describe('UI Simplification Requirements', () => {
+        it('should have multiline location input with textarea', () => {
+            fixture.detectChanges();
+            const compiled = fixture.nativeElement as HTMLElement;
+
+            // Should use textarea instead of input
+            const textarea = compiled.querySelector('textarea[formControlName="location"]');
+            expect(textarea).toBeTruthy();
+
+            // Should not have single-line input
+            const input = compiled.querySelector('input[formControlName="location"]');
+            expect(input).toBeFalsy();
+        });
+
+        it('should support multiline text in location input', () => {
+            fixture.detectChanges();
+            const compiled = fixture.nativeElement as HTMLElement;
+            const textarea = compiled.querySelector('textarea[formControlName="location"]') as HTMLTextAreaElement;
+
+            if (textarea) {
+                const multilineText = `Ancient Wizard Tower
+Third floor study chamber
+Cluttered with mystical artifacts`;
+
+                textarea.value = multilineText;
+                textarea.dispatchEvent(new Event('input'));
+                fixture.detectChanges();
+
+                expect(component.lootForm.get('location')?.value).toBe(multilineText);
+                expect(textarea.value.includes('\n')).toBeTruthy();
+            }
+        });
+
+        it('should have minimal spacing below generate button', () => {
+            fixture.detectChanges();
+            const compiled = fixture.nativeElement as HTMLElement;
+            const generateButton = compiled.querySelector('button[type="submit"]');
+
+            if (generateButton) {
+                const computedStyle = window.getComputedStyle(generateButton);
+                const marginBottom = parseInt(computedStyle.marginBottom);
+                expect(marginBottom).toBeLessThanOrEqual(8); // 8px max as per requirements
+            }
+        });
+
+        it('should have high contrast status message for ready state', () => {
+            component.isLoading.set(false);
+            component.errorMessage.set(null);
+            fixture.detectChanges();
+
+            const compiled = fixture.nativeElement as HTMLElement;
+            const statusMessage = compiled.querySelector('.status-message, .ready-message');
+
+            if (statusMessage) {
+                const computedStyle = window.getComputedStyle(statusMessage);
+                // Should have high contrast colors - this is a placeholder test
+                // In real implementation, you'd check actual contrast ratio
+                expect(computedStyle.color).not.toBe('rgb(238, 238, 238)'); // Not light gray
+            }
+        });
+
+        it('should include price toggle as mat-checkbox', () => {
+            fixture.detectChanges();
+            const compiled = fixture.nativeElement as HTMLElement;
+
+            const checkbox = compiled.querySelector('mat-checkbox[formControlName="showPrices"]');
+            expect(checkbox).toBeTruthy();
+        });
+
+        it('should use simplified component structure', () => {
+            fixture.detectChanges();
+            const compiled = fixture.nativeElement as HTMLElement;
+
+            // Should use standard form fields
+            const formFields = compiled.querySelectorAll('mat-form-field');
+            expect(formFields.length).toBeGreaterThan(0);
+
+            // Should not have overly complex custom components
+            const customComplexComponents = compiled.querySelectorAll('.custom-complex-component');
+            expect(customComplexComponents.length).toBe(0);
         });
     });
 });

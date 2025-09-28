@@ -1,11 +1,10 @@
 import { Component, Input, computed, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { LootItem } from '../../models/loot-item.interface';
-import { LootItemComponent } from '../loot-item/loot-item.component';
 import { I18nService } from '../../services/i18n.service';
+import { CurrencyService, CurrencyDisplayOptions } from '../../services/currency.service';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
@@ -13,10 +12,8 @@ import { TranslatePipe } from '../../pipes/translate.pipe';
     standalone: true,
     imports: [
         CommonModule,
-        MatCardModule,
-        MatIconModule,
-        MatButtonModule,
-        LootItemComponent,
+        MatListModule,
+        MatProgressBarModule,
         TranslatePipe
     ],
     templateUrl: './loot-list.component.html',
@@ -73,8 +70,28 @@ export class LootListComponent {
     });
 
     constructor(
-        private i18nService: I18nService
+        private i18nService: I18nService,
+        private currencyService: CurrencyService
     ) { }
+
+    /**
+     * Format the price of a loot item.
+     */
+    formatPrice(item: LootItem): string {
+        if (!item || !this.showPrices) {
+            return '';
+        }
+
+        const options: CurrencyDisplayOptions = {
+            showFullBreakdown: this.showFullBreakdown,
+            showSymbols: true,
+            showZeroValues: false,
+            abbreviate: true,
+            language: this.currentLanguage() as 'en' | 'pl'
+        };
+
+        return this.currencyService.formatCurrency(item.valueInPennies, options);
+    }
 
     /**
      * Tracks items by index for *ngFor performance optimization

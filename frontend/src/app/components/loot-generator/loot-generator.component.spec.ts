@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LootGeneratorComponent } from './loot-generator.component';
 import { LootFormComponent, LootGeneratedEvent } from '../loot-form/loot-form.component';
 import { LootListComponent } from '../loot-list/loot-list.component';
-import { PriceToggleComponent } from '../price-toggle/price-toggle.component';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { I18nService } from '../../services/i18n.service';
@@ -52,7 +51,6 @@ describe('LootGeneratorComponent', () => {
                 LootGeneratorComponent,
                 LootFormComponent,
                 LootListComponent,
-                PriceToggleComponent,
                 ErrorMessageComponent,
                 TranslatePipe
             ],
@@ -117,7 +115,7 @@ describe('LootGeneratorComponent', () => {
             component.generatedLoot.set(mockLootItems);
             fixture.detectChanges();
 
-            const priceToggle = fixture.debugElement.query(By.css('.results-section app-price-toggle'));
+            const priceToggle = fixture.debugElement.query(By.css('.results-section mat-checkbox'));
             expect(priceToggle).toBeTruthy();
         });
     });
@@ -247,15 +245,14 @@ describe('LootGeneratorComponent', () => {
             expect(lootListComponent.isLoading).toBe(false);
         });
 
-        it('should pass correct properties to price toggle', () => {
+        it('should show price toggle checkbox', () => {
             component.generatedLoot.set(mockLootItems);
             component.showPriceDetails.set(true);
             fixture.detectChanges();
 
-            const priceToggle = fixture.debugElement.query(By.css('app-price-toggle'));
-            const priceToggleComponent = priceToggle.componentInstance;
-
-            expect(priceToggleComponent.showDetailedPrices).toBe(true);
+            const priceToggle = fixture.debugElement.query(By.css('mat-checkbox'));
+            expect(priceToggle).toBeTruthy();
+            expect(priceToggle.componentInstance.checked).toBe(true);
         });
 
         it('should pass correct properties to error message', () => {

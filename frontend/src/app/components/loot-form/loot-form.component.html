@@ -12,8 +12,10 @@
     <mat-card-content class="form-content">
       <!-- Loading Spinner Overlay -->
       <div *ngIf="isLoading()" class="loading-overlay">
-        <app-loading-spinner [message]="'common.generating' | translate">
-        </app-loading-spinner>
+        <div class="loading-content">
+          <mat-spinner diameter="40" strokeWidth="4"></mat-spinner>
+          <p class="loading-message">{{ "common.generating" | translate }}</p>
+        </div>
       </div>
 
       <!-- Form Content -->
@@ -22,6 +24,20 @@
         (ngSubmit)="onSubmit()"
         class="loot-generation-form"
       >
+        <!-- Language Selection Section -->
+        <div
+          class="form-section"
+          role="group"
+          aria-labelledby="language-section-title"
+        >
+          <h3 id="language-section-title" class="section-title">
+            {{ "language.selector.label" | translate }}
+          </h3>
+          <app-language-selector></app-language-selector>
+        </div>
+
+        <mat-divider class="section-divider"></mat-divider>
+
         <!-- Location Input Section -->
         <div
           class="form-section"
@@ -33,12 +49,12 @@
           </h3>
           <mat-form-field appearance="outline" class="location-input">
             <mat-label>{{ "location.label" | translate }}</mat-label>
-            <input
+            <textarea
               matInput
               formControlName="location"
               [placeholder]="'location.placeholder' | translate"
               maxlength="200"
-              type="text"
+              rows="3"
               autocomplete="off"
               spellcheck="true"
               [attr.aria-describedby]="
@@ -49,8 +65,7 @@
               "
               role="textbox"
               [attr.aria-invalid]="locationControl.invalid"
-            />
-            <mat-icon matPrefix aria-hidden="true">place</mat-icon>
+            ></textarea>
             <mat-hint id="location-hint"
               >{{ locationControl.value?.length || 0 }}/200</mat-hint
             >
@@ -82,30 +97,60 @@
           <h3 id="wealth-section-title" class="section-title">
             {{ "wealth.label" | translate }}
           </h3>
-          <app-wealth-selector
-            [value]="lootForm.get('wealthLevel')?.value"
+          <mat-form-field appearance="outline" class="wealth-selector">
+            <mat-label>{{ "wealth.label" | translate }}</mat-label>
+            <mat-select
+              formControlName="wealthLevel"
+              [disabled]="isLoading()"
+              [attr.aria-label]="'wealth.label' | translate"
+              data-testid="wealth-selector"
+            >
+              <mat-option
+                *ngFor="let option of wealthLevelOptions"
+                [value]="option.value"
+              >
+                {{ option.labelKey | translate }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <mat-divider class="section-divider"></mat-divider>
+
+        <!-- Price Display Toggle Section -->
+        <div
+          class="form-section"
+          role="group"
+          aria-labelledby="price-section-title"
+        >
+          <mat-checkbox
+            formControlName="showPrices"
             [disabled]="isLoading()"
-            (valueChange)="onWealthLevelChange($event)"
-            data-testid="wealth-selector"
-            [attr.aria-describedby]="'wealth-description'"
+            (change)="onPriceToggleChange($event.checked)"
+            data-testid="price-toggle"
           >
-          </app-wealth-selector>
-          <p id="wealth-description" class="sr-only">
-            {{ "wealth.description" | translate }}
-          </p>
+            {{ "loot.prices.toggle" | translate }}
+          </mat-checkbox>
         </div>
 
         <mat-divider class="section-divider"></mat-divider>
 
         <!-- Error Message Section -->
         <div class="form-section" *ngIf="errorMessage()">
-          <app-error-message
-            [error]="{ message: errorMessage()!, type: 'error' }"
-            [allowDismiss]="true"
-            (dismiss)="clearError()"
-            data-testid="error-message"
-          >
-          </app-error-message>
+          <div class="error-message" role="alert">
+            <div class="error-content">
+              <mat-icon class="error-icon">error</mat-icon>
+              <span class="error-text">{{ errorMessage() }}</span>
+              <button
+                mat-icon-button
+                class="error-dismiss"
+                (click)="clearError()"
+                aria-label="Dismiss error"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Cooldown Timer Section -->
@@ -113,12 +158,19 @@
           class="form-section cooldown-section"
           *ngIf="cooldownStatus().isActive"
         >
-          <app-cooldown-timer
-            [remainingTime]="cooldownStatus().remainingMs"
-            [showProgress]="true"
-            data-testid="cooldown-timer"
-          >
-          </app-cooldown-timer>
+          <div class="cooldown-display">
+            <div class="cooldown-text">
+              <span
+                >{{ "cooldown.remaining" | translate }}:
+                {{ getCooldownText() }}</span
+              >
+            </div>
+            <mat-progress-bar
+              mode="determinate"
+              [value]="getCooldownProgress()"
+              class="cooldown-progress"
+            ></mat-progress-bar>
+          </div>
         </div>
 
         <!-- Generation Button Section -->
@@ -134,7 +186,6 @@
             [attr.aria-pressed]="isLoading()"
             role="button"
           >
-            <mat-icon *ngIf="!isLoading()" aria-hidden="true">casino</mat-icon>
             <mat-spinner
               *ngIf="isLoading()"
               diameter="16"

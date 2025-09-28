@@ -64,7 +64,7 @@ export class I18nService {
                 'common.clear': 'Clear',
                 'common.generate': 'Generate Loot',
                 'common.generating': 'Generating...',
-                'common.cooldown': 'Wait {{seconds}}s',
+                'common.cooldown.wait': 'Wait',
                 'loading.default': 'Loading...',
                 'cooldown.title': 'Generation Cooldown',
                 'cooldown.subtitle': 'Please wait before generating again',
@@ -98,15 +98,16 @@ export class I18nService {
                 'item.common': 'Common Treasure',
                 'item.common.description': 'Bronze-quality item suitable for beginning adventurers.',
                 'item.placeholder': 'No item selected',
+                'item.value': 'Value',
                 'currency.expand': 'Show detailed breakdown',
                 'currency.collapse': 'Hide detailed breakdown',
                 'loot.list.title': 'Generated Loot',
                 'loot.list.loading': 'Generating loot items...',
                 'loot.list.empty': 'No loot items generated yet',
                 'loot.list.emptyHint': 'Click the "Generate Loot" button to create thematic items for your location',
-                'loot.list.summary': '{{count}} item generated|{{count}} items generated',
                 'loot.empty.title': 'Ready to Generate Loot',
-                'loot.empty.description': 'Enter a location and select a wealth level to generate thematic treasures for your Warhammer Fantasy adventure'
+                'loot.empty.description': 'Enter a location and select a wealth level to generate thematic treasures for your Warhammer Fantasy adventure',
+                'loot.prices.toggle': 'Show Prices',
             }
         },
         {
@@ -153,7 +154,7 @@ export class I18nService {
                 'common.clear': 'Wyczyść',
                 'common.generate': 'Generuj Skarby',
                 'common.generating': 'Generowanie...',
-                'common.cooldown': 'Czekaj {{seconds}}s',
+                'common.cooldown.wait': 'Czekaj',
                 'loading.default': 'Ładowanie...',
                 'cooldown.title': 'Czas Odnowienia Generowania',
                 'cooldown.subtitle': 'Poczekaj przed ponownym generowaniem',
@@ -187,15 +188,16 @@ export class I18nService {
                 'item.common': 'Pospolity Skarb',
                 'item.common.description': 'Przedmiot jakości brązowej odpowiedni dla początkujących poszukiwaczy przygód.',
                 'item.placeholder': 'Nie wybrano przedmiotu',
+                'item.value': 'Wartość',
                 'currency.expand': 'Pokaż szczegółowy podział',
                 'currency.collapse': 'Ukryj szczegółowy podział',
                 'loot.list.title': 'Wygenerowane Skarby',
                 'loot.list.loading': 'Generowanie przedmiotów...',
                 'loot.list.empty': 'Nie wygenerowano jeszcze żadnych skarbów',
                 'loot.list.emptyHint': 'Kliknij przycisk "Generuj Skarby" aby stworzyć tematyczne przedmioty dla twojej lokalizacji',
-                'loot.list.summary': 'Wygenerowano {{count}} przedmiot|Wygenerowano {{count}} przedmiotów',
                 'loot.empty.title': 'Gotowy do Generowania Skarbów',
-                'loot.empty.description': 'Wprowadź lokalizację i wybierz poziom bogactwa aby wygenerować tematyczne skarby dla twojej przygody w Warhammer Fantasy'
+                'loot.empty.description': 'Wprowadź lokalizację i wybierz poziom bogactwa aby wygenerować tematyczne skarby dla twojej przygody w Warhammer Fantasy',
+                'loot.prices.toggle': 'Pokaż ceny',
             }
         }
     ];
