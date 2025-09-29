@@ -1,1 +1,210 @@
-[]
+[
+  {
+    "id": "20000000-0000-0000-0000-000000000001",
+    "name": "Soft Leather Jack",
+    "description": "A supple leather jack offering modest protection while allowing freedom of movement, favored by common soldiers.",
+    "valueInPennies": 144,
+    "tags": [
+      "Armor",
+      "Leather",
+      "Light",
+      "Soldier",
+      "Militia",
+      "Battlefield",
+      "Defensive",
+      "Tavern Brawl"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000002",
+    "name": "Soft Leather Jerkin",
+    "description": "A rugged leather jerkin, worn tight to the body for stealth and ease of travel.",
+    "valueInPennies": 120,
+    "tags": [
+      "Armor",
+      "Leather",
+      "Light",
+      "Rogue",
+      "Assassin",
+      "Stealth",
+      "Dungeon",
+      "Defensive"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000003",
+    "name": "Soft Leather Leggings",
+    "description": "Flexible leather leggings that shield the legs without hindering swift movement.",
+    "valueInPennies": 168,
+    "tags": [
+      "Armor",
+      "Leather",
+      "Light",
+      "Scout",
+      "Archer",
+      "Battlefield",
+      "Defensive",
+      "Mobility"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000004",
+    "name": "Soft Leather Skullcap",
+    "description": "A simple padded leather skullcap providing minor protection against glancing blows.",
+    "valueInPennies": 96,
+    "tags": [
+      "Armor",
+      "Leather",
+      "Helmet",
+      "Militia",
+      "Guard",
+      "Battlefield",
+      "Defensive",
+      "Headgear"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000005",
+    "name": "Boiled Leather Breastplate",
+    "description": "A hardened leather breastplate, stiffened by boiling, offering sturdier defense than its softer kin.",
+    "valueInPennies": 226,
+    "tags": [
+      "Armor",
+      "Leather",
+      "Medium",
+      "Breastplate",
+      "Soldier",
+      "Guard",
+      "Battlefield",
+      "Defensive"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000006",
+    "name": "Mail Chausses",
+    "description": "Heavy mail leggings designed to protect the lower body from brutal slashes and stabs.",
+    "valueInPennies": 480,
+    "tags": [
+      "Armor",
+      "Mail",
+      "Leggings",
+      "Knight",
+      "Soldier",
+      "Dungeon",
+      "Defensive",
+      "Battlefield"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000007",
+    "name": "Mail Coat",
+    "description": "A long coat of interlocking mail links that offers full protection while weighing down its wearer.",
+    "valueInPennies": 720,
+    "tags": [
+      "Armor",
+      "Mail",
+      "Coat",
+      "Knight",
+      "Soldier",
+      "Defensive",
+      "Dungeon",
+      "Battlefield"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000008",
+    "name": "Mail Coif",
+    "description": "A hood of fine mail that guards the head and neck from blades and arrows.",
+    "valueInPennies": 240,
+    "tags": [
+      "Armor",
+      "Mail",
+      "Helmet",
+      "Knight",
+      "Guard",
+      "Defensive",
+      "Battlefield",
+      "Dungeon"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000009",
+    "name": "Mail Shirt",
+    "description": "A sturdy shirt of riveted mail, balancing protection and mobility for adventurers and soldiers.",
+    "valueInPennies": 480,
+    "tags": [
+      "Armor",
+      "Mail",
+      "Shirt",
+      "Soldier",
+      "Adventurer",
+      "Battlefield",
+      "Dungeon",
+      "Defensive"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000010",
+    "name": "Breastplate",
+    "description": "A gleaming steel breastplate that shields the chest from deadly strikes, favored by knights and captains.",
+    "valueInPennies": 2400,
+    "tags": [
+      "Armor",
+      "Plate",
+      "Breastplate",
+      "Knight",
+      "Noble",
+      "Court",
+      "Battlefield",
+      "Defensive"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000011",
+    "name": "Open Plate Helmet",
+    "description": "A steel helm with an open face, balancing vision with formidable head protection.",
+    "valueInPennies": 480,
+    "tags": [
+      "Armor",
+      "Plate",
+      "Helmet",
+      "Knight",
+      "Guard",
+      "Battlefield",
+      "Defensive",
+      "Headgear"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000012",
+    "name": "Plate Bracers",
+    "description": "Forged steel bracers protecting the forearms, gleaming with the mark of the armorer’s craft.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Armor",
+      "Plate",
+      "Bracers",
+      "Knight",
+      "Soldier",
+      "Battlefield",
+      "Defensive",
+      "War Gear"
+    ]
+  },
+  {
+    "id": "20000000-0000-0000-0000-000000000013",
+    "name": "Plate Helm",
+    "description": "A full steel helm enclosing the head completely, offering supreme protection at the cost of comfort.",
+    "valueInPennies": 720,
+    "tags": [
+      "Armor",
+      "Plate",
+      "Helmet",
+      "Knight",
+      "Guard",
+      "Battlefield",
+      "Defensive",
+      "Headgear"
+    ]
+  }
+]

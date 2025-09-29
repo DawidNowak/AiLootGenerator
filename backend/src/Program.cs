@@ -40,8 +40,9 @@ builder.Services.AddSingleton<QdrantClient>(serviceProvider =>
     var host = configuration["Qdrant:Host"] ?? "localhost";
     var port = int.Parse(configuration["Qdrant:Port"] ?? "6334");
     var https = bool.Parse(configuration["Qdrant:UseHttps"] ?? "false");
-    
-    return new QdrantClient(host, port, https);
+    var apiKey = configuration["Qdrant:ApiKey"];
+
+    return new QdrantClient(host, port, https, apiKey);
 });
 
 // Register memory cache for cooldown management

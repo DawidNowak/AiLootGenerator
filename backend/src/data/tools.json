@@ -1,1 +1,382 @@
-[]
+[
+  {
+    "id": "40000000-0000-0000-0000-000000000001",
+    "name": "Abacus",
+    "description": "A finely crafted counting frame, indispensable for merchants and scholars tallying accounts or calculating taxes.",
+    "valueInPennies": 40,
+    "tags": ["Tool", "Accounting", "Merchant", "Scholar", "Market", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000002",
+    "name": "Animal Trap",
+    "description": "A cruel yet efficient iron trap designed to catch beasts, favored by hunters and farmers.",
+    "valueInPennies": 30,
+    "tags": ["Tool", "Hunting", "Farmer", "Trap", "Forest", "Survival"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000003",
+    "name": "Antitoxin Kit",
+    "description": "A set of vials and powders that counteract venomous bites, essential for adventurers traveling through dangerous lands.",
+    "valueInPennies": 720,
+    "tags": [
+      "Potion",
+      "Healing",
+      "Adventurer",
+      "Alchemist",
+      "Dungeon",
+      "Survival"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000004",
+    "name": "Boat Hook",
+    "description": "A sturdy wooden pole with a metal hook, useful for docking and pulling vessels alongside the pier.",
+    "valueInPennies": 60,
+    "tags": ["Tool", "Mariner", "Dock", "Utility", "Ship", "Fisherman"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000005",
+    "name": "Broom",
+    "description": "A simple broom of bound straw, often seen sweeping the floors of taverns and humble homes.",
+    "valueInPennies": 10,
+    "tags": ["Tool", "Cleaning", "Tavern", "Household", "Servant", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000006",
+    "name": "Bucket",
+    "description": "A sturdy wooden bucket bound with iron, perfect for carrying water or grain across farms and villages.",
+    "valueInPennies": 30,
+    "tags": ["Tool", "Water", "Farmer", "Utility", "Household", "Village"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000007",
+    "name": "Chisel",
+    "description": "A sharp chisel used by craftsmen and sculptors to carve wood, stone, or metal with precision.",
+    "valueInPennies": 50,
+    "tags": [
+      "Tool",
+      "Crafting",
+      "Sculptor",
+      "Carpenter",
+      "Workshop",
+      "Precision"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000008",
+    "name": "Comb",
+    "description": "A small wooden comb, used by travelers and nobles alike to keep hair tidy and free of tangles.",
+    "valueInPennies": 10,
+    "tags": [
+      "Tool",
+      "Personal Care",
+      "Noble",
+      "Traveler",
+      "Household",
+      "Adornment"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000009",
+    "name": "Crowbar",
+    "description": "A heavy iron bar perfect for prying doors or lifting crates, indispensable in both taverns and dungeons.",
+    "valueInPennies": 30,
+    "tags": ["Tool", "Prying", "Dungeon", "Workshop", "Utility", "Adventurer"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000010",
+    "name": "Crutch",
+    "description": "A sturdy wooden crutch carved for comfort, aiding the lame and injured in their travels.",
+    "valueInPennies": 36,
+    "tags": ["Tool", "Healing", "Traveler", "Injured", "Utility", "Village"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000011",
+    "name": "Disguise Kit",
+    "description": "A clever assortment of paints, wigs, and false mustaches, perfect for spies or wandering rogues.",
+    "valueInPennies": 78,
+    "tags": ["Tool", "Stealth", "Rogue", "Spy", "Utility", "Theater"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000012",
+    "name": "Ear Pick",
+    "description": "A delicate brass tool used to maintain hygiene, common among nobles and apothecaries.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Personal Care",
+      "Noble",
+      "Apothecary",
+      "Household",
+      "Hygiene"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000013",
+    "name": "12 Fish Hooks",
+    "description": "A small bundle of iron hooks, essential for fishermen and river folk seeking a bountiful catch.",
+    "valueInPennies": 12,
+    "tags": ["Tool", "Fishing", "Fisherman", "River", "Utility", "Survival"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000014",
+    "name": "Floor Brush",
+    "description": "A coarse brush ideal for scrubbing dirt and grime from tavern floors and workshop halls.",
+    "valueInPennies": 18,
+    "tags": ["Tool", "Cleaning", "Tavern", "Workshop", "Servant", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000015",
+    "name": "Gavel",
+    "description": "A finely carved wooden gavel used by judges or councilmen to command attention in court.",
+    "valueInPennies": 240,
+    "tags": ["Tool", "Court", "Judge", "Official", "Ceremonial", "Authority"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000016",
+    "name": "Hammer",
+    "description": "A sturdy iron hammer, vital for blacksmiths and carpenters to shape metal and wood alike.",
+    "valueInPennies": 36,
+    "tags": [
+      "Tool",
+      "Blacksmith",
+      "Carpenter",
+      "Workshop",
+      "Construction",
+      "Utility"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000017",
+    "name": "Hand Mirror",
+    "description": "A polished glass mirror framed in ornate metal, treasured by nobles and travelers for personal grooming.",
+    "valueInPennies": 258,
+    "tags": [
+      "Tool",
+      "Personal Care",
+      "Noble",
+      "Traveler",
+      "Adornment",
+      "Household"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000018",
+    "name": "Hoe",
+    "description": "A long-handled hoe with a steel blade, essential for farmers tilling the soil and tending fields.",
+    "valueInPennies": 48,
+    "tags": ["Tool", "Farming", "Farmer", "Field", "Utility", "Agriculture"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000019",
+    "name": "Key",
+    "description": "A small iron key, intricately cut to secure doors, chests, and mysterious locks.",
+    "valueInPennies": 12,
+    "tags": ["Tool", "Lock", "Dungeon", "Household", "Merchant", "Security"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000020",
+    "name": "Knife",
+    "description": "A sharp, balanced knife, useful for hunters, cooks, and adventurers alike.",
+    "valueInPennies": 96,
+    "tags": ["Weapon", "Tool", "One-handed", "Hunter", "Adventurer", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000021",
+    "name": "Lock Picks",
+    "description": "A set of fine tools for delicate manipulation of locks, favored by rogues and thieves.",
+    "valueInPennies": 180,
+    "tags": ["Tool", "Stealth", "Rogue", "Thief", "Dungeon", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000022",
+    "name": "Manacles",
+    "description": "Heavy iron manacles designed to restrain prisoners, often used by city guards and bounty hunters.",
+    "valueInPennies": 224,
+    "tags": ["Tool", "Restraint", "Guard", "Prison", "Dungeon", "Law"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000023",
+    "name": "Mop",
+    "description": "A simple mop with thick fibers, perfect for scrubbing tavern floors or storerooms.",
+    "valueInPennies": 12,
+    "tags": ["Tool", "Cleaning", "Tavern", "Household", "Servant", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000024",
+    "name": "12 Nails",
+    "description": "A small bundle of iron nails, handy for carpenters, builders, or fortifying structures quickly.",
+    "valueInPennies": 2,
+    "tags": [
+      "Tool",
+      "Construction",
+      "Carpenter",
+      "Workshop",
+      "Utility",
+      "Village"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000025",
+    "name": "Paint Brush",
+    "description": "A fine brush with soft bristles, used by artisans and scribes for painting or marking surfaces.",
+    "valueInPennies": 48,
+    "tags": ["Tool", "Artisan", "Painter", "Workshop", "Decoration", "Crafting"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000026",
+    "name": "Pestle & Mortar",
+    "description": "A sturdy stone mortar with a heavy pestle, ideal for grinding herbs, spices, and alchemical ingredients.",
+    "valueInPennies": 168,
+    "tags": ["Tool", "Alchemy", "Apothecary", "Herbs", "Cooking", "Workshop"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000027",
+    "name": "Pick",
+    "description": "A rugged iron pick for miners and adventurers, perfect for breaking rock or digging tunnels.",
+    "valueInPennies": 224,
+    "tags": ["Tool", "Mining", "Adventurer", "Dungeon", "Utility", "Excavation"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000028",
+    "name": "Pole (3 Yards)",
+    "description": "A long wooden pole, useful for scaffolding, boating, or as an improvised weapon in emergencies.",
+    "valueInPennies": 96,
+    "tags": ["Tool", "Utility", "Construction", "Mariner", "Workshop", "Combat"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000029",
+    "name": "Quill Pen",
+    "description": "A finely cut feather quill for writing letters, ledgers, or magical scrolls.",
+    "valueInPennies": 36,
+    "tags": ["Tool", "Writing", "Scholar", "Scribe", "Library", "Office"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000030",
+    "name": "Rake",
+    "description": "A wooden rake with sturdy tines, indispensable for farmers and gardeners tending fields or gardens.",
+    "valueInPennies": 54,
+    "tags": ["Tool", "Farming", "Gardening", "Farmer", "Field", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000031",
+    "name": "Reading Lens",
+    "description": "A finely ground magnifying glass, cherished by scholars and scribes for reading small scripts or studying maps.",
+    "valueInPennies": 720,
+    "tags": ["Tool", "Scholar", "Library", "Reading", "Scribe", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000032",
+    "name": "Saw",
+    "description": "A sturdy saw with a jagged edge, ideal for carpenters, woodcutters, and builders to shape timber.",
+    "valueInPennies": 72,
+    "tags": [
+      "Tool",
+      "Carpenter",
+      "Woodcutter",
+      "Construction",
+      "Workshop",
+      "Utility"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000033",
+    "name": "Sickle",
+    "description": "A curved blade for reaping crops swiftly, a farmer's essential for harvest season.",
+    "valueInPennies": 240,
+    "tags": ["Tool", "Farming", "Farmer", "Harvest", "Agriculture", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000034",
+    "name": "Spade",
+    "description": "A heavy spade perfect for digging earth, graves, or trenches in fields and battlefields alike.",
+    "valueInPennies": 96,
+    "tags": ["Tool", "Digging", "Farmer", "Grave Digger", "Field", "Utility"]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000035",
+    "name": "Spike",
+    "description": "A small iron spike, versatile for fortifications, traps, or fastening wood in construction.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Construction",
+      "Fortification",
+      "Workshop",
+      "Utility",
+      "Defense"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000036",
+    "name": "Stamp, Engraved",
+    "description": "An intricately engraved stamp, used to mark documents or seals with authority and precision.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Tool",
+      "Official",
+      "Scribe",
+      "Merchant",
+      "Court",
+      "Document",
+      "Authority"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000037",
+    "name": "Tongs, Steel",
+    "description": "Heavy steel tongs, essential for blacksmiths handling hot metal and forging weapons.",
+    "valueInPennies": 192,
+    "tags": [
+      "Tool",
+      "Blacksmith",
+      "Workshop",
+      "Forging",
+      "Metalworking",
+      "Utility"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000038",
+    "name": "Telescope",
+    "description": "A polished brass telescope, used by explorers and sailors to spy distant lands and approaching ships.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Tool",
+      "Explorer",
+      "Sailor",
+      "Observation",
+      "Navigation",
+      "Adventure"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000039",
+    "name": "Tweezers",
+    "description": "A delicate pair of tweezers, useful for apothecaries, jewelers, and meticulous craftsmen.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Apothecary",
+      "Jeweler",
+      "Craftsman",
+      "Precision",
+      "Utility"
+    ]
+  },
+  {
+    "id": "40000000-0000-0000-0000-000000000040",
+    "name": "Writing Kit",
+    "description": "A complete writing set including ink, quills, and parchment, ideal for scholars, scribes, or traveling nobles.",
+    "valueInPennies": 480,
+    "tags": [
+      "Tool",
+      "Writing",
+      "Scholar",
+      "Scribe",
+      "Library",
+      "Travel",
+      "Utility"
+    ]
+  }
+]

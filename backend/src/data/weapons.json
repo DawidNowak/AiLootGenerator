@@ -1,254 +1,494 @@
 [
   {
     "id": "10000000-0000-0000-0000-000000000001",
-    "name": "Dwarf-forged Hand Axe",
-    "description": "A compact axe favored by Dwarfs and mercenaries, forged in Karak smithies with a sturdy haft and razor-sharp edge for brutal close combat.",
+    "name": "Hand Axe",
+    "description": "A compact axe with a sturdy haft and razor-sharp edge for brutal close combat.",
     "valueInPennies": 240,
-    "tags": ["Dwarf", "Karak", "Axe", "Warrior", "Forged"]
+    "tags": [
+      "Axe",
+      "One-handed",
+      "Close Combat",
+      "Warrior",
+      "Militia",
+      "Woodcutter",
+      "Battlefield"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000002",
-    "name": "Imperial Dagger",
-    "description": "A short, double-edged blade commonly carried by soldiers and townsfolk of the Empire, useful for defense, duels, or daily survival tasks.",
+    "name": "Dagger",
+    "description": "A short, double-edged blade useful for defense, duels, or daily survival tasks.",
     "valueInPennies": 192,
-    "tags": ["Empire", "Imperial", "Blade", "Town", "Utility"]
+    "tags": [
+      "Blade",
+      "Knife",
+      "Stealth",
+      "Assassin",
+      "Rogue",
+      "Town",
+      "Utility"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000003",
     "name": "Large Shield",
-    "description": "A heavy shield reinforced with iron, often carried by soldiers to hold the line, its surface scarred by blades and arrows alike.",
+    "description": "A heavy shield reinforced with iron, its surface scarred by blades and arrows alike.",
     "valueInPennies": 720,
-    "tags": ["Imperial", "Barracks", "Shield", "Defense", "Military"]
+    "tags": [
+      "Shield",
+      "Defense",
+      "Soldier",
+      "Military",
+      "Knight",
+      "Guard",
+      "Protective"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000004",
     "name": "Cavalry Hammer",
-    "description": "A hammer designed for mounted knights, its blunt head able to crush armor while a spike pierces through even the toughest helmets.",
+    "description": "A hammer designed for mounted knights, its blunt head able to crush armor while a spike pierces through helmets.",
     "valueInPennies": 720,
-    "tags": ["Empire", "Cavalry", "Hammer", "Mounted", "Knight"]
+    "tags": [
+      "Hammer",
+      "Knight",
+      "Cavalry",
+      "Mounted",
+      "Armor Piercing",
+      "Military",
+      "Battlefield"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000005",
-    "name": "Bretonnian Cavalry Lance",
-    "description": "A long wooden lance wielded by Bretonnian knights, designed to deliver devastating charges that pierce armor and scatter enemy lines.",
+    "name": "Cavalry Lance",
+    "description": "A long wooden lance designed to deliver devastating charges that pierce armor and scatter enemy lines.",
     "valueInPennies": 240,
-    "tags": ["Bretonnia", "Cavalry", "Lance", "Charge", "Knight"]
+    "tags": [
+      "Lance",
+      "Cavalry",
+      "Knight",
+      "Charge",
+      "Mounted",
+      "Military",
+      "Tournament"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000006",
-    "name": "Imperial Rapier",
-    "description": "A slender dueling sword favored by nobles and officers of the Empire, its blade perfect for thrusts, flourishes, and lethal precision strikes.",
+    "name": "Rapier",
+    "description": "A slender dueling sword, its blade perfect for thrusts, flourishes, and lethal precision strikes.",
     "valueInPennies": 1200,
-    "tags": ["Empire", "Imperial", "Noble", "Duel", "Blade"]
+    "tags": ["Sword", "Blade", "Duel", "Noble", "Court", "Precision", "Elegant"]
   },
   {
     "id": "10000000-0000-0000-0000-000000000007",
     "name": "Knuckledusters",
     "description": "Simple but brutal iron rings fitted to the fist, favored by tavern brawlers and thieves for close and vicious fighting.",
     "valueInPennies": 30,
-    "tags": ["Tavern", "Thief", "Brawl", "Fist", "Street"]
+    "tags": [
+      "Fist",
+      "Street",
+      "Brawl",
+      "Tavern",
+      "Thief",
+      "Rogue",
+      "Improvised"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000008",
     "name": "Grain Flail",
     "description": "A converted farming tool turned into a weapon, its chain and wooden staff capable of striking with surprising force.",
     "valueInPennies": 120,
-    "tags": ["Peasant", "Farm", "Improvised", "Flail", "Rural"]
+    "tags": [
+      "Flail",
+      "Farm",
+      "Rural",
+      "Improvised",
+      "Peasant",
+      "Wooden",
+      "Chain"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000009",
     "name": "Military Flail",
     "description": "A weaponized flail with spiked heads, crafted for war, capable of smashing shields and breaking enemy lines.",
     "valueInPennies": 720,
-    "tags": ["Imperial", "Barracks", "Flail", "Soldier", "Battle"]
+    "tags": ["Flail", "Soldier", "Military", "Battle", "Spiked", "Heavy", "War"]
   },
   {
     "id": "10000000-0000-0000-0000-000000000010",
     "name": "Main Gauche",
     "description": "A parrying dagger with an extended guard, commonly used alongside a rapier to deflect and counter strikes in duels.",
     "valueInPennies": 240,
-    "tags": ["Empire", "Duel", "Blade", "Parry", "Noble"]
+    "tags": ["Dagger", "Parry", "Duel", "Blade", "Noble", "Court", "Defense"]
   },
   {
     "id": "10000000-0000-0000-0000-000000000011",
     "name": "Swordbreaker",
     "description": "A dagger with deep notches designed to catch and snap enemy blades, favored by duelists and rogues.",
     "valueInPennies": 270,
-    "tags": ["Empire", "Duel", "Rogue", "Blade", "Counter"]
+    "tags": ["Dagger", "Blade", "Rogue", "Duel", "Counter", "Trap", "Assassin"]
   },
   {
     "id": "10000000-0000-0000-0000-000000000012",
-    "name": "Imperial Halberd",
-    "description": "The standard polearm of Empire troops, combining axe blade, spear tip, and hook to deal with armored enemies and cavalry alike.",
+    "name": "Halberd",
+    "description": "A polearm combining axe blade, spear tip, and hook to deal with armored enemies and cavalry alike.",
     "valueInPennies": 480,
-    "tags": ["Empire", "Imperial", "Polearm", "Soldier", "Barracks"]
+    "tags": [
+      "Polearm",
+      "Soldier",
+      "Barracks",
+      "Guard",
+      "Knight",
+      "Military",
+      "Two-handed"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000013",
     "name": "Spear",
-    "description": "A versatile weapon with a pointed steel head, carried by soldiers and peasants alike, effective in ranks or thrown at short range.",
+    "description": "A versatile weapon with a pointed steel head, effective in ranks or thrown at short range.",
     "valueInPennies": 180,
-    "tags": ["Empire", "Peasant", "Polearm", "Soldier", "Battle"]
+    "tags": [
+      "Spear",
+      "Polearm",
+      "Soldier",
+      "Battlefield",
+      "Militia",
+      "Thrown",
+      "Hunter"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000014",
     "name": "Quarterstaff",
-    "description": "A simple wooden staff used for training and self-defense, surprisingly effective in skilled hands at keeping foes at bay.",
+    "description": "A simple wooden staff used for training and self-defense, effective in skilled hands at keeping foes at bay.",
     "valueInPennies": 36,
-    "tags": ["Training", "Staff", "Peasant", "Defense", "Wooden"]
+    "tags": [
+      "Staff",
+      "Training",
+      "Defense",
+      "Wooden",
+      "Peasant",
+      "Rural",
+      "Self-defense"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000015",
     "name": "Bastard Sword",
-    "description": "A versatile longsword wielded with one or two hands, favored by mercenaries for its balance between power and control.",
+    "description": "A versatile longsword wielded with one or two hands, valued for its balance between power and control.",
     "valueInPennies": 1920,
-    "tags": ["Mercenary", "Blade", "Sword", "Battle", "Versatile"]
+    "tags": [
+      "Sword",
+      "Blade",
+      "Knight",
+      "Battle",
+      "Soldier",
+      "Versatile",
+      "Military"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000016",
-    "name": "Chaos Great Axe",
-    "description": "A massive, brutal two-handed axe warped by dark runes, carried by Chaos warriors who revel in destruction and bloodshed on the battlefield.",
+    "name": "Great Axe",
+    "description": "A massive, brutal two-handed axe warped by dark runes, carried by warriors who revel in destruction on the battlefield.",
     "valueInPennies": 960,
-    "tags": ["Chaos", "Axe", "Runes", "Warrior", "Two-handed"]
+    "tags": [
+      "Axe",
+      "Two-handed",
+      "Warrior",
+      "Battlefield",
+      "Destructive",
+      "Runes",
+      "Soldier"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000017",
-    "name": "Sigmarite Warhammer",
-    "description": "A two-handed hammer wielded in devotion to Sigmar, bearing holy engravings and designed to crush armor and skulls with righteous fury.",
+    "name": "Warhammer",
+    "description": "A two-handed hammer bearing engravings and designed to crush armor and skulls with righteous fury.",
     "valueInPennies": 720,
-    "tags": ["Empire", "Sigmar", "Temple", "Warhammer", "Holy"]
+    "tags": [
+      "Hammer",
+      "Two-handed",
+      "Crushing",
+      "Temple",
+      "Holy",
+      "Knight",
+      "Soldier"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000018",
     "name": "Zweihander",
-    "description": "A massive two-handed sword wielded by elite Imperial guards, capable of sweeping blows that can cleave through multiple foes.",
+    "description": "A massive two-handed sword capable of sweeping blows that can cleave through multiple foes.",
     "valueInPennies": 2400,
-    "tags": ["Empire", "Imperial", "Sword", "Two-handed", "Guard"]
+    "tags": [
+      "Sword",
+      "Two-handed",
+      "Guard",
+      "Knight",
+      "Battlefield",
+      "Greatsword",
+      "Military"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000019",
-    "name": "Hochland Long Rifle",
-    "description": "A prized firearm of Imperial marksmen, this long rifle from Hochland features intricate mechanisms and deadly accuracy across battlefield distances.",
+    "name": "Long Rifle",
+    "description": "A prized firearm with intricate mechanisms and deadly accuracy across battlefield distances.",
     "valueInPennies": 24000,
-    "tags": ["Hochland", "Empire", "Marksman", "Firearm", "Rifle"]
+    "tags": [
+      "Firearm",
+      "Rifle",
+      "Marksman",
+      "Military",
+      "Long Range",
+      "Officer",
+      "Expensive"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000020",
-    "name": "Imperial Handgun",
-    "description": "A blackpowder firearm issued to Empire soldiers, firing deadly lead shot capable of piercing armor, though slow to reload.",
+    "name": "Handgun",
+    "description": "A blackpowder firearm firing deadly lead shot capable of piercing armor, though slow to reload.",
     "valueInPennies": 960,
-    "tags": ["Empire", "Imperial", "Gunpowder", "Soldier", "Firearm"]
+    "tags": [
+      "Firearm",
+      "Gunpowder",
+      "Soldier",
+      "Armor Piercing",
+      "Military",
+      "Close Range",
+      "Barracks"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000021",
     "name": "Pistol",
-    "description": "A compact blackpowder firearm carried by officers and mercenaries, deadly at close range but often unreliable.",
+    "description": "A compact blackpowder firearm, deadly at close range but often unreliable.",
     "valueInPennies": 1920,
-    "tags": ["Empire", "Mercenary", "Pistol", "Gunpowder", "Officer"]
+    "tags": [
+      "Firearm",
+      "Pistol",
+      "Gunpowder",
+      "Officer",
+      "Close Range",
+      "Noble",
+      "Unreliable"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000022",
-    "name": "Elven War Bow",
-    "description": "An elegant, finely crafted bow of gleaming wood, its draw smooth and precise, wielded by Elven archers with deadly accuracy from great distances.",
+    "name": "War Bow",
+    "description": "An elegant, finely crafted bow of gleaming wood, its draw smooth and precise, with deadly accuracy from great distances.",
     "valueInPennies": 2400,
-    "tags": ["Elven", "Lorien", "Bow", "Archer", "Noble"]
+    "tags": [
+      "Bow",
+      "Archer",
+      "Noble",
+      "Long Range",
+      "Military",
+      "Wooden",
+      "Precision"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000023",
-    "name": "Bretonnian Longbow",
-    "description": "A tall yew longbow crafted by Bretonnian peasants, renowned for its range and accuracy, used in hunting and on the battlefield against armored foes.",
+    "name": "Longbow",
+    "description": "A tall yew longbow renowned for its range and accuracy, used in hunting and on the battlefield against armored foes.",
     "valueInPennies": 1200,
-    "tags": ["Bretonnia", "Longbow", "Peasant", "Archer", "Battlefield"]
+    "tags": [
+      "Longbow",
+      "Archer",
+      "Battlefield",
+      "Hunting",
+      "Militia",
+      "Yew",
+      "Soldier"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000024",
     "name": "Shortbow",
     "description": "A simple shortbow, easy to draw and fire quickly, often carried by scouts, hunters, and militias for skirmishing.",
     "valueInPennies": 720,
-    "tags": ["Empire", "Scout", "Bow", "Hunt", "Militia"]
+    "tags": ["Bow", "Scout", "Hunter", "Militia", "Rural", "Skirmish", "Wooden"]
   },
   {
     "id": "10000000-0000-0000-0000-000000000025",
-    "name": "Tilean Crossbow Pistol",
-    "description": "An ingenious Tilean contraption, this compact crossbow pistol allows concealed yet deadly shots, favored by assassins and mercenaries alike.",
+    "name": "Crossbow Pistol",
+    "description": "An ingenious contraption, this compact crossbow pistol allows concealed yet deadly shots, favored by assassins and mercenaries alike.",
     "valueInPennies": 1440,
-    "tags": ["Tilea", "Crossbow", "Assassin", "Mercenary", "Compact"]
+    "tags": [
+      "Crossbow",
+      "Assassin",
+      "Mercenary",
+      "Compact",
+      "Concealed",
+      "Rogue",
+      "Urban"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000026",
     "name": "Heavy Crossbow",
     "description": "A powerful two-handed crossbow capable of piercing armor, slow to reload but devastating in the hands of trained marksmen.",
     "valueInPennies": 1680,
-    "tags": ["Empire", "Crossbow", "Marksman", "Two-handed", "Battle"]
+    "tags": [
+      "Crossbow",
+      "Marksman",
+      "Two-handed",
+      "Military",
+      "Soldier",
+      "Battlefield",
+      "Armor Piercing"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000027",
     "name": "Repeater Handgun",
     "description": "A rare and ingenious firearm that can fire multiple shots before reloading, valued highly by wealthy officers and noble hunters.",
     "valueInPennies": 2400,
-    "tags": ["Empire", "Imperial", "Gunpowder", "Firearm", "Noble"]
+    "tags": [
+      "Firearm",
+      "Gunpowder",
+      "Repeater",
+      "Noble",
+      "Officer",
+      "Hunter",
+      "Expensive"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000028",
     "name": "Whip",
     "description": "A flexible leather lash used by beastmasters and guards, capable of striking at range or controlling unruly foes.",
     "valueInPennies": 60,
-    "tags": ["Beastmaster", "Leather", "Whip", "Guard", "Arena"]
+    "tags": [
+      "Whip",
+      "Leather",
+      "Beastmaster",
+      "Arena",
+      "Guard",
+      "Trainer",
+      "Control"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000029",
     "name": "Bomb",
     "description": "A dangerous blackpowder device, crudely crafted but capable of wreaking havoc with fire, smoke, and deadly shrapnel.",
     "valueInPennies": 720,
-    "tags": ["Empire", "Gunpowder", "Explosive", "Engineer", "Siege"]
+    "tags": [
+      "Explosive",
+      "Gunpowder",
+      "Engineer",
+      "Siege",
+      "Destructive",
+      "Fire",
+      "Smoke"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000030",
     "name": "Sling",
-    "description": "A simple leather sling used by peasants and militias, hurling stones with surprising force against lightly armored foes.",
+    "description": "A simple leather sling hurling stones with surprising force against lightly armored foes.",
     "valueInPennies": 12,
-    "tags": ["Peasant", "Sling", "Stone", "Hunt", "Militia"]
+    "tags": [
+      "Sling",
+      "Stone",
+      "Hunter",
+      "Militia",
+      "Peasant",
+      "Rural",
+      "Simple"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000031",
     "name": "Staff Sling",
     "description": "A two-handed sling mounted on a staff, capable of launching stones farther and harder than a simple hand sling.",
     "valueInPennies": 48,
-    "tags": ["Peasant", "Sling", "Stone", "Two-handed", "Militia"]
+    "tags": [
+      "Sling",
+      "Stone",
+      "Two-handed",
+      "Militia",
+      "Rural",
+      "Hunter",
+      "Improvised"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000032",
     "name": "Bolas",
     "description": "A throwing weapon of weighted cords, designed to entangle legs and bring down prey or fleeing enemies with precision.",
     "valueInPennies": 120,
-    "tags": ["Hunter", "Throwing", "Cord", "Trap", "Ambush"]
+    "tags": ["Throwing", "Hunter", "Trap", "Cord", "Ambush", "Rural", "Capture"]
   },
   {
     "id": "10000000-0000-0000-0000-000000000033",
     "name": "Throwing Dart",
     "description": "Small and easily concealed, these darts can be hurled quickly and silently, favored by rogues and assassins.",
     "valueInPennies": 24,
-    "tags": ["Assassin", "Rogue", "Throwing", "Stealth", "Dart"]
+    "tags": [
+      "Throwing",
+      "Dart",
+      "Assassin",
+      "Rogue",
+      "Stealth",
+      "Urban",
+      "Silent"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000034",
     "name": "Javelin",
-    "description": "A light spear designed for throwing, carried by skirmishers and hunters, effective at harassing and disrupting enemy ranks.",
+    "description": "A light spear designed for throwing, carried by skirmishers and hunters, effective at harassing enemy ranks.",
     "valueInPennies": 126,
-    "tags": ["Empire", "Hunter", "Throwing", "Skirmish", "Light"]
+    "tags": [
+      "Throwing",
+      "Spear",
+      "Hunter",
+      "Skirmish",
+      "Soldier",
+      "Militia",
+      "Rural"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000035",
     "name": "Throwing Axe",
-    "description": "A balanced axe designed to be hurled with deadly accuracy, favored by Dwarfs and northern tribes in raids and ambushes.",
+    "description": "A balanced axe designed to be hurled with deadly accuracy, often used in raids and ambushes.",
     "valueInPennies": 240,
-    "tags": ["Dwarf", "Tribe", "Throwing", "Axe", "Ambush"]
+    "tags": [
+      "Throwing",
+      "Axe",
+      "Ambush",
+      "Raider",
+      "Warrior",
+      "Battlefield",
+      "Rural"
+    ]
   },
   {
     "id": "10000000-0000-0000-0000-000000000036",
     "name": "Throwing Knife",
     "description": "A set of balanced knives designed for throwing, often hidden beneath cloaks and favored by rogues and hired killers.",
     "valueInPennies": 216,
-    "tags": ["Rogue", "Knife", "Throwing", "Stealth", "Assassin"]
+    "tags": [
+      "Throwing",
+      "Knife",
+      "Rogue",
+      "Assassin",
+      "Stealth",
+      "Concealed",
+      "Urban"
+    ]
   }
 ]

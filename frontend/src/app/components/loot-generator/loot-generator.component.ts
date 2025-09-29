@@ -59,6 +59,29 @@ export class LootGeneratorComponent implements OnInit, OnDestroy {
     onLootGenerated(event: LootGeneratedEvent): void {
         this.generatedLoot.set(event.items);
         this.currentError.set(null);
+
+        // Auto-scroll to loot results after a short delay to ensure DOM is updated
+        setTimeout(() => {
+            this.scrollToLootResults();
+        }, 100);
+    }
+
+    /**
+     * Scroll to the loot results section, especially useful on mobile
+     */
+    private scrollToLootResults(): void {
+        const resultsSection = document.querySelector('.results-section');
+        if (resultsSection) {
+            // Use smooth scrolling with some offset from the top
+            const headerOffset = 20; // Small offset from top
+            const elementPosition = resultsSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     }
 
     /**

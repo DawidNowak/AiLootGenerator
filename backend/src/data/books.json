@@ -1,1 +1,192 @@
-[]
+[
+  {
+    "id": "50000000-0000-0000-0000-000000000001",
+    "name": "Book, Apothecary",
+    "description": "A worn tome detailing potions and herb lore, coveted by healers and alchemists alike.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Book",
+      "Alchemy",
+      "Potion",
+      "Healer",
+      "Apothecary",
+      "Library",
+      "Scholar",
+      "Magic"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000002",
+    "name": "Book, Art",
+    "description": "A lavishly illustrated book exploring styles and techniques, prized by artists and noble patrons.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Book",
+      "Art",
+      "Illustration",
+      "Artist",
+      "Noble",
+      "Library",
+      "Scholar",
+      "Court"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000003",
+    "name": "Book, Cryptography",
+    "description": "An intricate guide to secret codes and ciphers, essential for spies, scholars, and courtiers.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Book",
+      "Cryptography",
+      "Secret",
+      "Scholar",
+      "Spy",
+      "Library",
+      "Court",
+      "Intelligence"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000004",
+    "name": "Book, Engineer",
+    "description": "A detailed volume of gears, machines, and inventions, cherished by builders and artificers.",
+    "valueInPennies": 720,
+    "tags": [
+      "Book",
+      "Engineering",
+      "Machines",
+      "Builder",
+      "Artificer",
+      "Workshop",
+      "Scholar",
+      "Utility"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000005",
+    "name": "Book, Law",
+    "description": "A hefty codex of statutes and precedents, indispensable for judges, scribes, and lawyers.",
+    "valueInPennies": 3600,
+    "tags": [
+      "Book",
+      "Law",
+      "Judicial",
+      "Scribe",
+      "Court",
+      "Noble",
+      "Scholar",
+      "Legal"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000006",
+    "name": "Book, Magic",
+    "description": "A mysterious grimoire imbued with arcane secrets, sought by wizards, sorcerers, and daring apprentices.",
+    "valueInPennies": 4800,
+    "tags": [
+      "Book",
+      "Magic",
+      "Arcane",
+      "Wizard",
+      "Sorcerer",
+      "Library",
+      "Scholar",
+      "Mystical"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000007",
+    "name": "Book, Medicine",
+    "description": "A comprehensive guide to remedies and surgical practices, essential for physicians and healers.",
+    "valueInPennies": 3600,
+    "tags": [
+      "Book",
+      "Medicine",
+      "Healing",
+      "Physician",
+      "Apothecary",
+      "Library",
+      "Scholar",
+      "Surgery"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000008",
+    "name": "Book, Religion",
+    "description": "A sacred text venerating divine rites, revered by priests, acolytes, and devout followers.",
+    "valueInPennies": 240,
+    "tags": [
+      "Book",
+      "Religion",
+      "Sacred",
+      "Priest",
+      "Temple",
+      "Devotion",
+      "Library",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000009",
+    "name": "Leaflet",
+    "description": "A small, crudely printed sheet, used to spread news, decrees, or secret messages across towns.",
+    "valueInPennies": 12,
+    "tags": [
+      "Miscellaneous",
+      "Paper",
+      "Notice",
+      "Messenger",
+      "Market",
+      "Tavern",
+      "Communication"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000010",
+    "name": "Legal Document",
+    "description": "A formal parchment detailing agreements or decrees, essential in courts and noble households.",
+    "valueInPennies": 36,
+    "tags": [
+      "Document",
+      "Legal",
+      "Court",
+      "Scribe",
+      "Noble",
+      "Official",
+      "Paper",
+      "Contract"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000011",
+    "name": "Map",
+    "description": "A meticulously drawn chart of lands and roads, prized by travelers, adventurers, and military scouts.",
+    "valueInPennies": 720,
+    "tags": [
+      "Miscellaneous",
+      "Map",
+      "Cartography",
+      "Explorer",
+      "Scout",
+      "Dungeon",
+      "Travel",
+      "Military"
+    ]
+  },
+  {
+    "id": "50000000-0000-0000-0000-000000000012",
+    "name": "Parchment/Sheet",
+    "description": "A blank sheet of fine parchment, suitable for scribes, scholars, or secret messages.",
+    "valueInPennies": 12,
+    "tags": [
+      "Miscellaneous",
+      "Paper",
+      "Scribe",
+      "Library",
+      "Scholar",
+      "Writing",
+      "Message"
+    ]
+  }
+]

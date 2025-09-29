@@ -115,7 +115,6 @@ export class I18nService {
             label: 'Polski',
             translations: {
                 'app.title': 'Generator Skarbów AI',
-                'app.subtitle': 'Edycja Warhammer Fantasy',
                 'app.description': 'Generuj legendarny skarby i magiczne artefakty do twoich przygód w Warhammer Fantasy',
                 'language.selector.label': 'Język',
                 'color.gold': 'Złoty',

@@ -1,1 +1,210 @@
-[]
+[
+  {
+    "id": "30000000-0000-0000-0000-000000000001",
+    "name": "Backpack",
+    "description": "A rugged leather pack with worn straps, favored by travelers to carry provisions and gear across long roads.",
+    "valueInPennies": 58,
+    "tags": [
+      "Tool",
+      "Backpack",
+      "Traveler",
+      "Adventurer",
+      "Merchant",
+      "Road",
+      "Utility",
+      "Storage"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000002",
+    "name": "Barrel",
+    "description": "A stout wooden barrel bound in iron hoops, ideal for storing ale, salted meat, or contraband in dim taverns and cellars.",
+    "valueInPennies": 96,
+    "tags": [
+      "Tool",
+      "Container",
+      "Tavern",
+      "Cellar",
+      "Merchant",
+      "Smuggler",
+      "Storage",
+      "Utility"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000003",
+    "name": "Cask",
+    "description": "A small oak cask, its aroma hinting at strong spirits within, prized by innkeepers and travelers alike.",
+    "valueInPennies": 36,
+    "tags": [
+      "Tool",
+      "Container",
+      "Innkeeper",
+      "Tavern",
+      "Traveler",
+      "Liquor",
+      "Storage",
+      "Utility"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000004",
+    "name": "Flask",
+    "description": "A slim metal flask, perfect for concealing strong drink or potions beneath a cloak.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Container",
+      "Traveler",
+      "Soldier",
+      "Assassin",
+      "Stealth",
+      "Tavern",
+      "Utility"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000005",
+    "name": "Jug",
+    "description": "A simple clay jug, sturdy and well-used, often found on farmhouse tables or in bustling markets.",
+    "valueInPennies": 38,
+    "tags": [
+      "Tool",
+      "Container",
+      "Farmer",
+      "Peasant",
+      "Market",
+      "Tavern",
+      "Utility",
+      "Ceramic"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000006",
+    "name": "Pewter Stein",
+    "description": "A heavy pewter stein, etched with crude motifs, clinks loudly in rowdy tavern halls.",
+    "valueInPennies": 48,
+    "tags": [
+      "Tool",
+      "Drinking Vessel",
+      "Tavern",
+      "Soldier",
+      "Peasant",
+      "Festival",
+      "Ceremonial",
+      "Utility"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000007",
+    "name": "Pouch",
+    "description": "A small leather pouch, perfect for hiding coins or trinkets at a belt or beneath a cloak.",
+    "valueInPennies": 4,
+    "tags": [
+      "Tool",
+      "Container",
+      "Thief",
+      "Merchant",
+      "Adventurer",
+      "Market",
+      "Utility",
+      "Storage"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000008",
+    "name": "Sack",
+    "description": "A coarse burlap sack, smelling faintly of grain and soil, slung across farmyards or market stalls.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Container",
+      "Farmer",
+      "Peasant",
+      "Market",
+      "Storage",
+      "Utility",
+      "Grain"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000009",
+    "name": "Large Sack",
+    "description": "A broad burlap sack capable of holding heavy loads, often bulging with goods on market days.",
+    "valueInPennies": 18,
+    "tags": [
+      "Tool",
+      "Container",
+      "Farmer",
+      "Merchant",
+      "Market",
+      "Storage",
+      "Utility",
+      "Heavy Load"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000010",
+    "name": "Saddlebags",
+    "description": "A pair of weathered leather saddlebags, stained with dust and road grime from countless journeys.",
+    "valueInPennies": 224,
+    "tags": [
+      "Tool",
+      "Container",
+      "Traveler",
+      "Merchant",
+      "Knight",
+      "Road",
+      "Horse",
+      "Utility"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000011",
+    "name": "Sling Bag",
+    "description": "A simple cloth sling bag, favored by common folk for carrying daily necessities.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Container",
+      "Farmer",
+      "Peasant",
+      "Traveler",
+      "Market",
+      "Utility",
+      "Storage"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000012",
+    "name": "Scroll Case",
+    "description": "A polished leather scroll case with brass fittings, used to safeguard fragile writings from dust and rain.",
+    "valueInPennies": 192,
+    "tags": [
+      "Tool",
+      "Container",
+      "Scholar",
+      "Scribe",
+      "Wizard",
+      "Library",
+      "Magical",
+      "Utility"
+    ]
+  },
+  {
+    "id": "30000000-0000-0000-0000-000000000013",
+    "name": "Waterskin",
+    "description": "A leather waterskin with a cork stopper, indispensable for travelers braving long roads or dry wastes.",
+    "valueInPennies": 20,
+    "tags": [
+      "Tool",
+      "Container",
+      "Traveler",
+      "Soldier",
+      "Adventurer",
+      "Road",
+      "Utility",
+      "Survival"
+    ]
+  }
+]

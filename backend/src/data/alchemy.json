@@ -1,0 +1,244 @@
+[
+  {
+    "id": "60000000-0000-0000-0000-000000000001",
+    "name": "Black Lotus",
+    "description": "A rare and deadly flower from the Southland jungles, its petals yield a venom prized by assassins and blade masters.",
+    "valueInPennies": 4800,
+    "tags": [
+      "Plant",
+      "Poison",
+      "Assassin",
+      "Blade",
+      "Dungeon",
+      "Exotic",
+      "Magical",
+      "Venom"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000002",
+    "name": "Heartkill",
+    "description": "A lethal concoction of serpent and Jabberslythe venoms, completely colourless and odourless, feared in every court and back alley.",
+    "valueInPennies": 9600,
+    "tags": [
+      "Poison",
+      "Lethal",
+      "Assassin",
+      "Noble",
+      "Alchemy",
+      "Dungeon",
+      "Magical",
+      "Stealth"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000003",
+    "name": "Mad Cap Mushrooms",
+    "description": "Small, cap-shaped fungi that induce berserker rage in Goblin fanatics when consumed before battle.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Fungi",
+      "Hallucinogen",
+      "Goblin",
+      "Battlefield",
+      "Berserker",
+      "Magical",
+      "Street"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000004",
+    "name": "Mandrake Root",
+    "description": "A twisted root harvested beneath gallows, chewed to calm restless minds with its powerful, addictive properties.",
+    "valueInPennies": 240,
+    "tags": [
+      "Plant",
+      "Deliriant",
+      "Addictive",
+      "Witch",
+      "Alchemist",
+      "Dungeon",
+      "Magical"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000005",
+    "name": "Moonflower",
+    "description": "A rare mossy flower from Laurelorn, used by Elves to soothe the sick and treat the Black Plague.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Plant",
+      "Tranquilliser",
+      "Elf",
+      "Healer",
+      "Forest",
+      "Magical",
+      "Herbalism"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000006",
+    "name": "Ranald’s Delight",
+    "description": "A highly-addictive stimulant, concocted from sulphur and mercury, coveted by thieves and gamblers in the Empire.",
+    "valueInPennies": 196,
+    "tags": [
+      "Potion",
+      "Stimulant",
+      "Addictive",
+      "Thief",
+      "Gambler",
+      "Street",
+      "Magical"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000007",
+    "name": "Spit",
+    "description": "A hallucinogenic fluid from Chameleoleeches, inducing visions of lost loves or forgotten desires, sought by the desperate.",
+    "valueInPennies": 300,
+    "tags": [
+      "Potion",
+      "Hallucinogen",
+      "Despair",
+      "Thief",
+      "Street",
+      "Magical",
+      "Dungeon"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000008",
+    "name": "Weirdroot",
+    "description": "A common street-drug that brings euphoria and strange visions, whispered to connect with the Winds of Magic.",
+    "valueInPennies": 48,
+    "tags": [
+      "Plant",
+      "Hallucinogen",
+      "Addictive",
+      "Street",
+      "Magical",
+      "Alchemist",
+      "Urban"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000009",
+    "name": "Digestive Tonic",
+    "description": "A bitter herbal concoction that eases the belly and strengthens the constitution of weary travellers and soldiers.",
+    "valueInPennies": 36,
+    "tags": [
+      "Potion",
+      "Healing",
+      "Traveller",
+      "Soldier",
+      "Inn",
+      "Herbal",
+      "Utility"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000010",
+    "name": "Earth Root",
+    "description": "A potent herb ingested to counter the Buboes of Black Plague, though the swellings still mar the flesh.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Plant",
+      "Healing",
+      "Herbal",
+      "Healer",
+      "Plague",
+      "Alchemist",
+      "Dungeon"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000011",
+    "name": "Faxtoryll",
+    "description": "An herbal coagulant applied to wounds, halting bleeding without any need for skill or a Heal Test.",
+    "valueInPennies": 180,
+    "tags": [
+      "Herbal",
+      "Healing",
+      "Wound",
+      "Healer",
+      "Alchemist",
+      "Battlefield",
+      "Utility"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000012",
+    "name": "Healing Draught",
+    "description": "A restorative potion that revitalizes the body, treasured by adventurers and soldiers alike.",
+    "valueInPennies": 120,
+    "tags": [
+      "Potion",
+      "Healing",
+      "Adventurer",
+      "Soldier",
+      "Dungeon",
+      "Magical",
+      "Utility"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000013",
+    "name": "Healing Poultice",
+    "description": "A foul-smelling wrap of herbs, dung, and urine, surprisingly effective at staunching wounds and easing pain.",
+    "valueInPennies": 144,
+    "tags": [
+      "Herbal",
+      "Healing",
+      "Wound",
+      "Utility",
+      "Soldier",
+      "Alchemist",
+      "Battlefield"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000014",
+    "name": "Nightshade",
+    "description": "A sinister herb that lulls its victim into a deep, unnatural sleep after a few hours, prized by assassins.",
+    "valueInPennies": 720,
+    "tags": [
+      "Plant",
+      "Poison",
+      "Assassin",
+      "Stealth",
+      "Dungeon",
+      "Magical",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000015",
+    "name": "Salwort",
+    "description": "A crushed sprig emits an aroma that instantly clears a stunned mind, favored by healers and battlefield medics.",
+    "valueInPennies": 144,
+    "tags": [
+      "Plant",
+      "Healing",
+      "Herbal",
+      "Healer",
+      "Battlefield",
+      "Utility",
+      "Alchemist"
+    ]
+  },
+  {
+    "id": "60000000-0000-0000-0000-000000000016",
+    "name": "Vitality Draught",
+    "description": "A shimmering potion that instantly restores vigor and removes fatigue, prized by warriors and adventurers alike.",
+    "valueInPennies": 196,
+    "tags": [
+      "Potion",
+      "Healing",
+      "Adventurer",
+      "Soldier",
+      "Magical",
+      "Utility",
+      "Battlefield"
+    ]
+  }
+]
