@@ -490,5 +490,598 @@
       "Concealed",
       "Urban"
     ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000037",
+    "name": "Claymore",
+    "description": "A massive two-handed sword with a broad blade, favored by fierce warriors for devastating sweeps in battle.",
+    "valueInPennies": 720,
+    "tags": [
+      "Weapon",
+      "Sword",
+      "Two-handed",
+      "Knight",
+      "Soldier",
+      "Battlefield",
+      "Arena",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000038",
+    "name": "Gauntlet Knuckle-Duster",
+    "description": "A brutal iron gauntlet reinforced with spikes across the knuckles, crafted for close-quarters brawling.",
+    "valueInPennies": 24,
+    "tags": [
+      "Weapon",
+      "Melee",
+      "Assassin",
+      "Thug",
+      "Tavern",
+      "Stealth",
+      "Brawl",
+      "Utility"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000039",
+    "name": "Halberd",
+    "description": "A long polearm tipped with an axe blade and spear point, ideal for breaking cavalry charges and holding lines.",
+    "valueInPennies": 360,
+    "tags": [
+      "Weapon",
+      "Polearm",
+      "Soldier",
+      "Guard",
+      "Barracks",
+      "Battlefield",
+      "Two-handed",
+      "Defensive"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000040",
+    "name": "Lance",
+    "description": "A long ash shaft tipped with a steel point, designed for devastating charges from horseback.",
+    "valueInPennies": 960,
+    "tags": [
+      "Weapon",
+      "Polearm",
+      "Knight",
+      "Cavalry",
+      "Tournament",
+      "Battlefield",
+      "Ceremonial",
+      "Mounted Combat"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000041",
+    "name": "Morning Star",
+    "description": "A cruel spiked ball mounted on a stout haft, capable of crushing armor with a single blow.",
+    "valueInPennies": 360,
+    "tags": [
+      "Weapon",
+      "Mace",
+      "Spiked",
+      "Soldier",
+      "Knight",
+      "Battlefield",
+      "Close Combat",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000042",
+    "name": "Rapier",
+    "description": "A slender blade with ornate hilt, prized by duelists and nobles for speed and precision.",
+    "valueInPennies": 432,
+    "tags": [
+      "Weapon",
+      "Sword",
+      "One-handed",
+      "Noble",
+      "Court",
+      "Duel",
+      "Fencing",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000043",
+    "name": "Long Spear",
+    "description": "A sturdy spear with a long ash shaft, favored by militias for reach and defense.",
+    "valueInPennies": 300,
+    "tags": [
+      "Weapon",
+      "Polearm",
+      "Soldier",
+      "Militia",
+      "Barracks",
+      "Defensive",
+      "Two-handed",
+      "Battlefield"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000044",
+    "name": "Garrotte",
+    "description": "A simple length of wire or cord, deadly in the hands of an assassin when used from the shadows.",
+    "valueInPennies": 3,
+    "tags": [
+      "Weapon",
+      "Stealth",
+      "Assassin",
+      "Thief",
+      "Tavern",
+      "Back Alley",
+      "Utility",
+      "Silent Kill"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000045",
+    "name": "Kislev Berdysh",
+    "description": "A heavy, curved axe-blade fixed to a long shaft, wielded by Kislevite warriors for brutal cleaving strikes.",
+    "valueInPennies": 480,
+    "tags": [
+      "Weapon",
+      "Axe",
+      "Polearm",
+      "Kislev",
+      "Soldier",
+      "Battlefield",
+      "Two-handed",
+      "Northern"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000046",
+    "name": "Cathayan Sword",
+    "description": "An elegant curved blade from Cathay, finely balanced and treasured by collectors and duelists alike.",
+    "valueInPennies": 12000,
+    "tags": [
+      "Weapon",
+      "Sword",
+      "Cathay",
+      "Noble",
+      "Duel",
+      "Exotic",
+      "Collector",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000047",
+    "name": "Cathayan Longsword",
+    "description": "A masterwork longsword from Cathay, forged with rare techniques and imbued with flawless balance.",
+    "valueInPennies": 18000,
+    "tags": [
+      "Weapon",
+      "Sword",
+      "Longsword",
+      "Cathay",
+      "Noble",
+      "Knight",
+      "Exotic",
+      "Battlefield",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000048",
+    "name": "Elven Battle-Axe",
+    "description": "A gleaming axe of elegant elven make, combining deadly grace with brutal efficiency in war.",
+    "valueInPennies": 3600,
+    "tags": [
+      "Weapon",
+      "Axe",
+      "Elf",
+      "Two-handed",
+      "Warrior",
+      "Battlefield",
+      "Magical",
+      "Exotic"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000049",
+    "name": "Kopesh",
+    "description": "A curved blade of ancient Khemri design, often wielded in ritual combat or by Araby mercenaries.",
+    "valueInPennies": 240,
+    "tags": [
+      "Weapon",
+      "Sword",
+      "Khemri",
+      "Araby",
+      "Exotic",
+      "Warrior",
+      "Ceremonial",
+      "Desert"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000050",
+    "name": "Pavise",
+    "description": "A towering shield from Tilea, designed to cover crossbowmen as they reload amidst battle.",
+    "valueInPennies": 120,
+    "tags": [
+      "Armor",
+      "Shield",
+      "Tilea",
+      "Crossbowman",
+      "Defensive",
+      "Battlefield",
+      "Siege",
+      "Two-handed"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000051",
+    "name": "Tilean Pike",
+    "description": "A long spear used in the disciplined ranks of Tilean mercenaries, perfect for keeping foes at bay.",
+    "valueInPennies": 480,
+    "tags": [
+      "Weapon",
+      "Polearm",
+      "Tilea",
+      "Mercenary",
+      "Soldier",
+      "Battlefield",
+      "Formation",
+      "Defensive"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000052",
+    "name": "White Wolf Hammer",
+    "description": "A mighty warhammer blessed by the cult of Ulric, wielded by the fearsome White Wolves of Middenheim.",
+    "valueInPennies": 960,
+    "tags": [
+      "Weapon",
+      "Hammer",
+      "White Wolves",
+      "Religious",
+      "Knight",
+      "Priest",
+      "Battlefield",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000053",
+    "name": "Wood Elf Hunting Spear",
+    "description": "A finely crafted spear of ash and moonsteel, designed by wood elves for both hunting and battle.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Weapon",
+      "Spear",
+      "Elf",
+      "Hunter",
+      "Forest",
+      "Battlefield",
+      "Exotic",
+      "Two-handed"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000054",
+    "name": "Elven Bow",
+    "description": "A graceful longbow of elven craft, its string singing with unmatched accuracy and range.",
+    "valueInPennies": 1680,
+    "tags": [
+      "Weapon",
+      "Bow",
+      "Elf",
+      "Hunter",
+      "Archer",
+      "Forest",
+      "Battlefield",
+      "Exotic"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000055",
+    "name": "Kislev Recurve Bow",
+    "description": "A compact recurve bow from Kislev, prized for its power and accuracy even from horseback.",
+    "valueInPennies": 480,
+    "tags": [
+      "Weapon",
+      "Bow",
+      "Kislev",
+      "Archer",
+      "Cavalry",
+      "Hunter",
+      "Nomad",
+      "Mounted Combat"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000056",
+    "name": "Kislev Recurve Shortbow",
+    "description": "A lighter recurve shortbow from Kislev, favored by hunters and skirmishers for quick volleys.",
+    "valueInPennies": 240,
+    "tags": [
+      "Weapon",
+      "Bow",
+      "Shortbow",
+      "Kislev",
+      "Hunter",
+      "Skirmisher",
+      "Nomad",
+      "Forest"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000057",
+    "name": "12 Arrows",
+    "description": "A bundle of straight-fletched arrows, standard issue for hunters and soldiers alike.",
+    "valueInPennies": 36,
+    "tags": [
+      "Ammunition",
+      "Arrows",
+      "Hunter",
+      "Soldier",
+      "Archer",
+      "Battlefield",
+      "Forest",
+      "Utility"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000058",
+    "name": "12 Armor Piercing Arrows",
+    "description": "A quiver of arrows tipped with hardened steel heads, designed to pierce through mail and plate.",
+    "valueInPennies": 60,
+    "tags": [
+      "Ammunition",
+      "Arrows",
+      "Armor Piercing",
+      "Soldier",
+      "Archer",
+      "Battlefield",
+      "War",
+      "Utility"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000059",
+    "name": "12 Bolts",
+    "description": "A dozen stout crossbow bolts, effective against both beasts and men in battle.",
+    "valueInPennies": 60,
+    "tags": [
+      "Ammunition",
+      "Bolts",
+      "Crossbow",
+      "Soldier",
+      "Militia",
+      "Battlefield",
+      "Hunter",
+      "Utility"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000060",
+    "name": "12 Steel-Tipped Bolts",
+    "description": "Crossbow bolts reinforced with sharp steel heads, built to shatter shields and armor.",
+    "valueInPennies": 120,
+    "tags": [
+      "Ammunition",
+      "Bolts",
+      "Steel",
+      "Crossbow",
+      "Soldier",
+      "Battlefield",
+      "Defensive",
+      "Utility"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000061",
+    "name": "Blowgun",
+    "description": "A simple reed tube used to silently fire darts, favored by hunters and assassins alike.",
+    "valueInPennies": 48,
+    "tags": [
+      "Weapon",
+      "Blowgun",
+      "Hunter",
+      "Assassin",
+      "Stealth",
+      "Utility",
+      "Forest",
+      "Silent Kill"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000062",
+    "name": "Long Blowgun",
+    "description": "A longer blowgun with extended range, deadly in the hands of skilled stalkers.",
+    "valueInPennies": 60,
+    "tags": [
+      "Weapon",
+      "Blowgun",
+      "Hunter",
+      "Assassin",
+      "Stealth",
+      "Forest",
+      "Silent Kill",
+      "Utility"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000063",
+    "name": "Blowgun Dart",
+    "description": "A small wooden dart for use with a blowgun, often tipped with sharpened bone or steel.",
+    "valueInPennies": 5,
+    "tags": [
+      "Ammunition",
+      "Dart",
+      "Blowgun",
+      "Hunter",
+      "Assassin",
+      "Stealth",
+      "Utility",
+      "Silent Kill"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000064",
+    "name": "Blowgun Precision Dart",
+    "description": "A finely balanced dart designed for blowguns, deadly accurate when used by trained hands.",
+    "valueInPennies": 48,
+    "tags": [
+      "Ammunition",
+      "Dart",
+      "Blowgun",
+      "Hunter",
+      "Assassin",
+      "Stealth",
+      "Precision",
+      "Silent Kill"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000065",
+    "name": "10 Clay Round Shots",
+    "description": "A pouch of crude clay pellets, cheap and commonly used as sling ammunition.",
+    "valueInPennies": 1,
+    "tags": [
+      "Ammunition",
+      "Sling",
+      "Clay",
+      "Farmer",
+      "Militia",
+      "Cheap",
+      "Utility",
+      "Training"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000066",
+    "name": "10 Lead Round Shots",
+    "description": "Dense lead pellets used with slings, delivering heavy blows on impact.",
+    "valueInPennies": 10,
+    "tags": [
+      "Ammunition",
+      "Sling",
+      "Lead",
+      "Hunter",
+      "Soldier",
+      "Battlefield",
+      "Utility",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000067",
+    "name": "10 Iron Round Shots",
+    "description": "A set of iron pellets forged for use with slings, heavier and deadlier than clay or lead.",
+    "valueInPennies": 30,
+    "tags": [
+      "Ammunition",
+      "Sling",
+      "Iron",
+      "Soldier",
+      "Mercenary",
+      "Battlefield",
+      "Utility",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000068",
+    "name": "10 Steel Round Shots",
+    "description": "Well-crafted steel pellets, prized for their durability and lethal impact in sling warfare.",
+    "valueInPennies": 50,
+    "tags": [
+      "Ammunition",
+      "Sling",
+      "Steel",
+      "Soldier",
+      "Mercenary",
+      "Battlefield",
+      "Utility",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000069",
+    "name": "10 Grams of Gunpowder",
+    "description": "A small pouch of fine black powder, volatile and essential for early firearms and explosives.",
+    "valueInPennies": 4,
+    "tags": [
+      "Ammunition",
+      "Gunpowder",
+      "Explosive",
+      "Soldier",
+      "Mercenary",
+      "Artillery",
+      "Utility",
+      "Dangerous"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000070",
+    "name": "Plague Censer",
+    "description": "A foul Skaven weapon, a spiked iron ball on a chain filled with choking pestilential fumes.",
+    "valueInPennies": 10,
+    "tags": [
+      "Weapon",
+      "Mace",
+      "Skaven",
+      "Magical",
+      "Corruption",
+      "Priest",
+      "Battlefield",
+      "Plague"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000071",
+    "name": "Punch Dagger",
+    "description": "A vicious Skaven blade strapped across the fist, made for sudden and lethal strikes.",
+    "valueInPennies": 1,
+    "tags": [
+      "Weapon",
+      "Dagger",
+      "Skaven",
+      "Assassin",
+      "Stealth",
+      "Close Combat",
+      "Utility",
+      "Silent Kill"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000072",
+    "name": "Rat Claws",
+    "description": "Crude Skaven claw-blades worn over the hands, mimicking the verminous beasts’ natural weapons.",
+    "valueInPennies": 2,
+    "tags": [
+      "Weapon",
+      "Claws",
+      "Skaven",
+      "Assassin",
+      "Warrior",
+      "Close Combat",
+      "Stealth",
+      "Savage"
+    ]
+  },
+  {
+    "id": "10000000-0000-0000-0000-000000000073",
+    "name": "Tail Blade",
+    "description": "A wicked Skaven blade affixed to the tail, allowing deadly surprise strikes in battle.",
+    "valueInPennies": 2,
+    "tags": [
+      "Weapon",
+      "Blade",
+      "Skaven",
+      "Assassin",
+      "Warrior",
+      "Stealth",
+      "Close Combat",
+      "Savage"
+    ]
   }
 ]

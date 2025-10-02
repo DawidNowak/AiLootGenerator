@@ -1,0 +1,4040 @@
+[
+  {
+    "id": "70000000-0000-0000-0000-000000000001",
+    "name": "Canvas 1m2",
+    "description": "A coarse sheet of canvas, sturdy and rough, often used for tents, sails, or travel packs.",
+    "valueInPennies": 18,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Utility",
+      "Traveler",
+      "Merchant",
+      "Market",
+      "Sailor",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000002",
+    "name": "Homespun 1m2",
+    "description": "A rough, humble cloth woven by peasants, serviceable for everyday garb and blankets.",
+    "valueInPennies": 8,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Farmer",
+      "Peasant",
+      "Village",
+      "Utility",
+      "Market",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000003",
+    "name": "Lace 1m2",
+    "description": "Delicate lacework, finely woven and treasured by nobles for its elegance and extravagance.",
+    "valueInPennies": 156,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Noble",
+      "Adornment",
+      "Court",
+      "Market",
+      "Luxury",
+      "Decorative"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000004",
+    "name": "Linen 1m2",
+    "description": "A sheet of clean linen, prized for its smoothness and favored in noble houses and temples alike.",
+    "valueInPennies": 18,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Priest",
+      "Noble",
+      "Temple",
+      "Court",
+      "Utility",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000005",
+    "name": "Cathayan Silk 1m2",
+    "description": "A lustrous sheet of silk from far Cathay, soft as water and dazzling in its sheen.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Noble",
+      "Luxury",
+      "Court",
+      "Adornment",
+      "Exotic",
+      "Cathay"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000006",
+    "name": "Velvet 1m2",
+    "description": "A plush velvet cloth, heavy and decadent, beloved by merchants and courtiers alike.",
+    "valueInPennies": 480,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Adornment",
+      "Luxury",
+      "Decorative"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000007",
+    "name": "Wool 1m2",
+    "description": "A thick sheet of wool, warm and enduring, a staple for peasants and travelers in the cold.",
+    "valueInPennies": 34,
+    "tags": [
+      "Clothing",
+      "Fabric",
+      "Farmer",
+      "Traveler",
+      "Village",
+      "Utility",
+      "Warmth",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000008",
+    "name": "Bear Hide",
+    "description": "A thick, heavy bear hide, prized for its warmth and savage appearance when worn as a cloak.",
+    "valueInPennies": 132,
+    "tags": [
+      "Armor",
+      "Hide",
+      "Hunter",
+      "Warrior",
+      "Tavern",
+      "Battlefield",
+      "Warmth",
+      "Wild"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000009",
+    "name": "Deer Hide",
+    "description": "A supple deer hide, commonly used by hunters for crafting leather garments and boots.",
+    "valueInPennies": 48,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Hunter",
+      "Peasant",
+      "Village",
+      "Utility",
+      "Crafting",
+      "Leather"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000010",
+    "name": "Red Fox Hide",
+    "description": "A vivid red fox pelt, soft and eye-catching, favored as trim for cloaks and noble garb.",
+    "valueInPennies": 72,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Hunter",
+      "Adornment",
+      "Noble",
+      "Market",
+      "Decorative",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000011",
+    "name": "White Fox Hide",
+    "description": "A rare snow-white fox pelt, sleek and elegant, fetching high prices in markets and courts.",
+    "valueInPennies": 88,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Noble",
+      "Adornment",
+      "Court",
+      "Luxury",
+      "Hunter",
+      "Decorative"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000012",
+    "name": "Horse Hide",
+    "description": "A durable horse hide, valued by leatherworkers for making tack, boots, and armor pieces.",
+    "valueInPennies": 60,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Leather",
+      "Crafting",
+      "Stable",
+      "Utility",
+      "Merchant",
+      "Armor"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000013",
+    "name": "Cattle Leather",
+    "description": "A thick slab of cattle leather, versatile and strong, the backbone of common leatherwork.",
+    "valueInPennies": 72,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Leather",
+      "Farmer",
+      "Market",
+      "Utility",
+      "Crafting",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000014",
+    "name": "Leopard Hide",
+    "description": "A striking leopard pelt, its spotted pattern revered as a mark of exotic wealth and ferocity.",
+    "valueInPennies": 3360,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Noble",
+      "Luxury",
+      "Exotic",
+      "Adornment",
+      "Court",
+      "Hunter"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000015",
+    "name": "Lion Hide",
+    "description": "A regal lion’s pelt, golden and thick, often displayed as a trophy or worn as a symbol of might.",
+    "valueInPennies": 3600,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Noble",
+      "Warrior",
+      "Luxury",
+      "Exotic",
+      "Adornment",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000016",
+    "name": "Marten Hide",
+    "description": "A soft marten pelt, valued for its silky fur and often used to trim winter garments.",
+    "valueInPennies": 120,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Hunter",
+      "Adornment",
+      "Noble",
+      "Market",
+      "Luxury",
+      "Warmth"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000017",
+    "name": "Mink Hide",
+    "description": "A lustrous mink pelt, smooth and dark, favored for high-class garments and noble adornment.",
+    "valueInPennies": 144,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Adornment",
+      "Noble",
+      "Court",
+      "Luxury",
+      "Hunter",
+      "Decorative"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000018",
+    "name": "Raccoon Hide",
+    "description": "A coarse raccoon hide, striped and practical, commonly traded by trappers and villagers.",
+    "valueInPennies": 12,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Hunter",
+      "Trapper",
+      "Village",
+      "Utility",
+      "Market",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000019",
+    "name": "Sheep Hide",
+    "description": "A simple sheep pelt, wooly and warm, often used for cloaks and rural bedding.",
+    "valueInPennies": 18,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Farmer",
+      "Village",
+      "Warmth",
+      "Utility",
+      "Crafting",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000020",
+    "name": "Wolf Hide",
+    "description": "A rugged wolf hide, fierce and grey, worn by hunters and warriors as a mark of feral strength.",
+    "valueInPennies": 30,
+    "tags": [
+      "Clothing",
+      "Hide",
+      "Hunter",
+      "Warrior",
+      "Tavern",
+      "Wild",
+      "Adornment",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000021",
+    "name": "Copper Blue Dye 1 Ounce",
+    "description": "A small pouch of copper blue dye, bright and coarse, used to tint fabrics and banners.",
+    "valueInPennies": 132,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Merchant",
+      "Market",
+      "Fabric",
+      "Utility",
+      "Decorator",
+      "Clothing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000022",
+    "name": "Ultramarine Blue Dye 1 Ounce",
+    "description": "A rare ultramarine dye, vivid and deep, favored by nobles for its striking hues.",
+    "valueInPennies": 156,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Noble",
+      "Court",
+      "Luxury",
+      "Fabric",
+      "Decorator",
+      "Clothing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000023",
+    "name": "Green Dye 1 Ounce",
+    "description": "A vial of green dye, earthy and common, used widely by cloth makers across the Empire.",
+    "valueInPennies": 132,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Merchant",
+      "Market",
+      "Fabric",
+      "Utility",
+      "Clothing",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000024",
+    "name": "Ochre Dye 1 Ounce",
+    "description": "A packet of ochre dye, warm and earthen, favored for rustic tones in peasant garb.",
+    "valueInPennies": 180,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Farmer",
+      "Peasant",
+      "Village",
+      "Fabric",
+      "Clothing",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000025",
+    "name": "Purple Dye 1 Ounce",
+    "description": "A costly vial of purple dye, regal and rare, a mark of noble and priestly robes.",
+    "valueInPennies": 480,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Priest",
+      "Noble",
+      "Court",
+      "Luxury",
+      "Fabric",
+      "Clothing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000026",
+    "name": "Iron Red Dye 1 Ounce",
+    "description": "A pouch of rusty red dye, coarse and strong, often used in banners and soldier’s garb.",
+    "valueInPennies": 72,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Soldier",
+      "Banner",
+      "Battlefield",
+      "Fabric",
+      "Clothing",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000027",
+    "name": "Safflower Dye 1 Ounce",
+    "description": "A golden safflower dye, bright and floral, lending warm tones to fine fabrics.",
+    "valueInPennies": 60,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Merchant",
+      "Market",
+      "Fabric",
+      "Clothing",
+      "Decorator",
+      "Adornment"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000028",
+    "name": "Yellow Dye 1 Ounce",
+    "description": "A pouch of bright yellow dye, cheerful and simple, common among village clothiers.",
+    "valueInPennies": 36,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Village",
+      "Market",
+      "Fabric",
+      "Clothing",
+      "Utility",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000029",
+    "name": "Vermillion Dye 1 Ounce",
+    "description": "A striking vermillion dye, bold and rich, sought after for noble finery and banners.",
+    "valueInPennies": 240,
+    "tags": [
+      "Dye",
+      "Crafting",
+      "Noble",
+      "Court",
+      "Luxury",
+      "Fabric",
+      "Clothing",
+      "Banner"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000030",
+    "name": "Almond Oil (1 Gallon)",
+    "description": "A rich, fragrant oil pressed from almonds, prized by healers and perfumers for its soothing properties.",
+    "valueInPennies": 1440,
+    "tags": [
+      "Oil",
+      "Alchemist",
+      "Merchant",
+      "Healer",
+      "Apothecary",
+      "Market",
+      "Luxury",
+      "Cooking",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000031",
+    "name": "Hazelnut Oil (1 Gallon)",
+    "description": "A smooth nut oil with a faintly sweet aroma, favored by bakers and herbalists alike.",
+    "valueInPennies": 480,
+    "tags": [
+      "Oil",
+      "Baker",
+      "Merchant",
+      "Healer",
+      "Cooking",
+      "Market",
+      "Luxury",
+      "Apothecary"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000032",
+    "name": "Olive Oil (1 Gallon)",
+    "description": "Golden-green oil, treasured by merchants and nobles for cooking, trade, and lamp-lighting.",
+    "valueInPennies": 720,
+    "tags": [
+      "Oil",
+      "Merchant",
+      "Noble",
+      "Cooking",
+      "Trade",
+      "Market",
+      "Luxury",
+      "Household"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000033",
+    "name": "Safflower Oil (1 Gallon)",
+    "description": "A pale, light oil often used in lamps or for stretching a poor man’s stew.",
+    "valueInPennies": 22,
+    "tags": [
+      "Oil",
+      "Cooking",
+      "Farmer",
+      "Merchant",
+      "Market",
+      "Utility",
+      "Household",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000034",
+    "name": "Sesame Oil (1 Gallon)",
+    "description": "A nutty-scented oil beloved in kitchens and temples for food, lamps, and offerings.",
+    "valueInPennies": 1440,
+    "tags": [
+      "Oil",
+      "Cooking",
+      "Temple",
+      "Merchant",
+      "Market",
+      "Luxury",
+      "Household",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000035",
+    "name": "Sunflower Oil (1 Gallon)",
+    "description": "A humble oil pressed from sunflower seeds, cheap and filling for the common household.",
+    "valueInPennies": 48,
+    "tags": [
+      "Oil",
+      "Cooking",
+      "Farmer",
+      "Peasant",
+      "Market",
+      "Utility",
+      "Household",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000036",
+    "name": "Walnut Oil (1 Gallon)",
+    "description": "A dark, flavorful oil pressed from walnuts, often found in the kitchens of wealthier homes.",
+    "valueInPennies": 240,
+    "tags": [
+      "Oil",
+      "Cooking",
+      "Merchant",
+      "Noble",
+      "Market",
+      "Luxury",
+      "Kitchen",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000037",
+    "name": "Chillis (1 Pound)",
+    "description": "Fiery red pods that burn the tongue, sought after by bold cooks and daring merchants.",
+    "valueInPennies": 576,
+    "tags": [
+      "Spice",
+      "Cooking",
+      "Merchant",
+      "Market",
+      "Kitchen",
+      "Exotic",
+      "Trade",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000038",
+    "name": "Chocolate (1 Pound)",
+    "description": "A rare block of bitter-sweet luxury, melted into drinks for nobles and scholars.",
+    "valueInPennies": 5520,
+    "tags": [
+      "Luxury",
+      "Food",
+      "Noble",
+      "Scholar",
+      "Merchant",
+      "Court",
+      "Exotic",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000039",
+    "name": "Coffee (1 Pound)",
+    "description": "Dark, aromatic beans ground and brewed for sharp wits and sleepless nights.",
+    "valueInPennies": 2880,
+    "tags": [
+      "Luxury",
+      "Drink",
+      "Scholar",
+      "Merchant",
+      "Noble",
+      "Market",
+      "Exotic",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000040",
+    "name": "Tea (1 Pound)",
+    "description": "Fragrant dried leaves, steeped to calm nerves or accompany whispered courtly plots.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Luxury",
+      "Drink",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Scholar",
+      "Exotic",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000041",
+    "name": "Tobacco (1 Pound)",
+    "description": "Dried, pungent leaves smoked in pipes or rolled into cigars, favored by soldiers and nobles alike.",
+    "valueInPennies": 3360,
+    "tags": [
+      "Luxury",
+      "Tobacco",
+      "Soldier",
+      "Noble",
+      "Merchant",
+      "Tavern",
+      "Court",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000042",
+    "name": "Cigar",
+    "description": "A thick roll of rich tobacco leaves, smoked slowly as a mark of wealth or relaxation.",
+    "valueInPennies": 84,
+    "tags": [
+      "Luxury",
+      "Tobacco",
+      "Noble",
+      "Merchant",
+      "Soldier",
+      "Tavern",
+      "Court",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000043",
+    "name": "Cigarette",
+    "description": "A slender roll of tobacco, cheap and quick to smoke, common among soldiers and laborers.",
+    "valueInPennies": 7,
+    "tags": [
+      "Tobacco",
+      "Soldier",
+      "Laborer",
+      "Tavern",
+      "Market",
+      "Common",
+      "Cheap",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000044",
+    "name": "Honey (1 Pint)",
+    "description": "A golden pint of honey, thick and sweet, hoarded by peasants and prized in noble kitchens.",
+    "valueInPennies": 48,
+    "tags": [
+      "Food",
+      "Sweet",
+      "Farmer",
+      "Merchant",
+      "Noble",
+      "Kitchen",
+      "Market",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000045",
+    "name": "Brown Sugar (1 Pint)",
+    "description": "Coarse, sweet crystals often stirred into porridges or spiced drinks.",
+    "valueInPennies": 36,
+    "tags": [
+      "Food",
+      "Sweet",
+      "Kitchen",
+      "Merchant",
+      "Market",
+      "Common",
+      "Utility",
+      "Cooking"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000046",
+    "name": "Raw Sugar (1 Pint)",
+    "description": "Unrefined sugar crystals, rough and brown, valued in markets as a rare treat.",
+    "valueInPennies": 18,
+    "tags": [
+      "Food",
+      "Sweet",
+      "Merchant",
+      "Market",
+      "Cooking",
+      "Kitchen",
+      "Common",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000047",
+    "name": "Large Sack of Barley",
+    "description": "A heavy sack filled with barley, a staple grain for bread, porridge, or brewing.",
+    "valueInPennies": 46,
+    "tags": [
+      "Grain",
+      "Farmer",
+      "Brewer",
+      "Merchant",
+      "Market",
+      "Common",
+      "Food",
+      "Kitchen"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000048",
+    "name": "Large Sack of Buckwheat",
+    "description": "A sack of hardy buckwheat, ground for flour or boiled into porridge by peasants.",
+    "valueInPennies": 60,
+    "tags": [
+      "Grain",
+      "Farmer",
+      "Merchant",
+      "Market",
+      "Food",
+      "Kitchen",
+      "Common",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000049",
+    "name": "Large Sack of Chick Peas",
+    "description": "A hefty sack of chick peas, rich in protein and favored in stews and markets of distant lands.",
+    "valueInPennies": 2880,
+    "tags": [
+      "Grain",
+      "Food",
+      "Merchant",
+      "Farmer",
+      "Market",
+      "Kitchen",
+      "Exotic",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000050",
+    "name": "Large Sack of Lentils",
+    "description": "A sack brimming with earthy lentils, a cheap yet filling staple for peasants and soldiers.",
+    "valueInPennies": 480,
+    "tags": [
+      "Grain",
+      "Food",
+      "Peasant",
+      "Soldier",
+      "Farmer",
+      "Market",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000051",
+    "name": "Large Sack of Millet",
+    "description": "A sack of pale millet grains, boiled into porridge in countless humble homes.",
+    "valueInPennies": 60,
+    "tags": [
+      "Grain",
+      "Food",
+      "Farmer",
+      "Peasant",
+      "Market",
+      "Kitchen",
+      "Common",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000052",
+    "name": "Large Sack of Oats",
+    "description": "A coarse sack of oats, fed to horses or boiled into porridge for farm folk.",
+    "valueInPennies": 34,
+    "tags": [
+      "Grain",
+      "Food",
+      "Farmer",
+      "Stable",
+      "Market",
+      "Kitchen",
+      "Common",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000053",
+    "name": "Large Sack of Rye",
+    "description": "A sturdy sack of rye, ground for dark breads beloved in taverns and peasant homes.",
+    "valueInPennies": 60,
+    "tags": [
+      "Grain",
+      "Food",
+      "Farmer",
+      "Tavern",
+      "Peasant",
+      "Market",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000054",
+    "name": "Large Sack of Rice",
+    "description": "A vast sack of white rice, an exotic and costly staple prized by merchants and nobles.",
+    "valueInPennies": 17280,
+    "tags": [
+      "Grain",
+      "Food",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Exotic",
+      "Market",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000055",
+    "name": "Large Sack of Thrashed Wheat",
+    "description": "A sack of freshly thrashed wheat, ready for milling into flour or brewing strong ale.",
+    "valueInPennies": 60,
+    "tags": [
+      "Grain",
+      "Food",
+      "Farmer",
+      "Brewer",
+      "Market",
+      "Kitchen",
+      "Common",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000056",
+    "name": "Barley Flour (1 Pound)",
+    "description": "A coarse pound of barley flour, baked into dense loaves for common tables.",
+    "valueInPennies": 1,
+    "tags": [
+      "Flour",
+      "Food",
+      "Farmer",
+      "Peasant",
+      "Baker",
+      "Market",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000057",
+    "name": "Buckwheat Flour (1 Pound)",
+    "description": "Dark flour with a nutty taste, often used in rustic breads and peasant meals.",
+    "valueInPennies": 1,
+    "tags": [
+      "Flour",
+      "Food",
+      "Farmer",
+      "Peasant",
+      "Baker",
+      "Market",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000058",
+    "name": "Rye Flour (1 Pound)",
+    "description": "A pound of rye flour, baked into hearty loaves served in taverns and farms.",
+    "valueInPennies": 1,
+    "tags": [
+      "Flour",
+      "Food",
+      "Farmer",
+      "Baker",
+      "Tavern",
+      "Market",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000059",
+    "name": "Wheat Flour (1 Pound)",
+    "description": "Fine flour from wheat, the backbone of bakeries, kitchens, and bustling markets.",
+    "valueInPennies": 1,
+    "tags": [
+      "Flour",
+      "Food",
+      "Baker",
+      "Farmer",
+      "Merchant",
+      "Market",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000060",
+    "name": "Pint of Ale",
+    "description": "A frothy pint of dark ale, beloved by common folk after a hard day's toil.",
+    "valueInPennies": 2,
+    "tags": [
+      "Drink",
+      "Ale",
+      "Tavern",
+      "Farmer",
+      "Peasant",
+      "Common",
+      "Refreshment"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000061",
+    "name": "Pint of Beer",
+    "description": "A light, foamy beer that quenches thirst and fuels tavern chatter.",
+    "valueInPennies": 1,
+    "tags": [
+      "Drink",
+      "Beer",
+      "Tavern",
+      "Peasant",
+      "Common",
+      "Refreshment",
+      "Cheap"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000062",
+    "name": "Bottle of Bretonnian Brandy",
+    "description": "A refined Bretonnian brandy with a deep amber hue, prized by nobles and smugglers alike.",
+    "valueInPennies": 156,
+    "tags": [
+      "Bretonia",
+      "Drink",
+      "Brandy",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Luxury",
+      "Tavern",
+      "Imported"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000063",
+    "name": "Loaf of Bread",
+    "description": "A fresh round loaf with a crisp crust and soft crumb, a staple for all classes.",
+    "valueInPennies": 3,
+    "tags": [
+      "Food",
+      "Bread",
+      "Farmer",
+      "Peasant",
+      "Tavern",
+      "Market",
+      "Common",
+      "Staple"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000064",
+    "name": "Pound of Butter",
+    "description": "A creamy block of churned butter, rich and savory, cherished in kitchens and markets.",
+    "valueInPennies": 22,
+    "tags": [
+      "Food",
+      "Butter",
+      "Farmer",
+      "Merchant",
+      "Market",
+      "Cooking",
+      "Kitchen",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000065",
+    "name": "Cheap Pie",
+    "description": "A greasy hand pie filled with mystery meat, often sold on street corners to hungry laborers.",
+    "valueInPennies": 2,
+    "tags": [
+      "Food",
+      "Pie",
+      "Cheap",
+      "Street Food",
+      "Peasant",
+      "Tavern",
+      "Market",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000066",
+    "name": "Pound of Cheap Cheese",
+    "description": "A crumbly, pungent cheese, affordable but lacking in refinement.",
+    "valueInPennies": 10,
+    "tags": [
+      "Food",
+      "Cheese",
+      "Cheap",
+      "Peasant",
+      "Farmer",
+      "Market",
+      "Tavern",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000067",
+    "name": "Pound of Quality Cheese",
+    "description": "A well-aged wheel of cheese with a rich aroma, favored by merchants and nobles.",
+    "valueInPennies": 36,
+    "tags": [
+      "Food",
+      "Cheese",
+      "Quality",
+      "Noble",
+      "Merchant",
+      "Market",
+      "Tavern",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000068",
+    "name": "12 Eggs",
+    "description": "A dozen fresh eggs, fragile yet nourishing, gathered from farm hens.",
+    "valueInPennies": 8,
+    "tags": [
+      "Food",
+      "Eggs",
+      "Farmer",
+      "Peasant",
+      "Market",
+      "Cooking",
+      "Common",
+      "Kitchen"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000069",
+    "name": "Fresh Fish",
+    "description": "A silvery fish, still smelling of the river or sea, best cooked quickly before it spoils.",
+    "valueInPennies": 3,
+    "tags": [
+      "Food",
+      "Fish",
+      "Fresh",
+      "Fisherman",
+      "Market",
+      "Tavern",
+      "Common",
+      "Cooking"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006a",
+    "name": "Pickled Fish",
+    "description": "A salty preserved fish, soaked in brine to endure long journeys or cold winters.",
+    "valueInPennies": 4,
+    "tags": [
+      "Food",
+      "Fish",
+      "Pickled",
+      "Preserved",
+      "Sailor",
+      "Market",
+      "Tavern",
+      "Storage"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006b",
+    "name": "Barrel of Pickled Fishes",
+    "description": "A heavy barrel brimming with brined fish, vital provisions for ships and garrisons.",
+    "valueInPennies": 720,
+    "tags": [
+      "Food",
+      "Fish",
+      "Pickled",
+      "Preserved",
+      "Barrel",
+      "Sailor",
+      "Merchant",
+      "Storage",
+      "Bulk"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006c",
+    "name": "Pint of Mead",
+    "description": "A sweet golden mead brewed from honey, warming the heart and spirit.",
+    "valueInPennies": 3,
+    "tags": [
+      "Drink",
+      "Mead",
+      "Tavern",
+      "Farmer",
+      "Peasant",
+      "Festive",
+      "Sweet",
+      "Alcohol"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006d",
+    "name": "Pint of Milk",
+    "description": "A pint of fresh milk, smooth and wholesome, a staple in farmsteads.",
+    "valueInPennies": 1,
+    "tags": [
+      "Drink",
+      "Milk",
+      "Farmer",
+      "Child",
+      "Peasant",
+      "Kitchen",
+      "Market",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006e",
+    "name": "Pint of Cheap Wine",
+    "description": "A rough, sour wine, often watered down, yet still favored by the poor.",
+    "valueInPennies": 12,
+    "tags": [
+      "Drink",
+      "Wine",
+      "Cheap",
+      "Peasant",
+      "Tavern",
+      "Market",
+      "Alcohol",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000006f",
+    "name": "Pint of Local Quality Wine",
+    "description": "A well-aged local vintage, smooth and pleasing, served in better taverns and markets.",
+    "valueInPennies": 120,
+    "tags": [
+      "Drink",
+      "Wine",
+      "Quality",
+      "Local",
+      "Merchant",
+      "Noble",
+      "Tavern",
+      "Market",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000070",
+    "name": "Pint of Imported Quality Wine",
+    "description": "A rich, fragrant wine brought from distant vineyards, a mark of noble refinement.",
+    "valueInPennies": 300,
+    "tags": [
+      "Drink",
+      "Wine",
+      "Imported",
+      "Quality",
+      "Luxury",
+      "Noble",
+      "Court",
+      "Merchant",
+      "Tavern"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000071",
+    "name": "Pint of Watered Wine",
+    "description": "A thin mixture of wine and water, cheap and plentiful in the poorest taverns.",
+    "valueInPennies": 2,
+    "tags": [
+      "Drink",
+      "Wine",
+      "Watered",
+      "Cheap",
+      "Peasant",
+      "Tavern",
+      "Alcohol",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000072",
+    "name": "Apron",
+    "description": "A simple, stained apron once used by craftsmen or tavern cooks to shield against grime and sparks.",
+    "valueInPennies": 5,
+    "tags": [
+      "Clothing",
+      "Worker",
+      "Craftsman",
+      "Cook",
+      "Tavern",
+      "Utility",
+      "Protective",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000073",
+    "name": "Belt",
+    "description": "A sturdy leather belt with a worn brass buckle, useful for holding tools, blades, or garments tight.",
+    "valueInPennies": 12,
+    "tags": [
+      "Clothing",
+      "Accessory",
+      "Utility",
+      "Merchant",
+      "Soldier",
+      "Everyday",
+      "Leather",
+      "Functional"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000074",
+    "name": "High Hip Boots",
+    "description": "Tall leather boots reaching the hips, favored by riders and adventurers trudging through mire and marsh.",
+    "valueInPennies": 192,
+    "tags": [
+      "Clothing",
+      "Boots",
+      "Traveler",
+      "Rider",
+      "Adventurer",
+      "Protective",
+      "Leather",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000075",
+    "name": "Dwarven Hobnailed Boots",
+    "description": "Heavy dwarf-crafted boots studded with iron nails, made for long marches across stone and battlefield alike.",
+    "valueInPennies": 720,
+    "tags": [
+      "Dwarf",
+      "Clothing",
+      "Boots",
+      "Warrior",
+      "Soldier",
+      "Battlefield",
+      "Durable",
+      "Protective",
+      "Craftsmanship"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000076",
+    "name": "Low Boots",
+    "description": "Simple ankle-high boots of worn leather, favored by peasants and wandering commoners.",
+    "valueInPennies": 62,
+    "tags": [
+      "Clothing",
+      "Boots",
+      "Commoner",
+      "Traveler",
+      "Farm",
+      "Everyday",
+      "Leather",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000077",
+    "name": "Riding Boots",
+    "description": "Polished boots reinforced at the heel, designed for long journeys in the saddle.",
+    "valueInPennies": 108,
+    "tags": [
+      "Clothing",
+      "Boots",
+      "Rider",
+      "Noble",
+      "Travel",
+      "Leather",
+      "Protective",
+      "Stable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000078",
+    "name": "Breeches",
+    "description": "Sturdy woolen breeches cut to allow ease of movement, commonly worn by soldiers and workers.",
+    "valueInPennies": 41,
+    "tags": [
+      "Clothing",
+      "Trousers",
+      "Soldier",
+      "Worker",
+      "Everyday",
+      "Durable",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000079",
+    "name": "Hat",
+    "description": "A plain felt hat, slightly weathered, offering shade and modest protection from the elements.",
+    "valueInPennies": 24,
+    "tags": [
+      "Clothing",
+      "Headwear",
+      "Commoner",
+      "Traveler",
+      "Everyday",
+      "Market",
+      "Accessory",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007A",
+    "name": "Short Cape",
+    "description": "A modest cape reaching the shoulders, practical for keeping the chill of the night air away.",
+    "valueInPennies": 19,
+    "tags": [
+      "Clothing",
+      "Cape",
+      "Traveler",
+      "Commoner",
+      "Cold Weather",
+      "Accessory",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007B",
+    "name": "Long Cape",
+    "description": "A flowing long cape, often worn by merchants or wandering nobles to display status and keep warm.",
+    "valueInPennies": 28,
+    "tags": [
+      "Clothing",
+      "Cape",
+      "Noble",
+      "Merchant",
+      "Traveler",
+      "Court",
+      "Accessory",
+      "Ceremonial",
+      "Cold Weather"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007C",
+    "name": "Tunic",
+    "description": "A simple wool tunic, comfortable and practical, favored by common folk across the Empire.",
+    "valueInPennies": 58,
+    "tags": [
+      "Clothing",
+      "Tunic",
+      "Commoner",
+      "Farmer",
+      "Everyday",
+      "Utility",
+      "Market",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007D",
+    "name": "Cloak",
+    "description": "A heavy wool cloak, clasped at the neck, offering warmth and concealment on the road.",
+    "valueInPennies": 120,
+    "tags": [
+      "Clothing",
+      "Cloak",
+      "Traveler",
+      "Adventurer",
+      "Cold Weather",
+      "Protective",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007E",
+    "name": "Light Coat",
+    "description": "A modest light coat, sewn from linen and leather trim, offering a touch of warmth in cool weather.",
+    "valueInPennies": 72,
+    "tags": [
+      "Clothing",
+      "Coat",
+      "Traveler",
+      "Merchant",
+      "Commoner",
+      "Everyday",
+      "Utility",
+      "Cold Weather"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000007F",
+    "name": "Light Jacket",
+    "description": "A fitted jacket, lightly padded, favored by artisans and students for everyday wear.",
+    "valueInPennies": 72,
+    "tags": [
+      "Clothing",
+      "Jacket",
+      "Commoner",
+      "Scholar",
+      "Everyday",
+      "Utility",
+      "Market",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000080",
+    "name": "Heavy Coat",
+    "description": "A thick, fur-lined coat built to withstand biting winds and harsh winters.",
+    "valueInPennies": 120,
+    "tags": [
+      "Clothing",
+      "Coat",
+      "Cold Weather",
+      "Traveler",
+      "Merchant",
+      "Protective",
+      "Utility",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000081",
+    "name": "Heavy Jacket",
+    "description": "A stout, padded jacket reinforced with leather, often worn by travelers and watchmen.",
+    "valueInPennies": 120,
+    "tags": [
+      "Clothing",
+      "Jacket",
+      "Protective",
+      "Traveler",
+      "Soldier",
+      "Cold Weather",
+      "Durable",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000082",
+    "name": "Corset",
+    "description": "A tightly laced corset of stiffened cloth and whalebone, worn for shape and fashion among the wealthy.",
+    "valueInPennies": 60,
+    "tags": [
+      "Clothing",
+      "Corset",
+      "Fashion",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Ceremonial",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000083",
+    "name": "Doublet",
+    "description": "A quilted doublet with ornate stitching, offering modest protection and style for the ambitious merchant.",
+    "valueInPennies": 48,
+    "tags": [
+      "Clothing",
+      "Doublet",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Fashion",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000084",
+    "name": "Dress",
+    "description": "A finely tailored dress, dyed in rich hues, fit for feasts or gatherings of the nobility.",
+    "valueInPennies": 144,
+    "tags": [
+      "Clothing",
+      "Dress",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Ceremonial",
+      "Fashion",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000085",
+    "name": "Gloves",
+    "description": "A pair of soft leather gloves, useful for warmth, work, or concealment.",
+    "valueInPennies": 12,
+    "tags": [
+      "Clothing",
+      "Gloves",
+      "Traveler",
+      "Worker",
+      "Commoner",
+      "Cold Weather",
+      "Utility",
+      "Accessory"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000086",
+    "name": "Handkerchief",
+    "description": "A neatly folded square of fine cloth, often embroidered and carried by nobles or merchants.",
+    "valueInPennies": 72,
+    "tags": [
+      "Clothing",
+      "Accessory",
+      "Handkerchief",
+      "Noble",
+      "Merchant",
+      "Adornment",
+      "Court",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000087",
+    "name": "Wide-brimmed Hat",
+    "description": "A broad hat of felt, shielding the wearer from sun and rain, favored by travelers and merchants alike.",
+    "valueInPennies": 108,
+    "tags": [
+      "Clothing",
+      "Hat",
+      "Traveler",
+      "Merchant",
+      "Adventurer",
+      "Protective",
+      "Utility",
+      "Accessory"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000088",
+    "name": "Hood",
+    "description": "A simple cloth hood, often pulled low to hide the face from weather or watchful eyes.",
+    "valueInPennies": 12,
+    "tags": [
+      "Clothing",
+      "Hood",
+      "Commoner",
+      "Traveler",
+      "Assassin",
+      "Stealth",
+      "Cold Weather",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000089",
+    "name": "Vest",
+    "description": "A snug vest of stitched cloth, worn over a tunic for warmth and modest fashion.",
+    "valueInPennies": 24,
+    "tags": [
+      "Clothing",
+      "Vest",
+      "Commoner",
+      "Merchant",
+      "Everyday",
+      "Accessory",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008A",
+    "name": "Loincloth",
+    "description": "A rough strip of cloth tied about the waist, the most basic form of covering.",
+    "valueInPennies": 12,
+    "tags": [
+      "Clothing",
+      "Loincloth",
+      "Peasant",
+      "Commoner",
+      "Farm",
+      "Everyday",
+      "Minimal",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008B",
+    "name": "Cloth Mask",
+    "description": "A simple cloth mask, used to ward off smoke, dust, or to hide one’s features.",
+    "valueInPennies": 10,
+    "tags": [
+      "Clothing",
+      "Mask",
+      "Commoner",
+      "Thief",
+      "Stealth",
+      "Utility",
+      "Protective",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008C",
+    "name": "Metal Mask",
+    "description": "A grim iron mask, heavy and forbidding, sometimes worn in rituals or by mercenaries to instill fear.",
+    "valueInPennies": 96,
+    "tags": [
+      "Clothing",
+      "Mask",
+      "Metal",
+      "Mercenary",
+      "Ceremonial",
+      "Intimidation",
+      "Protective",
+      "Priest",
+      "Dungeon"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008D",
+    "name": "Nightshirt",
+    "description": "A long linen nightshirt, plain and comfortable, worn in quiet chambers or common inns.",
+    "valueInPennies": 48,
+    "tags": [
+      "Clothing",
+      "Nightwear",
+      "Commoner",
+      "Merchant",
+      "Inn",
+      "Everyday",
+      "Comfort",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008E",
+    "name": "Priest Vestments",
+    "description": "Elaborate silk vestments embroidered with holy symbols, worn by priests during ceremonies and rites.",
+    "valueInPennies": 312,
+    "tags": [
+      "Clothing",
+      "Religious",
+      "Priest",
+      "Ceremonial",
+      "Temple",
+      "Adornment",
+      "Holy",
+      "Ritual",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-00000000008F",
+    "name": "Rags",
+    "description": "Torn and filthy scraps of cloth barely stitched together, worn only by the poorest souls.",
+    "valueInPennies": 1,
+    "tags": [
+      "Clothing",
+      "Rags",
+      "Beggar",
+      "Peasant",
+      "Commoner",
+      "Everyday",
+      "Poor",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000090",
+    "name": "Robes",
+    "description": "Flowing robes of soft cloth, often dyed in muted tones and worn by scholars or wandering priests.",
+    "valueInPennies": 360,
+    "tags": [
+      "Clothing",
+      "Robes",
+      "Scholar",
+      "Priest",
+      "Ceremonial",
+      "Temple",
+      "Adornment",
+      "Court",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000091",
+    "name": "Sandals",
+    "description": "Light leather sandals, strapped to the feet, practical for peasants and pilgrims alike.",
+    "valueInPennies": 7,
+    "tags": [
+      "Clothing",
+      "Footwear",
+      "Sandals",
+      "Commoner",
+      "Farmer",
+      "Traveler",
+      "Temple",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000092",
+    "name": "Sash",
+    "description": "A colorful woven sash tied around the waist, often serving as both ornament and girdle.",
+    "valueInPennies": 18,
+    "tags": [
+      "Clothing",
+      "Sash",
+      "Accessory",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Everyday"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000093",
+    "name": "Scarf",
+    "description": "A long strip of wool cloth wrapped about the neck, providing warmth in bitter winds.",
+    "valueInPennies": 15,
+    "tags": [
+      "Clothing",
+      "Scarf",
+      "Traveler",
+      "Commoner",
+      "Cold Weather",
+      "Accessory",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000094",
+    "name": "Socks",
+    "description": "A pair of woolen socks, simple yet essential for comfort on long marches.",
+    "valueInPennies": 11,
+    "tags": [
+      "Clothing",
+      "Socks",
+      "Commoner",
+      "Traveler",
+      "Soldier",
+      "Everyday",
+      "Comfort",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000095",
+    "name": "Shoes",
+    "description": "Plain leather shoes with scuffed soles, suitable for daily wear by townsfolk and farmers.",
+    "valueInPennies": 24,
+    "tags": [
+      "Clothing",
+      "Shoes",
+      "Commoner",
+      "Farmer",
+      "Merchant",
+      "Everyday",
+      "Utility",
+      "Leather"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000096",
+    "name": "Kislevite Winter Clothing",
+    "description": "A heavy fur-lined coat and woolen garb from Kislev, built to withstand cruel northern winters.",
+    "valueInPennies": 480,
+    "tags": [
+      "Clothing",
+      "Kislev",
+      "Cold Weather",
+      "Traveler",
+      "Noble",
+      "Merchant",
+      "Protective",
+      "Fur",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000097",
+    "name": "Coach Horn",
+    "description": "A long brass horn whose echoing blare heralds the arrival of carriages or alarms the road ahead.",
+    "valueInPennies": 48,
+    "tags": [
+      "Instrument",
+      "Horn",
+      "Coachman",
+      "Messenger",
+      "Tavern",
+      "Road",
+      "Signal",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000098",
+    "name": "Drum",
+    "description": "A taut hide stretched across a wooden frame, beaten to drive rhythm into marching soldiers or tavern dances.",
+    "valueInPennies": 72,
+    "tags": [
+      "Instrument",
+      "Percussion",
+      "Soldier",
+      "Bard",
+      "Tavern",
+      "Battlefield",
+      "Ritual",
+      "Rhythm"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000099",
+    "name": "Flute",
+    "description": "A slender wooden pipe whose sweet notes charm tavern-goers and soothe weary souls.",
+    "valueInPennies": 14,
+    "tags": [
+      "Instrument",
+      "Woodwind",
+      "Bard",
+      "Noble",
+      "Tavern",
+      "Court",
+      "Melody",
+      "Lightweight"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000100",
+    "name": "Small Harp",
+    "description": "A delicate harp strung with fine gut strings, often carried by wandering minstrels and court entertainers.",
+    "valueInPennies": 480,
+    "tags": [
+      "Instrument",
+      "Harp",
+      "Bard",
+      "Noble",
+      "Court",
+      "Tavern",
+      "Portable",
+      "Melodic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000101",
+    "name": "Large Harp",
+    "description": "A grand harp with tall frame and golden strings, the centerpiece of noble courts and temples.",
+    "valueInPennies": 1680,
+    "tags": [
+      "Instrument",
+      "Harp",
+      "Noble",
+      "Court",
+      "Temple",
+      "Ceremonial",
+      "Luxurious",
+      "Melodic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000102",
+    "name": "Karpischord",
+    "description": "A rare and ornate keyboard instrument, filling great halls with its resonant and layered tones.",
+    "valueInPennies": 6000,
+    "tags": [
+      "Instrument",
+      "Keyboard",
+      "Noble",
+      "Court",
+      "Scholar",
+      "Temple",
+      "Grand",
+      "Luxurious",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000103",
+    "name": "Lute",
+    "description": "A wooden lute with rounded body, beloved by bards for its warm, storytelling tones.",
+    "valueInPennies": 312,
+    "tags": [
+      "Instrument",
+      "String",
+      "Bard",
+      "Tavern",
+      "Court",
+      "Noble",
+      "Melodic",
+      "Portable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000104",
+    "name": "Mandolin",
+    "description": "A small stringed mandolin whose brisk notes dance through taverns and village fairs.",
+    "valueInPennies": 360,
+    "tags": [
+      "Instrument",
+      "String",
+      "Bard",
+      "Tavern",
+      "Farmer",
+      "Market",
+      "Portable",
+      "Melodic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000105",
+    "name": "Mouth Harp",
+    "description": "A simple iron mouth harp, producing twanging tones carried by wandering folk and farmhands.",
+    "valueInPennies": 12,
+    "tags": [
+      "Instrument",
+      "Jew's Harp",
+      "Farmer",
+      "Traveler",
+      "Tavern",
+      "Market",
+      "Portable",
+      "Rustic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000106",
+    "name": "Tambourine",
+    "description": "A wooden frame strung with jingling bells, perfect for dance halls and raucous tavern songs.",
+    "valueInPennies": 24,
+    "tags": [
+      "Instrument",
+      "Percussion",
+      "Bard",
+      "Tavern",
+      "Dancer",
+      "Market",
+      "Rhythmic",
+      "Portable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000107",
+    "name": "Viol",
+    "description": "A finely crafted viol, its deep tones favored in noble courts and scholar gatherings.",
+    "valueInPennies": 720,
+    "tags": [
+      "Instrument",
+      "String",
+      "Noble",
+      "Scholar",
+      "Court",
+      "Ceremonial",
+      "Melodic",
+      "Luxurious"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000108",
+    "name": "Whistle",
+    "description": "A small wooden whistle whose shrill notes serve children at play and hunters in the wilds.",
+    "valueInPennies": 4,
+    "tags": [
+      "Instrument",
+      "Woodwind",
+      "Child",
+      "Hunter",
+      "Farmer",
+      "Tavern",
+      "Utility",
+      "Portable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000109",
+    "name": "Printed Glued Book",
+    "description": "A cheaply bound volume with glued spine, favored by common scholars and merchants for practical study.",
+    "valueInPennies": 1800,
+    "tags": [
+      "Book",
+      "Scholar",
+      "Merchant",
+      "Library",
+      "Study",
+      "Knowledge",
+      "Printed",
+      "Miscellaneous"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000110",
+    "name": "Printed Stitched Book",
+    "description": "A sturdily stitched tome with printed pages, durable for frequent use in academies and guild halls.",
+    "valueInPennies": 2400,
+    "tags": [
+      "Book",
+      "Scholar",
+      "Guild",
+      "Library",
+      "Durable",
+      "Knowledge",
+      "Printed",
+      "Miscellaneous"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000111",
+    "name": "Illuminated Book",
+    "description": "A lavishly decorated manuscript, its pages adorned with gold leaf and vibrant illustrations treasured by nobles and priests.",
+    "valueInPennies": 8400,
+    "tags": [
+      "Book",
+      "Illuminated",
+      "Priest",
+      "Noble",
+      "Library",
+      "Temple",
+      "Ceremonial",
+      "Valuable",
+      "Artistic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000112",
+    "name": "Brush",
+    "description": "A simple bristle brush used by scribes and artisans to apply ink or paint with precision.",
+    "valueInPennies": 16,
+    "tags": [
+      "Tool",
+      "Artisan",
+      "Scribe",
+      "Workshop",
+      "Utility",
+      "Painting",
+      "Writing",
+      "Miscellaneous"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000113",
+    "name": "Cartographer Kit",
+    "description": "A set of fine tools for mapping terrain, prized by explorers and scholars alike.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Cartography",
+      "Explorer",
+      "Scholar",
+      "Travel",
+      "Mapping",
+      "Utility",
+      "Adventurer"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000114",
+    "name": "Charcoal Stick",
+    "description": "A crude blackened stick used by artists and scribes to sketch rough outlines.",
+    "valueInPennies": 1,
+    "tags": [
+      "Tool",
+      "Charcoal",
+      "Artist",
+      "Scribe",
+      "Workshop",
+      "Drawing",
+      "Utility",
+      "Miscellaneous"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000115",
+    "name": "Chalk Stick",
+    "description": "A pale chalk stick used to mark surfaces, diagrams, or temporary notes.",
+    "valueInPennies": 2,
+    "tags": [
+      "Tool",
+      "Chalk",
+      "Teacher",
+      "Scholar",
+      "Workshop",
+      "Drawing",
+      "Temporary",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000116",
+    "name": "Black Ink (1 Ounce)",
+    "description": "A small vial of deep black ink, the standard choice for scribes and bureaucrats.",
+    "valueInPennies": 11,
+    "tags": [
+      "Ink",
+      "Black",
+      "Scribe",
+      "Scholar",
+      "Bureaucrat",
+      "Writing",
+      "Utility",
+      "Workshop"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000117",
+    "name": "Copper Blue Ink (1 Ounce)",
+    "description": "A vivid copper-blue ink favored for decorative texts and guild seals.",
+    "valueInPennies": 23,
+    "tags": [
+      "Ink",
+      "Blue",
+      "Scribe",
+      "Guild",
+      "Artisan",
+      "Decorative",
+      "Writing",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000118",
+    "name": "Ultramarine Blue Ink (1 Ounce)",
+    "description": "A luxurious ink of deep ultramarine, prized for illuminated manuscripts.",
+    "valueInPennies": 28,
+    "tags": [
+      "Ink",
+      "Blue",
+      "Illuminated",
+      "Scribe",
+      "Priest",
+      "Noble",
+      "Decorative",
+      "Artistic",
+      "Valuable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000119",
+    "name": "Green Ink (1 Ounce)",
+    "description": "A bright green ink often used by herbalists and scholars to highlight botanical texts.",
+    "valueInPennies": 24,
+    "tags": [
+      "Ink",
+      "Green",
+      "Scholar",
+      "Herbalist",
+      "Decorative",
+      "Writing",
+      "Utility",
+      "Workshop"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000120",
+    "name": "Ochre Ink (1 Ounce)",
+    "description": "A warm ochre-colored ink used in maps and guild records.",
+    "valueInPennies": 34,
+    "tags": [
+      "Ink",
+      "Ochre",
+      "Cartographer",
+      "Guild",
+      "Scribe",
+      "Mapping",
+      "Writing",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000121",
+    "name": "Purple Ink (1 Ounce)",
+    "description": "A rare purple ink, often reserved for royal decrees and priestly manuscripts.",
+    "valueInPennies": 74,
+    "tags": [
+      "Ink",
+      "Purple",
+      "Noble",
+      "Priest",
+      "Court",
+      "Ceremonial",
+      "Valuable",
+      "Decorative",
+      "Writing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000122",
+    "name": "Iron Red Ink (1 Ounce)",
+    "description": "A reddish ink with a metallic tint, favored for marking important documents.",
+    "valueInPennies": 12,
+    "tags": [
+      "Ink",
+      "Red",
+      "Scribe",
+      "Bureaucrat",
+      "Official",
+      "Writing",
+      "Marking",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000123",
+    "name": "Safflower Ink (1 Ounce)",
+    "description": "A golden safflower ink that adds vibrant highlights to manuscripts.",
+    "valueInPennies": 11,
+    "tags": [
+      "Ink",
+      "Safflower",
+      "Yellow",
+      "Scribe",
+      "Scholar",
+      "Decorative",
+      "Writing",
+      "Artistic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000124",
+    "name": "Yellow Ink (1 Ounce)",
+    "description": "A bright yellow ink used to embellish diagrams and heraldic texts.",
+    "valueInPennies": 6,
+    "tags": [
+      "Ink",
+      "Yellow",
+      "Heraldry",
+      "Scholar",
+      "Scribe",
+      "Decorative",
+      "Writing",
+      "Artistic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000125",
+    "name": "Vermillion Ink (1 Ounce)",
+    "description": "A striking vermillion ink favored for signatures and ceremonial texts.",
+    "valueInPennies": 48,
+    "tags": [
+      "Ink",
+      "Red",
+      "Vermillion",
+      "Priest",
+      "Noble",
+      "Court",
+      "Ceremonial",
+      "Decorative",
+      "Writing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000126",
+    "name": "Inkpen",
+    "description": "A finely crafted pen designed for precise ink writing by scribes and clerks.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Pen",
+      "Writing",
+      "Scribe",
+      "Clerk",
+      "Scholar",
+      "Workshop",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000127",
+    "name": "Paper Sheet",
+    "description": "A single sheet of rough paper, cheap and widely used for notes and drafts.",
+    "valueInPennies": 2,
+    "tags": [
+      "Paper",
+      "Writing",
+      "Scribe",
+      "Scholar",
+      "Clerk",
+      "Miscellaneous",
+      "Utility",
+      "Workshop"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000128",
+    "name": "Parchment Sheet",
+    "description": "A fine sheet of parchment made from treated hide, prized for official documents.",
+    "valueInPennies": 6,
+    "tags": [
+      "Parchment",
+      "Writing",
+      "Scribe",
+      "Priest",
+      "Court",
+      "Durable",
+      "Official",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000129",
+    "name": "Writing Kit",
+    "description": "A compact kit containing pens, ink, and parchment, essential for traveling scribes and merchants.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Writing",
+      "Kit",
+      "Scribe",
+      "Merchant",
+      "Traveler",
+      "Utility",
+      "Portable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000130",
+    "name": "Backpack",
+    "description": "A sturdy leather backpack, weathered by use, perfect for carrying provisions across long journeys.",
+    "valueInPennies": 108,
+    "tags": [
+      "Clothing",
+      "Container",
+      "Traveler",
+      "Adventurer",
+      "Utility",
+      "Wilderness",
+      "Merchant",
+      "Storage"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000131",
+    "name": "Basket",
+    "description": "A simple woven basket, used to carry fruits, herbs, or other market goods.",
+    "valueInPennies": 8,
+    "tags": [
+      "Container",
+      "Tool",
+      "Farmer",
+      "Merchant",
+      "Market",
+      "Utility",
+      "Storage"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000132",
+    "name": "Bottle",
+    "description": "A plain glass bottle, often used to store ale, spirits, or strange alchemical mixtures.",
+    "valueInPennies": 12,
+    "tags": [
+      "Container",
+      "Miscellaneous",
+      "Alchemist",
+      "Tavern",
+      "Utility",
+      "Storage",
+      "Adventurer"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000133",
+    "name": "Large Iron Box",
+    "description": "A heavy iron box with reinforced edges, used to secure valuables or dangerous contents.",
+    "valueInPennies": 120,
+    "tags": [
+      "Container",
+      "Iron",
+      "Chest",
+      "Guard",
+      "Merchant",
+      "Noble",
+      "Storage",
+      "Security"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000134",
+    "name": "Small Iron Box",
+    "description": "A compact iron box with a small lock, ideal for hiding coins or secret letters.",
+    "valueInPennies": 72,
+    "tags": [
+      "Container",
+      "Iron",
+      "Chest",
+      "Merchant",
+      "Rogue",
+      "Storage",
+      "Security",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000135",
+    "name": "Metal Bucket",
+    "description": "A sturdy iron bucket, dented from use, for hauling water or coal.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Container",
+      "Metal",
+      "Farmer",
+      "Miner",
+      "Utility",
+      "Storage",
+      "Workshop"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000136",
+    "name": "Wooden Bucket",
+    "description": "A rough-hewn wooden bucket, bound with iron bands, commonly found in farms and taverns.",
+    "valueInPennies": 17,
+    "tags": [
+      "Tool",
+      "Container",
+      "Wood",
+      "Farmer",
+      "Tavern",
+      "Utility",
+      "Storage",
+      "Village"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000137",
+    "name": "Large Cage",
+    "description": "A towering iron-barred cage, grimly suited for beasts or unfortunate prisoners.",
+    "valueInPennies": 576,
+    "tags": [
+      "Container",
+      "Iron",
+      "Prison",
+      "Hunter",
+      "Dungeon",
+      "Beast",
+      "Captivity",
+      "Guard"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000138",
+    "name": "Small Cage",
+    "description": "A small iron cage, often used to hold birds, rats, or unsettling alchemical experiments.",
+    "valueInPennies": 144,
+    "tags": [
+      "Container",
+      "Iron",
+      "Prison",
+      "Alchemist",
+      "Hunter",
+      "Dungeon",
+      "Beast",
+      "Captivity"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000139",
+    "name": "Tube Case",
+    "description": "A narrow leather tube case, made for carrying maps, scrolls, or sacred decrees.",
+    "valueInPennies": 24,
+    "tags": [
+      "Container",
+      "Leather",
+      "Scholar",
+      "Scribe",
+      "Priest",
+      "Library",
+      "Scroll",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000140",
+    "name": "Quarterkeg Cask (4 Litres)",
+    "description": "A small wooden cask that holds a modest share of ale or spirits, often carried by travelers.",
+    "valueInPennies": 10,
+    "tags": [
+      "Container",
+      "Wood",
+      "Tavern",
+      "Merchant",
+      "Traveler",
+      "Ale",
+      "Storage",
+      "Drink"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000141",
+    "name": "Halfkeg Cask (8 Litres)",
+    "description": "A medium-sized cask, filled with drink for taverns or caravans on the move.",
+    "valueInPennies": 17,
+    "tags": [
+      "Container",
+      "Wood",
+      "Tavern",
+      "Merchant",
+      "Traveler",
+      "Ale",
+      "Storage",
+      "Drink"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000142",
+    "name": "Keg Cask (16 Litres)",
+    "description": "A sturdy keg of ale or wine, bound with iron hoops for safe storage and transport.",
+    "valueInPennies": 31,
+    "tags": [
+      "Container",
+      "Wood",
+      "Iron",
+      "Tavern",
+      "Merchant",
+      "Ale",
+      "Storage",
+      "Drink"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000143",
+    "name": "Halfbarrel Cask (64 Litres)",
+    "description": "A large halfbarrel, heavy with spirits or water, favored by taverns and caravans.",
+    "valueInPennies": 48,
+    "tags": [
+      "Container",
+      "Wood",
+      "Tavern",
+      "Merchant",
+      "Ale",
+      "Storage",
+      "Drink",
+      "Transport"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000144",
+    "name": "Barrel Cask (128 Litres)",
+    "description": "A full-sized barrel, creaking under the weight of its contents, common in cellars and markets.",
+    "valueInPennies": 84,
+    "tags": [
+      "Container",
+      "Wood",
+      "Tavern",
+      "Merchant",
+      "Ale",
+      "Storage",
+      "Drink",
+      "Cellar"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000145",
+    "name": "Drumbarrel Cask (1500 Litres)",
+    "description": "A massive drumbarrel, enough to supply an entire garrison with ale or water.",
+    "valueInPennies": 840,
+    "tags": [
+      "Container",
+      "Wood",
+      "Tavern",
+      "Merchant",
+      "Ale",
+      "Storage",
+      "Drink",
+      "Garrison"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000146",
+    "name": "Large Wooden Chest",
+    "description": "A heavy wooden chest bound with iron, its lid scarred by years of travel and plunder.",
+    "valueInPennies": 216,
+    "tags": [
+      "Container",
+      "Chest",
+      "Wood",
+      "Iron",
+      "Noble",
+      "Merchant",
+      "Storage",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000147",
+    "name": "Small Wooden Chest",
+    "description": "A compact chest, easily hidden beneath a bed or in a wagon, ideal for personal valuables.",
+    "valueInPennies": 132,
+    "tags": [
+      "Container",
+      "Chest",
+      "Wood",
+      "Noble",
+      "Merchant",
+      "Rogue",
+      "Storage",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000148",
+    "name": "Wooden Crate (1m3)",
+    "description": "A square wooden crate, nailed shut, holding goods for market stalls or caravans.",
+    "valueInPennies": 72,
+    "tags": [
+      "Container",
+      "Wood",
+      "Merchant",
+      "Market",
+      "Transport",
+      "Storage",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000149",
+    "name": "Wooden Crate (1.5m3)",
+    "description": "A larger wooden crate, bulky and cumbersome, made to haul heavier wares.",
+    "valueInPennies": 96,
+    "tags": [
+      "Container",
+      "Wood",
+      "Merchant",
+      "Market",
+      "Transport",
+      "Storage",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000150",
+    "name": "Wooden Cup",
+    "description": "A simple carved wooden cup, rough but serviceable, found in every tavern and farmhouse.",
+    "valueInPennies": 2,
+    "tags": [
+      "Drinkware",
+      "Wood",
+      "Farmer",
+      "Tavern",
+      "Utility",
+      "Village",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000151",
+    "name": "Clay Cup",
+    "description": "A crude clay cup, fragile but cheap, often used by peasants and common folk.",
+    "valueInPennies": 2,
+    "tags": [
+      "Drinkware",
+      "Clay",
+      "Farmer",
+      "Tavern",
+      "Utility",
+      "Village",
+      "Common"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000152",
+    "name": "Leather Flask",
+    "description": "A supple leather flask, sealed with wax, perfect for holding water or spirits on the road.",
+    "valueInPennies": 18,
+    "tags": [
+      "Container",
+      "Leather",
+      "Traveler",
+      "Soldier",
+      "Tavern",
+      "Utility",
+      "Drink",
+      "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000153",
+    "name": "Metal Flask",
+    "description": "A polished metal flask, durable and practical, often treasured by soldiers and wanderers.",
+    "valueInPennies": 48,
+    "tags": [
+      "Container",
+      "Metal",
+      "Traveler",
+      "Soldier",
+      "Tavern",
+      "Utility",
+      "Drink",
+      "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000154",
+    "name": "Lead-Lined Metal Flask",
+    "description": "A heavy flask lined with lead, designed to carry volatile or dangerous liquids.",
+    "valueInPennies": 68,
+    "tags": [
+      "Container",
+      "Metal",
+      "Alchemist",
+      "Traveler",
+      "Utility",
+      "Dangerous",
+      "Potion",
+      "Storage"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000155",
+    "name": "Glass",
+    "description": "A fragile but elegant glass, uncommon outside taverns of wealth or noble feasts.",
+    "valueInPennies": 24,
+    "tags": [
+      "Drinkware",
+      "Glass",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Tavern",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000156",
+    "name": "Pewter Goblet",
+    "description": "A pewter goblet, heavy in hand, found in taverns of moderate wealth and soldier’s mess halls.",
+    "valueInPennies": 36,
+    "tags": [
+      "Drinkware",
+      "Metal",
+      "Goblet",
+      "Soldier",
+      "Merchant",
+      "Tavern",
+      "Feast"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000157",
+    "name": "Silver Goblet",
+    "description": "A gleaming silver goblet, engraved with delicate motifs, favored by nobles and priests.",
+    "valueInPennies": 168,
+    "tags": [
+      "Drinkware",
+      "Silver",
+      "Goblet",
+      "Noble",
+      "Priest",
+      "Court",
+      "Feast",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000158",
+    "name": "Gold Goblet",
+    "description": "A resplendent golden goblet, fit for kings and emperors, encrusted with faint etchings of grandeur.",
+    "valueInPennies": 1272,
+    "tags": [
+      "Drinkware",
+      "Gold",
+      "Goblet",
+      "Noble",
+      "King",
+      "Court",
+      "Luxury",
+      "Ceremonial",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000159",
+    "name": "Gunpowder Horn and Shot Pouch",
+    "description": "A polished horn with a pouch, essential for carrying powder and shot to keep muskets ready.",
+    "valueInPennies": 36,
+    "tags": [
+      "Weapon",
+      "Ammunition",
+      "Soldier",
+      "Mercenary",
+      "Battlefield",
+      "Hunting",
+      "Blackpowder",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000160",
+    "name": "Clay Jug (4 Litres)",
+    "description": "A coarse clay jug that can hold a modest portion of ale, milk, or water.",
+    "valueInPennies": 3,
+    "tags": [
+      "Container",
+      "Clay",
+      "Farmer",
+      "Tavern",
+      "Village",
+      "Drink",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000161",
+    "name": "Clay Jug (16 Litres)",
+    "description": "A large clay jug, unwieldy but useful for carrying drink or oil in bulk.",
+    "valueInPennies": 5,
+    "tags": [
+      "Container",
+      "Clay",
+      "Farmer",
+      "Tavern",
+      "Village",
+      "Drink",
+      "Utility",
+      "Storage"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000162",
+    "name": "Kettle",
+    "description": "A blackened kettle, soot-stained from countless fires, perfect for stews and boiling water.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Cooking",
+      "Metal",
+      "Farmer",
+      "Tavern",
+      "Utility",
+      "Village",
+      "Camp"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000163",
+    "name": "Clay Pitcher",
+    "description": "A squat clay pitcher, used for serving ale or wine at the common table.",
+    "valueInPennies": 5,
+    "tags": [
+      "Drinkware",
+      "Clay",
+      "Farmer",
+      "Tavern",
+      "Village",
+      "Utility",
+      "Drink"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000164",
+    "name": "Large Pouch",
+    "description": "A wide leather pouch, secured with a drawstring, useful for storing coins or supplies.",
+    "valueInPennies": 72,
+    "tags": [
+      "Container",
+      "Leather",
+      "Merchant",
+      "Adventurer",
+      "Rogue",
+      "Utility",
+      "Coins",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000165",
+    "name": "Small Pouch",
+    "description": "A modest leather pouch, easily hidden and favored by rogues and travelers alike.",
+    "valueInPennies": 36,
+    "tags": [
+      "Container",
+      "Leather",
+      "Adventurer",
+      "Rogue",
+      "Merchant",
+      "Utility",
+      "Coins",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000166",
+    "name": "Clay Pot",
+    "description": "A humble clay pot, fragile but useful for storing herbs, water, or small meals.",
+    "valueInPennies": 6,
+    "tags": [
+      "Container",
+      "Clay",
+      "Farmer",
+      "Tavern",
+      "Village",
+      "Utility",
+      "Cooking"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000167",
+    "name": "Iron Pot",
+    "description": "A heavy iron pot, blackened with soot, built to endure countless meals over open flame.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Cooking",
+      "Metal",
+      "Farmer",
+      "Tavern",
+      "Utility",
+      "Village",
+      "Camp"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000168",
+    "name": "Thick Leather Purse",
+    "description": "A sturdy leather purse with reinforced stitching, designed to safely carry coins during long travels.",
+    "valueInPennies": 24,
+    "tags": [
+      "Clothing",
+      "Accessory",
+      "Merchant",
+      "Traveler",
+      "Noble",
+      "Market",
+      "Utility",
+      "Storage"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000169",
+    "name": "Arrow Quiver",
+    "description": "A plain but practical leather quiver, worn across the back to keep arrows close at hand in battle.",
+    "valueInPennies": 18,
+    "tags": [
+      "Weapon",
+      "Ranged",
+      "Archer",
+      "Hunter",
+      "Soldier",
+      "Forest",
+      "Battlefield",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000170",
+    "name": "Bolts Quiver",
+    "description": "A compact quiver crafted to hold crossbow bolts, favored by mercenaries and city guards alike.",
+    "valueInPennies": 16,
+    "tags": [
+      "Weapon",
+      "Ranged",
+      "Crossbow",
+      "Mercenary",
+      "Soldier",
+      "Guard",
+      "Utility",
+      "Battlefield"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000171",
+    "name": "Large Sack",
+    "description": "A coarse hemp sack large enough to carry grain, coal, or ill-gotten spoils.",
+    "valueInPennies": 10,
+    "tags": [
+      "Tool",
+      "Farmer",
+      "Merchant",
+      "Peasant",
+      "Market",
+      "Utility",
+      "Storage",
+      "Travel"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000172",
+    "name": "Small Sack",
+    "description": "A small, rough-woven sack useful for carrying coins, herbs, or other modest goods.",
+    "valueInPennies": 5,
+    "tags": [
+      "Tool",
+      "Peasant",
+      "Farmer",
+      "Market",
+      "Utility",
+      "Storage",
+      "Travel",
+      "Miscellaneous"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000173",
+    "name": "Slingbag",
+    "description": "A rugged slingbag slung over the shoulder, favored by travelers for carrying daily provisions.",
+    "valueInPennies": 84,
+    "tags": [
+      "Clothing",
+      "Accessory",
+      "Traveler",
+      "Adventurer",
+      "Merchant",
+      "Utility",
+      "Storage",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000174",
+    "name": "Pewter Tankard",
+    "description": "A heavy pewter tankard, well-used in taverns where ale flows freely and fists fly often.",
+    "valueInPennies": 48,
+    "tags": [
+      "Miscellaneous",
+      "Drinkware",
+      "Tavern",
+      "Peasant",
+      "Merchant",
+      "Ale",
+      "Utility",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000175",
+    "name": "Wooden Tankard",
+    "description": "A stout wooden tankard, crudely carved but reliable for long nights of drink.",
+    "valueInPennies": 72,
+    "tags": [
+      "Miscellaneous",
+      "Drinkware",
+      "Tavern",
+      "Farmer",
+      "Peasant",
+      "Utility",
+      "Rustic",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000176",
+    "name": "Large Trunk",
+    "description": "A bulky wooden trunk bound in iron, used to guard valuables or transport supplies.",
+    "valueInPennies": 168,
+    "tags": [
+      "Tool",
+      "Storage",
+      "Merchant",
+      "Traveler",
+      "Noble",
+      "Caravan",
+      "Utility",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000177",
+    "name": "Small Trunk",
+    "description": "A modest wooden trunk, sturdy enough for clothes, documents, or a modest hoard of coins.",
+    "valueInPennies": 96,
+    "tags": [
+      "Tool",
+      "Storage",
+      "Merchant",
+      "Noble",
+      "Traveler",
+      "Court",
+      "Utility",
+      "Portable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000178",
+    "name": "Glass Vial (1 Ounce)",
+    "description": "A delicate glass vial, used to hold alchemical liquids or potent draughts.",
+    "valueInPennies": 10,
+    "tags": [
+      "Tool",
+      "Alchemy",
+      "Scholar",
+      "Priest",
+      "Magical",
+      "Potion",
+      "Utility",
+      "Fragile"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000179",
+    "name": "Lead-Lined Vial (1 Ounce)",
+    "description": "A small lead-lined vial designed to safely contain volatile or corrupted substances.",
+    "valueInPennies": 36,
+    "tags": [
+      "Tool",
+      "Alchemy",
+      "Scholar",
+      "Priest",
+      "Corruption",
+      "Magical",
+      "Utility",
+      "Protective"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000180",
+    "name": "Tallow Candle",
+    "description": "A greasy tallow candle that burns dimly, filling the air with a rancid odor.",
+    "valueInPennies": 2,
+    "tags": [
+      "Tool",
+      "Light",
+      "Peasant",
+      "Tavern",
+      "Farm",
+      "Utility",
+      "Cheap",
+      "Temporary"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000181",
+    "name": "Wax Candle",
+    "description": "A clean-burning wax candle, prized by merchants and scholars for steady light.",
+    "valueInPennies": 3,
+    "tags": [
+      "Tool",
+      "Light",
+      "Scholar",
+      "Merchant",
+      "Temple",
+      "Utility",
+      "Refined",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000182",
+    "name": "Large Sack of Charcoal",
+    "description": "A bulky sack filled with charcoal, used for fueling forges, kitchens, and campfires.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Fuel",
+      "Blacksmith",
+      "Farmer",
+      "Merchant",
+      "Utility",
+      "Fire",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000183",
+    "name": "Lamp",
+    "description": "A simple oil-fed lamp, offering a steady glow in cottages and taverns.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Light",
+      "Peasant",
+      "Tavern",
+      "Merchant",
+      "Utility",
+      "Home",
+      "Durable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000184",
+    "name": "Lantern",
+    "description": "A sturdy lantern with a protective casing, carried by guards and travelers through dark streets.",
+    "valueInPennies": 108,
+    "tags": [
+      "Tool",
+      "Light",
+      "Traveler",
+      "Guard",
+      "Soldier",
+      "Utility",
+      "Durable",
+      "Portable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000185",
+    "name": "Storm Lantern",
+    "description": "A well-crafted lantern shielded against wind and rain, prized by sailors and roadwardens.",
+    "valueInPennies": 312,
+    "tags": [
+      "Tool",
+      "Light",
+      "Traveler",
+      "Sailor",
+      "Roadwarden",
+      "Weatherproof",
+      "Durable",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000186",
+    "name": "Dozen Matches",
+    "description": "A bundle of twelve matches, quick to ignite and essential for kindling fires on the road.",
+    "valueInPennies": 1,
+    "tags": [
+      "Tool",
+      "Fire",
+      "Traveler",
+      "Adventurer",
+      "Utility",
+      "Survival",
+      "Market",
+      "Cheap"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000187",
+    "name": "Oil Lamp",
+    "description": "A refined oil lamp with a small reservoir, casting bright light for long hours of study or trade.",
+    "valueInPennies": 72,
+    "tags": [
+      "Tool",
+      "Light",
+      "Scholar",
+      "Merchant",
+      "Temple",
+      "Utility",
+      "Durable",
+      "Home"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000188",
+    "name": "Treated Torch",
+    "description": "A sturdy torch treated with pitch to burn longer and resist damp conditions.",
+    "valueInPennies": 8,
+    "tags": [
+      "Tool",
+      "Light",
+      "Adventurer",
+      "Soldier",
+      "Dungeon",
+      "Utility",
+      "Durable",
+      "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000189",
+    "name": "Untreated Torch",
+    "description": "A rough wooden torch that burns quickly, useful for short expeditions into the dark.",
+    "valueInPennies": 3,
+    "tags": [
+      "Tool",
+      "Light",
+      "Adventurer",
+      "Soldier",
+      "Dungeon",
+      "Utility",
+      "Temporary",
+      "Cheap"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000190",
+    "name": "Banner",
+    "description": "A tattered cloth banner bearing faded heraldry, once flown proudly above soldiers on the battlefield.",
+    "valueInPennies": 480,
+    "tags": [
+      "Banner",
+      "Clothing",
+      "Soldier",
+      "Knight",
+      "Battlefield",
+      "Ceremonial",
+      "War Camp",
+      "Noble"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000191",
+    "name": "Bedroll",
+    "description": "A rough woolen bedroll, offering a sliver of comfort for those forced to sleep under the open sky.",
+    "valueInPennies": 108,
+    "tags": [
+      "Clothing",
+      "Bedroll",
+      "Adventurer",
+      "Soldier",
+      "Tavern",
+      "Camp",
+      "Travel",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000192",
+    "name": "Bell",
+    "description": "A small iron bell whose ringing can summon, warn, or ward off lurking shadows.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Bell",
+      "Priest",
+      "Farmer",
+      "Temple",
+      "Tavern",
+      "Signal",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000193",
+    "name": "Blanket",
+    "description": "A coarse woolen blanket, worn thin but still capable of warding off the night's chill.",
+    "valueInPennies": 84,
+    "tags": [
+      "Clothing",
+      "Blanket",
+      "Farmer",
+      "Adventurer",
+      "Camp",
+      "Tavern",
+      "Utility",
+      "Travel"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000194",
+    "name": "Scroll Case",
+    "description": "A sturdy leather case designed to keep precious scrolls safe from damp, dirt, and careless hands.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Scroll Case",
+      "Scholar",
+      "Priest",
+      "Library",
+      "Temple",
+      "Storage",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000195",
+    "name": "Brush",
+    "description": "A simple bristled brush used for grooming or cleaning, worn smooth from constant use.",
+    "valueInPennies": 15,
+    "tags": [
+      "Tool",
+      "Brush",
+      "Merchant",
+      "Farmer",
+      "Market",
+      "Utility",
+      "Domestic",
+      "Travel"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000196",
+    "name": "Comb",
+    "description": "A plain wooden comb, carved crudely yet effective at taming tangled hair.",
+    "valueInPennies": 15,
+    "tags": [
+      "Tool",
+      "Comb",
+      "Merchant",
+      "Noble",
+      "Market",
+      "Adornment",
+      "Domestic",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000197",
+    "name": "Dozen of Clothes Pegs",
+    "description": "A bundle of rough wooden pegs used by washerwomen to fasten garments upon the line.",
+    "valueInPennies": 13,
+    "tags": [
+      "Tool",
+      "Clothes Pegs",
+      "Farmer",
+      "Merchant",
+      "Tavern",
+      "Domestic",
+      "Laundry",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000198",
+    "name": "Wooden Knife",
+    "description": "A crude wooden knife, more suited for spreading butter than spilling blood.",
+    "valueInPennies": 6,
+    "tags": [
+      "Tool",
+      "Knife",
+      "Wooden",
+      "Farmer",
+      "Kitchen",
+      "Market",
+      "Domestic",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000199",
+    "name": "Metal Knife",
+    "description": "A sturdy metal knife, balanced enough for both kitchen work and desperate defense.",
+    "valueInPennies": 28,
+    "tags": [
+      "Weapon",
+      "Knife",
+      "Metal",
+      "Soldier",
+      "Assassin",
+      "Kitchen",
+      "Tavern",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000200",
+    "name": "Silver Knife",
+    "description": "A gleaming silver knife, elegant and sharp, often carried by nobles or hunters wary of darker things.",
+    "valueInPennies": 168,
+    "tags": [
+      "Weapon",
+      "Knife",
+      "Silver",
+      "Noble",
+      "Court",
+      "Hunter",
+      "Adornment",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000201",
+    "name": "Gold Knife",
+    "description": "A delicate gold knife, more ornament than tool, displayed as a sign of wealth and status.",
+    "valueInPennies": 624,
+    "tags": [
+      "Weapon",
+      "Knife",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Valuable",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000202",
+    "name": "Set of Bone Dice",
+    "description": "Six crudely carved bone dice, rattling with the promise of fortune or ruin.",
+    "valueInPennies": 18,
+    "tags": [
+      "Miscellaneous",
+      "Dice",
+      "Gambler",
+      "Tavern",
+      "Market",
+      "Entertainment",
+      "Luck",
+      "Game"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000203",
+    "name": "Weighted Bone Dice",
+    "description": "A set of six weighted bone dice, crafted for cheaters and rogues seeking easy coin.",
+    "valueInPennies": 120,
+    "tags": [
+      "Miscellaneous",
+      "Dice",
+      "Weighted",
+      "Rogue",
+      "Tavern",
+      "Assassin",
+      "Gambler",
+      "Game"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000204",
+    "name": "Grappling Hook",
+    "description": "A heavy iron grappling hook with four curved prongs, perfect for scaling walls or hauling loads.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Hook",
+      "Rogue",
+      "Soldier",
+      "Dungeon",
+      "Stealth",
+      "Utility",
+      "Climbing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000205",
+    "name": "Kislevite Winged Banner",
+    "description": "A proud Kislevite banner adorned with carved wooden wings, fluttering with the spirit of war.",
+    "valueInPennies": 288,
+    "tags": [
+      "Kislev",
+      "Banner",
+      "Soldier",
+      "Knight",
+      "Battlefield",
+      "Ceremonial",
+      "War Camp",
+      "Noble"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000206",
+    "name": "Screamer Winged Banner",
+    "description": "A Kislevite banner crowned with screaming wings, designed to terrify foes and inspire allies.",
+    "valueInPennies": 336,
+    "tags": [
+      "Kislev",
+      "Banner",
+      "Soldier",
+      "Knight",
+      "Ceremonial",
+      "War Camp",
+      "Battlefield",
+      "Intimidation"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000207",
+    "name": "Rope Ladder",
+    "description": "A long rope ladder reinforced with wooden rungs, essential for scaling cliffs or siege walls.",
+    "valueInPennies": 120,
+    "tags": [
+      "Tool",
+      "Rope Ladder",
+      "Rogue",
+      "Soldier",
+      "Dungeon",
+      "Utility",
+      "Climbing",
+      "Siege"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000208",
+    "name": "Average Lock",
+    "description": "A sturdy iron lock of fair make, good enough to deter thieves of lesser skill.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Lock",
+      "Merchant",
+      "Noble",
+      "Chest",
+      "Security",
+      "Utility",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000209",
+    "name": "Quality Lock",
+    "description": "A masterfully forged lock, its complex mechanism a true challenge for even skilled thieves.",
+    "valueInPennies": 960,
+    "tags": [
+      "Tool",
+      "Lock",
+      "Noble",
+      "Merchant",
+      "Chest",
+      "Security",
+      "Valuable",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000210",
+    "name": "Marbles",
+    "description": "A small pouch containing ten polished glass marbles, a child’s toy or gambler’s diversion.",
+    "valueInPennies": 36,
+    "tags": [
+      "Miscellaneous",
+      "Marbles",
+      "Child",
+      "Gambler",
+      "Tavern",
+      "Market",
+      "Entertainment",
+      "Game"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000211",
+    "name": "Large Metal Mirror",
+    "description": "A heavy polished metal mirror, slightly warped but reflecting enough for grooming or signaling.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Mirror",
+      "Metal",
+      "Merchant",
+      "Noble",
+      "Adornment",
+      "Utility",
+      "Domestic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000212",
+    "name": "Large Silver Mirror",
+    "description": "A grand silver-framed mirror, its reflective surface gleaming with noble vanity.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Jewelry",
+      "Mirror",
+      "Silver",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Valuable",
+      "Domestic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000213",
+    "name": "Small Silver Mirror",
+    "description": "A delicate hand mirror of silver, prized by merchants and nobles for personal grooming.",
+    "valueInPennies": 480,
+    "tags": [
+      "Jewelry",
+      "Mirror",
+      "Silver",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000214",
+    "name": "Perfume",
+    "description": "A small vial of sweet-scented perfume, masking foul odors and declaring refinement.",
+    "valueInPennies": 240,
+    "tags": [
+      "Clothing",
+      "Perfume",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Adornment",
+      "Luxury",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000215",
+    "name": "Cologne",
+    "description": "A bottle of sharp-scented cologne, favored by merchants and courtiers to impress.",
+    "valueInPennies": 240,
+    "tags": [
+      "Clothing",
+      "Cologne",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Adornment",
+      "Luxury",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000216",
+    "name": "Rope 10m",
+    "description": "A coil of sturdy hemp rope, measuring ten meters, indispensable for travel and labor.",
+    "valueInPennies": 120,
+    "tags": [
+      "Tool",
+      "Rope",
+      "Adventurer",
+      "Soldier",
+      "Dungeon",
+      "Utility",
+      "Climbing",
+      "Travel"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000217",
+    "name": "Shaving Kit",
+    "description": "A small leather pouch with razor, brush, and bowl for the fastidious gentleman’s grooming.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Shaving",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Utility",
+      "Domestic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000218",
+    "name": "Snuff Box",
+    "description": "A finely decorated snuff box, often carried by nobles to indulge in pungent powder.",
+    "valueInPennies": 42,
+    "tags": [
+      "Jewelry",
+      "Box",
+      "Noble",
+      "Merchant",
+      "Court",
+      "Adornment",
+      "Luxury",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000219",
+    "name": "Soap",
+    "description": "A crude block of lye soap, harsh on skin but effective at banishing filth.",
+    "valueInPennies": 2,
+    "tags": [
+      "Tool",
+      "Soap",
+      "Farmer",
+      "Merchant",
+      "Tavern",
+      "Utility",
+      "Domestic",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000220",
+    "name": "Tarp",
+    "description": "A heavy canvas tarp, useful for covering supplies or offering makeshift shelter against rain.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Tarp",
+      "Farmer",
+      "Adventurer",
+      "Camp",
+      "Utility",
+      "Travel",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000221",
+    "name": "Large Tent",
+    "description": "A spacious canvas tent, sturdy enough to house a small squad of soldiers or a merchant’s wares.",
+    "valueInPennies": 288,
+    "tags": [
+      "Clothing",
+      "Tent",
+      "Large",
+      "Soldier",
+      "Merchant",
+      "Camp",
+      "Utility",
+      "Travel"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000222",
+    "name": "Small Tent",
+    "description": "A compact tent, providing just enough shelter for a weary traveler or scout.",
+    "valueInPennies": 144,
+    "tags": [
+      "Clothing",
+      "Tent",
+      "Small",
+      "Adventurer",
+      "Scout",
+      "Camp",
+      "Utility",
+      "Travel"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000223",
+    "name": "Pavilion Tent",
+    "description": "A grand pavilion tent of fine make, often erected for nobles and officers to rest in style.",
+    "valueInPennies": 840,
+    "tags": [
+      "Clothing",
+      "Tent",
+      "Pavilion",
+      "Noble",
+      "Soldier",
+      "Camp",
+      "Ceremonial",
+      "Luxury"
+    ]
+  },
+  [
+  {
+    "id": "70000000-0000-0000-0000-000000000224",
+    "name": "Ball",
+    "description": "A small leather-stuffed ball, worn from use, often found in the hands of children or gamblers.",
+    "valueInPennies": 5,
+    "tags": [
+      "Miscellaneous",
+      "Toy",
+      "Child",
+      "Gambler",
+      "Tavern",
+      "Market",
+      "Entertainment",
+      "Game"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000225",
+    "name": "Bandage",
+    "description": "A strip of rough linen, bloodstained from previous use, ready to bind wounds on the battlefield.",
+    "valueInPennies": 4,
+    "tags": [
+      "Tool",
+      "Bandage",
+      "Soldier",
+      "Adventurer",
+      "Dungeon",
+      "Battlefield",
+      "Healing",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000226",
+    "name": "Baton",
+    "description": "A short wooden baton, simple yet effective for training drills or street brawls.",
+    "valueInPennies": 12,
+    "tags": [
+      "Weapon",
+      "Baton",
+      "Guard",
+      "Militia",
+      "Tavern",
+      "Barracks",
+      "Close Combat",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000227",
+    "name": "Davrich Lamp",
+    "description": "A brass Davrich lamp, its faintly magical glow casting steady light even in the darkest dungeons.",
+    "valueInPennies": 492,
+    "tags": [
+      "Tool",
+      "Lamp",
+      "Davrich",
+      "Adventurer",
+      "Scholar",
+      "Dungeon",
+      "Magical",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000228",
+    "name": "Deck of Cards",
+    "description": "A deck of worn playing cards, edges smudged with ale and the sweat of gamblers’ hands.",
+    "valueInPennies": 12,
+    "tags": [
+      "Miscellaneous",
+      "Cards",
+      "Gambler",
+      "Tavern",
+      "Market",
+      "Entertainment",
+      "Luck",
+      "Game"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000229",
+    "name": "Cooking Pot",
+    "description": "A blackened iron pot, scarred from countless fires, essential for feeding a camp of weary souls.",
+    "valueInPennies": 96,
+    "tags": [
+      "Tool",
+      "Cooking",
+      "Pot",
+      "Farmer",
+      "Adventurer",
+      "Camp",
+      "Tavern",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000230",
+    "name": "Doll",
+    "description": "A ragged cloth doll with button eyes, clutched tightly by children or left behind in ruins.",
+    "valueInPennies": 24,
+    "tags": [
+      "Miscellaneous",
+      "Toy",
+      "Child",
+      "Farmer",
+      "Tavern",
+      "Market",
+      "Domestic",
+      "Game"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000231",
+    "name": "Pan",
+    "description": "A heavy iron pan, equally suited for frying food or smashing a skull in desperate times.",
+    "valueInPennies": 90,
+    "tags": [
+      "Tool",
+      "Cooking",
+      "Pan",
+      "Farmer",
+      "Tavern",
+      "Kitchen",
+      "Utility",
+      "Improvised Weapon"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000232",
+    "name": "Pipe and Tobacco",
+    "description": "A carved wooden pipe with a pouch of pungent tobacco, beloved by soldiers and merchants alike.",
+    "valueInPennies": 40,
+    "tags": [
+      "Miscellaneous",
+      "Pipe",
+      "Tobacco",
+      "Soldier",
+      "Merchant",
+      "Tavern",
+      "Relaxation",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000233",
+    "name": "Bowl",
+    "description": "A simple clay bowl, chipped from use, serving food in taverns and roadside camps.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Bowl",
+      "Farmer",
+      "Adventurer",
+      "Tavern",
+      "Kitchen",
+      "Utility",
+      "Domestic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000234",
+    "name": "Tinderbox",
+    "description": "A weathered tinderbox with flint and steel, vital for sparking fire in cold nights or deep dungeons.",
+    "valueInPennies": 50,
+    "tags": [
+      "Tool",
+      "Tinderbox",
+      "Adventurer",
+      "Soldier",
+      "Dungeon",
+      "Camp",
+      "Utility",
+      "Survival"
+    ]
+  }
+]
