@@ -612,3 +612,6 @@ api-docs/
 
 # Build artifacts
 artifacts/
+
+# Deployment packages
+deployment.zip
