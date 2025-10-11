@@ -1,6 +1,6 @@
 # Tasks: Extend WealthLevel Enum with Treasure Tier
 
-**Input**: Design documents from `/specs/005-i-want-to/`
+**Input**- [x] T013 [P] Manual validation using quickstart scenarios from specs/005-i-want-to/quickstart.md Design documents from `/specs/005-i-want-to/`
 **Prerequisites**: plan.md (required), research.md, data-model.md, contracts/
 
 ## Execution Flow (main)
@@ -44,24 +44,24 @@
 
 ## Phase 3.1: Core Implementation
 
-- [ ] T001 Update backend WealthLevel enum in `backend/src/Models/WealthLevel.cs` (add Treasure=6, update Noble docs)
-- [ ] T002 Update frontend WealthLevel enum in `frontend/src/app/models/wealth-level.enum.ts` (mirror backend changes)
-- [ ] T003 [P] Update loot generation service logic in `backend/src/Services/LootGenerationService.cs` (handle treasure tier ranges)
-- [ ] T004 [P] Update wealth selector component template in `frontend/src/app/components/wealth-selector/wealth-selector.component.html`
-- [ ] T005 [P] Update wealth selector component logic in `frontend/src/app/components/wealth-selector/wealth-selector.component.ts`
-- [ ] T006 Update API controller validation in `backend/src/Controllers/LootController.cs` (accept wealthLevel=6)
+- [x] T001 Update backend WealthLevel enum in `backend/src/Models/WealthLevel.cs` (add Treasure=6, update Noble docs)
+- [x] T002 Update frontend WealthLevel enum in `frontend/src/app/models/wealth-level.enum.ts` (mirror backend changes)
+- [x] T003 [P] Update loot generation service logic in `backend/src/Services/LootGenerationService.cs` (handle treasure tier ranges)
+- [x] T004 [P] Update wealth selector component template in `frontend/src/app/components/wealth-selector/wealth-selector.component.html`
+- [x] T005 [P] Update wealth selector component logic in `frontend/src/app/components/wealth-selector/wealth-selector.component.ts`
+- [x] T006 Update API controller validation in `backend/src/Controllers/LootController.cs` (accept wealthLevel=6)
 
 ## Phase 3.2: Integration
 
-- [ ] T007 [P] Add wealth levels endpoint logic in `backend/src/Controllers/LootController.cs` (return 6 levels with updated ranges)
-- [ ] T008 [P] Update frontend service calls in `frontend/src/app/services/loot.service.ts` (handle new enum value)
-- [ ] T009 Update request/response validation in `backend/src/Models/GenerationRequest.cs` (if needed)
-- [ ] T010 [P] Update any hardcoded wealth level references in documentation or configuration files
+- [x] T007 [P] Add wealth levels endpoint logic in `backend/src/Controllers/LootController.cs` (return 6 levels with updated ranges)
+- [x] T008 [P] Update frontend service calls in `frontend/src/app/services/loot.service.ts` (handle new enum value)
+- [x] T009 Update request/response validation in `backend/src/Models/GenerationRequest.cs` (if needed)
+- [x] T010 [P] Update any hardcoded wealth level references in documentation or configuration files
 
 ## Phase 3.3: Documentation & Validation
 
-- [ ] T011 [P] Update API documentation (OpenAPI/Swagger) with new enum values
-- [ ] T012 [P] Update any user-facing documentation about wealth tiers
+- [x] T011 [P] Update API documentation (OpenAPI/Swagger) with new enum values
+- [x] T012 [P] Update any user-facing documentation about wealth tiers
 - [ ] T013 Manual validation using quickstart scenarios from `specs/005-i-want-to/quickstart.md`
 
 ## Dependencies

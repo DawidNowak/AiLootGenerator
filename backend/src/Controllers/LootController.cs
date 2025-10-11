@@ -149,6 +149,29 @@ namespace AiLootGenerator.RestApi.Controllers
                 });
             }
         }
+
+        /// <summary>
+        /// Gets all available wealth levels with their ranges and descriptions.
+        /// </summary>
+        /// <returns>A response containing all wealth levels with their penny ranges.</returns>
+        [HttpGet("wealth-levels")]
+        [ProducesResponseType(typeof(WealthLevelsResponse), StatusCodes.Status200OK)]
+        public IActionResult GetWealthLevels()
+        {
+            _logger.LogInformation("Retrieving wealth levels information");
+
+            var wealthLevels = new List<WealthLevelInfo>
+            {
+                new WealthLevelInfo { Value = 1, Name = "Rubbish", Range = "1-12 pennies" },
+                new WealthLevelInfo { Value = 2, Name = "Poor", Range = "13-60 pennies" },
+                new WealthLevelInfo { Value = 3, Name = "Common", Range = "61-240 pennies" },
+                new WealthLevelInfo { Value = 4, Name = "Wealthy", Range = "241-1200 pennies" },
+                new WealthLevelInfo { Value = 5, Name = "Noble", Range = "1201-3600 pennies" },
+                new WealthLevelInfo { Value = 6, Name = "Treasure", Range = "3601+ pennies" }
+            };
+
+            return Ok(new WealthLevelsResponse { WealthLevels = wealthLevels });
+        }
     }
 
     /// <summary>
@@ -207,5 +230,37 @@ namespace AiLootGenerator.RestApi.Controllers
         /// When user can retry the request.
         /// </summary>
         public DateTime RetryAfter { get; set; }
+    }
+
+    /// <summary>
+    /// Response model for wealth levels endpoint.
+    /// </summary>
+    public class WealthLevelsResponse
+    {
+        /// <summary>
+        /// Available wealth levels with their information.
+        /// </summary>
+        public List<WealthLevelInfo> WealthLevels { get; set; } = new();
+    }
+
+    /// <summary>
+    /// Information about a specific wealth level.
+    /// </summary>
+    public class WealthLevelInfo
+    {
+        /// <summary>
+        /// Numeric value of the wealth level.
+        /// </summary>
+        public int Value { get; set; }
+
+        /// <summary>
+        /// Display name of the wealth level.
+        /// </summary>
+        public string Name { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Penny range for this wealth level.
+        /// </summary>
+        public string Range { get; set; } = string.Empty;
     }
 }

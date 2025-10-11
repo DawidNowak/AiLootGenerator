@@ -148,7 +148,8 @@ Value ranges for each wealth level (in pennies):
 - Poor: 13-60 pennies  
 - Common: 61-240 pennies
 - Wealthy: 241-1200 pennies
-- Noble: 1201+ pennies";
+- Noble: 1201-3600 pennies
+- Treasure: 3601+ pennies";
 
             return prompt;
         }
@@ -193,7 +194,8 @@ Guidelines:
                 WealthLevel.Poor => "peasant scraps, basic items (13-60 pennies)",
                 WealthLevel.Common => "everyday goods, standard quality (61-240 pennies)",
                 WealthLevel.Wealthy => "merchant spoils, valuable items (241-1200 pennies)",
-                WealthLevel.Noble => "opulent treasures, rare items (1201+ pennies)",
+                WealthLevel.Noble => "opulent treasures, rare items (1201-3600 pennies)",
+                WealthLevel.Treasure => "legendary artifacts, ultimate treasures (3601+ pennies)",
                 _ => "unknown wealth level"
             };
         }
