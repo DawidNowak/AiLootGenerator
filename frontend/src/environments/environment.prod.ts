@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://api.warhammerloot.com/api',
+    apiUrl: 'https://ailootgenerator-api.azurewebsites.net/api',
     apiTimeout: 30000, // 30 seconds
     cooldownDurationMs: 60000, // 1 minute
     maxRetries: 3,
