@@ -5,6 +5,6 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "cd frontend && npm run build",
+  "buildCommand": "ls -la && npm run build --prefix frontend",
   "outputDirectory": "frontend/dist/frontend"
 }
