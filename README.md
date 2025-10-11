@@ -1,7 +1,9 @@
 # 🎲 AI Loot Generator
 
-[![.NET Build](https://github.com/DawidNowak/AiLootGenerator/actions/workflows/dotnet.yml/badge.svg)](https://github.com/DawidNowak/AiLootGenerator/actions/workflows/dotnet.yml)
-[![Angular Build](https://github.com/DawidNowak/AiLootGenerator/actions/workflows/angular.yml/badge.svg)](https://github.com/DawidNowak/AiLootGenerator/actions/workflows/angular.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/download/dotnet/8.0)
+[![Angular 18](https://img.shields.io/badge/Angular-18-DD0031)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5+-3178C6)](https://www.typescriptlang.org/)
 
 A responsive web application designed for **Warhammer Fantasy Roleplay (WFRP) Game Masters** to generate immersive, lore-consistent loot for tabletop sessions. The app helps GMs quickly create thematic treasures based on in-game locations and wealth levels, maintaining the gritty, low-fantasy atmosphere of the Warhammer Fantasy setting.
 
