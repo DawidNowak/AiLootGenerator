@@ -3860,7 +3860,6 @@
       "Luxury"
     ]
   },
-  [
   {
     "id": "70000000-0000-0000-0000-000000000224",
     "name": "Ball",
@@ -4035,6 +4034,2306 @@
       "Camp",
       "Utility",
       "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000235",
+    "name": "Anvil",
+    "description": "A massive block of iron, scarred from countless hammer blows, essential to any blacksmith’s forge.",
+    "valueInPennies": 1560,
+    "tags": [
+      "Tool",
+      "Forge",
+      "Blacksmith",
+      "Metalworking",
+      "Crafting",
+      "Heavy",
+      "Workshop",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000236",
+    "name": "Awl",
+    "description": "A sharp, slender tool used to pierce leather or wood, favored by cobblers and tanners.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Leatherworking",
+      "Crafting",
+      "Cobbler",
+      "Tanner",
+      "Workshop",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000237",
+    "name": "Bellows",
+    "description": "A sturdy set of bellows, puffing air into the forge fire to keep the flames roaring hot.",
+    "valueInPennies": 72,
+    "tags": [
+      "Tool",
+      "Forge",
+      "Blacksmith",
+      "Fire",
+      "Workshop",
+      "Utility",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000238",
+    "name": "Branding Iron",
+    "description": "A heavy iron rod ending in a heated mark, used by farmers and herders to claim their livestock.",
+    "valueInPennies": 120,
+    "tags": [
+      "Tool",
+      "Farmer",
+      "Herdsman",
+      "Livestock",
+      "Farm",
+      "Utility",
+      "Iron",
+      "Marking"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000239",
+    "name": "Butcher Tools",
+    "description": "A set of cleavers, hooks, and knives stained with the work of a seasoned butcher.",
+    "valueInPennies": 312,
+    "tags": [
+      "Tool",
+      "Butcher",
+      "Knife",
+      "Tavern",
+      "Market",
+      "Crafting",
+      "Food",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000240",
+    "name": "Iron Chain (1m)",
+    "description": "A length of heavy iron chain, useful for securing goods or restraining prisoners.",
+    "valueInPennies": 180,
+    "tags": [
+      "Tool",
+      "Iron",
+      "Utility",
+      "Blacksmith",
+      "Guard",
+      "Manacles",
+      "Dungeon",
+      "Restraint"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000241",
+    "name": "Wood Chisels Set",
+    "description": "A collection of sharp chisels used by carpenters and craftsmen to carve fine wooden details.",
+    "valueInPennies": 192,
+    "tags": [
+      "Tool",
+      "Woodworking",
+      "Carpenter",
+      "Crafting",
+      "Workshop",
+      "Utility",
+      "Set"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000242",
+    "name": "Crowbar",
+    "description": "A solid iron bar pried and bent, ideal for forcing open doors, crates, or locks.",
+    "valueInPennies": 46,
+    "tags": [
+      "Tool",
+      "Iron",
+      "Utility",
+      "Thief",
+      "Laborer",
+      "Dungeon",
+      "Prying",
+      "Breaking"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000243",
+    "name": "Disguise Kit",
+    "description": "A box of powders, paints, wigs, and masks favored by spies, actors, and thieves alike.",
+    "valueInPennies": 180,
+    "tags": [
+      "Tool",
+      "Stealth",
+      "Actor",
+      "Thief",
+      "Assassin",
+      "Tavern",
+      "Court",
+      "Deception",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000244",
+    "name": "Fishhook and Line",
+    "description": "A simple hook tied to a coarse string, indispensable for any fisherman along river or sea.",
+    "valueInPennies": 8,
+    "tags": [
+      "Tool",
+      "Fishing",
+      "Farmer",
+      "River",
+      "Coast",
+      "Utility",
+      "Survival",
+      "Food"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000245",
+    "name": "Trap",
+    "description": "A small metal trap with snapping jaws, designed to catch unwary animals in the wild.",
+    "valueInPennies": 60,
+    "tags": [
+      "Tool",
+      "Hunting",
+      "Farmer",
+      "Woodsman",
+      "Forest",
+      "Utility",
+      "Survival",
+      "Animal"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000246",
+    "name": "Large Trap",
+    "description": "A heavy iron contraption, brutal in design, meant to ensnare wolves, boars, or worse.",
+    "valueInPennies": 144,
+    "tags": [
+      "Tool",
+      "Hunting",
+      "Farmer",
+      "Forest",
+      "Animal",
+      "Iron",
+      "Utility",
+      "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000247",
+    "name": "Glue (4 Litres)",
+    "description": "A viscous bucket of glue with a pungent smell, used by craftsmen for wood and repairs.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Crafting",
+      "Woodworking",
+      "Carpenter",
+      "Workshop",
+      "Utility",
+      "Adhesive"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000248",
+    "name": "Hacksaw",
+    "description": "A fine-toothed saw with a thin blade, designed to cut through wood, bone, or metal.",
+    "valueInPennies": 204,
+    "tags": [
+      "Tool",
+      "Carpenter",
+      "Butcher",
+      "Workshop",
+      "Cutting",
+      "Utility",
+      "Crafting",
+      "Iron"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000249",
+    "name": "Hammer",
+    "description": "A solid-headed hammer, equally suited for pounding nails or skulls, depending on the wielder.",
+    "valueInPennies": 48,
+    "tags": [
+      "Tool",
+      "Blacksmith",
+      "Carpenter",
+      "Laborer",
+      "Workshop",
+      "Utility",
+      "Weapon",
+      "Blunt"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000250",
+    "name": "Hourglass",
+    "description": "A glass vessel filled with sand that marks the passage of time, favored by scholars and tacticians.",
+    "valueInPennies": 120,
+    "tags": [
+      "Tool",
+      "Timekeeping",
+      "Scholar",
+      "Wizard",
+      "Library",
+      "Study",
+      "Utility",
+      "Desk"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000251",
+    "name": "Lock Picks (12)",
+    "description": "A slender set of finely crafted tools, essential for locksmiths or cunning thieves.",
+    "valueInPennies": 72,
+    "tags": [
+      "Tool",
+      "Thief",
+      "Assassin",
+      "Locksmith",
+      "Dungeon",
+      "Stealth",
+      "Utility",
+      "Breaking"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000252",
+    "name": "Magnifying Glass",
+    "description": "A polished lens that reveals minute details, indispensable for alchemists and scholars.",
+    "valueInPennies": 1800,
+    "tags": [
+      "Tool",
+      "Scholar",
+      "Alchemist",
+      "Library",
+      "Investigation",
+      "Study",
+      "Observation",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000253",
+    "name": "Manacles",
+    "description": "Iron shackles used to restrain prisoners, their weight a reminder of captivity and law enforcement.",
+    "valueInPennies": 120,
+    "tags": [
+      "Tool",
+      "Restraint",
+      "Guard",
+      "Dungeon",
+      "Soldier",
+      "Prisoner",
+      "Iron",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000254",
+    "name": "Copper (1 Pound)",
+    "description": "A small bundle of raw copper, a basic metal for coins, tools, and simple crafts.",
+    "valueInPennies": 17,
+    "tags": [
+      "Metal",
+      "Crafting",
+      "Blacksmith",
+      "Workshop",
+      "Trader",
+      "Mining",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000255",
+    "name": "Iron (1 Pound)",
+    "description": "A pound of raw iron, ready for forging into tools, weapons, or armor.",
+    "valueInPennies": 13,
+    "tags": [
+      "Metal",
+      "Blacksmith",
+      "Weapon",
+      "Armor",
+      "Workshop",
+      "Crafting",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000256",
+    "name": "Steel (1 Pound)",
+    "description": "A pound of fine steel, prized for its strength and versatility in weapons and armor.",
+    "valueInPennies": 210,
+    "tags": [
+      "Metal",
+      "Weapon",
+      "Armor",
+      "Blacksmith",
+      "Crafting",
+      "Workshop",
+      "Soldier",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000257",
+    "name": "Silver (1 Ounce)",
+    "description": "A small ounce of silver, highly valued for coinage, jewelry, or alchemical experiments.",
+    "valueInPennies": 12,
+    "tags": [
+      "Metal",
+      "Jewelry",
+      "Trader",
+      "Alchemist",
+      "Valuable",
+      "Merchant",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000258",
+    "name": "Gold (1 Ounce)",
+    "description": "A gleaming ounce of gold, treasured by nobles, merchants, and treasure hunters alike.",
+    "valueInPennies": 240,
+    "tags": [
+      "Metal",
+      "Jewelry",
+      "Trader",
+      "Noble",
+      "Merchant",
+      "Valuable",
+      "Coinage",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000259",
+    "name": "Microscope",
+    "description": "A finely tuned optical instrument revealing the invisible world, prized by scholars and alchemists.",
+    "valueInPennies": 3600,
+    "tags": [
+      "Tool",
+      "Scholar",
+      "Alchemist",
+      "Library",
+      "Study",
+      "Observation",
+      "Utility",
+      "Investigation"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000260",
+    "name": "Sewing Needles (5)",
+    "description": "A small set of fine needles, essential for tailors, travelers, or mending worn garments.",
+    "valueInPennies": 72,
+    "tags": [
+      "Tool",
+      "Clothing",
+      "Tailor",
+      "Traveler",
+      "Workshop",
+      "Crafting",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000261",
+    "name": "Pestle and Mortar",
+    "description": "A sturdy stone set used to grind herbs, spices, and alchemical ingredients.",
+    "valueInPennies": 12,
+    "tags": [
+      "Tool",
+      "Alchemy",
+      "Cooking",
+      "Herbalist",
+      "Potion",
+      "Workshop",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000262",
+    "name": "Climbing Pick",
+    "description": "A sharp iron pick designed for scaling rock faces and treacherous mountains.",
+    "valueInPennies": 84,
+    "tags": [
+      "Tool",
+      "Climber",
+      "Adventurer",
+      "Explorer",
+      "Mountain",
+      "Utility",
+      "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000263",
+    "name": "Miner's Pick",
+    "description": "A durable pick used to break rock and extract ore deep within mines.",
+    "valueInPennies": 300,
+    "tags": [
+      "Tool",
+      "Miner",
+      "Mining",
+      "Workshop",
+      "Iron",
+      "Utility",
+      "Crafting",
+      "Survival"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000264",
+    "name": "Pitchfork",
+    "description": "A three-pronged fork for moving hay or defending a farmhouse in desperate times.",
+    "valueInPennies": 36,
+    "tags": [
+      "Tool",
+      "Farmer",
+      "Agriculture",
+      "Farm",
+      "Utility",
+      "Weapon",
+      "Wood",
+      "Rural"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000265",
+    "name": "Plough",
+    "description": "A heavy wooden plough, used to till the soil and prepare fields for sowing.",
+    "valueInPennies": 552,
+    "tags": [
+      "Tool",
+      "Farmer",
+      "Agriculture",
+      "Farm",
+      "Woodworking",
+      "Field",
+      "Utility",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000266",
+    "name": "Saw",
+    "description": "A toothed steel blade mounted on a frame, ideal for cutting wood with precision.",
+    "valueInPennies": 168,
+    "tags": [
+      "Tool",
+      "Carpenter",
+      "Woodworking",
+      "Workshop",
+      "Crafting",
+      "Utility",
+      "Iron"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000267",
+    "name": "Scales",
+    "description": "A finely balanced set of scales, indispensable for merchants, apothecaries, and goldsmiths.",
+    "valueInPennies": 480,
+    "tags": [
+      "Tool",
+      "Merchant",
+      "Trader",
+      "Apothecary",
+      "Goldsmith",
+      "Market",
+      "Utility",
+      "Weighing"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000268",
+    "name": "Scythe",
+    "description": "A long, curved blade attached to a wooden shaft, perfect for cutting grain or tall grass.",
+    "valueInPennies": 524,
+    "tags": [
+      "Tool",
+      "Farmer",
+      "Agriculture",
+      "Harvest",
+      "Field",
+      "Weapon",
+      "Wood",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000269",
+    "name": "Sealing Wax",
+    "description": "Bright red wax used to seal letters and documents, leaving the mark of a noble hand.",
+    "valueInPennies": 24,
+    "tags": [
+      "Tool",
+      "Clerk",
+      "Noble",
+      "Letter",
+      "Court",
+      "Document",
+      "Utility",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000270",
+    "name": "Wooden Wedge",
+    "description": "A small wedge of hard wood, handy for splitting logs or stabilizing heavy objects.",
+    "valueInPennies": 1,
+    "tags": [
+      "Tool",
+      "Woodworking",
+      "Carpenter",
+      "Workshop",
+      "Utility",
+      "Crafting",
+      "Heavy"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000271",
+    "name": "Whetstone",
+    "description": "A coarse stone used to sharpen blades and maintain weapons or tools in top condition.",
+    "valueInPennies": 36,
+    "tags": [
+      "Tool",
+      "Sharpening",
+      "Weapon",
+      "Blacksmith",
+      "Carpenter",
+      "Workshop",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000272",
+    "name": "Wheelbarrow",
+    "description": "A sturdy wooden cart with a single wheel, perfect for hauling soil, hay, or heavy cargo.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Farmer",
+      "Laborer",
+      "Transport",
+      "Woodworking",
+      "Utility",
+      "Workshop"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000273",
+    "name": "Grooming Kit",
+    "description": "A small leather pouch filled with combs, brushes, and scissors, prized by nobles and mercenaries who value appearance as much as bladework.",
+    "valueInPennies": 120,
+    "tags": [
+      "Tool",
+      "Personal Care",
+      "Noble",
+      "Mercenary",
+      "Tavern",
+      "Travel",
+      "Utility",
+      "Adornment"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000274",
+    "name": "Saddle",
+    "description": "A well-worn leather saddle offering comfort and stability to any rider crossing the battlefields or wild roads of the Empire.",
+    "valueInPennies": 336,
+    "tags": [
+      "Tool",
+      "Riding Gear",
+      "Soldier",
+      "Knight",
+      "Traveler",
+      "Horse",
+      "Battlefield",
+      "Utility"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000275",
+    "name": "Saddlebag",
+    "description": "A sturdy pair of leather bags used by travelers and merchants to carry supplies and coin across long distances.",
+    "valueInPennies": 43,
+    "tags": [
+      "Tool",
+      "Storage",
+      "Merchant",
+      "Traveler",
+      "Utility",
+      "Road",
+      "Pack",
+      "Leatherwork"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000276",
+    "name": "Aspergilla",
+    "description": "A silver-tipped wand used by priests to sprinkle holy water, warding off corruption and impurity.",
+    "valueInPennies": 36,
+    "tags": [
+      "Religious",
+      "Ceremonial",
+      "Priest",
+      "Temple",
+      "Holy",
+      "Ritual",
+      "Blessing",
+      "Faith"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000277",
+    "name": "Prayer Beads",
+    "description": "A string of smooth wooden beads worn around the wrist or neck, aiding priests and pilgrims in their devotions.",
+    "valueInPennies": 24,
+    "tags": [
+      "Religious",
+      "Jewelry",
+      "Priest",
+      "Pilgrim",
+      "Temple",
+      "Prayer",
+      "Faith",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000278",
+    "name": "Large Brazier",
+    "description": "A grand iron brazier fit for a temple hall, its roaring flames banishing chill and shadow alike.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Tool",
+      "Temple",
+      "Fire",
+      "Ceremonial",
+      "Religious",
+      "Utility",
+      "Heat",
+      "Lighting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000279",
+    "name": "Medium Brazier",
+    "description": "A sturdy brazier used to warm small chapels or guardrooms, giving off a steady glow and comforting heat.",
+    "valueInPennies": 480,
+    "tags": [
+      "Tool",
+      "Fire",
+      "Utility",
+      "Temple",
+      "Guardroom",
+      "Lighting",
+      "Ceremonial",
+      "Heat"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000280",
+    "name": "Small Brazier",
+    "description": "A portable brazier ideal for travelers and hermits, offering light and warmth in the wilderness.",
+    "valueInPennies": 240,
+    "tags": [
+      "Tool",
+      "Fire",
+      "Traveler",
+      "Hermit",
+      "Utility",
+      "Camp",
+      "Lighting",
+      "Heat"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000281",
+    "name": "Iron Candelabra",
+    "description": "A heavy wrought-iron candelabra, favored in taverns and temples for its durability and simple craftsmanship.",
+    "valueInPennies": 204,
+    "tags": [
+      "Tool",
+      "Lighting",
+      "Ironwork",
+      "Tavern",
+      "Temple",
+      "Utility",
+      "Crafted",
+      "Decorative"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000282",
+    "name": "Silver Candelabra",
+    "description": "An ornate silver candelabra gleaming with polish, often found in noble halls or shrines of wealthier temples.",
+    "valueInPennies": 480,
+    "tags": [
+      "Jewelry",
+      "Lighting",
+      "Noble",
+      "Temple",
+      "Court",
+      "Decorative",
+      "Valuable",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000283",
+    "name": "Gold Candelabra",
+    "description": "A magnificent golden candelabra radiating luxury, a centerpiece in any noble court or grand cathedral.",
+    "valueInPennies": 2760,
+    "tags": [
+      "Jewelry",
+      "Lighting",
+      "Gold",
+      "Noble",
+      "Cathedral",
+      "Court",
+      "Luxury",
+      "Ceremonial",
+      "Wealth"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000284",
+    "name": "Iron Candlesticks",
+    "description": "A pair of simple iron candlesticks, sturdy and practical, favored by common folk and soldiers on campaign.",
+    "valueInPennies": 80,
+    "tags": [
+      "Tool",
+      "Lighting",
+      "Ironwork",
+      "Soldier",
+      "Tavern",
+      "Camp",
+      "Utility",
+      "Simple"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000285",
+    "name": "Silver Candlesticks",
+    "description": "Delicate silver candlesticks that reflect light beautifully, a mark of refinement among the merchant class.",
+    "valueInPennies": 190,
+    "tags": [
+      "Jewelry",
+      "Lighting",
+      "Merchant",
+      "Noble",
+      "Home",
+      "Luxury",
+      "Decorative",
+      "Refined"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000286",
+    "name": "Gold Candlesticks",
+    "description": "A lavish set of gold candlesticks, symbols of opulence reserved for lords, bishops, and wealthy merchants.",
+    "valueInPennies": 1104,
+    "tags": [
+      "Jewelry",
+      "Lighting",
+      "Gold",
+      "Noble",
+      "Bishop",
+      "Wealth",
+      "Luxury",
+      "Ceremonial",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000287",
+    "name": "Censer",
+    "description": "A hanging metal censer used to burn incense during rituals, filling the air with sacred smoke and divine scent.",
+    "valueInPennies": 480,
+    "tags": [
+      "Religious",
+      "Ceremonial",
+      "Priest",
+      "Temple",
+      "Ritual",
+      "Holy",
+      "Smoke",
+      "Incense"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000288",
+    "name": "Incense, 1 Oz Stick",
+    "description": "A thin stick of fragrant incense, burned to purify temples, calm the mind, or conceal less pleasant odors.",
+    "valueInPennies": 24,
+    "tags": [
+      "Religious",
+      "Ceremonial",
+      "Temple",
+      "Priest",
+      "Aromatic",
+      "Purification",
+      "Ritual",
+      "Fragrance"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000289",
+    "name": "Relic Box",
+    "description": "A small ornate box crafted to hold sacred relics or charms, often locked and sealed with wax sigils.",
+    "valueInPennies": 60,
+    "tags": [
+      "Religious",
+      "Container",
+      "Temple",
+      "Priest",
+      "Holy",
+      "Ceremonial",
+      "Storage",
+      "Faith"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000290",
+    "name": "Wooden Armband",
+    "description": "A simple band of carved wood worn on the arm, favored by peasants and woodsmen for humble adornment.",
+    "valueInPennies": 30,
+    "tags": [
+      "Jewelry",
+      "Armband",
+      "Wood",
+      "Peasant",
+      "Farmer",
+      "Crafted",
+      "Rural",
+      "Adornment"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000291",
+    "name": "Bronze Armband",
+    "description": "A sturdy bronze armband with faint etchings, often worn by soldiers and travelers as a token of endurance.",
+    "valueInPennies": 360,
+    "tags": [
+      "Jewelry",
+      "Armband",
+      "Bronze",
+      "Soldier",
+      "Traveler",
+      "Tavern",
+      "Battlefield",
+      "Adornment"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000292",
+    "name": "Silver Armband",
+    "description": "A gleaming silver armband engraved with intricate runes, marking its wearer as someone of modest wealth.",
+    "valueInPennies": 564,
+    "tags": [
+      "Jewelry",
+      "Armband",
+      "Silver",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Valuable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000293",
+    "name": "Gilded Silver Armband",
+    "description": "A silver armband overlaid with delicate gold filigree, fit for a courtier or priest of refined taste.",
+    "valueInPennies": 1812,
+    "tags": [
+      "Jewelry",
+      "Armband",
+      "Silver",
+      "Gold",
+      "Noble",
+      "Priest",
+      "Court",
+      "Adornment",
+      "Wealth"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000294",
+    "name": "Gold Armband",
+    "description": "A masterfully crafted band of pure gold, a clear display of affluence and noble heritage.",
+    "valueInPennies": 4080,
+    "tags": [
+      "Jewelry",
+      "Armband",
+      "Gold",
+      "Noble",
+      "Court",
+      "Wealth",
+      "Adornment",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000295",
+    "name": "Wooden Bracelet",
+    "description": "A rough-hewn bracelet of oak beads strung together, commonly worn by rural folk.",
+    "valueInPennies": 18,
+    "tags": [
+      "Jewelry",
+      "Bracelet",
+      "Wood",
+      "Farmer",
+      "Crafted",
+      "Village",
+      "Adornment",
+      "Simple"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000296",
+    "name": "Bronze Bracelet",
+    "description": "A plain bronze bracelet, dulled by age but still sturdy, often traded in local markets.",
+    "valueInPennies": 120,
+    "tags": [
+      "Jewelry",
+      "Bracelet",
+      "Bronze",
+      "Merchant",
+      "Market",
+      "Traveler",
+      "Adornment",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000297",
+    "name": "Silver Bracelet",
+    "description": "A fine silver bracelet polished to a mirror shine, cherished by merchants and courtiers alike.",
+    "valueInPennies": 312,
+    "tags": [
+      "Jewelry",
+      "Bracelet",
+      "Silver",
+      "Merchant",
+      "Court",
+      "Adornment",
+      "Wealth",
+      "Gift"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000298",
+    "name": "Gilded Silver Bracelet",
+    "description": "A bracelet of silver adorned with thin golden leaves, a favorite among nobles seeking subtle luxury.",
+    "valueInPennies": 876,
+    "tags": [
+      "Jewelry",
+      "Bracelet",
+      "Silver",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000299",
+    "name": "Gold Bracelet",
+    "description": "A bracelet of pure gold, its weight a constant reminder of the wealth it represents.",
+    "valueInPennies": 2400,
+    "tags": [
+      "Jewelry",
+      "Bracelet",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Treasure",
+      "Wealth"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000300",
+    "name": "Wooden Pendant",
+    "description": "A small wooden charm carved in the likeness of a leaf, worn for luck by woodsmen.",
+    "valueInPennies": 9,
+    "tags": [
+      "Jewelry",
+      "Pendant",
+      "Wood",
+      "Woodsman",
+      "Rural",
+      "Talisman",
+      "Adornment",
+      "Simple"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000301",
+    "name": "Bronze Pendant",
+    "description": "A crude bronze pendant shaped like a hammer, often worn by craftsmen and miners.",
+    "valueInPennies": 108,
+    "tags": [
+      "Jewelry",
+      "Pendant",
+      "Bronze",
+      "Craftsman",
+      "Miner",
+      "Talisman",
+      "Adornment",
+      "Labor"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000302",
+    "name": "Silver Pendant",
+    "description": "A gleaming silver pendant etched with a faint sigil, sometimes believed to ward off evil.",
+    "valueInPennies": 168,
+    "tags": [
+      "Jewelry",
+      "Pendant",
+      "Silver",
+      "Magical",
+      "Ward",
+      "Priest",
+      "Temple",
+      "Adornment"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000303",
+    "name": "Gilded Silver Pendant",
+    "description": "A silver pendant rimmed with gold, depicting a radiant sun, favored by nobles and clerics.",
+    "valueInPennies": 492,
+    "tags": [
+      "Jewelry",
+      "Pendant",
+      "Silver",
+      "Gold",
+      "Noble",
+      "Priest",
+      "Temple",
+      "Adornment",
+      "Faith"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000304",
+    "name": "Gold Pendant",
+    "description": "A heavy pendant of gold embossed with fine filigree, prized by the wealthy and devout.",
+    "valueInPennies": 504,
+    "tags": [
+      "Jewelry",
+      "Pendant",
+      "Gold",
+      "Noble",
+      "Priest",
+      "Temple",
+      "Adornment",
+      "Wealth"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000305",
+    "name": "Wooden Earrings",
+    "description": "Simple wooden hoops worn by villagers, their surfaces smoothed by years of use.",
+    "valueInPennies": 12,
+    "tags": [
+      "Jewelry",
+      "Earrings",
+      "Wood",
+      "Villager",
+      "Crafted",
+      "Adornment",
+      "Simple",
+      "Rural"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000306",
+    "name": "Bronze Earrings",
+    "description": "Small bronze earrings shaped like drops, a common trinket in the markets of small towns.",
+    "valueInPennies": 144,
+    "tags": [
+      "Jewelry",
+      "Earrings",
+      "Bronze",
+      "Merchant",
+      "Market",
+      "Adornment",
+      "Common",
+      "Trade"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000307",
+    "name": "Silver Earrings",
+    "description": "Elegant silver earrings that catch the light beautifully, worn by merchants and courtesans.",
+    "valueInPennies": 216,
+    "tags": [
+      "Jewelry",
+      "Earrings",
+      "Silver",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000308",
+    "name": "Gilded Silver Earrings",
+    "description": "Silver earrings adorned with gold trim, an exquisite piece of craftsmanship for the refined.",
+    "valueInPennies": 612,
+    "tags": [
+      "Jewelry",
+      "Earrings",
+      "Silver",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Luxury",
+      "Gift"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000309",
+    "name": "Gold Earrings",
+    "description": "Delicate loops of gold that shimmer with every movement, a mark of elegance and fortune.",
+    "valueInPennies": 516,
+    "tags": [
+      "Jewelry",
+      "Earrings",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Wealth",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000310",
+    "name": "Wooden Necklace",
+    "description": "A string of wooden beads, simple yet cherished as a keepsake among the humble folk.",
+    "valueInPennies": 36,
+    "tags": [
+      "Jewelry",
+      "Necklace",
+      "Wood",
+      "Peasant",
+      "Rural",
+      "Adornment",
+      "Simple",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000311",
+    "name": "Bronze Necklace",
+    "description": "A chain of dull bronze links, often worn by traders or mercenaries as a lucky charm.",
+    "valueInPennies": 420,
+    "tags": [
+      "Jewelry",
+      "Necklace",
+      "Bronze",
+      "Trader",
+      "Mercenary",
+      "Tavern",
+      "Adornment",
+      "Amulet"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000312",
+    "name": "Silver Necklace",
+    "description": "A delicate silver chain with a small pendant, a favorite among courtiers and scholars.",
+    "valueInPennies": 456,
+    "tags": [
+      "Jewelry",
+      "Necklace",
+      "Silver",
+      "Court",
+      "Scholar",
+      "Adornment",
+      "Gift",
+      "Valuable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000313",
+    "name": "Gilded Silver Necklace",
+    "description": "A silver chain with gold filigree, radiating subtle splendor suited to the upper class.",
+    "valueInPennies": 1380,
+    "tags": [
+      "Jewelry",
+      "Necklace",
+      "Silver",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Wealth",
+      "Gift"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000314",
+    "name": "Gold Necklace",
+    "description": "A finely wrought gold chain that gleams in candlelight, symbolizing status and luxury.",
+    "valueInPennies": 1680,
+    "tags": [
+      "Jewelry",
+      "Necklace",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Wealth",
+      "Luxury"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000315",
+    "name": "Wooden Ring",
+    "description": "A crude wooden ring carved by hand, often exchanged as a token of affection among villagers.",
+    "valueInPennies": 12,
+    "tags": [
+      "Jewelry",
+      "Ring",
+      "Wood",
+      "Villager",
+      "Peasant",
+      "Gift",
+      "Adornment",
+      "Simple"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000316",
+    "name": "Bronze Ring",
+    "description": "A plain bronze ring, worn smooth by years of use, popular among artisans and travelers.",
+    "valueInPennies": 84,
+    "tags": [
+      "Jewelry",
+      "Ring",
+      "Bronze",
+      "Artisan",
+      "Traveler",
+      "Adornment",
+      "Common",
+      "Market"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000317",
+    "name": "Silver Ring",
+    "description": "A polished silver ring engraved with fine lines, a modest but elegant ornament.",
+    "valueInPennies": 156,
+    "tags": [
+      "Jewelry",
+      "Ring",
+      "Silver",
+      "Merchant",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Gift"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000318",
+    "name": "Gilded Silver Ring",
+    "description": "A silver ring gilded with gold, its craftsmanship admired in the courts of the Empire.",
+    "valueInPennies": 336,
+    "tags": [
+      "Jewelry",
+      "Ring",
+      "Silver",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Luxury",
+      "Wealth"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000319",
+    "name": "Gold Ring",
+    "description": "A simple yet resplendent ring of gold, gleaming proof of fortune and refined taste.",
+    "valueInPennies": 516,
+    "tags": [
+      "Jewelry",
+      "Ring",
+      "Gold",
+      "Noble",
+      "Court",
+      "Adornment",
+      "Wealth",
+      "Treasure"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000320",
+    "name": "Uncut Agate Gemstone",
+    "description": "A rough agate stone showing faint bands of color, prized by artisans for its hidden beauty.",
+    "valueInPennies": 12,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Mineral",
+      "Merchant",
+      "Jeweler",
+      "Mine",
+      "Trade",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000321",
+    "name": "Cut Agate Gemstone",
+    "description": "A polished agate gleaming with layered hues, often set into amulets and charms.",
+    "valueInPennies": 132,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Jewelry",
+      "Merchant",
+      "Noble",
+      "Adornment",
+      "Valuable",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000322",
+    "name": "Uncut Amber Gemstone",
+    "description": "A lump of golden amber trapping ancient air and perhaps a forgotten insect.",
+    "valueInPennies": 120,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Amber",
+      "Merchant",
+      "Collector",
+      "Mine",
+      "Natural",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000323",
+    "name": "Cut Amber Gemstone",
+    "description": "A translucent amber gem radiating warm light, beloved by nobles for its gentle glow.",
+    "valueInPennies": 240,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Amber",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Valuable",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000324",
+    "name": "Uncut Amethyst Gemstone",
+    "description": "A jagged violet crystal that glimmers faintly even in the dimmest light.",
+    "valueInPennies": 60,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Amethyst",
+      "Mine",
+      "Merchant",
+      "Mineral",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000325",
+    "name": "Cut Amethyst Gemstone",
+    "description": "A deep-purple amethyst finely cut to catch the light like noble wine in glass.",
+    "valueInPennies": 480,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Amethyst",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Valuable",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000326",
+    "name": "Uncut Chalcedony Gemstone",
+    "description": "A dull blue-gray stone concealing a smooth heart within its rough exterior.",
+    "valueInPennies": 72,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Chalcedony",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000327",
+    "name": "Cut Chalcedony Gemstone",
+    "description": "A polished chalcedony gem reflecting soft hues, favored by priests and healers.",
+    "valueInPennies": 180,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Chalcedony",
+      "Jewelry",
+      "Priest",
+      "Adornment",
+      "Ceremonial",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000328",
+    "name": "Uncut Chrysoberyl Gemstone",
+    "description": "A pale green crystal still bearing the scars of the earth that birthed it.",
+    "valueInPennies": 120,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Chrysoberyl",
+      "Mine",
+      "Mineral",
+      "Raw Material",
+      "Merchant",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000329",
+    "name": "Cut Chrysoberyl Gemstone",
+    "description": "A gleaming green gem with a cat’s-eye shimmer, treasured by discerning jewelers.",
+    "valueInPennies": 360,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Chrysoberyl",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Crafted",
+      "Valuable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000330",
+    "name": "Uncut Diamond Gemstone",
+    "description": "A cloudy crystal with hidden brilliance waiting to be freed by a master’s hand.",
+    "valueInPennies": 6000,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Diamond",
+      "Mine",
+      "Merchant",
+      "Raw Material",
+      "Luxury",
+      "Valuable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000331",
+    "name": "Cut Diamond Gemstone",
+    "description": "A flawless diamond blazing with cold fire, the crown of any noble’s collection.",
+    "valueInPennies": 7200,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Diamond",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Luxury",
+      "Court",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000332",
+    "name": "Uncut Emerald Gemstone",
+    "description": "A rough green shard whispering of deep forests and hidden wealth.",
+    "valueInPennies": 1200,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Emerald",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000333",
+    "name": "Cut Emerald Gemstone",
+    "description": "A vivid emerald polished to perfection, radiating the color of life and envy.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Emerald",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Valuable",
+      "Crafted",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000334",
+    "name": "Uncut Garnet Gemstone",
+    "description": "A dark red stone that gleams faintly like dried blood under torchlight.",
+    "valueInPennies": 240,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Garnet",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000335",
+    "name": "Cut Garnet Gemstone",
+    "description": "A polished garnet glowing with deep crimson light, beloved by soldiers and lovers alike.",
+    "valueInPennies": 360,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Garnet",
+      "Jewelry",
+      "Soldier",
+      "Noble",
+      "Adornment",
+      "Crafted",
+      "Symbolic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000336",
+    "name": "Uncut Hematite Gemstone",
+    "description": "A dull iron-gray stone with a faint metallic sheen, heavy and cold to the touch.",
+    "valueInPennies": 11,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Hematite",
+      "Mineral",
+      "Mine",
+      "Merchant",
+      "Raw Material",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000337",
+    "name": "Cut Hematite Gemstone",
+    "description": "A polished hematite gem reflecting light like dark steel, often worn by soldiers for luck.",
+    "valueInPennies": 72,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Hematite",
+      "Jewelry",
+      "Soldier",
+      "Adornment",
+      "Protection",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000338",
+    "name": "Uncut Jade Gemstone",
+    "description": "A pale green stone revered by mystics, believed to bring harmony and endurance.",
+    "valueInPennies": 480,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Jade",
+      "Mineral",
+      "Mine",
+      "Priest",
+      "Mystic",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000339",
+    "name": "Cut Jade Gemstone",
+    "description": "A smooth jade gem carved with care, often used in charms and ceremonial trinkets.",
+    "valueInPennies": 720,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Jade",
+      "Jewelry",
+      "Priest",
+      "Adornment",
+      "Ceremonial",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000340",
+    "name": "Uncut Jacinth Gemstone",
+    "description": "A fiery orange-red crystal glowing faintly with inner warmth.",
+    "valueInPennies": 6000,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Jacinth",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Rare",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000341",
+    "name": "Cut Jacinth Gemstone",
+    "description": "A brilliant jacinth gem blazing like molten gold, coveted by nobles and collectors.",
+    "valueInPennies": 7200,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Jacinth",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Luxury",
+      "Crafted",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000342",
+    "name": "Uncut Jet Gemstone",
+    "description": "A matte black stone once formed from ancient wood, smooth yet lifeless.",
+    "valueInPennies": 240,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Jet",
+      "Mineral",
+      "Mine",
+      "Raw Material",
+      "Merchant",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000343",
+    "name": "Cut Jet Gemstone",
+    "description": "A gleaming black gem often worn in mourning jewelry or carved into holy talismans.",
+    "valueInPennies": 480,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Jet",
+      "Jewelry",
+      "Priest",
+      "Adornment",
+      "Ceremonial",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000344",
+    "name": "Uncut Lapis Lazuli Gemstone",
+    "description": "A vivid blue stone flecked with gold, sacred to scholars and nobles alike.",
+    "valueInPennies": 24,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Lapis Lazuli",
+      "Mine",
+      "Scholar",
+      "Priest",
+      "Mineral",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000345",
+    "name": "Cut Lapis Lazuli Gemstone",
+    "description": "A polished lapis lazuli shining like the night sky, often set in holy ornaments.",
+    "valueInPennies": 96,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Lapis Lazuli",
+      "Jewelry",
+      "Priest",
+      "Scholar",
+      "Adornment",
+      "Ceremonial"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000346",
+    "name": "Uncut Malachite Gemstone",
+    "description": "A rough green stone streaked with darker lines, popular among hedge wizards.",
+    "valueInPennies": 24,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Malachite",
+      "Mine",
+      "Mineral",
+      "Wizard",
+      "Raw Material",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000347",
+    "name": "Cut Malachite Gemstone",
+    "description": "A swirled green malachite polished to a mirror sheen, used in charms and jewelry.",
+    "valueInPennies": 96,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Malachite",
+      "Jewelry",
+      "Wizard",
+      "Adornment",
+      "Crafted",
+      "Mystical"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000348",
+    "name": "Uncut Moonstone Gemstone",
+    "description": "A cloudy white stone that seems to glow faintly under moonlight.",
+    "valueInPennies": 360,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Moonstone",
+      "Mine",
+      "Mystical",
+      "Mineral",
+      "Raw Material",
+      "Priest"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000349",
+    "name": "Cut Moonstone Gemstone",
+    "description": "A luminous moonstone that shimmers with soft light, favored by seers and nobles.",
+    "valueInPennies": 720,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Moonstone",
+      "Jewelry",
+      "Seer",
+      "Priest",
+      "Adornment",
+      "Mystical",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000350",
+    "name": "Uncut Obsidian Gemstone",
+    "description": "A shard of volcanic glass with razor-sharp edges and dark reflections.",
+    "valueInPennies": 10,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Obsidian",
+      "Mine",
+      "Mineral",
+      "Assassin",
+      "Raw Material",
+      "Dangerous"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000351",
+    "name": "Cut Obsidian Gemstone",
+    "description": "A mirror-like black gem gleaming ominously, often used in dark rituals.",
+    "valueInPennies": 72,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Obsidian",
+      "Jewelry",
+      "Assassin",
+      "Priest",
+      "Dark Magic",
+      "Ceremonial",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000352",
+    "name": "Uncut Onyx Gemstone",
+    "description": "A dark, layered stone that seems to absorb light rather than reflect it.",
+    "valueInPennies": 72,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Onyx",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000353",
+    "name": "Cut Onyx Gemstone",
+    "description": "A smooth black onyx gleaming like midnight glass, worn by nobles and priests of Morr.",
+    "valueInPennies": 204,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Onyx",
+      "Jewelry",
+      "Priest",
+      "Noble",
+      "Ceremonial",
+      "Adornment",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000354",
+    "name": "Uncut Black Opal Gemstone",
+    "description": "A rare dark stone flickering with hidden hues of green and violet fire.",
+    "valueInPennies": 7200,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Black Opal",
+      "Mine",
+      "Rare",
+      "Mineral",
+      "Collector",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000355",
+    "name": "Cut Black Opal Gemstone",
+    "description": "A mesmerizing gem that dances with spectral colors, whispered to hold arcane power.",
+    "valueInPennies": 8400,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Black Opal",
+      "Jewelry",
+      "Wizard",
+      "Noble",
+      "Adornment",
+      "Magical",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000356",
+    "name": "Coloured Pearl",
+    "description": "A lustrous pearl shimmering with subtle hues, born from the depths of warm southern seas.",
+    "valueInPennies": 2400,
+    "tags": [
+      "Gemstone",
+      "Pearl",
+      "Jewelry",
+      "Noble",
+      "Merchant",
+      "Sea",
+      "Adornment",
+      "Luxury",
+      "Exotic"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000357",
+    "name": "Common Pearl",
+    "description": "A simple white pearl with soft luster, often used in modest jewelry and trade.",
+    "valueInPennies": 240,
+    "tags": [
+      "Gemstone",
+      "Pearl",
+      "Jewelry",
+      "Merchant",
+      "Sailor",
+      "Adornment",
+      "Trade",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000358",
+    "name": "Uncut Peridot Gemstone",
+    "description": "A raw green crystal that gleams faintly in torchlight, hinting at its future brilliance.",
+    "valueInPennies": 1800,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Peridot",
+      "Mine",
+      "Mineral",
+      "Raw Material",
+      "Merchant",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000359",
+    "name": "Cut Peridot Gemstone",
+    "description": "A radiant peridot gleaming with bright green fire, symbol of prosperity and renewal.",
+    "valueInPennies": 2160,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Peridot",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Crafted",
+      "Symbolic",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000360",
+    "name": "Uncut Quartz Gemstone",
+    "description": "A clear crystal shard with faint inclusions, valued by craftsmen for its purity.",
+    "valueInPennies": 11,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Quartz",
+      "Mine",
+      "Mineral",
+      "Crafting",
+      "Merchant",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000361",
+    "name": "Cut Quartz Gemstone",
+    "description": "A flawless quartz crystal cut to sparkle brilliantly, used in charms and talismans.",
+    "valueInPennies": 96,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Quartz",
+      "Jewelry",
+      "Wizard",
+      "Crafted",
+      "Adornment",
+      "Mystical"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000362",
+    "name": "Uncut Rock Crystal Gemstone",
+    "description": "A translucent stone cool to the touch, catching faint hints of inner light.",
+    "valueInPennies": 24,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Rock Crystal",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000363",
+    "name": "Cut Rock Crystal Gemstone",
+    "description": "A clear rock crystal sparkling like ice, prized for its beauty and purity.",
+    "valueInPennies": 144,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Rock Crystal",
+      "Jewelry",
+      "Priest",
+      "Adornment",
+      "Ceremonial",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000364",
+    "name": "Uncut Ruby Gemstone",
+    "description": "A blood-red stone of great value, said to bring passion and misfortune alike.",
+    "valueInPennies": 12000,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Ruby",
+      "Mine",
+      "Rare",
+      "Mineral",
+      "Merchant",
+      "Raw Material"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000365",
+    "name": "Cut Ruby Gemstone",
+    "description": "A blazing ruby gem gleaming like liquid fire, centerpiece of royal regalia.",
+    "valueInPennies": 14400,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Ruby",
+      "Jewelry",
+      "Noble",
+      "Royal",
+      "Adornment",
+      "Luxury",
+      "Crafted",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000366",
+    "name": "Uncut Sapphire Gemstone",
+    "description": "A rough blue stone cool as river depths, hinting at the brilliance within.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Sapphire",
+      "Mine",
+      "Mineral",
+      "Rare",
+      "Raw Material",
+      "Merchant"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000367",
+    "name": "Cut Sapphire Gemstone",
+    "description": "A deep blue sapphire shimmering like twilight seas, favored by nobles and mages.",
+    "valueInPennies": 3000,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Sapphire",
+      "Jewelry",
+      "Noble",
+      "Wizard",
+      "Adornment",
+      "Luxury",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000368",
+    "name": "Uncut Blue Spinel Gemstone",
+    "description": "A dusky blue crystal with muted gleam, awaiting the lapidary’s art to reveal its worth.",
+    "valueInPennies": 600,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Blue Spinel",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000369",
+    "name": "Cut Blue Spinel Gemstone",
+    "description": "A bright blue spinel gleaming with cold brilliance, often mistaken for sapphire.",
+    "valueInPennies": 960,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Blue Spinel",
+      "Jewelry",
+      "Merchant",
+      "Noble",
+      "Adornment",
+      "Crafted",
+      "Valuable"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000370",
+    "name": "Uncut Tiger's Eye Gemstone",
+    "description": "A rough brown-gold stone flashing bands of light like a predator’s gaze.",
+    "valueInPennies": 36,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Tiger's Eye",
+      "Mine",
+      "Mineral",
+      "Hunter",
+      "Raw Material",
+      "Crafting"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000371",
+    "name": "Cut Tiger's Eye Gemstone",
+    "description": "A polished tiger’s eye gem catching the light with living fire, worn for courage and luck.",
+    "valueInPennies": 180,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Tiger's Eye",
+      "Jewelry",
+      "Hunter",
+      "Soldier",
+      "Adornment",
+      "Protective",
+      "Crafted"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000372",
+    "name": "Uncut Topaz Gemstone",
+    "description": "A pale golden crystal glimmering faintly beneath its rough skin.",
+    "valueInPennies": 960,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Topaz",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000373",
+    "name": "Cut Topaz Gemstone",
+    "description": "A golden topaz polished to brilliance, shining like sunlight captured in stone.",
+    "valueInPennies": 1920,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Topaz",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Valuable",
+      "Crafted",
+      "Court"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000374",
+    "name": "Uncut Tourmaline Gemstone",
+    "description": "A dark crystal showing faint glimmers of color, prized by jewelers for its hidden beauty.",
+    "valueInPennies": 144,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Tourmaline",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000375",
+    "name": "Cut Tourmaline Gemstone",
+    "description": "A radiant tourmaline gem alive with shifting hues, often gifted among nobles.",
+    "valueInPennies": 480,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Tourmaline",
+      "Jewelry",
+      "Noble",
+      "Adornment",
+      "Crafted",
+      "Valuable",
+      "Gift"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000376",
+    "name": "Uncut Zircon Gemstone",
+    "description": "A clear crystal with flashes of fire, easily mistaken for something far rarer.",
+    "valueInPennies": 120,
+    "tags": [
+      "Gemstone",
+      "Uncut",
+      "Zircon",
+      "Mine",
+      "Mineral",
+      "Merchant",
+      "Raw Material",
+      "Collector"
+    ]
+  },
+  {
+    "id": "70000000-0000-0000-0000-000000000377",
+    "name": "Cut Zircon Gemstone",
+    "description": "A brilliant zircon gem catching the light like diamond, admired by merchants and nobles alike.",
+    "valueInPennies": 840,
+    "tags": [
+      "Gemstone",
+      "Cut",
+      "Zircon",
+      "Jewelry",
+      "Merchant",
+      "Noble",
+      "Adornment",
+      "Crafted",
+      "Valuable"
     ]
   }
 ]

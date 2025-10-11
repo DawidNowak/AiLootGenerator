@@ -38,6 +38,9 @@ namespace AiLootGenerator.RestApi.Tests.Unit
 
             _tempDirectory = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString());
             Directory.CreateDirectory(_tempDirectory);
+            
+            // Update the data directory to use the temp directory
+            _seedingSettings.DataDirectory = _tempDirectory;
         }
 
         public void Dispose()
@@ -94,40 +97,154 @@ namespace AiLootGenerator.RestApi.Tests.Unit
 
         #endregion
 
-        #region SeedDatabaseIfEmptyAsync Tests
+        #region SeedDatabaseIfNewDataAvailableAsync Tests
 
         [Fact]
-        public async Task SeedDatabaseIfEmptyAsync_WhenSeedingDisabled_ReturnsFalseAndDoesNotSeed()
+        public async Task SeedDatabaseIfNewDataAvailableAsync_WhenSeedingDisabled_ReturnsFalseAndDoesNotSeed()
         {
             // Arrange
             _seedingSettings.EnableSeeding = false;
             var service = CreateService();
 
             // Act
-            var result = await service.SeedDatabaseIfEmptyAsync();
+            var result = await service.SeedDatabaseIfNewDataAvailableAsync();
 
             // Assert
             Assert.False(result);
-            // Note: Since we use real QdrantClient, we can't easily verify that certain methods weren't called
-            // This test focuses on the business logic of checking the EnableSeeding flag
         }
 
         [Fact]
-        public async Task SeedDatabaseIfEmptyAsync_WithCancellation_ThrowsOperationCanceledException()
+        public async Task SeedDatabaseIfNewDataAvailableAsync_WithNoNewFiles_ReturnsFalse()
+        {
+            // Arrange
+            // Create only files with DONE in the name
+            await File.WriteAllTextAsync(Path.Combine(_tempDirectory, "DONE_test1.json"), "[]");
+            await File.WriteAllTextAsync(Path.Combine(_tempDirectory, "test2_DONE.json"), "[]");
+            
+            _mockQdrantService.Setup(x => x.IsHealthyAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+            _mockQdrantService.Setup(x => x.EnsureCollectionExistsAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+
+            var service = CreateService();
+
+            // Act
+            var result = await service.SeedDatabaseIfNewDataAvailableAsync();
+
+            // Assert
+            Assert.False(result);
+        }
+
+        [Fact]
+        public async Task SeedDatabaseIfNewDataAvailableAsync_WithNewFiles_ProcessesFilesAndReturnsTrue()
+        {
+            // Arrange
+            var loreItems = new List<LoreItem>
+            {
+                new() 
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Test Item",
+                    Description = "Test description",
+                    ValueInPennies = 100,
+                    Tags = new List<string> { "test", "item" }
+                }
+            };
+
+            var jsonContent = JsonSerializer.Serialize(loreItems, new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            });
+
+            var testFile = Path.Combine(_tempDirectory, "test_data.json");
+            await File.WriteAllTextAsync(testFile, jsonContent);
+
+            _mockQdrantService.Setup(x => x.IsHealthyAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+            _mockQdrantService.Setup(x => x.EnsureCollectionExistsAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+            _mockQdrantService.Setup(x => x.AddLoreItemsBatchAsync(It.IsAny<IEnumerable<LoreItem>>(), It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(1);
+
+            var service = CreateService();
+
+            // Act
+            var result = await service.SeedDatabaseIfNewDataAvailableAsync();
+
+            // Assert
+            Assert.True(result);
+            
+            // Verify the file was renamed
+            Assert.False(File.Exists(testFile));
+            Assert.True(File.Exists(Path.Combine(_tempDirectory, "DONE_test_data.json")));
+        }
+
+        [Fact]
+        public async Task SeedDatabaseIfNewDataAvailableAsync_WithEmptyFile_RenamesFileAndContinues()
+        {
+            // Arrange
+            var testFile = Path.Combine(_tempDirectory, "empty_test.json");
+            await File.WriteAllTextAsync(testFile, "");
+
+            _mockQdrantService.Setup(x => x.IsHealthyAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+            _mockQdrantService.Setup(x => x.EnsureCollectionExistsAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+
+            var service = CreateService();
+
+            // Act
+            var result = await service.SeedDatabaseIfNewDataAvailableAsync();
+
+            // Assert
+            Assert.False(result); // No items were seeded
+            
+            // Verify the file was still renamed
+            Assert.False(File.Exists(testFile));
+            Assert.True(File.Exists(Path.Combine(_tempDirectory, "DONE_empty_test.json")));
+        }
+
+        [Fact]
+        public async Task SeedDatabaseIfNewDataAvailableAsync_WithFileNameConflict_HandlesConflictCorrectly()
+        {
+            // Arrange
+            var testFile = Path.Combine(_tempDirectory, "conflict_test.json");
+            await File.WriteAllTextAsync(testFile, "[]");
+            
+            // Create a file that would conflict
+            var conflictFile = Path.Combine(_tempDirectory, "DONE_conflict_test.json");
+            await File.WriteAllTextAsync(conflictFile, "existing");
+
+            _mockQdrantService.Setup(x => x.IsHealthyAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+            _mockQdrantService.Setup(x => x.EnsureCollectionExistsAsync(It.IsAny<CancellationToken>()))
+                             .ReturnsAsync(true);
+
+            var service = CreateService();
+
+            // Act
+            var result = await service.SeedDatabaseIfNewDataAvailableAsync();
+
+            // Assert
+            Assert.False(result); // No items were seeded (empty array)
+            
+            // Verify the file was renamed with a counter
+            Assert.False(File.Exists(testFile));
+            Assert.True(File.Exists(Path.Combine(_tempDirectory, "DONE_conflict_test_1.json")));
+            Assert.True(File.Exists(conflictFile)); // Original conflict file should still exist
+        }
+
+        [Fact]
+        public async Task SeedDatabaseIfNewDataAvailableAsync_WithCancellation_ThrowsOperationCanceledException()
         {
             // Arrange
             using var cts = new CancellationTokenSource();
             cts.Cancel();
             
-            // Setup the mock to throw OperationCanceledException when any method is called with cancellation token
-            _mockQdrantService.Setup(x => x.IsHealthyAsync(It.IsAny<CancellationToken>()))
-                             .Callback<CancellationToken>(token => token.ThrowIfCancellationRequested())
-                             .ThrowsAsync(new OperationCanceledException());
-            
             var service = CreateService();
 
             // Act & Assert
-            await Assert.ThrowsAsync<OperationCanceledException>(() => service.SeedDatabaseIfEmptyAsync(cts.Token));
+            await Assert.ThrowsAsync<OperationCanceledException>(() => service.SeedDatabaseIfNewDataAvailableAsync(cts.Token));
         }
 
         #endregion

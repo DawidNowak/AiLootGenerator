@@ -11,11 +11,12 @@ namespace AiLootGenerator.RestApi.Services
     public interface IDatabaseSeedingService
     {
         /// <summary>
-        /// Seeds the database with initial lore data if it's empty.
+        /// Seeds the database with data from files that don't have 'DONE' in their name.
+        /// Files are renamed with 'DONE_' prefix after successful seeding.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token for the operation.</param>
         /// <returns>True if seeding was performed, false if skipped.</returns>
-        Task<bool> SeedDatabaseIfEmptyAsync(CancellationToken cancellationToken = default);
+        Task<bool> SeedDatabaseIfNewDataAvailableAsync(CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -38,7 +39,7 @@ namespace AiLootGenerator.RestApi.Services
         }
 
         /// <inheritdoc/>
-        public async Task<bool> SeedDatabaseIfEmptyAsync(CancellationToken cancellationToken = default)
+        public async Task<bool> SeedDatabaseIfNewDataAvailableAsync(CancellationToken cancellationToken = default)
         {
             try
             {
@@ -54,22 +55,33 @@ namespace AiLootGenerator.RestApi.Services
                     return false;
                 }
 
-                // Check if collection exists and has data
-                var needsSeeding = await CheckIfSeedingRequiredAsync(cancellationToken);
+                // Ensure Qdrant service is healthy and collection exists
+                await EnsureQdrantServiceReadyAsync(cancellationToken);
+
+                // Find files that need to be processed (don't have 'DONE' in the name)
+                var filesToProcess = GetFilesToProcess();
                 
-                if (!needsSeeding)
+                if (!filesToProcess.Any())
                 {
-                    _logger.LogInformation("Database already contains data, skipping seeding");
+                    _logger.LogInformation("No new data files found for seeding (all files have 'DONE' in the name)");
                     return false;
                 }
 
-                _logger.LogInformation("Database is empty, starting seeding process...");
+                _logger.LogInformation("Found {FileCount} new data files to process", filesToProcess.Count);
 
-                // Load and seed all JSON data files
-                var totalItemsSeeded = await LoadAndSeedAllDataFilesAsync(cancellationToken);
+                // Load and seed all new data files
+                var totalItemsSeeded = await ProcessNewDataFilesAsync(filesToProcess, cancellationToken);
 
-                _logger.LogInformation("Database seeding completed successfully. Total items seeded: {TotalItems}", totalItemsSeeded);
-                return true;
+                if (totalItemsSeeded > 0)
+                {
+                    _logger.LogInformation("Database seeding completed successfully. Total items seeded: {TotalItems}", totalItemsSeeded);
+                    return true;
+                }
+                else
+                {
+                    _logger.LogInformation("No items were seeded from the available files");
+                    return false;
+                }
             }
             catch (Exception ex)
             {
@@ -79,44 +91,31 @@ namespace AiLootGenerator.RestApi.Services
         }
 
         /// <summary>
-        /// Checks if the database needs seeding by verifying collection existence and content.
+        /// Ensures the Qdrant service is healthy and the collection exists.
         /// </summary>
-        private async Task<bool> CheckIfSeedingRequiredAsync(CancellationToken cancellationToken)
+        private async Task EnsureQdrantServiceReadyAsync(CancellationToken cancellationToken)
         {
             try
             {
-                // First check if Qdrant service is healthy
                 var isHealthy = await _qdrantService.IsHealthyAsync(cancellationToken);
                 if (!isHealthy)
                 {
                     _logger.LogWarning("Qdrant service is not healthy, attempting to create collection");
-                    await _qdrantService.EnsureCollectionExistsAsync(cancellationToken);
                 }
-
-                // Check if collection has any data
-                var hasData = await _qdrantService.HasDataAsync(cancellationToken);
                 
-                if (!hasData)
-                {
-                    _logger.LogInformation("Collection exists but is empty");
-                    return true;
-                }
-
-                _logger.LogInformation("Collection contains data");
-                return false;
+                await _qdrantService.EnsureCollectionExistsAsync(cancellationToken);
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "Error checking collection status, assuming seeding is required");
-                await _qdrantService.EnsureCollectionExistsAsync(cancellationToken);
-                return true;
+                _logger.LogWarning(ex, "Error ensuring Qdrant service is ready");
+                throw;
             }
         }
 
         /// <summary>
-        /// Loads and seeds all JSON data files from the configured data directory.
+        /// Gets the list of JSON files that don't have 'DONE' in their name and need to be processed.
         /// </summary>
-        private async Task<int> LoadAndSeedAllDataFilesAsync(CancellationToken cancellationToken)
+        private List<string> GetFilesToProcess()
         {
             var dataDirectory = _seedingSettings.DataDirectory;
             
@@ -131,19 +130,27 @@ namespace AiLootGenerator.RestApi.Services
                 throw new DirectoryNotFoundException($"Data directory not found: {dataDirectory}");
             }
 
-            _logger.LogInformation("Loading data files from directory: {DataDirectory}", dataDirectory);
+            _logger.LogInformation("Scanning data directory for new files: {DataDirectory}", dataDirectory);
 
-            var jsonFiles = Directory.GetFiles(dataDirectory, "*.json");
-            
-            if (!jsonFiles.Any())
-            {
-                _logger.LogWarning("No JSON files found in data directory: {DataDirectory}", dataDirectory);
-                return 0;
-            }
+            var allJsonFiles = Directory.GetFiles(dataDirectory, "*.json");
+            var filesToProcess = allJsonFiles
+                .Where(file => !Path.GetFileName(file).Contains("DONE", StringComparison.OrdinalIgnoreCase))
+                .ToList();
 
+            _logger.LogDebug("Found {TotalFiles} JSON files, {FilesToProcess} need processing", 
+                allJsonFiles.Length, filesToProcess.Count);
+
+            return filesToProcess;
+        }
+
+        /// <summary>
+        /// Processes all new data files and renames them after successful seeding.
+        /// </summary>
+        private async Task<int> ProcessNewDataFilesAsync(List<string> filesToProcess, CancellationToken cancellationToken)
+        {
             var totalItemsSeeded = 0;
 
-            foreach (var jsonFile in jsonFiles)
+            foreach (var jsonFile in filesToProcess)
             {
                 try
                 {
@@ -155,6 +162,9 @@ namespace AiLootGenerator.RestApi.Services
                     if (!loreItems.Any())
                     {
                         _logger.LogWarning("No valid lore items found in file: {FileName}", fileName);
+                        
+                        // Still rename the file even if it's empty to avoid processing it again
+                        await RenameFileAsDoneAsync(jsonFile);
                         continue;
                     }
 
@@ -162,6 +172,9 @@ namespace AiLootGenerator.RestApi.Services
                     totalItemsSeeded += itemsSeeded;
 
                     _logger.LogInformation("Successfully seeded {ItemsSeeded} items from {FileName}", itemsSeeded, fileName);
+
+                    // Rename the file to mark it as processed
+                    await RenameFileAsDoneAsync(jsonFile);
                 }
                 catch (Exception ex)
                 {
@@ -178,6 +191,44 @@ namespace AiLootGenerator.RestApi.Services
             }
 
             return totalItemsSeeded;
+        }
+
+        /// <summary>
+        /// Renames a file by adding 'DONE_' prefix to mark it as processed.
+        /// </summary>
+        private async Task RenameFileAsDoneAsync(string originalFilePath)
+        {
+            try
+            {
+                var directory = Path.GetDirectoryName(originalFilePath)!;
+                var fileName = Path.GetFileName(originalFilePath);
+                var newFileName = $"DONE_{fileName}";
+                var newFilePath = Path.Combine(directory, newFileName);
+
+                // Handle potential file conflicts
+                int counter = 1;
+                while (File.Exists(newFilePath))
+                {
+                    var nameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+                    var extension = Path.GetExtension(fileName);
+                    newFileName = $"DONE_{nameWithoutExtension}_{counter}{extension}";
+                    newFilePath = Path.Combine(directory, newFileName);
+                    counter++;
+                }
+
+                File.Move(originalFilePath, newFilePath);
+                
+                _logger.LogInformation("Renamed processed file: {OriginalFileName} -> {NewFileName}", 
+                    fileName, newFileName);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to rename file after processing: {FilePath}. " +
+                    "The file was processed successfully but may be processed again on next startup.", 
+                    originalFilePath);
+                
+                // Don't throw here as the seeding was successful, just the rename failed
+            }
         }
 
         /// <summary>

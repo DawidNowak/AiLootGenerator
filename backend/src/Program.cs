@@ -99,7 +99,7 @@ using (var scope = app.Services.CreateScope())
     try
     {
         logger.LogInformation("Starting database seeding process...");
-        var wasSeeded = await seedingService.SeedDatabaseIfEmptyAsync();
+        var wasSeeded = await seedingService.SeedDatabaseIfNewDataAvailableAsync();
         
         if (wasSeeded)
         {
@@ -107,7 +107,7 @@ using (var scope = app.Services.CreateScope())
         }
         else
         {
-            logger.LogInformation("Database seeding skipped - data already exists or seeding disabled");
+            logger.LogInformation("Database seeding skipped - no new data files found or seeding disabled");
         }
     }
     catch (Exception ex)
