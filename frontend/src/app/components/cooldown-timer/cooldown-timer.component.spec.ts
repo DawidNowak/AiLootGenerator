@@ -247,8 +247,8 @@ describe('CooldownTimerComponent', () => {
             fixture.detectChanges();
 
             const compiled = fixture.nativeElement as HTMLElement;
-            const textDisplay = compiled.querySelector('.timer-text, .cooldown-text');
-            const progressBar = compiled.querySelector('mat-progress-bar');
+            const textDisplay = compiled.querySelector('.time-value, .compact-text, .ready-text');
+            const progressBar = compiled.querySelector('mat-progress-bar, .compact-progress');
 
             expect(textDisplay).toBeTruthy();
             expect(progressBar).toBeTruthy();

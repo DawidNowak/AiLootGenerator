@@ -1,10 +1,11 @@
 # AiLootGenerator Development Guidelines
 
-Auto-generated from all feature plans. Last updated: 2025-09-28
+Auto-generated from all feature plans. Last updated: 2025-10-11
 
 ## Active Technologies
 
 - C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+) + ASP.NET Core Web API, Angular, Angular Material, Angular i18n, OpenAI .NET SDK, Qdrant .NET client (001-build-warhammer-fantasy)
+- WealthLevel enum extension: 6-tier system with Treasure tier (005-i-want-to)
 
 ## Project Structure
 
@@ -24,6 +25,7 @@ C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+): Follow standard conv
 
 ## Recent Changes
 
+- 005-i-want-to: Extended WealthLevel enum with Treasure tier (6th level), updated Noble tier range to 1201-3600 pennies, Treasure tier for 3601+ pennies
 - 004-further-rework-of: UI simplification using standard Angular Material components, improved spacing and contrast, multiline location input
 - 001-build-warhammer-fantasy: Added C# 8.0+ (ASP.NET Core 6.0+), TypeScript 5.5+ (Angular 18+) + ASP.NET Core Web API, Angular, Angular Material, Angular i18n, OpenAI .NET SDK, Qdrant .NET client
 

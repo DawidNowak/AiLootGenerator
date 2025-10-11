@@ -166,6 +166,8 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         [InlineData(241, WealthLevel.Wealthy)] // Lower bound Wealthy
         [InlineData(1200, WealthLevel.Wealthy)] // Upper bound Wealthy
         [InlineData(1201, WealthLevel.Noble)]  // Lower bound Noble
+        [InlineData(3600, WealthLevel.Noble)]  // Upper bound Noble
+        [InlineData(3601, WealthLevel.Treasure)]  // Lower bound Treasure
         public void DetermineWealthLevel_BoundaryValues_ReturnsCorrectWealthLevel(int valueInPennies, WealthLevel expected)
         {
             // Arrange
@@ -188,7 +190,8 @@ namespace AiLootGenerator.RestApi.Tests.Unit
         [InlineData(WealthLevel.Poor, "peasant scraps, basic items (13-60 pennies)")]
         [InlineData(WealthLevel.Common, "everyday goods, standard quality (61-240 pennies)")]
         [InlineData(WealthLevel.Wealthy, "merchant spoils, valuable items (241-1200 pennies)")]
-        [InlineData(WealthLevel.Noble, "opulent treasures, rare items (1201+ pennies)")]
+        [InlineData(WealthLevel.Noble, "opulent treasures, rare items (1201-3600 pennies)")]
+        [InlineData(WealthLevel.Treasure, "legendary artifacts, ultimate treasures (3601+ pennies)")]
         public void GetWealthDescription_ReturnsCorrectDescription(WealthLevel wealthLevel, string expected)
         {
             // Arrange

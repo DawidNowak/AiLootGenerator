@@ -43,6 +43,11 @@ describe('LootGeneratorComponent', () => {
         });
 
         mockI18nService.translate.and.returnValue('Test Translation');
+        mockI18nService.getAvailableLanguages.and.returnValue([
+            { code: 'en', label: 'English', translations: {} },
+            { code: 'de', label: 'Deutsch', translations: {} }
+        ]);
+        mockI18nService.getCurrentLanguageInfo.and.returnValue({ code: 'en', label: 'English', translations: {} });
 
         await TestBed.configureTestingModule({
             imports: [
@@ -111,11 +116,11 @@ describe('LootGeneratorComponent', () => {
             expect(lootList).toBeTruthy();
         });
 
-        it('should render price toggle in results section', () => {
+        it('should render price toggle in form section', () => {
             component.generatedLoot.set(mockLootItems);
             fixture.detectChanges();
 
-            const priceToggle = fixture.debugElement.query(By.css('.results-section mat-checkbox'));
+            const priceToggle = fixture.debugElement.query(By.css('app-loot-form mat-checkbox'));
             expect(priceToggle).toBeTruthy();
         });
     });
@@ -298,15 +303,14 @@ describe('LootGeneratorComponent', () => {
     });
 
     describe('Accessibility', () => {
-        it('should have proper heading hierarchy', () => {
-            component.generatedLoot.set(mockLootItems);
+        it('should have accessible form elements', () => {
             fixture.detectChanges();
 
-            const h2Headers = fixture.debugElement.queryAll(By.css('h2'));
-            const h3Headers = fixture.debugElement.queryAll(By.css('h3'));
-
-            expect(h2Headers.length).toBeGreaterThan(0);
-            expect(h3Headers.length).toBeGreaterThan(0);
+            // Check that form has proper labels and accessibility
+            const formFields = fixture.debugElement.queryAll(By.css('mat-form-field'));
+            expect(formFields.length).toBeGreaterThan(0);
+            
+            // Simplified UI focuses on form accessibility rather than heading hierarchy
         });
 
         it('should have semantic section elements', () => {

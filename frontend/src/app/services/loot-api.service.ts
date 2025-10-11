@@ -42,6 +42,22 @@ export interface ApiErrorResponse {
 }
 
 /**
+ * Response model for the wealth levels API endpoint.
+ */
+export interface WealthLevelsResponse {
+    wealthLevels: WealthLevelInfo[];
+}
+
+/**
+ * Information about a specific wealth level.
+ */
+export interface WealthLevelInfo {
+    value: number;
+    name: string;
+    range: string;
+}
+
+/**
  * Service for interacting with the loot generation API.
  * Handles all communication with the backend ASP.NET Core API.
  */
@@ -51,6 +67,7 @@ export interface ApiErrorResponse {
 export class LootApiService {
     private readonly endpoints = {
         generateLoot: 'loot/generate',
+        wealthLevels: 'loot/wealth-levels',
         health: 'health'
     };
 
@@ -98,6 +115,20 @@ export class LootApiService {
             tap(response => {
                 if (environment.enableLogging && !environment.production) {
                     console.log('Health check response:', response);
+                }
+            })
+        );
+    }
+
+    /**
+     * Gets all available wealth levels with their ranges and descriptions.
+     * @returns Observable of the wealth levels response
+     */
+    getWealthLevels(): Observable<WealthLevelsResponse> {
+        return this.httpClient.get<WealthLevelsResponse>(this.endpoints.wealthLevels).pipe(
+            tap(response => {
+                if (environment.enableLogging && !environment.production) {
+                    console.log('Wealth levels response:', response);
                 }
             })
         );
@@ -190,7 +221,8 @@ export class LootApiService {
             [WealthLevel.Poor]: 'Poor',
             [WealthLevel.Common]: 'Common',
             [WealthLevel.Wealthy]: 'Wealthy',
-            [WealthLevel.Noble]: 'Noble'
+            [WealthLevel.Noble]: 'Noble',
+            [WealthLevel.Treasure]: 'Treasure'
         };
         return names[wealthLevel] || 'Unknown';
     }
@@ -206,7 +238,8 @@ export class LootApiService {
             [WealthLevel.Poor]: 'Peasant scraps, basic items (13-60 pennies)',
             [WealthLevel.Common]: 'Everyday goods, standard quality (61-240 pennies)',
             [WealthLevel.Wealthy]: 'Merchant spoils, valuable items (241-1200 pennies)',
-            [WealthLevel.Noble]: 'Opulent treasures, rare items (1201+ pennies)'
+            [WealthLevel.Noble]: 'Opulent treasures, rare items (1201-3600 pennies)',
+            [WealthLevel.Treasure]: 'Legendary artifacts, ultimate treasures (3601+ pennies)'
         };
         return descriptions[wealthLevel] || 'Unknown wealth level';
     }
@@ -222,7 +255,8 @@ export class LootApiService {
             [WealthLevel.Poor]: { min: 13, max: 60 },
             [WealthLevel.Common]: { min: 61, max: 240 },
             [WealthLevel.Wealthy]: { min: 241, max: 1200 },
-            [WealthLevel.Noble]: { min: 1201, max: 10000 }
+            [WealthLevel.Noble]: { min: 1201, max: 3600 },
+            [WealthLevel.Treasure]: { min: 3601, max: 100000 }
         };
         return ranges[wealthLevel] || { min: 0, max: 0 };
     }

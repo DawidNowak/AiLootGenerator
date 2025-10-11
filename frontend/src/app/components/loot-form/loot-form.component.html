@@ -105,11 +105,22 @@
               [attr.aria-label]="'wealth.label' | translate"
               data-testid="wealth-selector"
             >
+              <mat-select-trigger>
+                {{ getWealthDisplayText(lootForm.get("wealthLevel")?.value) }}
+              </mat-select-trigger>
               <mat-option
-                *ngFor="let option of wealthLevelOptions"
+                *ngFor="let option of wealthLevelOptions; let last = last"
                 [value]="option.value"
               >
-                {{ option.labelKey | translate }}
+                <div class="wealth-option">
+                  <div class="wealth-label">
+                    {{ option.labelKey | translate }}
+                  </div>
+                  <div class="wealth-description">
+                    {{ option.descriptionKey | translate }}
+                  </div>
+                </div>
+                <mat-divider *ngIf="!last" class="wealth-divider"></mat-divider>
               </mat-option>
             </mat-select>
           </mat-form-field>

@@ -132,7 +132,8 @@ export class LootFormComponent implements OnInit, OnDestroy {
         .filter(key => !isNaN(Number(WealthLevel[key as keyof typeof WealthLevel])))
         .map(key => ({
             value: WealthLevel[key as keyof typeof WealthLevel],
-            labelKey: `wealth.${key.toLowerCase()}`
+            labelKey: `wealth.${key.toLowerCase()}`,
+            descriptionKey: `wealth.${key.toLowerCase()}.description`
         }));
 
     constructor(
@@ -428,6 +429,14 @@ export class LootFormComponent implements OnInit, OnDestroy {
      */
     get locationControl(): AbstractControl {
         return this.lootForm.get('location')!;
+    }
+
+    /**
+     * Get display text for selected wealth level (shows only the label, not description).
+     */
+    getWealthDisplayText(value: WealthLevel): string {
+        const option = this.wealthLevelOptions.find(opt => opt.value === value);
+        return option ? this.i18nService.translate(option.labelKey) : '';
     }
 
     /**
