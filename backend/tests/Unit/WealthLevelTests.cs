@@ -30,7 +30,8 @@ namespace AiLootGenerator.RestApi.Tests.Unit.Models
                 WealthLevel.Poor,
                 WealthLevel.Common,
                 WealthLevel.Wealthy,
-                WealthLevel.Noble
+                WealthLevel.Noble,
+                WealthLevel.Treasure
             };
 
             // Act

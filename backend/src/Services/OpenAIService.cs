@@ -290,7 +290,8 @@ Guidelines:
                 >= 13 and <= 60 => WealthLevel.Poor,
                 >= 61 and <= 240 => WealthLevel.Common,
                 >= 241 and <= 1200 => WealthLevel.Wealthy,
-                >= 1201 => WealthLevel.Noble,
+                >= 1201 and <= 3600 => WealthLevel.Noble,
+                >= 3601 => WealthLevel.Treasure,
                 _ => null
             };
         }
