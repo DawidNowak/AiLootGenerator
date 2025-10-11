@@ -102,6 +102,44 @@ paths:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
 
+  /api/loot/wealth-levels:
+    get:
+      summary: Get available wealth levels with ranges
+      description: Returns all available wealth level tiers with their penny value ranges
+      operationId: getWealthLevels
+      tags:
+        - Loot Generation
+      responses:
+        "200":
+          description: Successfully retrieved wealth levels
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WealthLevelsResponse"
+              examples:
+                wealth_levels:
+                  summary: All wealth levels with ranges
+                  value:
+                    wealthLevels:
+                      - value: 1
+                        name: "Rubbish"
+                        range: "1-12 pennies"
+                      - value: 2
+                        name: "Poor"
+                        range: "13-60 pennies"
+                      - value: 3
+                        name: "Common"
+                        range: "61-240 pennies"
+                      - value: 4
+                        name: "Wealthy"
+                        range: "241-1200 pennies"
+                      - value: 5
+                        name: "Noble"
+                        range: "1201-3600 pennies"
+                      - value: 6
+                        name: "Treasure"
+                        range: "3601+ pennies"
+
   /api/health:
     get:
       summary: Health check endpoint
@@ -215,14 +253,15 @@ components:
 
     WealthLevel:
       type: string
-      enum: ["Rubbish", "Poor", "Common", "Wealthy", "Noble"]
+      enum: ["Rubbish", "Poor", "Common", "Wealthy", "Noble", "Treasure"]
       description: |
-        Five-tier wealth classification system:
+        Six-tier wealth classification system:
         - Rubbish: Junk items, lowest tier (1-12 pennies)
         - Poor: Peasant scraps, basic items (13-60 pennies)  
         - Common: Everyday goods, standard quality (61-240 pennies)
         - Wealthy: Merchant spoils, valuable items (241-1200 pennies)
-        - Noble: Opulent treasures, rare magic items (1201+ pennies)
+        - Noble: Opulent treasures, rare items (1201-3600 pennies)
+        - Treasure: Legendary artifacts, priceless items (3601+ pennies)
       example: "Common"
 
     ErrorResponse:
@@ -293,6 +332,41 @@ components:
               type: string
               enum: ["Healthy", "Unhealthy"]
               example: "Healthy"
+
+    WealthLevelsResponse:
+      type: object
+      required:
+        - wealthLevels
+      properties:
+        wealthLevels:
+          type: array
+          items:
+            $ref: "#/components/schemas/WealthLevelInfo"
+          description: List of available wealth levels with ranges
+          minItems: 6
+          maxItems: 6
+
+    WealthLevelInfo:
+      type: object
+      required:
+        - value
+        - name
+        - range
+      properties:
+        value:
+          type: integer
+          minimum: 1
+          maximum: 6
+          description: Numeric wealth level value
+          example: 3
+        name:
+          type: string
+          description: Human-readable wealth level name
+          example: "Common"
+        range:
+          type: string
+          description: Penny value range for this wealth level
+          example: "61-240 pennies"
 
 security: []
 

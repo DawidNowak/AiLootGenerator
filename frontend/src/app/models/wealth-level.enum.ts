@@ -1,5 +1,5 @@
 /**
- * Defines the five-tier wealth system for loot quality.
+ * Defines the six-tier wealth system for loot quality.
  * Corresponds to the backend WealthLevel enum with numeric values.
  */
 export enum WealthLevel {
@@ -28,8 +28,14 @@ export enum WealthLevel {
     Wealthy = 4,
 
     /**
-     * Opulent treasures, rare magic items (1201+ pennies).
+     * Opulent treasures, rare magic items (1201-3600 pennies).
      * Luxury goods, art, magical artifacts.
      */
-    Noble = 5
+    Noble = 5,
+
+    /**
+     * Legendary artifacts, ultimate treasures (3601+ pennies).
+     * Legendary items, dragon hoards, royal artifacts.
+     */
+    Treasure = 6
 }

@@ -1,7 +1,7 @@
 namespace AiLootGenerator.RestApi.Models
 {
     /// <summary>
-    /// Defines the five-tier wealth system for loot quality.
+    /// Defines the six-tier wealth system for loot quality.
     /// </summary>
     public enum WealthLevel
     {
@@ -26,8 +26,13 @@ namespace AiLootGenerator.RestApi.Models
         Wealthy = 4,
 
         /// <summary>
-        /// Opulent treasures, rare magic items (1201+ pennies).
+        /// Opulent treasures, rare magic items (1201-3600 pennies).
         /// </summary>
-        Noble = 5
+        Noble = 5,
+
+        /// <summary>
+        /// Legendary artifacts, ultimate treasures (3601+ pennies).
+        /// </summary>
+        Treasure = 6
     }
 }

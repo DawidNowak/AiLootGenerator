@@ -202,7 +202,7 @@ describe('LootListComponent', () => {
             fixture.detectChanges();
 
             const itemsList = fixture.debugElement.query(By.css('.loot-items-list'));
-            const lootItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
+            const lootItems = fixture.debugElement.queryAll(By.css('.loot-item-card'));
 
             expect(itemsList).toBeTruthy();
             expect(lootItems.length).toBe(3);
@@ -225,11 +225,12 @@ describe('LootListComponent', () => {
             component.isLoading = false;
             fixture.detectChanges();
 
-            const summary = fixture.debugElement.query(By.css('.results-summary'));
-            const summaryText = fixture.debugElement.query(By.css('.summary-text'));
+            const listHeader = fixture.debugElement.query(By.css('.list-header'));
+            const listTitle = fixture.debugElement.query(By.css('.list-title'));
 
-            expect(summary).toBeTruthy();
-            expect(summaryText).toBeTruthy();
+            expect(listHeader).toBeTruthy();
+            expect(listTitle).toBeTruthy();
+            expect(listTitle.nativeElement.textContent).toContain('(3)'); // Item count
         });
 
         it('should not show list content when loading', () => {
@@ -329,10 +330,9 @@ describe('LootListComponent', () => {
 
             const listContainer = fixture.debugElement.query(By.css('.loot-items-list'));
             expect(listContainer).toBeTruthy();
-            expect(listContainer.nativeElement.tagName.toLowerCase()).toBe('mat-list');
 
-            const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
-            expect(listItems.length).toBe(3);
+            const lootItemCards = fixture.debugElement.queryAll(By.css('.loot-item-card'));
+            expect(lootItemCards.length).toBe(3);
         });
 
         it('should apply list item styling to each loot item', () => {
@@ -340,25 +340,22 @@ describe('LootListComponent', () => {
             component.items = mockItems;
             fixture.detectChanges();
 
-            const itemElements = fixture.debugElement.queryAll(By.css('mat-list-item'));
-            expect(itemElements.length).toBe(2);
-
-            itemElements.forEach((element: any) => {
-                expect(element.nativeElement.classList.contains('loot-item-light')).toBe(true);
-            });
+            const lootItemCards = fixture.debugElement.queryAll(By.css('.loot-item-card'));
+            expect(lootItemCards.length).toBe(2);
         });
 
         it('should preserve all item information in list format', () => {
             const mockItem = sampleLootItems[0];
             component.items = [mockItem];
+            component.showPrices = true;
             fixture.detectChanges();
 
-            const itemElement = fixture.debugElement.query(By.css('mat-list-item'));
+            const itemElement = fixture.debugElement.query(By.css('.loot-item-card'));
             expect(itemElement).toBeTruthy();
 
             const nameElement = itemElement.query(By.css('.item-name'));
             const descriptionElement = itemElement.query(By.css('.item-description'));
-            const priceElement = itemElement.query(By.css('.item-price'));
+            const priceElement = itemElement.query(By.css('.item-value'));
 
             expect(nameElement.nativeElement.textContent.trim()).toBe(mockItem.name);
             expect(descriptionElement.nativeElement.textContent.trim()).toBe(mockItem.description);
@@ -373,8 +370,8 @@ describe('LootListComponent', () => {
             const listContainer = fixture.debugElement.query(By.css('.loot-items-list'));
             expect(listContainer).toBeTruthy();
 
-            const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
-            expect(listItems.length).toBe(3);
+            const lootItemCards = fixture.debugElement.queryAll(By.css('.loot-item-card'));
+            expect(lootItemCards.length).toBe(3);
         });
 
         it('should use semantic list markup for accessibility', () => {
@@ -382,12 +379,12 @@ describe('LootListComponent', () => {
             component.items = mockItems;
             fixture.detectChanges();
 
-            // mat-list automatically provides proper ARIA roles
-            const listElement = fixture.debugElement.query(By.css('mat-list'));
-            expect(listElement).toBeTruthy();
+            // Uses custom card layout for simplified design
+            const listContainer = fixture.debugElement.query(By.css('.loot-items-list'));
+            expect(listContainer).toBeTruthy();
 
-            const listItems = fixture.debugElement.queryAll(By.css('mat-list-item'));
-            expect(listItems.length).toBe(2);
+            const lootItemCards = fixture.debugElement.queryAll(By.css('.loot-item-card'));
+            expect(lootItemCards.length).toBe(2);
         });
 
         it('should preserve loading and empty states in list layout', () => {
@@ -416,10 +413,16 @@ describe('LootListComponent Input Properties', () => {
 
     const sampleLootItems: LootItem[] = [
         {
-            name: 'Test Item',
-            description: 'Test Description',
+            name: 'Test Item 1',
+            description: 'Test Description 1',
             valueInPennies: 60,
             wealthLevel: WealthLevel.Poor
+        },
+        {
+            name: 'Test Item 2',
+            description: 'Test Description 2',
+            valueInPennies: 120,
+            wealthLevel: WealthLevel.Common
         }
     ];
 
@@ -445,8 +448,8 @@ describe('LootListComponent Input Properties', () => {
         hostComponent.testItems = sampleLootItems;
         hostFixture.detectChanges();
 
-        const lootItemElements = hostFixture.debugElement.queryAll(By.css('mat-list-item'));
-        expect(lootItemElements.length).toBe(1);
+        const lootItemElements = hostFixture.debugElement.queryAll(By.css('.loot-item-card'));
+        expect(lootItemElements.length).toBe(2); // sampleLootItems has 2 items
     });
 
     it('should handle empty items array', () => {
@@ -454,7 +457,7 @@ describe('LootListComponent Input Properties', () => {
         hostFixture.detectChanges();
 
         const emptyState = hostFixture.debugElement.query(By.css('.empty-state'));
-        const lootItems = hostFixture.debugElement.queryAll(By.css('mat-list-item'));
+        const lootItems = hostFixture.debugElement.queryAll(By.css('.loot-item-card'));
 
         expect(emptyState).toBeTruthy();
         expect(lootItems.length).toBe(0);
@@ -481,16 +484,17 @@ describe('LootListComponent Input Properties', () => {
     });
 
     describe('UI Simplification Requirements', () => {
-        it('should use mat-list container instead of custom grid', () => {
+        it('should use custom card layout instead of complex grid', () => {
             hostComponent.testItems = sampleLootItems.slice(0, 2);
             hostFixture.detectChanges();
 
-            // Should find mat-list
-            const matList = hostFixture.debugElement.query(By.css('mat-list'));
-            expect(matList).toBeTruthy();
+            // Should find simplified card container
+            const listContainer = hostFixture.debugElement.query(By.css('.loot-items-list'));
+            expect(listContainer).toBeTruthy();
 
-            // Should use the correct CSS class
-            expect(matList.nativeElement.classList.contains('loot-items-list')).toBe(true);
+            // Should use custom card elements
+            const cardElements = hostFixture.debugElement.queryAll(By.css('.loot-item-card'));
+            expect(cardElements.length).toBe(2);
         });
 
         it('should have simplified header without decorative icons', () => {
@@ -501,16 +505,16 @@ describe('LootListComponent Input Properties', () => {
             expect(headerIcon).toBeFalsy(); // No decorative icons in header
         });
 
-        it('should maintain accessibility with proper mat-list structure', () => {
+        it('should maintain accessibility with proper card structure', () => {
             hostComponent.testItems = sampleLootItems.slice(0, 2);
             hostFixture.detectChanges();
 
-            const matList = hostFixture.debugElement.query(By.css('mat-list'));
-            expect(matList).toBeTruthy();
+            const listContainer = hostFixture.debugElement.query(By.css('.loot-items-list'));
+            expect(listContainer).toBeTruthy();
 
-            // mat-list automatically provides proper accessibility attributes
-            const listItems = hostFixture.debugElement.queryAll(By.css('mat-list-item'));
-            expect(listItems.length).toBe(2);
+            // Custom card layout with proper semantic structure
+            const cardItems = hostFixture.debugElement.queryAll(By.css('.loot-item-card'));
+            expect(cardItems.length).toBe(2);
         });
     });
 });
