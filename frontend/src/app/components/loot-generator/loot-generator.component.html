@@ -21,12 +21,6 @@
       class="results-section grid-results"
       *ngIf="generatedLoot().length > 0"
     >
-      <div class="section-header">
-        <h3 class="section-title">
-          {{ "loot.generated.title" | translate }}
-        </h3>
-      </div>
-
       <app-loot-list
         [items]="generatedLoot()"
         [showPrices]="showPriceDetails()"
