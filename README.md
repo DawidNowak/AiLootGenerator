@@ -7,6 +7,10 @@
 
 A responsive web application designed for **Warhammer Fantasy Roleplay (WFRP) Game Masters** to generate immersive, lore-consistent loot for tabletop sessions. The app helps GMs quickly create thematic treasures based on in-game locations and wealth levels, maintaining the gritty, low-fantasy atmosphere of the Warhammer Fantasy setting.
 
+## 🌐 Live Demo
+
+Try the app live at: **[https://ai-loot-generator.vercel.app/](https://ai-loot-generator.vercel.app/)**
+
 ## ✨ Features
 
 ### 🎯 Core Functionality
