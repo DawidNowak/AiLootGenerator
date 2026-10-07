@@ -11,6 +11,14 @@ A responsive web application designed for **Warhammer Fantasy Roleplay (WFRP) Ga
 
 Try the app live at: **[https://ai-loot-generator.vercel.app/](https://ai-loot-generator.vercel.app/)**
 
+![AI Loot Generator demo](docs/demo.gif)
+
+### ☁️ Hosting
+
+- **Frontend**: [Vercel](https://vercel.com/)
+- **Backend API**: [Azure App Service](https://azure.microsoft.com/products/app-service/)
+- **Vector database**: [Qdrant Cloud](https://cloud.qdrant.io/)
+
 ## ✨ Features
 
 ### 🎯 Core Functionality
@@ -259,39 +267,6 @@ interface LootItem {
   wealthLevel: number; // 0-4 wealth tier
 }
 ```
-
-## 🚢 Deployment
-
-The application is designed for easy deployment on various platforms:
-
-### Docker Support
-
-_Coming soon - Dockerfiles for both backend and frontend_
-
-### Cloud Deployment
-
-- **Backend**: Compatible with Azure App Service, AWS Elastic Beanstalk
-- **Frontend**: Deployable to Netlify, Vercel, or any static hosting
-- **Database**: Qdrant Cloud or self-hosted Qdrant instance
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our development guidelines:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Follow** the existing code style and testing patterns
-4. **Write** tests for new functionality
-5. **Commit** with clear messages (`git commit -m 'Add amazing feature'`)
-6. **Push** to your branch (`git push origin feature/amazing-feature`)
-7. **Open** a Pull Request
-
-### Development Standards
-
-- **Backend**: Follow C# conventions, comprehensive unit tests required
-- **Frontend**: Angular style guide, component tests for new features
-- **Commits**: Conventional commit format preferred
-- **Documentation**: Update README and inline docs for new features
 
 ## 📜 License
 
